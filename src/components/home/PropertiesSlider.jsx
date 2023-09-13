@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Slider from "react-slick";
-import properties from "../../data/properties";
 import Image from "next/image";
 
-const FeaturedProperties = () => {
+const PropertiesSlider = ({ properties }) => {
   const settings = {
     dots: true,
     arrows: false,
@@ -28,26 +27,27 @@ const FeaturedProperties = () => {
       },
     ],
   };
+  const imagePath = "http://localhost:8000/public/images/";
 
-  let content = properties?.slice(0, 12)?.map((item) => (
-    <div className="item" key={item.id}>
+  let content = properties?.slice(0, 12)?.map((property) => ( 
+    <div className="item" key={property.id}>
       <div className="feat_property">
         <div className="thumb">
           <Image
             width={343}
             height={220}
             className="img-whp w-100 h-100 cover"
-            src={item.img}
-            alt="fp1.jpg"
+            src=''
+            alt=""
           />
           <div className="thmb_cntnt">
-            <ul className="tag mb0">
+            {/* <ul className="tag mb0">
               {item.saleTag.map((val, i) => (
                 <li className="list-inline-item" key={i}>
                   <a href="#">{val}</a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
             {/* End .tag */}
 
             <ul className="icon mb0">
@@ -64,33 +64,33 @@ const FeaturedProperties = () => {
             </ul>
             {/* End .icon */}
 
-            <Link href={`/listing-details-v1/${item.id}`} className="fp_price">
-              ${item.price}
-              <small>/mo</small>
-            </Link>
+            
           </div>
         </div>
         {/* End .thumb */}
 
         <div className="details">
           <div className="tc_content">
-            <p className="text-thm">{item.type}</p>
+            <p className="text-thm">{property.prop_type}</p>
             <h4>
-              <Link href={`/listing-details-v1/${item.id}`}>{item.title}</Link>
+              <Link href={`/listing-details-v1/${property.id}`}>{property.prop_name}</Link>
             </h4>
             <p>
               <span className="flaticon-placeholder"></span>
-              {item.location}
+              {property.prop_address}
+            </p>
+            <p>
+              Move in <b>{property.est_occupancy_year}</b>
             </p>
 
             <ul className="prop_details mb0">
-              {item.itemDetails.map((val, i) => (
+              {/* {item.itemDetails.map((val, i) => (
                 <li className="list-inline-item" key={i}>
                   <a href="#">
                     {val.name}: {val.number}
                   </a>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
           {/* End .tc_content */}
@@ -98,20 +98,12 @@ const FeaturedProperties = () => {
           <div className="fp_footer">
             <ul className="fp_meta float-start mb0">
               <li className="list-inline-item">
-                <Link href="/agent-v2">
-                  <Image
-                    width={40}
-                    height={40}
-                    src={item.posterAvatar}
-                    alt="pposter1.png"
-                  />
-                </Link>
-              </li>
-              <li className="list-inline-item">
-                <Link href="/agent-v2">{item.posterName}</Link>
+              <Link href={`/listing-details-v1/${property.id}`} className="fp_price">
+                <h4>${property.prop_price_from} - ${property.prop_price_to}</h4>
+              </Link>
               </li>
             </ul>
-            <div className="fp_pdate float-end">{item.postedYear}</div>
+            <div className="fp_pdate float-end"></div>
           </div>
           {/* End .fp_footer */}
         </div>
@@ -129,4 +121,4 @@ const FeaturedProperties = () => {
   );
 };
 
-export default FeaturedProperties;
+export default PropertiesSlider;

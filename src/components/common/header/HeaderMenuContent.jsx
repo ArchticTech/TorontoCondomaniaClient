@@ -4,26 +4,28 @@ import { useRouter } from "next/router";
 const HeaderMenuContent = ({ float = "" }) => {
   const route = useRouter();
 
-  const home = [
-    {
-      id: 1,
-      name: "Home 1",
-      routerPath: "/",
-    },
-    { id: 2, name: "Home 2", routerPath: "/home-2" },
-    {
-      id: 3,
-      name: "Home 3",
-      routerPath: "/home-3",
-    },
-    { id: 4, name: "Home 4", routerPath: "/home-4" },
-    { id: 5, name: "Home 5", routerPath: "/home-5" },
-    { id: 6, name: "Home 6", routerPath: "/home-6" },
-    { id: 7, name: "Home 7", routerPath: "/home-7" },
-    { id: 8, name: "Home 8", routerPath: "/home-8" },
-    { id: 9, name: "Home 9", routerPath: "/home-9" },
-    { id: 10, name: "Home 10", routerPath: "/home-10" },
-  ];
+  // const home = [
+  //   {
+  //     id: 1,
+  //     name: "Home 1",
+  //     routerPath: "/",
+  //   },
+  //   { id: 2, name: "Home 2", routerPath: "/home-2" },
+  //   {
+  //     id: 3,
+  //     name: "Home 3",
+  //     routerPath: "/home-3",
+  //   },
+  //   { id: 4, name: "Home 4", routerPath: "/home-4" },
+  //   { id: 5, name: "Home 5", routerPath: "/home-5" },
+  //   { id: 6, name: "Home 6", routerPath: "/home-6" },
+  //   { id: 7, name: "Home 7", routerPath: "/home-7" },
+  //   { id: 8, name: "Home 8", routerPath: "/home-8" },
+  //   { id: 9, name: "Home 9", routerPath: "/home-9" },
+  //   { id: 10, name: "Home 10", routerPath: "/home-10" },
+  // ];
+
+  const home = {name: "Home", routerPath: "/"};
 
   const listing = [
     {
@@ -243,33 +245,16 @@ const HeaderMenuContent = ({ float = "" }) => {
       data-menu-style="horizontal"
     >
       <li className="dropitem">
-        <a
-          href="#"
+        <Link
+          href={home.routerPath}
           className={
-            home.some((page) => page.routerPath === route.pathname)
+            (home.routerPath === route.pathname)
               ? "ui-active"
               : undefined
           }
         >
-          <span className="title">Home</span>
-          <span className="arrow"></span>
-        </a>
-        {/* <!-- Level Two--> */}
-
-        <ul className="sub-menu ">
-          {home.map((item) => (
-            <li key={item.id}>
-              <Link
-                href={item.routerPath}
-                className={
-                  route.pathname === item.routerPath ? "ui-active" : undefined
-                }
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <span className="title">{home.name}</span>
+        </Link>
       </li>
       {/* End .dropitem */}
 
@@ -290,7 +275,7 @@ const HeaderMenuContent = ({ float = "" }) => {
           <span className="arrow"></span>
         </a>
         {/* <!-- Level Two--> */}
-        <ul className="sub-menu ">
+        <ul className="sub-menu">
           {listing.map((item) => (
             <li className="dropitem arrow" key={item.id}>
               <a

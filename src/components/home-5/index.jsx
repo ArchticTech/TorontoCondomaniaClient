@@ -1,6 +1,6 @@
 import MobileMenu from "../common/header/MobileMenu";
 import WhyChoose from "../common/WhyChoose";
-import FeaturedProperties from "../home/FeaturedProperties";
+import PropertiesSlider from "../home/PropertiesSlider";
 import FindProperties from "./FindProperties";
 import Header from "./Header";
 import Testimonial from "../common/Testimonial";
@@ -12,7 +12,7 @@ import Blogs from "../common/Blogs";
 import PopupSignInUp from "../common/PopupSignInUp";
 import Hero from "./Hero";
 
-const index = () => {
+const index = ({ properties }) => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -45,23 +45,27 @@ const index = () => {
       </section>
 
       {/* <!-- Feature Properties --> */}
-      <section id="feature-property" className="property-city pb30 bg-ptrn1">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center mb40">
-                <h2>Featured Properties</h2>
-                <p>Handpicked properties by our team.</p>
+      {(() => {
+        if (properties.length >= 3) {
+          return <section id="feature-property" className="property-city pb30 bg-ptrn1">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6 offset-lg-3">
+                <div className="main-title text-center mb40">
+                  <h2>Featured Properties</h2>
+                  <p>Handpicked properties by our team.</p>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="feature_property_slider gutter-x15">
-                <FeaturedProperties />
+              <div className="col-lg-12">
+                <div className="feature_property_slider gutter-x15">
+                  <PropertiesSlider properties={properties} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>;
+        }
+      })()}
 
       {/* <!-- Why Chose Us --> */}
       <section id="why-chose" className="whychose_us bgc-f7 pb30">
