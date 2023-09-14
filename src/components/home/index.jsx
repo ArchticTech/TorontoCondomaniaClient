@@ -4,7 +4,7 @@ import Footer from "../common/footer/Footer";
 import MobileMenu from "../common/header/MobileMenu";
 import Partners from "../common/Partners";
 import Blogs from "../common/Blogs";
-import FeaturedProperties from "./FeaturedProperties";
+import PropertiesSlider from "./PropertiesSlider";
 import FindProperties from "./FindProperties";
 import Header from "./Header";
 import Hero from "./Hero";
@@ -38,7 +38,7 @@ const Index = () => {
             </div>
             <div className="col-lg-12">
               <div className="feature_property_slider gutter-x15">
-                <FeaturedProperties />
+                <PropertiesSlider />
               </div>
             </div>
           </div>

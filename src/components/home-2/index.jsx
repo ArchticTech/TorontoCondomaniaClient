@@ -1,6 +1,6 @@
 import MobileMenu from "../common/header/MobileMenu";
 import Header from "../common/header/DefaultHeader";
-import FeaturedProperties from "../home/FeaturedProperties";
+import PropertiesSlider from "../home/PropertiesSlider";
 import WhyChoose from "../common/WhyChoose";
 import FindProperties from "./FindProperties";
 import BestProperties from "./BestProperties";
@@ -54,7 +54,7 @@ const index = () => {
 
             <div className="col-lg-12">
               <div className="feature_property_slider gutter-x15">
-                <FeaturedProperties />
+                <PropertiesSlider />
               </div>
             </div>
             {/* End .col */}

@@ -1,5 +1,5 @@
 import GlobalFilter from "../common/GlobalFilter";
-import FeaturedProperties from "../home/FeaturedProperties";
+import PropertiesSlider from "../home/PropertiesSlider";
 
 const Hero = () => {
   return (
@@ -25,7 +25,7 @@ const Hero = () => {
 
           <div className="col-lg-12">
             <div className="feature_property_slider gutter-x15">
-              <FeaturedProperties />
+              <PropertiesSlider />
             </div>
           </div>
           {/* End .col */}

@@ -2,7 +2,7 @@ import GlobalFilter from "../common/GlobalFilter";
 import MobileMenu from "../common/header/MobileMenu";
 import Header from "./Header";
 import HeroSlider from "./HeroSlider";
-import FeaturedProperties from "../home/FeaturedProperties";
+import PropertiesSlider from "../home/PropertiesSlider";
 import FindProperties from "../home-7/FindProperties";
 import WhyChoose from "../common/WhyChoose";
 import Testimonial from "../common/Testimonial";
@@ -57,7 +57,7 @@ const index = () => {
             </div>
             <div className="col-lg-12">
               <div className="feature_property_slider gutter-x15">
-                <FeaturedProperties />
+                <PropertiesSlider />
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ import MobileMenu from "../common/header/MobileMenu";
 import Partners from "../common/Partners";
 import PopupSignInUp from "../common/PopupSignInUp";
 import FindProperties from "../home-8/FindProperties";
-import FeaturedProperties from "../home/FeaturedProperties";
+import PropertiesSlider from "../home/PropertiesSlider";
 import Header from "./Header";
 import Hero from "./Hero";
 import Testimonial from "./Testimonial";
@@ -37,7 +37,7 @@ const index = () => {
             </div>
             <div className="col-lg-12">
               <div className="feature_property_slider gutter-x15">
-                <FeaturedProperties />
+                <PropertiesSlider />
               </div>
             </div>
           </div>
