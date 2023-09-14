@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Slider from "react-slick";
-import Image from "next/image";
+import global from "../../config/env";
 
 const PropertiesSlider = ({ properties }) => {
   const settings = {
@@ -15,30 +15,29 @@ const PropertiesSlider = ({ properties }) => {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 4,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
         },
       },
     ],
   };
-  const imagePath = "http://localhost:8000/public/images/";
 
   let content = properties?.slice(0, 12)?.map((property) => ( 
     <div className="item" key={property.id}>
       <div className="feat_property">
         <div className="thumb">
-          <Image
+          <img
             width={343}
             height={220}
             className="img-whp w-100 h-100 cover"
-            src=''
-            alt=""
+            src={global.apiURL + 'images/' + property.prop_image}
+            alt="property.prop_name"
           />
           <div className="thmb_cntnt">
             {/* <ul className="tag mb0">
