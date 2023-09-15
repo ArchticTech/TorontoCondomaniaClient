@@ -7,22 +7,29 @@ import Footer from "../../components/common/footer/Footer";
 import Header from "../../components/common/header/DefaultHeader";
 import MobileMenu from "../../components/common/header/MobileMenu";
 import PopupSignInUp from "../../components/common/PopupSignInUp";
-import properties from "../../data/properties";
 import DetailsContent from "../../components/listing-details-v1/DetailsContent";
 import Sidebar from "../../components/listing-details-v1/Sidebar";
 import Image from "next/image";
+import { fetchProperty } from "../../utils/api";
+import global from "../../config/env";
 
-const ListingDynamicDetailsV1 = () => {
-  const router = useRouter();
-  const [property, setProperty] = useState({});
-  const id = router.query.id;
+const PropertyView = ({property}) => {
 
-  useEffect(() => {
-    if (!id) <h1>Loading...</h1>;
-    else setProperty(properties?.find((item) => item.id == id));
+  const priceFrom = property?.price_from;
+  const priceTo = property?.price_to;
 
-    return () => {};
-  }, [id]);
+  const formattedPriceFrom = priceFrom.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+  const formattedPriceTo = priceTo.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
 
   return (
     <>
@@ -42,16 +49,15 @@ const ListingDynamicDetailsV1 = () => {
             <div className="row mb30">
               <div className="col-lg-7 col-xl-8">
                 <div className="single_property_title mt30-767">
-                  <h2>{property?.title}</h2>
-                  <p>{property?.location}</p>
+                  <h2>{property?.name}</h2>
+                  <p>{property?.address}</p>
                 </div>
               </div>
               <div className="col-lg-5 col-xl-4">
                 <div className="single_property_social_share position-static transform-none">
                   <div className="price float-start fn-400">
                     <h2>
-                      ${property?.price}
-                      <small>/mo</small>
+                      {formattedPriceFrom} - {formattedPriceTo}
                     </h2>
                   </div>
 
@@ -91,19 +97,19 @@ const ListingDynamicDetailsV1 = () => {
                   <div className="col-lg-12">
                     <div className="spls_style_two mb30-520">
                       <Item
-                        original={property?.img}
-                        thumbnail={property?.img}
+                        original={property?.image}
+                        thumbnail={property?.image}
                         width={752}
                         height={450}
                       >
                         {({ ref, open }) => (
                           <div role="button" ref={ref} onClick={open}>
-                            <Image
+                            <img
                               width={752}
                               height={450}
                               className="img-fluid w100 cover lds-1"
-                              src={property.img}
-                              alt="1.jpg"
+                              src={global.apiURL + 'images/' + property.image}
+                              alt={property.name}
                             />
                           </div>
                         )}
@@ -186,4 +192,15 @@ const ListingDynamicDetailsV1 = () => {
   );
 };
 
-export default ListingDynamicDetailsV1;
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  var property = await fetchProperty(id);
+
+  return {
+    props: {
+      'property': property.data,
+    },
+  };
+}
+
+export default PropertyView;

@@ -5,7 +5,7 @@ import ListingDetailsV1 from "../../components/listing-details-v1";
 const index = () => {
   return (
     <>
-      <Seo pageTitle="Listing Single – Details V1" />
+      <Seo pageTitle="Property" />
       <ListingDetailsV1 />
     </>
   );

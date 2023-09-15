@@ -17,7 +17,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      properties,
+      'properties': properties.data,
     },
     revalidate: 120,
   };

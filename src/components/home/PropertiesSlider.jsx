@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Slider from "react-slick";
 import global from "../../config/env";
+import BedIcon from '@mui/icons-material/Bed';
+import BathIcon from '@mui/icons-material/Bathtub';
 
 const PropertiesSlider = ({ properties }) => {
   const settings = {
@@ -28,7 +30,25 @@ const PropertiesSlider = ({ properties }) => {
     ],
   };
 
-  let content = properties?.slice(0, 12)?.map((property) => ( 
+  let content = properties?.slice(0, 12)?.map((property) => {
+    
+    const priceFrom = property.price_from;
+    const priceTo = property.price_to;
+
+    const formattedPriceFrom = priceFrom.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+    const formattedPriceTo = priceTo.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+    return ( 
     <div className="item" key={property.id}>
       <div className="feat_property">
         <div className="thumb">
@@ -36,17 +56,22 @@ const PropertiesSlider = ({ properties }) => {
             width={343}
             height={220}
             className="img-whp w-100 h-100 cover"
-            src={global.apiURL + 'images/' + property.prop_image}
-            alt="property.prop_name"
+            src={global.apiURL + 'images/' + property.image}
+            alt={property.name}
           />
           <div className="thmb_cntnt">
-            {/* <ul className="tag mb0">
-              {item.saleTag.map((val, i) => (
-                <li className="list-inline-item" key={i}>
-                  <a href="#">{val}</a>
-                </li>
-              ))}
-            </ul> */}
+            <ul className="tag mb0">
+                {(property.vip_featured_promotion != null) ? (
+                  <li className="list-inline-item">
+                  <a>{property.vip_featured_promotion}</a>
+                  </li>
+                ) : undefined}
+                {(property.isHot > 0) ? (
+                  <li className="list-inline-item">
+                  <a>Hot</a>
+                  </li>
+                ) : undefined}
+            </ul>
             {/* End .tag */}
 
             <ul className="icon mb0">
@@ -70,16 +95,20 @@ const PropertiesSlider = ({ properties }) => {
 
         <div className="details">
           <div className="tc_content">
-            <p className="text-thm">{property.prop_type}</p>
+            <p className="text-thm">{property.type}</p>
             <h4>
-              <Link href={`/listing-details-v1/${property.id}`}>{property.prop_name}</Link>
+              <Link href={`/property/${property.id}`}>{property.name}</Link>
             </h4>
-            <p>
-              <span className="flaticon-placeholder"></span>
-              {property.prop_address}
+            <p className="d-flex justify-content-between flex-wrap">
+              <div className="my-1"><span className="flaticon-placeholder"></span> {property.address}</div>
+              <div className="moveIn my-1">Move in <b>{property.est_occupancy_year}</b></div>
             </p>
-            <p>
-              Move in <b>{property.est_occupancy_year}</b>
+            <p className="d-flex justify-content-between flex-wrap">
+              <div><BedIcon /> {property.beds}</div>
+              <div><BathIcon /> {property.baths}</div>
+              <div></div>
+              <div></div>
+              <div className="my-1">{property.status}</div>
             </p>
 
             <ul className="prop_details mb0">
@@ -97,8 +126,8 @@ const PropertiesSlider = ({ properties }) => {
           <div className="fp_footer">
             <ul className="fp_meta float-start mb0">
               <li className="list-inline-item">
-              <Link href={`/listing-details-v1/${property.id}`} className="fp_price">
-                <h4>${property.prop_price_from} - ${property.prop_price_to}</h4>
+              <Link href={`/property/${property.id}`} className="fp_price">
+                <h4>{formattedPriceFrom} - {formattedPriceTo}</h4>
               </Link>
               </li>
             </ul>
@@ -109,7 +138,7 @@ const PropertiesSlider = ({ properties }) => {
         {/* End .details */}
       </div>
     </div>
-  ));
+  )});
 
   return (
     <>

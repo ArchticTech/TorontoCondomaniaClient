@@ -1,6 +1,6 @@
 
 const global = {
-    apiURL: 'http://lsqcondoofficial.com/torontocondomania/public/',
+    apiURL: 'http://localhost:8000/',
   };
   
   export default global;
