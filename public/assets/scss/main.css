@@ -6363,6 +6363,9 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   bottom: 30px;
   transform: translateX(-50%);
   z-index: 2;
+  display: flex;
+  align-items: end;
+  flex-direction: column
 }
 
 .single_property_social_share h2 {
@@ -6372,6 +6375,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 0;
+  margin-right: 11px;
 }
 
 .single_property_social_share h2 small {
