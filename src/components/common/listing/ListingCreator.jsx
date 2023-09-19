@@ -1,20 +1,19 @@
-import Image from "next/image";
+import global from "../../../config/env";
 
-const Creaator = () => {
+const Creaator = ({agent}) => {
   return (
     <div className="media d-flex">
-      <Image
+      <img
         width={90}
-        height={90}
         className="me-3"
-        src="/assets/images/team/lc1.png"
-        alt="lc1.png"
+        src={global.apiURL + 'profile-pictures/' + agent.image}
+        alt={agent?.name}
       />
       <div className="media-body">
-        <h5 className="mt-0 mb0">Samul Williams</h5>
-        <p className="mb0">(123)456-7890</p>
-        <p className="mb0">info@findhouse.com</p>
-        <a className="text-thm" href="#">
+        <h5 className="mt-0 mb0">{agent?.name}</h5>
+        <p className="mb0">{agent?.contact}</p>
+        <p className="mb0">{agent?.email}</p>
+        <a className="text-thm" href="">
           View My Listing
         </a>
       </div>

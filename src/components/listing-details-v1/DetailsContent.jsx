@@ -13,18 +13,19 @@ import PropertyVideo from "../common/listing-details/PropertyVideo";
 import WalkScore from "../common/listing-details/WalkScore";
 import WhatsNearby from "../common/listing-details/WhatsNearby";
 
-const DetailsContent = () => {
+const DetailsContent = ({property}) => {
   return (
     <>
+    {(property.description) ?
       <div className="listing_single_description">
         <div className="lsd_list">
-          <PropertyItem />
+          <PropertyItem property={property}/>
         </div>
         {/* End .lsd_list */}
 
-        <h4 className="mb30">Description</h4>
-        <PropertyDescriptions />
-      </div>
+          <h4 className="mb30">Description</h4>
+          <PropertyDescriptions property={property}/>
+      </div> : undefined}
       {/* End .listing_single_description */}
 
       <div className="additional_details">
@@ -32,7 +33,7 @@ const DetailsContent = () => {
           <div className="col-lg-12">
             <h4 className="mb15">Property Details</h4>
           </div>
-          <PropertyDetails />
+          <PropertyDetails property={property}/>
         </div>
       </div>
       {/* End .additional_details */}
@@ -42,7 +43,7 @@ const DetailsContent = () => {
           <div className="col-lg-12">
             <h4 className="mb15">Additional details</h4>
           </div>
-          <AdditionalDetails />
+          <AdditionalDetails property={property}/>
         </div>
       </div>
       {/* End .additional_details */}
@@ -55,6 +56,7 @@ const DetailsContent = () => {
       </div>
       {/* End .property_attachment_area */}
 
+      {(PropertyFeatures.features) ?
       <div className="application_statics mt30">
         <div className="row">
           <div className="col-lg-12">
@@ -62,16 +64,15 @@ const DetailsContent = () => {
           </div>
           {/* End .col */}
 
-          <PropertyFeatures />
+          <PropertyFeatures features={property.features}/>
         </div>
-      </div>
-      {/* End .feature_area */}
+      </div> : undefined}
 
       <div className="application_statics mt30">
         <h4 className="mb30">
           Location{" "}
           <small className="float-end">
-            1421 San Pedro St, Los Angeles, CA 90015
+            {property.address}
           </small>
         </h4>
         <div className="property_video p0">
