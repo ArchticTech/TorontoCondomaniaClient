@@ -55,7 +55,7 @@ const PropertiesSlider = ({ properties }) => {
           <img
             width={343}
             height={220}
-            className="img-whp w-100 h-100 cover"
+            className="img-whp cover"
             src={global.apiURL + 'images/' + property.image}
             alt={property.name}
           />

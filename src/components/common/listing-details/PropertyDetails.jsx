@@ -1,12 +1,12 @@
 const PropertyDetails = ({property}) => {
   
-  const formattedSqFtPriceFrom = property?.price_per_sqft_from.toLocaleString('en-US', {
+  const formattedSqFtPriceFrom = property?.price_per_sqft_from?.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   });
-  const formattedSqFtPriceTo = property?.price_per_sqft_to.toLocaleString('en-US', {
+  const formattedSqFtPriceTo = property?.price_per_sqft_to?.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,

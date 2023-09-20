@@ -3,16 +3,16 @@ import GlobalFilter from "./GlobalFilter";
 const GlobalHeroFilter = ({ className = "" }) => {
   return (
     <div className={`home_adv_srch_opt ${className}`}>
-      <ul className="nav nav-pills" id="pills-tab" role="tablist">
+      <ul className="nav nav-pills" style={{display:"flex", gap:'1rem', alignItems:'center', width: '40%'}} id="pills-tab" role="tablist">
         <li className="nav-item">
           <a
             className="nav-link active"
             id="pills-home-tab"
-            data-bs-toggle="pill"
-            href="#pills-home"
-            role="tab"
-            aria-controls="pills-home"
-            aria-selected="true"
+            // data-bs-toggle="pill"
+            href="/buy"
+            // role="tab"
+            // aria-controls="pills-home"
+            // aria-selected="true"
           >
             Buy
           </a>
@@ -22,13 +22,27 @@ const GlobalHeroFilter = ({ className = "" }) => {
           <a
             className="nav-link"
             id="pills-profile-tab"
-            data-bs-toggle="pill"
-            href="#pills-profile"
-            role="tab"
-            aria-controls="pills-profile"
-            aria-selected="false"
+            // data-bs-toggle="pill"
+            href="/rent"
+            // role="tab"
+            // aria-controls="pills-profile"
+            // aria-selected="false"
           >
             Rent
+          </a>
+        </li>
+
+        <li className="nav-item">
+          <a
+            className="nav-link"
+            id="pills-profile-tab"
+            // data-bs-toggle="pill"
+            href="/assignments"
+            // role="tab"
+            // aria-controls="pills-profile"
+            // aria-selected="false"
+          >
+            Assignment
           </a>
         </li>
       </ul>
