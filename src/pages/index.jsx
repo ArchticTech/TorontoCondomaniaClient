@@ -1,25 +1,23 @@
 import dynamic from "next/dynamic";
 import Seo from "../components/common/seo";
 import HomeMain from "../components/home-5";
-import { fetchAllAssignments, fetchAllProperties } from '../utils/api';
+import { fetchAllProperties } from '../utils/api';
 
-const index = ({ properties, assignments }) => {
+const index = ({ properties }) => {
   return (
     <>
       <Seo pageTitle="TorontoCondomania | Find Your Dream Condo" />
-      <HomeMain properties={properties} assignments={assignments}/>
+      <HomeMain properties={properties}/>
     </>
   );
 };
 
 export async function getStaticProps() {
   const properties = await fetchAllProperties();
-  const assignments = await fetchAllAssignments();
 
   return {
     props: {
       'properties': properties.data,
-      'assignments': assignments.data,
     },
     revalidate: 120,
   };

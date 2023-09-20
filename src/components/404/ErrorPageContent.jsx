@@ -13,7 +13,7 @@ const ErrorPageContent = () => {
         alt="error.png"
       />
       <div className="erro_code">
-        <h1>Ooops! Page Not Found</h1>
+        <h1>Ohh! Page Not Found</h1>
       </div>
       <p>We can’t seem to find the page you’re looking for</p>
 
