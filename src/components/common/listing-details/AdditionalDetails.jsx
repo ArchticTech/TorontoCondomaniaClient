@@ -1,12 +1,12 @@
 const AdditionalDetails = ({property}) => {
 
-  const formattedParkingPrice = property?.parking_price.toLocaleString('en-US', {
+  const formattedParkingPrice = property?.parking_price?.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   });
-  const formattedLockerPrice = property?.locker_price.toLocaleString('en-US', {
+  const formattedLockerPrice = property?.locker_price?.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,

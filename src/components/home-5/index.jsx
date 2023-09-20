@@ -2,15 +2,17 @@ import MobileMenu from "../common/header/MobileMenu";
 import WhyChoose from "../common/WhyChoose";
 import PropertiesSlider from "../home/PropertiesSlider";
 import FindProperties from "./FindProperties";
+// import Header from "../home-6/Header";
 import Header from "./Header";
-import Testimonial from "../common/Testimonial";
+import RecentlyAddedProperties from "./RecentlyAddedProperties";
+import FeaturedAssignments from "./FeaturedAssignments";
 import Partners from "../common/Partners";
 import CallToAction from "../common/CallToAction";
 import Footer from "../common/footer/Footer";
 import CopyrightFooter from "../common/footer/CopyrightFooter";
 import Blogs from "../common/Blogs";
 import PopupSignInUp from "../common/PopupSignInUp";
-import Hero from "./Hero";
+import Hero from "../home-6/Hero";
 
 const index = ({ properties }) => {
   return (
@@ -30,13 +32,19 @@ const index = ({ properties }) => {
       {/* <!-- Property Cities --> */}
       <section id="property-city" className="property-city pb30">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center">
-                <h2>Find Properties in These Cities</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div className="row">
+            <div className="col-lg-12">
+              <div className="main-title mb40">
+                <h2>Featured Properties</h2>
+                <p>
+                  Handpicked properties by our team.{" "}
+                  <a className="float-end" href="#">
+                    View All <span className="flaticon-next"></span>
+                  </a>
+                </p>
               </div>
             </div>
+            {/* End .col */}
           </div>
           <div className="row">
             <FindProperties />
@@ -84,8 +92,46 @@ const index = ({ properties }) => {
         </div>
       </section>
 
+       {/* <!-- Recently added Properties --> */}
+       <section id="feature-property" className="property-city pb30 bb1">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 offset-lg-3">
+              <div className="main-title text-center mb40">
+                <h2>Recently added Properties</h2>
+                <p>Properties added recently.</p>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="feature_property_slider gutter-x15">
+                <RecentlyAddedProperties />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       
+       {/* <!-- Featured Assignments --> */}
+       <section id="feature-property" className="property-city pb30 bb1">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 offset-lg-3">
+              <div className="main-title text-center mb40">
+                <h2>Featured Assignments</h2>
+                <p>Featured Assignments.</p>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="feature_property_slider gutter-x15">
+                <FeaturedAssignments />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* <!-- Our Testimonials --> */}
-      <section id="our-testimonials" className="our-testimonial home5">
+      {/* <section id="our-testimonials" className="our-testimonial home5">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -95,7 +141,6 @@ const index = ({ properties }) => {
               </div>
             </div>
           </div>
-          {/* End .row */}
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="testimonial_grid_slider">
@@ -103,10 +148,8 @@ const index = ({ properties }) => {
               </div>
             </div>
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
-      </section>
+      </section> */}
 
       {/* <!-- Our Blog --> */}
       <section className="our-blog bg-ptrn2 pb30">

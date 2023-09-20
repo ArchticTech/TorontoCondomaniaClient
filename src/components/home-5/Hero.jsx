@@ -1,6 +1,7 @@
 import Image from "next/image";
 import GlobalFilter from "../common/GlobalFilter";
 import LookingItem from "./LookingItem";
+import GlobalHeroFilter from "../common/GlobalHeroFilter";
 
 const Hero = () => {
   return (
