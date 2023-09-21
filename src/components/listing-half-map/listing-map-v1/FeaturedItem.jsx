@@ -74,14 +74,6 @@ const FeaturedItem = () => {
   // status handler
   let content = properties
     ?.slice(0, 9)
-    ?.filter(keywordHandler)
-    ?.filter(statusHandler)
-    ?.filter(bathroomHandler)
-    ?.filter(bedroomHandler)
-    ?.filter(builtYearsHandler)
-    ?.filter(advanceHandler)
-    ?.sort(statusTypeHandler)
-    ?.filter(featuredHandler)
     .map((item) => (
       <div
         className={`${
@@ -183,11 +175,6 @@ const FeaturedItem = () => {
         </div>
       </div>
     ));
-
-  // add length of filter items
-  useEffect(() => {
-    dispatch(addLength(content.length));
-  }, [dispatch, content]);
 
   return <>{content}</>;
 };

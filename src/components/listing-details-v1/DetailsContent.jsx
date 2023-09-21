@@ -76,7 +76,7 @@ const DetailsContent = ({property}) => {
           </small>
         </h4>
         <div className="property_video p0">
-          <PropertyLocation />
+          <PropertyLocation latitude={property.latitude} longitude={property.longitude}/>
         </div>
       </div>
       {/* End .location_area */}

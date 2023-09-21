@@ -1,0 +1,29 @@
+import dynamic from "next/dynamic";
+import Seo from "../../components/common/seo";
+import ListingMapV2 from "../../components/listing-half-map/listing-map-v2";
+import Head from "next/head";
+import { fetchAllProperties } from "../../utils/api";
+
+const index = ({properties}) => {
+  return (
+    <>
+      <Head>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+      </Head>
+      <Seo pageTitle="Latest Properties" />
+      <ListingMapV2 properties={properties}/>
+    </>
+  );
+};
+
+export async function getServerSideProps() {
+  var properties = await fetchAllProperties();
+
+  return {
+    props: {
+      'properties': properties.data,
+    },
+  };
+}
+
+export default dynamic(() => Promise.resolve(index), { ssr: false });
