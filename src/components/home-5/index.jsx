@@ -35,9 +35,9 @@ const index = ({ properties }) => {
         <div className="row">
             <div className="col-lg-12">
               <div className="main-title mb40">
-                <h2>Featured Properties</h2>
+                <h2>Find Properties in these cities</h2>
                 <p>
-                  Handpicked properties by our team.{" "}
+                  Handpicked properties by our team.
                   <a className="float-end" href="#">
                     View All <span className="flaticon-next"></span>
                   </a>
@@ -98,8 +98,8 @@ const index = ({ properties }) => {
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center mb40">
-                <h2>Recently added Properties</h2>
-                <p>Properties added recently.</p>
+                <h2>New Rentals Recently added</h2>
+                <p>Rentals added recently.</p>
               </div>
             </div>
             <div className="col-lg-12">

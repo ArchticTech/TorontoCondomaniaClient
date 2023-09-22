@@ -1,9 +1,8 @@
 const Pagination = () => {
   return (
     <ul className="page_navigation">
-      <li className="page-item disabled">
-        <a className="page-link" href="#" tabIndex="-1" aria-disabled="true">
-          {" "}
+      <li className="page-item">
+        <a className="page-link" href="#" >  
           <span className="flaticon-left-arrow"></span>
         </a>
       </li>
