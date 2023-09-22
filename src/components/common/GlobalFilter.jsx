@@ -6,8 +6,10 @@ import {
 import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";
 import GlobalSelectBox from "./GlobalSelectBox";
+import { useDispatch } from 'react-redux';
 
 const GlobalFilter = ({ className = "" }) => {
+  const dispatch = useDispatch();
   // submit handler
   const submitHandler = () => {
     Router.push("/listing-grid-v1");
