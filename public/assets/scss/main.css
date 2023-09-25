@@ -19788,3 +19788,6 @@ button.gm-ui-hover-effect:focus {
 .mapboxgl-control-container {
   display: none;
 }
+.marker-active {
+  transform: scale(2);
+}

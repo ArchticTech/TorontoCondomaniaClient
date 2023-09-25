@@ -122,6 +122,14 @@ const FeaturedItem = ({properties}) => {
     return true;
   };
 
+  const activateMarker = (marker) =>
+  {
+    const markerElement = marker.getElement();
+    
+    // Add the custom CSS class to the marker element
+    markerElement.classList.add('marker-active');
+  }
+
   // status handler
   let content = properties
     ?.slice(0, 8)
@@ -150,6 +158,7 @@ const FeaturedItem = ({properties}) => {
           isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
         } `}
         key={item.id}
+        onClick={() => activateMarker(item.marker)}
       >
         <div
           className={`feat_property home7 style4 ${

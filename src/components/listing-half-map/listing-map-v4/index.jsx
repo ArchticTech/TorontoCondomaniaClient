@@ -7,7 +7,7 @@ import ShowFilter from "../../common/listing/ShowFilter";
 import SidebarListing2 from "../../common/listing/SidebarListing2";
 import PopupSignInUp from "../../common/PopupSignInUp";
 import FeaturedItem from "./FeaturedItem";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../../config/env";
 
@@ -15,31 +15,35 @@ mapboxgl.accessToken = global.mapboxAccessToken;
 
 const index = ({ properties }) => {
   
-  // useEffect(() => {
-  //   const map = new mapboxgl.Map({
-  //     container: 'mapbox',
-  //     style: 'mapbox://styles/mapbox/streets-v11',
-  //     center: [-80.042869, 43.718371],
-  //     zoom: 7
-  //   });
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: 'mapbox',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-80.042869, 43.718371],
+      zoom: 7
+    });
 
-  //   properties?.map((item) => {
+    properties?.map((property) => {
 
-  //     setMarkerOnMap(map, item.latitude, item.longitude);
-  //   });
-  //   // Clean up the map instance when the component unmounts
-  //   return () => map.remove();
-  // }, []);
+      property.marker = setMarkerOnMap(map, property.latitude, property.longitude);
 
-  // const setMarkerOnMap = (map, latitude, longitude) => {
+    });
     
-  //   const marker = new mapboxgl.Marker({
-  //       color: '#6449e7', // Marker color
-  //       draggable: false, // Allow the user to drag the marker
-  //   })
-  //   .setLngLat([longitude, latitude])
-  //   .addTo(map);
-  // };
+    // Clean up the map instance when the component unmounts
+    return () => map.remove();
+  }, []);
+
+  const setMarkerOnMap = (map, latitude, longitude) => {
+    
+    const marker = new mapboxgl.Marker({
+        color: '#6449e7', // Marker color
+        draggable: false, // Allow the user to drag the marker
+    })
+    .setLngLat([longitude, latitude])
+    .setPopup(new mapboxgl.Popup())
+    .addTo(map);
+    return marker;
+  };
 
   return (
     <>
