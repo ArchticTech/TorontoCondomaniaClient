@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Seo from "../../components/common/seo";
-import ListingMapV2 from "../../components/listing-half-map/listing-map-v2";
+import ListingMapV4 from "../../components/listing-half-map/listing-map-v4";
 import Head from "next/head";
 import { fetchAllProperties } from "../../utils/api";
 
@@ -11,7 +11,7 @@ const index = ({properties}) => {
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
       </Head>
       <Seo pageTitle="Latest Properties" />
-      <ListingMapV2 properties={properties}/>
+      <ListingMapV4 properties={properties}/>
     </>
   );
 };

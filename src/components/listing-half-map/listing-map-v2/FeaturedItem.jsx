@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../../features/properties/propertiesSlice";
 import global from "../../../config/env";
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
 const FeaturedItem = ({properties}) => {
   const {
@@ -27,7 +26,7 @@ const FeaturedItem = ({properties}) => {
 
   // keyword filter
   const keywordHandler = (item) =>
-    item.title.toLowerCase().includes(keyword?.toLowerCase());
+    item.name.toLowerCase().includes(keyword?.toLowerCase());
 
   // location handler
   const locationHandler = (item) => {
@@ -117,6 +116,7 @@ const FeaturedItem = ({properties}) => {
   // status handler
   let content = properties
     ?.slice(0, 8)
+    ?.filter(keywordHandler)
     .map((item) => {
       const priceFrom = item?.price_from;
       const priceTo = item?.price_to;
