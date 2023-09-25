@@ -188,7 +188,7 @@ const FilteringItem = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="keyword"
+            placeholder="Keyword"
             value={getKeyword}
             onChange={(e) => setKeyword(e.target.value)}
           />

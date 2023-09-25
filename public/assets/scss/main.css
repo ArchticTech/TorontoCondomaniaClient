@@ -13392,8 +13392,8 @@ legend span {
   margin-top: 0;
 }
 
-.grid_list_search_result .right_area ul li:first-child {
-  margin-right: 40px;
+.grid_list_search_result .right_area ul li:nth-child(2) {
+  margin-left: 40px;
   position: relative;
 }
 

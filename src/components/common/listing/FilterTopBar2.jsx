@@ -32,7 +32,7 @@ const FilterTopBar2 = () => {
 
   return (
     <>
-      <div className="col-sm-12 col-md-4 col-lg-4 col-xl-5">
+      <div className="col-sm-12 col-md-4">
         <div className="left_area tac-xsd">
           <p>
             <span className={length === 0 ? "text-danger" : undefined}>
@@ -48,7 +48,7 @@ const FilterTopBar2 = () => {
       </div>
       {/* End .col */}
 
-      <div className="col-sm-12 col-md-8 col-lg-8 col-xl-7">
+      <div className="col-sm-12 col-md-8">
         <div className="right_area text-end tac-xsd">
           <ul>
             <li className="list-inline-item">
