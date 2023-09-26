@@ -15,31 +15,31 @@ mapboxgl.accessToken = global.mapboxAccessToken;
 
 const index = ({ properties }) => {
   
-  // useEffect(() => {
-  //   const map = new mapboxgl.Map({
-  //     container: 'mapbox',
-  //     style: 'mapbox://styles/mapbox/streets-v11',
-  //     center: [-80.042869, 43.718371],
-  //     zoom: 7
-  //   });
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: 'mapbox',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-80.042869, 43.718371],
+      zoom: 7
+    });
 
-  //   properties?.map((item) => {
+    properties?.map((item) => {
 
-  //     setMarkerOnMap(map, item.latitude, item.longitude);
-  //   });
-  //   // Clean up the map instance when the component unmounts
-  //   return () => map.remove();
-  // }, []);
+      setMarkerOnMap(map, item.latitude, item.longitude);
+    });
+    // Clean up the map instance when the component unmounts
+    return () => map.remove();
+  }, []);
 
-  // const setMarkerOnMap = (map, latitude, longitude) => {
+  const setMarkerOnMap = (map, latitude, longitude) => {
     
-  //   const marker = new mapboxgl.Marker({
-  //       color: '#6449e7', // Marker color
-  //       draggable: false, // Allow the user to drag the marker
-  //   })
-  //   .setLngLat([longitude, latitude])
-  //   .addTo(map);
-  // };
+    const marker = new mapboxgl.Marker({
+        color: '#6449e7', // Marker color
+        draggable: false, // Allow the user to drag the marker
+    })
+    .setLngLat([longitude, latitude])
+    .addTo(map);
+  };
 
   return (
     <>

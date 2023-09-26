@@ -188,13 +188,13 @@ const FeaturedItem = ({ properties }) => {
               <div className="thmb_cntnt">
                 <ul className="tag mb0">
                   <li className="list-inline-item">
-                    <a href="#">Featured</a>
+                    <a href="#">{item.vip_featured_promotion}</a>
                   </li>
-                  <li className="list-inline-item">
+                  {item.isHot && <li className="list-inline-item">
                     <a href="#" className="text-capitalize">
-                      {item.vip_feature_promotion}
+                      Hot
                     </a>
-                  </li>
+                  </li>}
                 </ul>
                 <ul className="icon mb0">
                   <li className="list-inline-item">
@@ -221,7 +221,7 @@ const FeaturedItem = ({ properties }) => {
               <div className="tc_content">
                 <p className="text-thm">{item.type}</p>
                 <h4>
-                  <Link href={`/listing-details-v1/${item.id}`}>
+                  <Link href={`/property/${item.id}`}>
                     {item.name}
                   </Link>
                 </h4>
