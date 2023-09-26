@@ -272,7 +272,7 @@ const FilteringItem = () => {
         </div>
       </li>
 
-      <div className="col-lg-12 ">
+      <div className="col-lg-12 d-flex">
         <li className="min_area list-inline-item">
           <div className="form-group mb-4">
             <input
@@ -386,24 +386,6 @@ const FilteringItem = () => {
                     </div>
                   </div>
                 </div>
-                {/* End li */}
-{/* 
-                <div className="col-12 my-2">
-                  <div className="search_option_two">
-                    <div className="candidate_revew_select">
-                      <select
-                        onChange={(e) => setGarages(e.target.value)}
-                        className="selectpicker w100 show-tick form-select"
-                        value={getGarages}
-                      >
-                        <option value="">Garages</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                        <option value="other">Others</option>
-                      </select>
-                    </div>
-                  </div>
-                </div> */}
                 {/* End li */}
 
                 <div className="col-lg-12">

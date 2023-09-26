@@ -26,7 +26,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [showSearchButton]);
 
   const changeBackground = () => {
     if (window.scrollY >= 95) {
@@ -64,11 +64,11 @@ const Header = () => {
               src="/assets/images/header-logo2.png"
               alt="header-logo2.png"
             />
-            <span>TCM</span>
+            <span>FindHouse</span>
           </Link>
           {/* site logo brand */}
           {showSearchButton && (
-            <div className="ht_left_widget float-left header_search_section" >
+            <div className="ht_left_widget float-left header_search_section">
               <ul>
                 <li className="list-inline-item dn-1440">
                   <div className="ht_search_widget">

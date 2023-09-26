@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../../features/properties/propertiesSlice";
 import global from "../../../config/env";
@@ -20,6 +20,7 @@ const FeaturedItem = ({ properties }) => {
   const { statusType, featured, isGridOrList } = useSelector(
     (state) => state.filter
   );
+  const [activeMarker, setActiveMarker] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -135,6 +136,19 @@ const FeaturedItem = ({ properties }) => {
     return true;
   };
 
+  useEffect(() => {
+
+    const markers = document.querySelectorAll('.mapboxgl-marker');
+    markers.forEach(marker => {
+      marker.classList.remove('marker-active');
+    });
+
+    if (activeMarker) {
+      const markerElement = activeMarker.getElement();
+      markerElement.classList.add('marker-active');
+    }
+  }, [activeMarker])
+
   // status handler
   let content = properties
     ?.slice(0, 8)
@@ -166,48 +180,50 @@ const FeaturedItem = ({ properties }) => {
       });
 
       return (
+      <div
+        className={`${
+          isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
+        } `}
+        key={item.id}
+      >
         <div
-          className={`${
-            isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
-          } `}
-          key={item.id}
+          className={`feat_property home7 style4 ${
+            isGridOrList ? "d-flex align-items-center" : undefined
+          }`}
+          onMouseEnter={() => setActiveMarker(item.marker)}
+          onMouseLeave={() => setActiveMarker(null)}
         >
-          <div
-            className={`feat_property home7 style4 ${
-              isGridOrList ? "d-flex align-items-center" : undefined
-            }`}
-          >
-            <div className="thumb">
-              <img
-                width={316}
-                height={220}
-                className="img-whp w-100 h-100 cover"
-                src={global.apiURL + "images/" + item.image}
-                alt="fp1.jpg"
-              />
-              <div className="thmb_cntnt">
-                <ul className="tag mb0">
-                  <li className="list-inline-item">
-                    <a href="#">{item.vip_featured_promotion}</a>
-                  </li>
-                  {item.isHot && <li className="list-inline-item">
-                    <a href="#" className="text-capitalize">
-                      Hot
-                    </a>
-                  </li>}
-                </ul>
-                <ul className="icon mb0">
-                  <li className="list-inline-item">
-                    <a href="#">
-                      <span className="flaticon-transfer-1"></span>
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="#">
-                      <span className="flaticon-heart"></span>
-                    </a>
-                  </li>
-                </ul>
+          <div className="thumb">
+            <img
+              width={316}
+              height={220}
+              className="img-whp w-100 h-100 cover"
+              src={global.apiURL + 'images/' + item.image}
+              alt="fp1.jpg"
+            />
+            <div className="thmb_cntnt">
+              <ul className="tag mb0">
+                <li className="list-inline-item">
+                  <a href="#">Featured</a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#" className="text-capitalize">
+                    {item.vip_feature_promotion}
+                  </a>
+                </li>
+              </ul>
+              <ul className="icon mb0">
+                <li className="list-inline-item">
+                  <a href="#">
+                    <span className="flaticon-transfer-1"></span>
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#">
+                    <span className="flaticon-heart"></span>
+                  </a>
+                </li>
+              </ul>
 
                 <Link
                   href={`/listing-details-v1/${item.id}`}
@@ -221,7 +237,7 @@ const FeaturedItem = ({ properties }) => {
               <div className="tc_content">
                 <p className="text-thm">{item.type}</p>
                 <h4>
-                  <Link href={`/property/${item.id}`}>
+                  <Link href={`/listing-details-v1/${item.id}`}>
                     {item.name}
                   </Link>
                 </h4>

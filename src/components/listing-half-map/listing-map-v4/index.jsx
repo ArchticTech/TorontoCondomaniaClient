@@ -7,7 +7,7 @@ import ShowFilter from "../../common/listing/ShowFilter";
 import SidebarListing2 from "../../common/listing/SidebarListing2";
 import PopupSignInUp from "../../common/PopupSignInUp";
 import FeaturedItem from "./FeaturedItem";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../../config/env";
 
@@ -23,10 +23,12 @@ const index = ({ properties }) => {
       zoom: 7
     });
 
-    properties?.map((item) => {
+    properties?.map((property) => {
 
-      setMarkerOnMap(map, item.latitude, item.longitude);
+      property.marker = setMarkerOnMap(map, property.latitude, property.longitude);
+
     });
+    
     // Clean up the map instance when the component unmounts
     return () => map.remove();
   }, []);
@@ -38,11 +40,13 @@ const index = ({ properties }) => {
         draggable: false, // Allow the user to drag the marker
     })
     .setLngLat([longitude, latitude])
+    .setPopup(new mapboxgl.Popup())
     .addTo(map);
+    return marker;
   };
 
   return (
-    <>
+    <div className="scroll-disabled">
       {/* <!-- Main Header Nav --> */}
       <Header />
 
@@ -138,7 +142,7 @@ const index = ({ properties }) => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

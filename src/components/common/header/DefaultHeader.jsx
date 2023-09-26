@@ -41,7 +41,7 @@ const Header = () => {
             src="/assets/images/header-logo2.png"
             alt="header-logo2.png"
           />
-          <span>TCM</span>
+          <span>FindHouse</span>
         </Link>
         {/* site logo brand */}
 
