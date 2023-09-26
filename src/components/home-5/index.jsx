@@ -13,6 +13,7 @@ import CopyrightFooter from "../common/footer/CopyrightFooter";
 import Blogs from "../common/Blogs";
 import PopupSignInUp from "../common/PopupSignInUp";
 import Hero from "../home-6/Hero";
+import Link from "next/link";
 
 const index = ({ properties }) => {
   return (
@@ -32,15 +33,17 @@ const index = ({ properties }) => {
       {/* <!-- Property Cities --> */}
       <section id="property-city" className="property-city pb30">
         <div className="container">
-        <div className="row">
+          <div className="row">
             <div className="col-lg-12">
               <div className="main-title mb40">
                 <h2>Find Properties in these cities</h2>
                 <p>
                   Handpicked properties by our team.
-                  <a className="float-end" href="#">
-                    View All <span className="flaticon-next"></span>
-                  </a>
+                  <Link className="float-end" href="/properties">
+                    {/* <a  > */}
+                      View All <span className="flaticon-next"></span>
+                    {/* </a> */}
+                  </Link>
                 </p>
               </div>
             </div>
@@ -55,23 +58,28 @@ const index = ({ properties }) => {
       {/* <!-- Feature Properties --> */}
       {(() => {
         if (properties.length >= 3) {
-          return <section id="feature-property" className="property-city pb30 bg-ptrn1">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6 offset-lg-3">
-                <div className="main-title text-center mb40">
-                  <h2>Featured Properties</h2>
-                  <p>Handpicked properties by our team.</p>
+          return (
+            <section
+              id="feature-property"
+              className="property-city pb30 bg-ptrn1"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-6 offset-lg-3">
+                    <div className="main-title text-center mb40">
+                      <h2>Featured Properties</h2>
+                      <p>Handpicked properties by our team.</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="feature_property_slider gutter-x15">
+                      <PropertiesSlider properties={properties} />
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="col-lg-12">
-                <div className="feature_property_slider gutter-x15">
-                  <PropertiesSlider properties={properties} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>;
+            </section>
+          );
         }
       })()}
 
@@ -92,8 +100,8 @@ const index = ({ properties }) => {
         </div>
       </section>
 
-       {/* <!-- Recently added Properties --> */}
-       <section id="feature-property" className="property-city pb30 bb1">
+      {/* <!-- Recently added Properties --> */}
+      <section id="feature-property" className="property-city pb30 bb1">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -110,9 +118,9 @@ const index = ({ properties }) => {
           </div>
         </div>
       </section>
-       
-       {/* <!-- Featured Assignments --> */}
-       <section id="feature-property" className="property-city pb30 bb1">
+
+      {/* <!-- Featured Assignments --> */}
+      <section id="feature-property" className="property-city pb30 bb1">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
