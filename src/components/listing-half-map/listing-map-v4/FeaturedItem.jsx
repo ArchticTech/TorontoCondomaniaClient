@@ -10,11 +10,9 @@ const FeaturedItem = ({ properties }) => {
     type,
     location,
     status,
-    propertyType,
     price,
     bathrooms,
     bedrooms,
-    garages,
     yearBuilt,
     area,
     amenities,
@@ -78,8 +76,8 @@ const FeaturedItem = ({ properties }) => {
 
   // price handler
   const priceHandler = (item) => {
-    if ((price?.min < 0) | (price?.max < 0)) return true;
-    else return item.price_from < price?.max && item.price_to > price?.min;
+    if ((price?.min < 0) || (price?.max < 0)) return true;
+    else return item.price_from <= price?.max && item.price_to >= price?.min;
   };
 
   // bathroom handler

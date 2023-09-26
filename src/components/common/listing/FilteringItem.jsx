@@ -11,7 +11,6 @@ import {
   addAreaMin,
   addBathrooms,
   addBedrooms,
-  addGarages,
   addKeyword,
   addLocation,
   addPrice,
@@ -34,10 +33,8 @@ const FilteringItem = () => {
     propertyType,
     bathrooms,
     bedrooms,
-    garages,
     yearBuilt,
     area,
-    amenities,
   } = useSelector((state) => state.properties);
 
   // input state

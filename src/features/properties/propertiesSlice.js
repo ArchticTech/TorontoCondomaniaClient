@@ -6,8 +6,8 @@ const initialState = {
     location: "",
     propertyType: "",
     price: {
-        min: 0,
-        max: 0,
+        min: -1,
+        max: -1,
     },
     amenities: [],
     status: "",
