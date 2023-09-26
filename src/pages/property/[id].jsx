@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect, useState, useRef } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
@@ -9,6 +8,7 @@ import MobileMenu from "../../components/common/header/MobileMenu";
 import PopupSignInUp from "../../components/common/PopupSignInUp";
 import DetailsContent from "../../components/listing-details-v1/DetailsContent";
 import Sidebar from "../../components/listing-details-v1/Sidebar";
+import Head from "next/head";
 import { fetchProperty } from "../../utils/api";
 import global from "../../config/env";
 
@@ -60,6 +60,10 @@ const PropertyView = ({property}) => {
 
   return (
     <>
+      <Head>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+      </Head>
+
       {/* <!-- Main Header Nav --> */}
       <Header />
 

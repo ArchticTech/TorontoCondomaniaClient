@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     keyword: "",
+    type: "",
     propertyType: "",
     location: "",
     price: {
@@ -27,6 +28,9 @@ export const propertiesSlice = createSlice({
     reducers: {
         addKeyword: (state, action) => {
             state.keyword = action.payload;
+        },
+        addType: (state, action) => {
+            state.type = action.payload;
         },
         addPropertyType: (state, action) => {
             state.propertyType = action.payload;
@@ -82,6 +86,7 @@ export const propertiesSlice = createSlice({
 
 export const {
     addKeyword,
+    addType,
     addPropertyType,
     addLocation,
     addPrice,

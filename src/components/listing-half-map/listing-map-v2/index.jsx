@@ -7,8 +7,41 @@ import ShowFilter from "../../common/listing/ShowFilter";
 import SidebarListing2 from "../../common/listing/SidebarListing2";
 import PopupSignInUp from "../../common/PopupSignInUp";
 import FeaturedItem from "./FeaturedItem";
+import { useEffect } from 'react';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import global from "../../../config/env";
 
-const index = () => {
+mapboxgl.accessToken = global.mapboxAccessToken;
+
+const index = ({properties}) => {
+  
+  // useEffect(() => {
+  //   const map = new mapboxgl.Map({
+  //     container: 'mapbox',
+  //     style: 'mapbox://styles/mapbox/streets-v11',
+  //     center: [-80.042869, 43.718371],
+  //     zoom: 7
+  //   });
+
+  //   properties?.map((item) => {
+
+  //     setMarkerOnMap(map, item.latitude, item.longitude);
+  //   });
+  //   // Clean up the map instance when the component unmounts
+  //   return () => map.remove();
+  // }, []);
+
+  const setMarkerOnMap = (map, latitude, longitude) => {
+    
+    const marker = new mapboxgl.Marker({
+        color: '#6449e7', // Marker color
+        draggable: false, // Allow the user to drag the marker
+    })
+    .setLngLat([longitude, latitude])
+    .addTo(map);
+
+  };
+  
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -65,15 +98,7 @@ const index = () => {
               </div>
               {/* filter switch */}
 
-              <div className="home_two_map style2 half_map_area">
-                <div className="gmap_canvas pe-none  map-canvas half_style">
-                  <iframe
-                    title="map"
-                    className="gmap_iframe"
-                    src="https://www.google.com/maps/d/embed?mid=1tJl0-uRax4AKBfbh1eLPLX5WzOk&hl=en&ehbc=2E312F"
-                  ></iframe>
-                </div>
-              </div>
+              <div id="mapbox" className="home_two_map style2 half_map_area"></div>;
             </div>
             {/* End .col */}
 
@@ -93,7 +118,7 @@ const index = () => {
                   {/* End .row */}
 
                   <div className="row">
-                    <FeaturedItem />
+                    <FeaturedItem properties={properties}/>
                   </div>
                   {/* End .row */}
 

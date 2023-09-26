@@ -17,6 +17,7 @@ import {
   addPrice,
   addPropertyType,
   addStatus,
+  addType,
   addYearBuilt,
   resetAmenities,
 } from "../../../features/properties/propertiesSlice";
@@ -27,6 +28,7 @@ import { useRouter } from "next/router";
 const FilteringItem = () => {
   const {
     keyword,
+    type,
     location,
     status,
     propertyType,
@@ -40,6 +42,7 @@ const FilteringItem = () => {
 
   // input state
   const [getKeyword, setKeyword] = useState(keyword);
+  const [getType, setType] = useState(type);
   const [getLocation, setLocation] = useState(location);
   const [getStatus, setStatus] = useState(status);
   const [getPropertiesType, setPropertiesType] = useState(propertyType);
@@ -77,6 +80,11 @@ const FilteringItem = () => {
   useEffect(() => {
     dispath(addKeyword(getKeyword));
   }, [dispath, getKeyword]);
+  
+  // type
+  useEffect(() => {
+    dispath(addType(getType));
+  }, [dispath, getType]);
 
   // location
   useEffect(() => {
@@ -130,6 +138,7 @@ const FilteringItem = () => {
 
   const clearAllFilters = () => {
     setKeyword("");
+    setType("");
     setLocation("");
     setStatus("");
     setPropertiesType("");
@@ -179,13 +188,32 @@ const FilteringItem = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="keyword"
+            placeholder="Keyword"
             value={getKeyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
           <label>
             <span className="flaticon-magnifying-glass"></span>
           </label>
+        </div>
+      </li>
+      {/* End li */}
+      
+      <li>
+        <div className="search_option_two">
+          <div className="candidate_revew_select">
+            <select
+              onChange={(e) => setType(e.target.value)}
+              className="selectpicker w100 show-tick form-select"
+              value={getType}
+            >
+              <option value="">Property Type</option>
+              <option value="Condo">Condo</option>
+              <option value="Townhouse">Townhouse</option>
+              <option value="Condo Townhomes">Condo Townhomes</option>
+              <option value="Single Family">Single Family</option>
+            </select>
+          </div>
         </div>
       </li>
       {/* End li */}

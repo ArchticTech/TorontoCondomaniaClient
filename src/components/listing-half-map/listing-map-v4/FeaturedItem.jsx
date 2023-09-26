@@ -2,12 +2,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../../features/properties/propertiesSlice";
-import properties from "../../../data/properties";
-import Image from "next/image";
+import global from "../../../config/env";
 
-const FeaturedItem = () => {
+const FeaturedItem = ({properties}) => {
   const {
     keyword,
+    type,
     location,
     status,
     propertyType,
@@ -27,8 +27,16 @@ const FeaturedItem = () => {
 
   // keyword filter
   const keywordHandler = (item) =>
-    item.title.toLowerCase().includes(keyword?.toLowerCase());
+    item.name.toLowerCase().includes(keyword?.toLowerCase());
 
+  // type handler
+  const typeHandler = (item) => {
+    if (type == '')
+      return true;
+    else
+      return item.type.toLowerCase() == type.toLowerCase();
+  };
+  
   // location handler
   const locationHandler = (item) => {
     return item.location.toLowerCase().includes(location.toLowerCase());
@@ -118,19 +126,25 @@ const FeaturedItem = () => {
   let content = properties
     ?.slice(0, 8)
     ?.filter(keywordHandler)
-    ?.filter(locationHandler)
-    ?.filter(statusHandler)
-    ?.filter(propertiesHandler)
-    ?.filter(priceHandler)
-    ?.filter(bathroomHandler)
-    ?.filter(bedroomHandler)
-    ?.filter(garagesHandler)
-    ?.filter(builtYearsHandler)
-    ?.filter(areaHandler)
-    ?.filter(advanceHandler)
-    ?.sort(statusTypeHandler)
-    ?.filter(featuredHandler)
-    .map((item) => (
+    ?.filter(typeHandler)
+    .map((item) => {
+      const priceFrom = item?.price_from;
+      const priceTo = item?.price_to;
+
+      const formattedPriceFrom = priceFrom.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      });
+      const formattedPriceTo = priceTo.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      });
+
+      return (
       <div
         className={`${
           isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
@@ -143,11 +157,11 @@ const FeaturedItem = () => {
           }`}
         >
           <div className="thumb">
-            <Image
-              width={332}
+            <img
+              width={316}
               height={220}
               className="img-whp w-100 h-100 cover"
-              src={item.img}
+              src={global.apiURL + 'images/' + item.image}
               alt="fp1.jpg"
             />
             <div className="thmb_cntnt">
@@ -157,7 +171,7 @@ const FeaturedItem = () => {
                 </li>
                 <li className="list-inline-item">
                   <a href="#" className="text-capitalize">
-                    {item.featured}
+                    {item.vip_feature_promotion}
                   </a>
                 </li>
               </ul>
@@ -178,8 +192,7 @@ const FeaturedItem = () => {
                 href={`/listing-details-v1/${item.id}`}
                 className="fp_price"
               >
-                ${item.price}
-                <small>/mo</small>
+                {formattedPriceFrom} - {formattedPriceTo}
               </Link>
             </div>
           </div>
@@ -188,22 +201,15 @@ const FeaturedItem = () => {
               <p className="text-thm">{item.type}</p>
               <h4>
                 <Link href={`/listing-details-v1/${item.id}`}>
-                  {item.title}
+                  {item.name}
                 </Link>
               </h4>
               <p>
                 <span className="flaticon-placeholder"></span>
-                {item.location}
+                {item.address}
               </p>
 
               <ul className="prop_details mb0">
-                {item.itemDetails.map((val, i) => (
-                  <li className="list-inline-item" key={i}>
-                    <a href="#">
-                      {val.name}: {val.number}
-                    </a>
-                  </li>
-                ))}
               </ul>
             </div>
             {/* End .tc_content */}
@@ -212,16 +218,16 @@ const FeaturedItem = () => {
               <ul className="fp_meta float-start mb0">
                 <li className="list-inline-item">
                   <Link href="/agent-v2">
-                    <Image
+                    <img
                       width={40}
                       height={40}
-                      src={item.posterAvatar}
+                      src={global.apiURL + 'profile-pictures/' + item.agent.image}
                       alt="pposter1.png"
                     />
                   </Link>
                 </li>
                 <li className="list-inline-item">
-                  <Link href="/agent-v2">{item.posterName}</Link>
+                  <Link href="/agent-v2">{item.agent.name}</Link>
                 </li>
               </ul>
               <div className="fp_pdate float-end">{item.postedYear}</div>
@@ -230,7 +236,7 @@ const FeaturedItem = () => {
           </div>
         </div>
       </div>
-    ));
+    )});
 
   // add length of filter items
   useEffect(() => {
