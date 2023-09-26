@@ -48,7 +48,6 @@ const FilteringItem = () => {
   const [getPropertiesType, setPropertiesType] = useState(propertyType);
   const [getBathroom, setBathroom] = useState(bathrooms);
   const [getBedroom, setBedroom] = useState(bedrooms);
-  const [getGarages, setGarages] = useState(garages);
   const [getBuiltYear, setBuiltYear] = useState(yearBuilt);
   const [getAreaMin, setAreaMin] = useState(area.min);
   const [getAreaMax, setAreaMax] = useState(area.max);
@@ -70,6 +69,7 @@ const FilteringItem = () => {
     { id: uuidv4(), name: "Laundry" },
     { id: uuidv4(), name: "Outdoor Shower" },
     { id: uuidv4(), name: "Window Coverings" },
+    { id: uuidv4(), name: "Test" },
   ]);
 
   const dispath = useDispatch();
@@ -80,7 +80,7 @@ const FilteringItem = () => {
   useEffect(() => {
     dispath(addKeyword(getKeyword));
   }, [dispath, getKeyword]);
-  
+
   // type
   useEffect(() => {
     dispath(addType(getType));
@@ -112,9 +112,9 @@ const FilteringItem = () => {
   }, [dispath, getBedroom]);
 
   // garages
-  useEffect(() => {
-    dispath(addGarages(getGarages));
-  }, [dispath, getGarages]);
+  // useEffect(() => {
+  //   dispath(addGarages(getGarages));
+  // }, [dispath, getGarages]);
 
   // built years
   useEffect(() => {
@@ -142,11 +142,10 @@ const FilteringItem = () => {
     setLocation("");
     setStatus("");
     setPropertiesType("");
-    dispath(addPrice({ min: 10000, max: 20000 }));
+    dispath(addPrice({ min: -1, max: -1 }));
     setBathroom("");
     setBedroom("");
     setBedroom("");
-    setGarages("");
     setBuiltYear("");
     setAreaMin("");
     setAreaMax("");
@@ -198,7 +197,7 @@ const FilteringItem = () => {
         </div>
       </li>
       {/* End li */}
-      
+
       <li>
         <div className="search_option_two">
           <div className="candidate_revew_select">
@@ -244,116 +243,9 @@ const FilteringItem = () => {
               value={getStatus}
             >
               <option value="">Status</option>
-              <option value="apartment">Apartment</option>
-              <option value="bungalow">Bungalow</option>
-              <option value="condo">Condo</option>
-              <option value="house">House</option>
-              <option value="land">Land</option>
-              <option value="single family">Single Family</option>
-            </select>
-          </div>
-        </div>
-      </li>
-      {/* End li */}
-
-      <li>
-        <div className="search_option_two">
-          <div className="candidate_revew_select">
-            <select
-              onChange={(e) => setPropertiesType(e.target.value)}
-              className="selectpicker w100 show-tick form-select"
-              value={getPropertiesType}
-            >
-              <option value="">Property Type</option>
-              <option value="apartment">Apartment</option>
-              <option value="bungalow">Bungalow</option>
-              <option value="condo">Condo</option>
-              <option value="house">House</option>
-              <option value="land">Land</option>
-              <option value="single family">Single Family</option>
-            </select>
-          </div>
-        </div>
-      </li>
-      {/* End li */}
-
-      <li>
-        <div className="small_dropdown2">
-          <div
-            id="prncgs2"
-            className="btn dd_btn"
-            data-bs-toggle="dropdown"
-            data-bs-auto-close="outside"
-            aria-expanded="false"
-          >
-            <span>Price Range</span>
-            <label htmlFor="prncgs2">
-              <span className="fa fa-angle-down"></span>
-            </label>
-          </div>
-          <div className="dd_content2 style2 dropdown-menu">
-            <div className="pricing_acontent ">
-              <PricingRangeSlider />
-            </div>
-          </div>
-        </div>
-      </li>
-      {/* End li */}
-
-      <li>
-        <div className="search_option_two">
-          <div className="candidate_revew_select">
-            <select
-              onChange={(e) => setBathroom(e.target.value)}
-              className="selectpicker w100 show-tick form-select"
-              value={getBathroom}
-            >
-              <option value="">Bathrooms</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-          </div>
-        </div>
-      </li>
-      {/* End li */}
-
-      <li>
-        <div className="search_option_two">
-          <div className="candidate_revew_select">
-            <select
-              onChange={(e) => setBedroom(e.target.value)}
-              className="selectpicker w100 show-tick form-select"
-              value={getBedroom}
-            >
-              <option value="">Bedrooms</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-          </div>
-        </div>
-      </li>
-      {/* End li */}
-
-      <li>
-        <div className="search_option_two">
-          <div className="candidate_revew_select">
-            <select
-              onChange={(e) => setGarages(e.target.value)}
-              className="selectpicker w100 show-tick form-select"
-              value={getGarages}
-            >
-              <option value="">Garages</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-              <option value="other">Others</option>
+              <option value="Pre-Construction">Pre Construction</option>
+              <option value="Under-Construction">Under-Construction</option>
+              <option value="Ready to move">Ready To Move</option>
             </select>
           </div>
         </div>
@@ -368,47 +260,49 @@ const FilteringItem = () => {
               className="selectpicker w100 show-tick form-select"
               value={getBuiltYear}
             >
-              <option value="">Year built</option>
-              <option value="2013">2013</option>
-              <option value="2014">2014</option>
-              <option value="2015">2015</option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-              <option value="2020">2020</option>
+              <option value="">Estimate Occupancy Year</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
             </select>
           </div>
         </div>
       </li>
-      {/* End li */}
 
-      <li className="min_area list-inline-item">
-        <div className="form-group mb-4">
-          <input
-            type="number"
-            className="form-control"
-            id="exampleInputName2"
-            placeholder="Min Area"
-            value={getAreaMin}
-            onChange={(e) => setAreaMin(e.target.value)}
-          />
-        </div>
-      </li>
-      {/* End li */}
+      <div className="col-lg-12 d-flex">
+        <li className="min_area list-inline-item">
+          <div className="form-group mb-4">
+            <input
+              type="number"
+              className="form-control"
+              id="exampleInputName2"
+              placeholder="Min Area"
+              value={getAreaMin}
+              onChange={(e) => setAreaMin(e.target.value)}
+            />
+          </div>
+        </li>
+        {/* End li */}
 
-      <li className="max_area list-inline-item">
-        <div className="form-group mb-4">
-          <input
-            type="number"
-            className="form-control"
-            id="exampleInputName3"
-            placeholder="Max Area"
-            value={getAreaMax}
-            onChange={(e) => setAreaMax(e.target.value)}
-          />
-        </div>
-      </li>
+        <li className="max_area list-inline-item">
+          <div className="form-group mb-4">
+            <input
+              type="number"
+              className="form-control"
+              id="exampleInputName3"
+              placeholder="Max Area"
+              value={getAreaMax}
+              onChange={(e) => setAreaMax(e.target.value)}
+            />
+          </div>
+        </li>
+      </div>
       {/* End li */}
 
       <li>
@@ -430,6 +324,91 @@ const FilteringItem = () => {
 
             <div id="panelBodyRating" className="panel-collapse collapse">
               <div className="panel-body row">
+                {/* End li */}
+
+                <div className="col-12 my-2">
+                  <div className="small_dropdown2">
+                    <div
+                      id="prncgs2"
+                      className="btn dd_btn"
+                      data-bs-toggle="dropdown"
+                      data-bs-auto-close="outside"
+                      aria-expanded="false"
+                    >
+                      <span>Price Range</span>
+                      <label htmlFor="prncgs2">
+                        <span className="fa fa-angle-down"></span>
+                      </label>
+                    </div>
+                    <div className="dd_content2 style2 dropdown-menu">
+                      <div className="pricing_acontent ">
+                        <PricingRangeSlider />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* End li */}
+
+                <div className="col-12 my-2">
+                  <div className="search_option_two">
+                    <div className="candidate_revew_select">
+                      <select
+                        onChange={(e) => setBathroom(e.target.value)}
+                        className="selectpicker w100 show-tick form-select"
+                        value={getBathroom}
+                      >
+                        <option value="">Bathrooms</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                {/* End li */}
+
+                <div className="col-12 my-2">
+                  <div className="search_option_two">
+                    <div className="candidate_revew_select">
+                      <select
+                        onChange={(e) => setBedroom(e.target.value)}
+                        className="selectpicker w100 show-tick form-select"
+                        value={getBedroom}
+                      >
+                        <option value="">Bedrooms</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                {/* End li */}
+{/* 
+                <div className="col-12 my-2">
+                  <div className="search_option_two">
+                    <div className="candidate_revew_select">
+                      <select
+                        onChange={(e) => setGarages(e.target.value)}
+                        className="selectpicker w100 show-tick form-select"
+                        value={getGarages}
+                      >
+                        <option value="">Garages</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="other">Others</option>
+                      </select>
+                    </div>
+                  </div>
+                </div> */}
+                {/* End li */}
+
                 <div className="col-lg-12">
                   <ul className="ui_kit_checkbox selectable-list fn-400">
                     {getAdvanced?.map((feature) => (
