@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../../features/properties/propertiesSlice";
 import global from "../../../config/env";
@@ -22,6 +22,7 @@ const FeaturedItem = ({properties}) => {
   const { statusType, featured, isGridOrList } = useSelector(
     (state) => state.filter
   );
+  const [activeMarker, setActiveMarker] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -122,13 +123,18 @@ const FeaturedItem = ({properties}) => {
     return true;
   };
 
-  const activateMarker = (marker) =>
-  {
-    const markerElement = marker.getElement();
-    
-    // Add the custom CSS class to the marker element
-    markerElement.classList.add('marker-active');
-  }
+  useEffect(() => {
+
+    const markers = document.querySelectorAll('.mapboxgl-marker');
+    markers.forEach(marker => {
+      marker.classList.remove('marker-active');
+    });
+
+    if (activeMarker) {
+      const markerElement = activeMarker.getElement();
+      markerElement.classList.add('marker-active');
+    }
+  }, [activeMarker])
 
   // status handler
   let content = properties
@@ -158,12 +164,13 @@ const FeaturedItem = ({properties}) => {
           isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
         } `}
         key={item.id}
-        onClick={() => activateMarker(item.marker)}
       >
         <div
           className={`feat_property home7 style4 ${
             isGridOrList ? "d-flex align-items-center" : undefined
           }`}
+          onMouseEnter={() => setActiveMarker(item.marker)}
+          onMouseLeave={() => setActiveMarker(null)}
         >
           <div className="thumb">
             <img
