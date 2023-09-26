@@ -14,6 +14,7 @@ Tag: advanced custom search, agency, agent, business, clean, corporate, director
 @import url(../scss/font-awesome-animation.min.css);
 @import url(../scss/flaticon.css);
 
+
 /* Table of contents */
 
 /*== Typography ==*/
@@ -2718,7 +2719,8 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   color: #1b2032;
   font-size: 16px;
   height: 50px;
-  width: 110px;
+  width: fit-content;
+  min-width: 110px;
   text-align: center;
   line-height: 35px;
 }
@@ -4272,7 +4274,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 
 .home6-overlay:before {
-  background-image: url(../images/background/7.jpg);
+  background-image: url(../images/background/bg1.jpg);
   bottom: 0;
   content: "";
   opacity: 0.7;
@@ -18283,6 +18285,10 @@ canvas {
   width: 170px;
   z-index: 2;
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
+}
+
+.filter-let-top #main2 .filter_open_btn{
+  top: 55px !important; 
 }
 
 #main2 .filter_open_btn {

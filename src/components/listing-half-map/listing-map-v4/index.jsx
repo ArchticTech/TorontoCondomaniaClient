@@ -65,7 +65,7 @@ const index = ({ properties }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="sidebar_switch mobile_style dn db-991 mt30 mb0">
-                {" "}
+                
                 <ShowFilter />
               </div>
 

@@ -26,7 +26,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [showSearchButton]);
 
   const changeBackground = () => {
     if (window.scrollY >= 95) {

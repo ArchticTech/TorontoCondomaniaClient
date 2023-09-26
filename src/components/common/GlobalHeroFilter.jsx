@@ -1,21 +1,34 @@
+import Link from "next/link";
 import GlobalFilter from "./GlobalFilter";
 
 const GlobalHeroFilter = ({ className = "" }) => {
   return (
     <div className={`home_adv_srch_opt ${className}`}>
-      <ul className="nav nav-pills" style={{display:"flex", gap:'1rem', alignItems:'center', width: '40%'}} id="pills-tab" role="tablist">
+      <ul
+        className="nav nav-pills"
+        style={{
+          display: "flex",
+          gap: "1rem",
+          alignItems: "center",
+          width: "40%",
+        }}
+        id="pills-tab"
+        role="tablist"
+      >
         <li className="nav-item">
-          <a
-            className="nav-link active"
-            id="pills-home-tab"
-            // data-bs-toggle="pill"
-            href="/buy"
-            // role="tab"
-            // aria-controls="pills-home"
-            // aria-selected="true"
-          >
-            Buy
-          </a>
+        <Link 
+            
+              className="nav-link active"
+              id="pills-home-tab"
+              // data-bs-toggle="pill"
+              href="/buy"
+              
+              // role="tab"
+              // aria-controls="pills-home"
+              // aria-selected="true"
+            >
+              Buy   
+          </Link>
         </li>
 
         <li className="nav-item">
