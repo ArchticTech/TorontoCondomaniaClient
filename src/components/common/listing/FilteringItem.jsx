@@ -272,7 +272,7 @@ const FilteringItem = () => {
         </div>
       </li>
 
-      <div className="col-lg-12 d-flex">
+      <div className="col-lg-12 ">
         <li className="min_area list-inline-item">
           <div className="form-group mb-4">
             <input
