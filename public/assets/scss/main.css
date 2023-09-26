@@ -19788,6 +19788,10 @@ button.gm-ui-hover-effect:focus {
 .mapboxgl-control-container {
   display: none;
 }
+.scroll-disabled {
+  max-height: 100vh;
+  overflow: hidden;
+}
 .marker-active svg {
   animation-name: grow-and-shrink;
   animation-duration: 1s;

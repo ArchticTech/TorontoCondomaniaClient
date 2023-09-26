@@ -46,7 +46,7 @@ const index = ({ properties }) => {
   };
 
   return (
-    <>
+    <div className="scroll-disabled">
       {/* <!-- Main Header Nav --> */}
       <Header />
 
@@ -142,7 +142,7 @@ const index = ({ properties }) => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
