@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addLength } from "../../../features/properties/propertiesSlice";
-import global from "../../../config/env";
+import { addLength } from "../../features/properties/propertiesSlice";
+import global from "../../config/env";
 
 const FeaturedItem = ({ properties }) => {
   const {
@@ -226,7 +226,7 @@ const FeaturedItem = ({ properties }) => {
               </ul>
 
                 <Link
-                  href={`/listing-details-v1/${item.id}`}
+                  href={`/property/${item.id}`}
                   className="fp_price"
                 >
                   {formattedPriceFrom} - {formattedPriceTo}
@@ -237,7 +237,7 @@ const FeaturedItem = ({ properties }) => {
               <div className="tc_content">
                 <p className="text-thm">{item.type}</p>
                 <h4>
-                  <Link href={`/listing-details-v1/${item.id}`}>
+                  <Link href={`/property/${item.id}`}>
                     {item.name}
                   </Link>
                 </h4>

@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Seo from "../components/common/seo";
-import HomeMain from "../components/home-5";
+import HomeMain from "../components/home";
 import { fetchAllProperties } from '../utils/api';
 
 const index = ({ properties }) => {
