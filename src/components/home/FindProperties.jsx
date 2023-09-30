@@ -1,12 +1,16 @@
 import Link from "next/link";
 import findProperties from "../../data/findProperties";
 import Image from "next/image";
+import { AddLocation } from "../../features/properties/propertiesSlice";
+import { useDispatch } from "react-redux";
 
 const FindProperties = () => {
+  const dispatch = useDispatch()
   return (
     <>
       {findProperties.slice(0, 4).map((item) => (
-        <div className={`col-lg-4 ${item.column}`} key={item.id}>
+        <div className={`col-lg-4 ${item.column}`} key={item.id}
+          onClick={dispatch(AddLocation(item.name))}>
           <Link href="/listing-grid-v5" className="properti_city home5 d-block">
             <div className="thumb">
               <Image
@@ -22,7 +26,7 @@ const FindProperties = () => {
                 <div className="left">
                   <h4>{item.name}</h4>
                 </div>
-                <p>{item.number} Properties</p>
+                <p>Properties</p>
               </div>
             </div>
           </Link>

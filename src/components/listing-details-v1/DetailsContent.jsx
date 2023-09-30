@@ -56,27 +56,32 @@ const DetailsContent = ({ property }) => {
         </div>
       </div>
       {/* End .property_attachment_area */}
-      {property.features}
+      {/* {property.features} */}
+      {/* 
+      {property.features? (
+        <div className="application_statics mt30">
+          <div className="row">
+            <div className="col-lg-12">
+              <h4 className="mb10">Features</h4>
+            </div>
 
-      {PropertyFeatures.features ? (
+            <PropertyFeatures features={property.features} />
+          </div>
+        </div>
+      ) : undefined} */}
+      {Object.keys(property.features).length > 0 ? (
         <div className="application_statics mt30">
           <div className="row">
             <div className="col-lg-12">
               <h4 className="mb10">Features</h4>
             </div>
             {/* End .col */}
-
             <PropertyFeatures features={property.features} />
           </div>
         </div>
-      ) : (
-        <div className="row container my-3 ">
-          <div className="col-lg-12">
-            <h4 className="mb10">No Features Found</h4>
-          </div>
-        </div>
-      )}
+      ) : null}
 
+{property.address && property.floorPlan.length > 0 ? (
       <div className="application_statics mt30">
         <h4 className="mb30">
           Location <small className="float-end">{property.address}</small>
@@ -88,20 +93,25 @@ const DetailsContent = ({ property }) => {
           />
         </div>
       </div>
+      ) : null}
       {/* End .location_area */}
 
-      {property.floorPlan ? (
+      {/* {property.floorPlan ? (
         <div className="application_statics mt30">
           <h4 className="mb30">Floor plans</h4>
           <div className="faq_according style2">
             <FloorPlans floorPlan={property.floorPlan} />
           </div>
         </div>
-      ) : (
+      ) : null} */}
+      {property.floorPlan && property.floorPlan.length > 0 ? (
         <div className="application_statics mt30">
-          <h4 className="mb30">No Floor plans</h4>
+          <h4 className="mb30">Floor plans</h4>
+          <div className="faq_according style2">
+            <FloorPlans floorPlan={property.floorPlan} />
+          </div>
         </div>
-      )}
+      ) : null}
 
       {/* End .floor_plane */}
 
