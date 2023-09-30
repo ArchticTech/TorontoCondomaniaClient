@@ -35,6 +35,7 @@ const FilteringItem = () => {
     bedrooms,
     yearBuilt,
     area,
+    amenities
   } = useSelector((state) => state.properties);
 
   // input state
@@ -50,24 +51,36 @@ const FilteringItem = () => {
   const [getAreaMax, setAreaMax] = useState(area.max);
 
   // advanced state
-  const [getAdvanced, setAdvanced] = useState([
-    { id: uuidv4(), name: "Air Conditioning" },
-    { id: uuidv4(), name: "Barbeque" },
-    { id: uuidv4(), name: "Gym" },
-    { id: uuidv4(), name: "Microwave" },
-    { id: uuidv4(), name: "TV Cable" },
-    { id: uuidv4(), name: "Lawn" },
-    { id: uuidv4(), name: "Refrigerator" },
-    { id: uuidv4(), name: "Swimming Pool" },
-    { id: uuidv4(), name: "WiFi" },
-    { id: uuidv4(), name: "Sauna" },
-    { id: uuidv4(), name: "Dryer" },
-    { id: uuidv4(), name: "Washer" },
-    { id: uuidv4(), name: "Laundry" },
-    { id: uuidv4(), name: "Outdoor Shower" },
-    { id: uuidv4(), name: "Window Coverings" },
-    { id: uuidv4(), name: "Test" },
-  ]);
+  const [getAdvanced, setAdvanced] = useState();
+
+  useEffect(() => {
+    let features = [
+      { id: uuidv4(), name: "Air Conditioning" },
+      { id: uuidv4(), name: "Barbeque" },
+      { id: uuidv4(), name: "Gym" },
+      { id: uuidv4(), name: "Microwave" },
+      { id: uuidv4(), name: "TV Cable" },
+      { id: uuidv4(), name: "Lawn" },
+      { id: uuidv4(), name: "Refrigerator" },
+      { id: uuidv4(), name: "Swimming Pool" },
+      { id: uuidv4(), name: "WiFi" },
+      { id: uuidv4(), name: "Sauna" },
+      { id: uuidv4(), name: "Dryer" },
+      { id: uuidv4(), name: "Washer" },
+      { id: uuidv4(), name: "Laundry" },
+      { id: uuidv4(), name: "Outdoor Shower" },
+      { id: uuidv4(), name: "Window Coverings" },
+    ];
+
+    features = features.map((feature) => {
+      if (amenities.includes(feature)) {
+        feature.isChecked = true;
+      }
+      return feature;
+    })
+
+    setAdvanced(features)
+  }, [amenities])
 
   const dispath = useDispatch();
 
@@ -107,11 +120,6 @@ const FilteringItem = () => {
   useEffect(() => {
     dispath(addBedrooms(getBedroom));
   }, [dispath, getBedroom]);
-
-  // garages
-  // useEffect(() => {
-  //   dispath(addGarages(getGarages));
-  // }, [dispath, getGarages]);
 
   // built years
   useEffect(() => {
@@ -184,7 +192,7 @@ const FilteringItem = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="Keyword"
+            placeholder="Search..."
             value={getKeyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
@@ -388,6 +396,7 @@ const FilteringItem = () => {
                 </div>
                 {/* End li */}
 
+                {amenities}
                 <div className="col-lg-12">
                   <ul className="ui_kit_checkbox selectable-list fn-400">
                     {getAdvanced?.map((feature) => (

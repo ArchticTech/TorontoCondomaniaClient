@@ -7,7 +7,7 @@ import ShowFilter from "../common/listing/ShowFilter";
 import SidebarListing2 from "../common/listing/SidebarListing2";
 import PopupSignInUp from "../common/PopupSignInUp";
 import FeaturedItem from "./FeaturedItem";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
 

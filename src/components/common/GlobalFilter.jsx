@@ -1,7 +1,17 @@
 import Router from "next/router";
 import {
+  addAmenities,
+  addAreaMax,
+  addAreaMin,
+  addBathrooms,
+  addBedrooms,
   addKeyword,
   addLocation,
+  addPropertyType,
+  addStatus,
+  addType,
+  addYearBuilt,
+  resetAmenities
 } from "../../features/properties/propertiesSlice";
 import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";
@@ -12,7 +22,7 @@ const GlobalFilter = ({ className = "" }) => {
   const dispatch = useDispatch();
   // submit handler
   const submitHandler = () => {
-    Router.push("/listing-grid-v1");
+    Router.push("/properties");
   };
 
   return (
@@ -23,7 +33,7 @@ const GlobalFilter = ({ className = "" }) => {
             <input
               type="text"
               className="form-control"
-              placeholder="Enter keyword..."
+              placeholder="Search..."
               onChange={(e) => dispatch(addKeyword(e.target.value))}
             />
           </div>
@@ -33,14 +43,14 @@ const GlobalFilter = ({ className = "" }) => {
         <li className="list-inline-item">
           <div className="search_option_two">
             <div className="candidate_revew_select">
-              <select className="selectpicker w100 form-select show-tick">
+              <select className="selectpicker w100 form-select show-tick"
+              onChange={(e) => dispatch(addType(e.target.value))}
+              >
                 <option value="">Property Type</option>
-                <option>Apartment</option>
-                <option>Bungalow</option>
-                <option>Condo</option>
-                <option>House</option>
-                <option>Land</option>
-                <option>Single Family</option>
+                <option value="Condo">Condo</option>
+                <option value="Townhouse">Townhouse</option>
+                <option value="Condo Townhomes">Condo Townhomes</option>
+                <option value="Single Family">Single Family</option>
               </select>
             </div>
           </div>

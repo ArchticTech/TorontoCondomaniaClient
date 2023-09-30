@@ -1,237 +1,69 @@
+import {useEffect, useRef, useState} from "react";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import { addAmenities } from "../../features/properties/propertiesSlice";
+
 const CheckBoxFilter = () => {
+  
+  const [features, setFeatures] = useState([
+    { id: uuidv4(), name: "Air Conditioning" },
+    { id: uuidv4(), name: "Barbeque" },
+    { id: uuidv4(), name: "Gym" },
+    { id: uuidv4(), name: "Microwave" },
+    { id: uuidv4(), name: "TV Cable" },
+    { id: uuidv4(), name: "Lawn" },
+    { id: uuidv4(), name: "Refrigerator" },
+    { id: uuidv4(), name: "Swimming Pool" },
+    { id: uuidv4(), name: "WiFi" },
+    { id: uuidv4(), name: "Sauna" },
+    { id: uuidv4(), name: "Dryer" },
+    { id: uuidv4(), name: "Washer" },
+    { id: uuidv4(), name: "Laundry" },
+    { id: uuidv4(), name: "Outdoor Shower" },
+    { id: uuidv4(), name: "Window Coverings" },
+  ]);
+
+  const dispatch = useDispatch();
+
+  const featureHandler = (id) => {
+    const data = features.map((feature) => {
+      if (feature.id === id) {
+        if (feature.isChecked) {
+          feature.isChecked = false;
+        } else {
+          feature.isChecked = true;
+        }
+      }
+      return feature;
+    });
+
+    dispatch(addAmenities(data));
+  };
+
   return (
     <>
-      <div className="col-xxs-6 col-sm col-lg col-xl">
-        <ul className="ui_kit_checkbox selectable-list">
-          <li>
+    <div className="col-xxs-6 col-sm col-lg col-xl">
+      <ul className="ui_kit_checkbox selectable-list">
+        {features?.map((feature) => (
+          <li key={feature.id}>
             <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck1"
-              />
-              <label className="form-check-label" htmlFor="customCheck1">
-                Air Conditioning
-              </label>
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id={feature.id}
+              value={feature.name}
+              checked={feature.isChecked || false}
+              onChange={(e) =>
+                dispatch(addAmenities(e.target.value))
+              }
+              // onClick={() => featureHandler(feature.id)}
+            />
+            <label className="form-check-label" htmlFor={feature.id} >
+              {feature.name}
+            </label>
             </div>
           </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck2"
-              />
-              <label className="form-check-label" htmlFor="customCheck2">
-                Lawn
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck3"
-              />
-              <label className="form-check-label" htmlFor="customCheck3">
-                Swimming Pool
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-        </ul>
-      </div>
-      {/* End .col */}
-
-      <div className="col-xs-6 col-sm col-lg col-xl">
-        <ul className="ui_kit_checkbox selectable-list">
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck4"
-              />
-              <label className="form-check-label" htmlFor="customCheck4">
-                Barbeque
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck5"
-              />
-              <label className="form-check-label" htmlFor="customCheck5">
-                Microwave
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck6"
-              />
-              <label className="form-check-label" htmlFor="customCheck6">
-                TV Cable
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-        </ul>
-      </div>
-      {/* End .col */}
-
-      <div className="col-xs-6 col-sm col-lg col-xl">
-        <ul className="ui_kit_checkbox selectable-list">
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck7"
-              />
-              <label className="form-check-label" htmlFor="customCheck7">
-                Dryer
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck8"
-              />
-              <label className="form-check-label" htmlFor="customCheck8">
-                Outdoor Shower
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck9"
-              />
-              <label className="form-check-label" htmlFor="customCheck9">
-                Washer
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-        </ul>
-      </div>
-      {/* End .col */}
-
-      <div className="col-xxs-6 col-sm col-lg col-xl">
-        <ul className="ui_kit_checkbox selectable-list">
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck10"
-              />
-              <label className="form-check-label" htmlFor="customCheck10">
-                Gym
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck11"
-              />
-              <label className="form-check-label" htmlFor="customCheck11">
-                Refrigerator
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck12"
-              />
-              <label className="form-check-label" htmlFor="customCheck12">
-                WiFi
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-        </ul>
-      </div>
-      {/* End .col */}
-
-      <div className="col-xxs-6 col-sm col-lg col-xl">
-        <ul className="ui_kit_checkbox selectable-list">
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck13"
-              />
-              <label className="form-check-label" htmlFor="customCheck13">
-                Laundry
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck14"
-              />
-              <label className="form-check-label" htmlFor="customCheck14">
-                Sauna
-              </label>
-            </div>
-          </li>
-          {/* End li */}
-
-          <li>
-            <div className="form-check custom-checkbox">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="customCheck15"
-              />
-              <label className="form-check-label" htmlFor="customCheck15">
-                Window Coverings
-              </label>
-            </div>
-          </li>
-          {/* End li */}
+        ))}
         </ul>
       </div>
       {/* End .col */}

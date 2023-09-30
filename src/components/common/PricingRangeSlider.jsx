@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import InputRange from "react-input-range";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPrice } from "../../features/properties/propertiesSlice";
 
 const RangeSlider = () => {
