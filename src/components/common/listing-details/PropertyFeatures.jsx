@@ -13,6 +13,6 @@ const PropertyFeatures = ({propertyFeatures}) => {
       ))}
     </>
   );
-};
+}; 
 
 export default PropertyFeatures;
