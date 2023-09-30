@@ -56,6 +56,7 @@ const DetailsContent = ({ property }) => {
         </div>
       </div>
       {/* End .property_attachment_area */}
+      {property.features}
 
       {PropertyFeatures.features ? (
         <div className="application_statics mt30">
@@ -89,7 +90,7 @@ const DetailsContent = ({ property }) => {
       </div>
       {/* End .location_area */}
 
-      {property.latitude ? (
+      {property.floorPlan ? (
         <div className="application_statics mt30">
           <h4 className="mb30">Floor plans</h4>
           <div className="faq_according style2">
