@@ -1,11 +1,11 @@
-import {useEffect, useRef, useState} from "react";
-import { useDispatch } from "react-redux";
+import {useEffect, useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { addAmenities } from "../../features/properties/propertiesSlice";
 
 const CheckBoxFilter = () => {
   
-  const [features, setFeatures] = useState([
+  const [features] = useState([
     { id: uuidv4(), name: "Air Conditioning" },
     { id: uuidv4(), name: "Barbeque" },
     { id: uuidv4(), name: "Gym" },
@@ -24,39 +24,24 @@ const CheckBoxFilter = () => {
   ]);
 
   const dispatch = useDispatch();
-
-  const featureHandler = (id) => {
-    const data = features.map((feature) => {
-      if (feature.id === id) {
-        if (feature.isChecked) {
-          feature.isChecked = false;
-        } else {
-          feature.isChecked = true;
-        }
-      }
-      return feature;
-    });
-
-    dispatch(addAmenities(data));
-  };
+  const {amenities} = useSelector((state) => state.properties);
 
   return (
     <>
-    <div className="col-xxs-6 col-sm col-lg col-xl">
-      <ul className="ui_kit_checkbox selectable-list">
+    <div>
+      <ul className="ui_kit_checkbox selectable-list row">
         {features?.map((feature) => (
-          <li key={feature.id}>
+          <li className="col-xxs-6 col-sm col-lg col-xl" key={feature.id}>
             <div className="form-check custom-checkbox">
             <input
               type="checkbox"
               className="form-check-input"
               id={feature.id}
               value={feature.name}
-              checked={feature.isChecked || false}
               onChange={(e) =>
                 dispatch(addAmenities(e.target.value))
               }
-              // onClick={() => featureHandler(feature.id)}
+              checked = {amenities.includes(feature.name)}
             />
             <label className="form-check-label" htmlFor={feature.id} >
               {feature.name}

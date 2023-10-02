@@ -11,10 +11,10 @@ const initialState = {
     },
     amenities: [],
     status: "",
-    bathrooms: "",
-    bedrooms: "",
+    bathrooms: 0,
+    bedrooms: 0,
     garages: "",
-    yearBuilt: "",
+    occupencyYear: "",
     area: {
         min: "",
         max: "",
@@ -69,8 +69,8 @@ export const propertiesSlice = createSlice({
         addGarages: (state, action) => {
             state.garages = action.payload;
         },
-        addYearBuilt: (state, action) => {
-            state.yearBuilt = action.payload;
+        addOccupencyYear: (state, action) => {
+            state.occupencyYear = action.payload;
         },
         addAreaMin: (state, action) => {
             state.area.min = action.payload;
@@ -95,7 +95,7 @@ export const {
     addBathrooms,
     addBedrooms,
     addGarages,
-    addYearBuilt,
+    addOccupencyYear,
     addAreaMin,
     addAreaMax,
     addLength,

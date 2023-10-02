@@ -17,7 +17,7 @@ import {
   addPropertyType,
   addStatus,
   addType,
-  addYearBuilt,
+  addOccupencyYear,
   resetAmenities,
 } from "../../../features/properties/propertiesSlice";
 import PricingRangeSlider from "../../common/PricingRangeSlider";
@@ -33,7 +33,7 @@ const FilteringItem = () => {
     propertyType,
     bathrooms,
     bedrooms,
-    yearBuilt,
+    occupencyYear,
     area,
     amenities
   } = useSelector((state) => state.properties);
@@ -46,95 +46,82 @@ const FilteringItem = () => {
   const [getPropertiesType, setPropertiesType] = useState(propertyType);
   const [getBathroom, setBathroom] = useState(bathrooms);
   const [getBedroom, setBedroom] = useState(bedrooms);
-  const [getBuiltYear, setBuiltYear] = useState(yearBuilt);
+  const [getOccupencyYear, setOccupencyYear] = useState(occupencyYear);
   const [getAreaMin, setAreaMin] = useState(area.min);
   const [getAreaMax, setAreaMax] = useState(area.max);
 
   // advanced state
-  const [getAdvanced, setAdvanced] = useState();
+  const [features] = useState([
+    { id: uuidv4(), name: "Air Conditioning" },
+    { id: uuidv4(), name: "Barbeque" },
+    { id: uuidv4(), name: "Gym" },
+    { id: uuidv4(), name: "Microwave" },
+    { id: uuidv4(), name: "TV Cable" },
+    { id: uuidv4(), name: "Lawn" },
+    { id: uuidv4(), name: "Refrigerator" },
+    { id: uuidv4(), name: "Swimming Pool" },
+    { id: uuidv4(), name: "WiFi" },
+    { id: uuidv4(), name: "Sauna" },
+    { id: uuidv4(), name: "Dryer" },
+    { id: uuidv4(), name: "Washer" },
+    { id: uuidv4(), name: "Laundry" },
+    { id: uuidv4(), name: "Outdoor Shower" },
+    { id: uuidv4(), name: "Window Coverings" },
+  ]);
 
-  useEffect(() => {
-    let features = [
-      { id: uuidv4(), name: "Air Conditioning" },
-      { id: uuidv4(), name: "Barbeque" },
-      { id: uuidv4(), name: "Gym" },
-      { id: uuidv4(), name: "Microwave" },
-      { id: uuidv4(), name: "TV Cable" },
-      { id: uuidv4(), name: "Lawn" },
-      { id: uuidv4(), name: "Refrigerator" },
-      { id: uuidv4(), name: "Swimming Pool" },
-      { id: uuidv4(), name: "WiFi" },
-      { id: uuidv4(), name: "Sauna" },
-      { id: uuidv4(), name: "Dryer" },
-      { id: uuidv4(), name: "Washer" },
-      { id: uuidv4(), name: "Laundry" },
-      { id: uuidv4(), name: "Outdoor Shower" },
-      { id: uuidv4(), name: "Window Coverings" },
-    ];
-
-    features = features.map((feature) => {
-      if (amenities.includes(feature)) {
-        feature.isChecked = true;
-      }
-      return feature;
-    })
-
-    setAdvanced(features)
-  }, [amenities])
-
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
 
   const Router = useRouter();
 
   // keyword
   useEffect(() => {
-    dispath(addKeyword(getKeyword));
-  }, [dispath, getKeyword]);
+    dispatch(addKeyword(getKeyword));
+  }, [dispatch, getKeyword]);
 
   // type
   useEffect(() => {
-    dispath(addType(getType));
-  }, [dispath, getType]);
+    dispatch(addType(getType));
+  }, [dispatch, getType]);
 
   // location
   useEffect(() => {
-    dispath(addLocation(getLocation));
-  }, [dispath, getLocation]);
+    dispatch(addLocation(getLocation));
+  }, [dispatch, getLocation]);
 
   // status
   useEffect(() => {
-    dispath(addStatus(getStatus));
-  }, [dispath, getStatus]);
+    dispatch(addStatus(getStatus));
+  }, [dispatch, getStatus]);
 
   // properties type
   useEffect(() => {
-    dispath(addPropertyType(getPropertiesType));
-  }, [dispath, getPropertiesType]);
+    dispatch(addPropertyType(getPropertiesType));
+  }, [dispatch, getPropertiesType]);
 
   // bathroom
   useEffect(() => {
-    dispath(addBathrooms(getBathroom));
-  }, [dispath, getBathroom]);
+    dispatch(addBathrooms(getBathroom));
+  }, [dispatch, getBathroom]);
 
   // bedroom
   useEffect(() => {
-    dispath(addBedrooms(getBedroom));
-  }, [dispath, getBedroom]);
+    dispatch(addBedrooms(getBedroom));
+  }, [dispatch, getBedroom]);
 
   // built years
   useEffect(() => {
-    dispath(addYearBuilt(getBuiltYear));
-  }, [dispath, getBuiltYear]);
+    dispatch(addOccupencyYear(getOccupencyYear));
+  }, [dispatch, getOccupencyYear]);
 
   // area min
   useEffect(() => {
-    dispath(dispath(addAreaMin(getAreaMin)));
-  }, [dispath, getAreaMin]);
+    dispatch(dispatch(addAreaMin(getAreaMin)));
+  }, [dispatch, getAreaMin]);
 
   // area max
   useEffect(() => {
-    dispath(dispath(addAreaMax(getAreaMax)));
-  }, [dispath, getAreaMax]);
+    dispatch(dispatch(addAreaMax(getAreaMax)));
+  }, [dispatch, getAreaMax]);
 
   // clear filter
   const clearHandler = () => {
@@ -147,42 +134,16 @@ const FilteringItem = () => {
     setLocation("");
     setStatus("");
     setPropertiesType("");
-    dispath(addPrice({ min: -1, max: -1 }));
+    dispatch(addPrice({ min: -1, max: -1 }));
     setBathroom("");
     setBedroom("");
     setBedroom("");
-    setBuiltYear("");
+    setOccupencyYear("");
     setAreaMin("");
     setAreaMax("");
-    dispath(resetAmenities());
-    dispath(addStatusType(""));
-    dispath(addFeatured(""));
-    clearAdvanced();
-  };
-
-  // clear advanced
-  const clearAdvanced = () => {
-    const changed = getAdvanced.map((item) => {
-      item.isChecked = false;
-      return item;
-    });
-    setAdvanced(changed);
-  };
-
-  // add advanced
-  const advancedHandler = (id) => {
-    const data = getAdvanced.map((feature) => {
-      if (feature.id === id) {
-        if (feature.isChecked) {
-          feature.isChecked = false;
-        } else {
-          feature.isChecked = true;
-        }
-      }
-      return feature;
-    });
-
-    setAdvanced(data);
+    dispatch(resetAmenities());
+    dispatch(addStatusType(""));
+    dispatch(addFeatured(""));
   };
 
   return (
@@ -261,9 +222,9 @@ const FilteringItem = () => {
         <div className="search_option_two">
           <div className="candidate_revew_select">
             <select
-              onChange={(e) => setBuiltYear(e.target.value)}
+              onChange={(e) => setOccupencyYear(e.target.value)}
               className="selectpicker w100 show-tick form-select"
-              value={getBuiltYear}
+              value={getOccupencyYear}
             >
               <option value="">Estimate Occupancy Year</option>
               <option value="2022">2022</option>
@@ -279,39 +240,32 @@ const FilteringItem = () => {
           </div>
         </div>
       </li>
-
-      <div className="col-lg-12 d-flex">
-        <li className="min_area list-inline-item">
-          <div className="form-group mb-4">
-            <input
-              type="number"
-              className="form-control"
-              id="exampleInputName2"
-              placeholder="Min Area"
-              value={getAreaMin}
-              onChange={(e) => setAreaMin(e.target.value)}
-            />
+      
+      <li className="col-12">
+        <div className="small_dropdown2">
+          <div
+            id="prncgs2"
+            className="btn dd_btn"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+          >
+            <span>Price Range</span>
+            <label htmlFor="prncgs2">
+              <span className="fa fa-angle-down"></span>
+            </label>
           </div>
-        </li>
-        {/* End li */}
-
-        <li className="max_area list-inline-item">
-          <div className="form-group mb-4">
-            <input
-              type="number"
-              className="form-control"
-              id="exampleInputName3"
-              placeholder="Max Area"
-              value={getAreaMax}
-              onChange={(e) => setAreaMax(e.target.value)}
-            />
+          <div className="dd_content2 style2 dropdown-menu">
+            <div className="pricing_acontent ">
+              <PricingRangeSlider />
+            </div>
           </div>
-        </li>
-      </div>
+        </div>
+      </li>
       {/* End li */}
 
       <li>
-        <div id="accordion" className="panel-group">
+        <div id="accordion" className="panel-group mt-2">
           <div className="panel">
             <div className="panel-heading">
               <h4 className="panel-title">
@@ -331,75 +285,77 @@ const FilteringItem = () => {
               <div className="panel-body row">
                 {/* End li */}
 
-                <div className="col-12 my-2">
-                  <div className="small_dropdown2">
-                    <div
-                      id="prncgs2"
-                      className="btn dd_btn"
-                      data-bs-toggle="dropdown"
-                      data-bs-auto-close="outside"
-                      aria-expanded="false"
+                <div className="col-12 d-flex mb-3">
+                  <li className="min_area list-inline-item w-100">
+                    <div className="form-group">
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="exampleInputName2"
+                        placeholder="Min Area"
+                        value={getAreaMin}
+                        onChange={(e) => setAreaMin(e.target.value)}
+                      />
+                    </div>
+                  </li>
+                  {/* End li */}
+
+                  <li className="max_area list-inline-item w-100">
+                    <div className="form-group">
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="exampleInputName3"
+                        placeholder="Max Area"
+                        value={getAreaMax}
+                        onChange={(e) => setAreaMax(e.target.value)}
+                      />
+                    </div>
+                  </li>
+                </div>
+                {/* End li */}
+
+                <div className="col-12 mb-3">
+                  <div className="candidate_revew_select">
+                    <select
+                      onChange={(e) => setBathroom(e.target.value)}
+                      className="selectpicker w100 show-tick form-select"
+                      value={getBathroom}
                     >
-                      <span>Price Range</span>
-                      <label htmlFor="prncgs2">
-                        <span className="fa fa-angle-down"></span>
-                      </label>
-                    </div>
-                    <div className="dd_content2 style2 dropdown-menu">
-                      <div className="pricing_acontent ">
-                        <PricingRangeSlider />
-                      </div>
-                    </div>
+                      <option value="">Bathrooms</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
                   </div>
                 </div>
                 {/* End li */}
 
-                <div className="col-12 my-2">
-                  <div className="search_option_two">
-                    <div className="candidate_revew_select">
-                      <select
-                        onChange={(e) => setBathroom(e.target.value)}
-                        className="selectpicker w100 show-tick form-select"
-                        value={getBathroom}
-                      >
-                        <option value="">Bathrooms</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                      </select>
-                    </div>
+                <div className="col-12 mb-3">
+                  <div className="candidate_revew_select">
+                    <select
+                      onChange={(e) => setBedroom(e.target.value)}
+                      className="selectpicker w100 show-tick form-select"
+                      value={getBedroom}
+                    >
+                      <option value="">Bedrooms</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
                   </div>
                 </div>
                 {/* End li */}
 
-                <div className="col-12 my-2">
-                  <div className="search_option_two">
-                    <div className="candidate_revew_select">
-                      <select
-                        onChange={(e) => setBedroom(e.target.value)}
-                        className="selectpicker w100 show-tick form-select"
-                        value={getBedroom}
-                      >
-                        <option value="">Bedrooms</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                {/* End li */}
-
-                {amenities}
                 <div className="col-lg-12">
                   <ul className="ui_kit_checkbox selectable-list fn-400">
-                    {getAdvanced?.map((feature) => (
+                    {features?.map((feature) => (
                       <li key={feature.id}>
                         <div className="form-check custom-checkbox">
                           <input
@@ -407,11 +363,10 @@ const FilteringItem = () => {
                             className="form-check-input"
                             id={feature.id}
                             value={feature.name}
-                            checked={feature.isChecked || false}
                             onChange={(e) =>
-                              dispath(addAmenities(e.target.value))
+                              dispatch(addAmenities(e.target.value))
                             }
-                            onClick={() => advancedHandler(feature.id)}
+                            checked = {amenities.includes(feature.name)}
                           />
                           <label
                             className="form-check-label"

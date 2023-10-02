@@ -13,7 +13,7 @@ const FeaturedItem = ({ properties }) => {
     price,
     bathrooms,
     bedrooms,
-    yearBuilt,
+    occupencyYear,
     area,
     amenities,
   } = useSelector((state) => state.properties);
@@ -41,10 +41,6 @@ const FeaturedItem = ({ properties }) => {
     return item.address.toLowerCase().includes(location.toLowerCase());
   };
 
-  // status handler
-  // const statusHandler = (item) =>
-  //   item.type.toLowerCase().includes(status.toLowerCase());
-  // status handler
   const statusHandler = (item) => {
     if (status == "") return true;
     else return item.status.toLowerCase() == status.toLowerCase();
@@ -60,19 +56,12 @@ const FeaturedItem = ({ properties }) => {
         );
       }
     }
-    // console.log(item.areaMin);
     return true;
   };
 
-  // built years handler
-  // const builtYearsHandler = (item) =>
-  //   yearBuilt !== "" ? item?.built == yearBuilt : true;
-  // const incomingObjectArray = item;
-  // const [{ est_occupancy_year }] = incomingObjectArray;
-  // built years handler
-  const builtYearsHandler = (item) => {
-    if (yearBuilt == "") return true;
-    else return item.yearBuilt.toLowerCase() == yearBuilt.toLowerCase();
+  const occupencyYearsHandler = (item) => {
+    if (occupencyYear == "") return true;
+    else return item.occupencyYear.toLowerCase() == occupencyYear.toLowerCase();
   };
 
   // price handler
@@ -103,17 +92,6 @@ const FeaturedItem = ({ properties }) => {
       return amenities.some((searchedFeature) =>
         item.features.find((feature) => feature.toLowerCase().includes(searchedFeature.toLowerCase())));
     }
-    // return true;
-    // if (amenities.length !== 0) {
-    //   return amenities.find((item2) => {
-        // if (typeof item2 === "string" && typeof item.amenities === "string") {
-          // console.log(item2);
-          // return item2.toLowerCase().includes(item.features.toLowerCase());
-        // }
-        // return false;
-      // });
-    // }
-// console.log(typeof(amenities));
      return true;
   };
 
@@ -157,7 +135,7 @@ const FeaturedItem = ({ properties }) => {
     ?.filter(locationHandler)
     ?.filter(statusHandler)
     ?.filter(areaHandler)
-    ?.filter(builtYearsHandler)
+    ?.filter(occupencyYearsHandler)
     ?.filter(priceHandler)
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
