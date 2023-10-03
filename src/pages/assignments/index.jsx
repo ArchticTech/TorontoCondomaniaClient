@@ -2,9 +2,9 @@ import dynamic from "next/dynamic";
 import Seo from "../../components/common/seo";
 import ListingMapV4 from "../../components/listing-map";
 import Head from "next/head";
-import { fetchAllProperties } from "../../utils/api";
+import {  fetchAllAssignments } from "../../utils/api";
 
-const index = ({ properties }) => {
+const index = ({  assignments }) => {
   return (
     <>
       <Head>
@@ -14,17 +14,17 @@ const index = ({ properties }) => {
         />
       </Head>
       <Seo pageTitle="Latest Properties" />
-      <ListingMapV4 properties={properties}  />
+      <ListingMapV4 properties={assignments} isAssignment={true}/>
     </>
   );
 };
 
 export async function getServerSideProps() {
-  var properties = await fetchAllProperties();
+  var assignments = await fetchAllAssignments();
 
   return {
     props: {
-      properties: properties.data,
+      assignments: assignments.data
     },
   };
 }

@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header
+    <header 
       className={`header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu  ${
         navbar ? "stricky-fixed " : ""
       }`}
@@ -31,17 +31,17 @@ const Header = () => {
             width={40}
             height={45}
             className="logo1 img-fluid"
-            src="/assets/images/header-logo2.png"
+            src="/assets/images/logo.png"
             alt="header-logo2.png"
           />
           <Image
             width={40}
             height={45}
             className="logo2 img-fluid"
-            src="/assets/images/header-logo2.png"
+            src="/assets/images/logo.png"
             alt="header-logo2.png"
           />
-          <span>FindHouse</span>
+          <span>TCM</span>
         </Link>
         {/* site logo brand */}
 

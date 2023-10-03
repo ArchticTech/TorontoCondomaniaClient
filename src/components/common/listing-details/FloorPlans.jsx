@@ -1,4 +1,5 @@
 import Image from "next/image";
+import global from "../../../config/env";
 
 const FloorPlans = ({ floorPlan }) => {
   return (
@@ -14,7 +15,7 @@ const FloorPlans = ({ floorPlan }) => {
                   data-bs-toggle="collapse"
                   data-bs-target={`#collapse${index}`}
                   aria-expanded="false"
-                  aria-controls={`collapse${index}`} 
+                  aria-controls={`collapse${index}`}
                 >
                   <ul className="mb0 d-flex align-items-cener flex-wrap">
                     <li className="d-inline-flex list-inline-item">
@@ -32,6 +33,9 @@ const FloorPlans = ({ floorPlan }) => {
                     <li className="d-inline-flex list-inline-item">
                       <p>Beds:</p> <span>{plan.bed}</span>
                     </li>
+                    <li className="d-inline-flex list-inline-item">
+                      <span>{plan.availability ? 'Available' : 'Not Available'}</span>
+                    </li>
                   </ul>
                 </button>
               </h2>
@@ -42,23 +46,21 @@ const FloorPlans = ({ floorPlan }) => {
               aria-labelledby={`heading${index}`}
               data-bs-parent="#accordionExample"
             >
-              {plan.image}
               <div className="card-body text-center">
-                <Image
-                  width={619}
-                  height={465}
+                <img
+                  style={{ height: "20%", width: "100px" }}
                   className="img-fluid w-100 h-100 cover"
                   // src={`/images/${plan.image}`}
-                  src={`/images/${plan.image}`} 
-                  alt={`Suite ${plan.suite_no}`} 
+                  src={`${global.apiURL}images/${plan.image}`}
+                  alt={`Suite ${plan.suite_no}`}
                 />
-                <p>
+                {/* <p>
                   Plan description. Lorem ipsum dolor sit amet, consectetuer
                   adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
                   laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
                   minim veniam, quis nostrud exerci tation ullamcorper suscipit
                   lobortis nisl ut aliquip ex ea commodo consequat.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

@@ -9,8 +9,9 @@ const GlobalHeroFilter = ({ className = "" }) => {
         style={{
           display: "flex",
           gap: "1rem",
+          alignItems: 'space-between',
           alignItems: "center",
-          width: "40%",
+          width: "100%",
         }}
         id="pills-tab"
         role="tablist"

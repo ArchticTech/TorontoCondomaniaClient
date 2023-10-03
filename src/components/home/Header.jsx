@@ -54,17 +54,17 @@ const Header = () => {
               width={40}
               height={45}
               className="logo1 img-fluid contain"
-              src="/assets/images/header-logo.png"
+              src="/assets/images/logo.png"
               alt="header-logo.png"
             />
             <Image
               width={40}
               height={45}
               className="logo2 img-fluid contain"
-              src="/assets/images/header-logo2.png"
+              src="/assets/images/logo.png"
               alt="header-logo2.png"
             />
-            <span>FindHouse</span>
+            <span>TCM</span>
           </Link>
           {/* site logo brand */}
           {showSearchButton && (
