@@ -14,7 +14,7 @@ import PopupSignInUp from "../common/PopupSignInUp";
 import Hero from "./Hero";
 import Link from "next/link";
 
-const index = ({ properties }) => {
+const index = ({ properties , assignments, cities }) => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -49,7 +49,7 @@ const index = ({ properties }) => {
             {/* End .col */}
           </div>
           <div className="row">
-            <FindProperties />
+            <FindProperties cities={cities} />
           </div>
         </div>
       </section>
@@ -119,23 +119,32 @@ const index = ({ properties }) => {
       </section>
 
       {/* <!-- Featured Assignments --> */}
-      <section id="feature-property" className="property-city pb30 bb1">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center mb40">
-                <h2>Featured Assignments</h2>
-                <p>Featured Assignments.</p>
+      {(() => {
+        if (assignments.length >= 3) {
+          return (
+            <section
+              id="feature-assignment"
+              className="property-city pb30 bg-ptrn1"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-6 offset-lg-3">
+                    <div className="main-title text-center mb40">
+                      <h2>Featured Assignments</h2>
+                      <p>Handpicked properties by our team.</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="feature_property_slider gutter-x15">
+                      <PropertiesSlider properties={assignments} />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="feature_property_slider gutter-x15">
-                <FeaturedAssignments />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
+          );
+        }
+      })()}
 
       {/* <!-- Our Blog --> */}
       <section className="our-blog bg-ptrn2 pb30">

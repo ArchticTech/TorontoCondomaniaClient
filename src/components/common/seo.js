@@ -6,6 +6,7 @@ const Seo = ({ pageTitle, font }) => (
       <title>
         {pageTitle && `${pageTitle} || FindHouse - Real Estate React Template}`}
       </title>
+      <link rel="icon" href="/favicon-16x16.ico"/>
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta
         name="keywords"

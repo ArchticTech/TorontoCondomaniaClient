@@ -9,49 +9,20 @@
 // import DetailsContent from "../../components/listing-details-v1/DetailsContent";
 // import Sidebar from "../../components/listing-details-v1/Sidebar";
 // import Head from "next/head";
-import { fetchProperty } from "../../utils/api";
-import SingleProperty from "../../components/single-property/index";
-import Head from "next/head";
-import Seo from "../../components/common/seo";
+// import { fetchAssignment } from "../../utils/api";
 // import global from "../../config/env";
 
-const PropertyView = ({property}) => {
-  return (
-    <>
-      <Head>
-        <link
-          href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
-          rel="stylesheet"
-        />
-      </Head>
-      <Seo pageTitle="Latest Properties" />
-      <SingleProperty property={property}  />
-    </>
-  );
-}
+// const PropertyView = ({assignment}) => {
 
-export async function getServerSideProps(context) {
-  const { id } = context.query;
-  var property = await fetchProperty(id);
-
-  return {
-    props: {
-      'property': property.data,
-    },
-  };
-}
-
-export default PropertyView;
-
-//   const priceFrom = property?.price_from;
-//   const priceTo = property?.price_to;
+//   const priceFrom = assignment?.price_from;
+//   const priceTo = assignment?.price_to;
 
 //   const formattedPriceFrom = priceFrom.toLocaleString('en-US', {
 //     style: 'currency',
 //     currency: 'USD',
 //     minimumFractionDigits: 0,
 //     maximumFractionDigits: 0,
-//   });
+//   }); 
 //   const formattedPriceTo = priceTo.toLocaleString('en-US', {
 //     style: 'currency',
 //     currency: 'USD',
@@ -109,8 +80,8 @@ export default PropertyView;
 //             <div className="row mb30">
 //               <div className="col-lg-7 col-xl-8">
 //                 <div className="single_property_title mt30-767">
-//                   <h2>{property?.name}</h2>
-//                   <p>{property?.address}</p>
+//                   <h2>{assignment?.name}</h2>
+//                   <p>{assignment?.address}</p>
 //                 </div>
 //               </div>
 //               <div className="col-lg-5 col-xl-4">
@@ -160,13 +131,13 @@ export default PropertyView;
 //                 <div className="row">
 //                   <div className="col-lg-12">
 //                     <div className="spls_style_two mb30-520">
-//                         <div role="button" onClick={() => handlePopup(true, property.image)}>
+//                         <div role="button" onClick={() => handlePopup(true, assignment.image)}>
 //                           <img
 //                             width={752}
 //                             height={450}
 //                             className="img-fluid w100 cover lds-1"
-//                             src={global.apiURL + 'images/' + property.image}
-//                             alt={property?.name}
+//                             src={global.apiURL + 'images/' + assignment.image}
+//                             alt={assignment?.name}
 //                           />
 //                         </div>
 //                     </div>
@@ -177,7 +148,7 @@ export default PropertyView;
 
 //               <div className="col-sm-5 col-lg-4">
 //                 <div className="row">
-//                   {property?.images?.map((image, i) => (
+//                   {assignment?.images?.map((image, i) => (
 //                     <div className="col-6" key={i}>
 //                       <div className="spls_style_two img-gallery-box mb24">
 //                         <div role="button" onClick={() => handlePopup(true, image)}>
@@ -186,7 +157,7 @@ export default PropertyView;
 //                             height={133}
 //                             className="img-fluid w100 cover"
 //                             src={global.apiURL + 'images/' + image}
-//                             alt={property?.name}
+//                             alt={assignment?.name}
 //                           />
 //                         </div>
 //                       </div>
@@ -206,12 +177,12 @@ export default PropertyView;
 //         <div className="container">
 //           <div className="row">
 //             <div className="col-md-12 col-lg-8">
-//               <DetailsContent property={property}/>
+//               <DetailsContent property={assignment}/>
 //             </div>
 //             {/* End details content .col-lg-8 */}
 
 //             <div className="col-lg-4 col-xl-4">
-//               <Sidebar agent={property?.agent}/>
+//               <Sidebar agent={assignment?.agent}/>
 //             </div>
 //             {/* End sidebar content .col-lg-4 */}
 //           </div>
@@ -238,3 +209,49 @@ export default PropertyView;
 //   );
 // };
 
+// export async function getServerSideProps(context) {
+//   const { id } = context.query;
+//   var assignment = await fetchAssignment(id);
+
+//   return {
+//     props: {
+//       'assignment': assignment.data,
+//     },
+//   };
+// }
+
+// export default PropertyView;
+
+import { fetchAssignment } from "../../utils/api";
+import SingleProperty from "../../components/single-property/index";
+import Head from "next/head";
+import Seo from "../../components/common/seo";
+// import global from "../../config/env";
+
+const PropertyView = ({assignment}) => {
+  return (
+    <>
+      <Head>
+        <link
+          href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+          rel="stylesheet"
+        />
+      </Head>
+      <Seo pageTitle="Latest Properties" />
+      <SingleProperty property={assignment}  />
+    </>
+  );
+}
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  var assignment = await fetchAssignment(id);
+
+  return {
+    props: {
+      'assignment': assignment.data,
+    },
+  };
+}
+
+export default PropertyView;

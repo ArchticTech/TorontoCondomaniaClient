@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../features/properties/propertiesSlice";
 import global from "../../config/env";
+import assignments from "../../pages/assignments";
 
-const FeaturedItem = ({ properties }) => {
+const FeaturedItem = ({ properties, isAssignment }) => {
   const {
     keyword,
     type,
@@ -25,7 +26,7 @@ const FeaturedItem = ({ properties }) => {
   const dispatch = useDispatch();
 
   // keyword filter
-  const keywordHandler = (item) =>
+  const keywordHandler = (item) => 
     item.name.toLowerCase().includes(keyword?.toLowerCase()) ||
     item.address.toLowerCase().includes(keyword?.toLowerCase()) ||
     item.code.toLowerCase().includes(keyword?.toLowerCase());
@@ -224,9 +225,8 @@ const FeaturedItem = ({ properties }) => {
                   </a>
                 </li>
               </ul>
-
                 <Link
-                  href={`/property/${item.id}`}
+                  href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}
                   className="fp_price"
                 >
                   {formattedPriceFrom} - {formattedPriceTo}
@@ -237,7 +237,7 @@ const FeaturedItem = ({ properties }) => {
               <div className="tc_content">
                 <p className="text-thm">{item.type}</p>
                 <h4>
-                  <Link href={`/property/${item.id}`}>
+                  <Link href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}>
                     {item.name}
                   </Link>
                 </h4>

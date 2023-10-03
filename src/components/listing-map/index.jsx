@@ -11,37 +11,42 @@ import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
 
-mapboxgl.accessToken = global.mapboxAccessToken;
+mapboxgl.accessToken = global.mapboxAccessToken; 
 
-const ListingMap = ({ properties }) => {
-  
+const addLocation =({name})=>{
+ console.log(name);
+}
+
+const ListingMap = ({ properties, isAssignment=true }) => {
+
   useEffect(() => {
     const map = new mapboxgl.Map({
-      container: 'mapbox',
-      style: 'mapbox://styles/mapbox/streets-v11',
+      container: "mapbox",
+      style: "mapbox://styles/mapbox/streets-v11",
       center: [-80.042869, 43.718371],
-      zoom: 7
+      zoom: 7,
     });
 
     properties?.map((property) => {
-
-      property.marker = setMarkerOnMap(map, property.latitude, property.longitude);
-
+      property.marker = setMarkerOnMap(
+        map,
+        property.latitude,
+        property.longitude
+      );
     });
-    
+
     // Clean up the map instance when the component unmounts
     return () => map.remove();
   }, []);
 
   const setMarkerOnMap = (map, latitude, longitude) => {
-    
     const marker = new mapboxgl.Marker({
-        color: '#6449e7', // Marker color
-        draggable: false, // Allow the user to drag the marker
+      color: "#6449e7", // Marker color
+      draggable: false, // Allow the user to drag the marker
     })
-    .setLngLat([longitude, latitude])
-    .setPopup(new mapboxgl.Popup())
-    .addTo(map);
+      .setLngLat([longitude, latitude])
+      .setPopup(new mapboxgl.Popup())
+      .addTo(map);
     return marker;
   };
 
@@ -65,12 +70,11 @@ const ListingMap = ({ properties }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="sidebar_switch mobile_style dn db-991 mt30 mb0">
-                
                 <ShowFilter />
               </div>
 
               {/* sidebar switch */}
-
+              {/* {assignments} */}
               <div
                 className="offcanvas offcanvas-start offcanvas-listing-sidebar"
                 tabIndex="-1"
@@ -100,8 +104,11 @@ const ListingMap = ({ properties }) => {
                 <ShowFilter />
               </div>
               {/* filter switch */}
-
-              <div id="mapbox" className="home_two_map style2 half_map_area"></div>;
+              <div
+                id="mapbox"
+                className="home_two_map style2 half_map_area"
+              ></div>
+              ;
             </div>
             {/* End .col */}
 
@@ -121,7 +128,7 @@ const ListingMap = ({ properties }) => {
                   {/* End .row */}
 
                   <div className="row">
-                    <FeaturedItem properties={properties}/>
+                    <FeaturedItem properties={properties} isAssignment={isAssignment} />
                   </div>
                   {/* End .row */}
 

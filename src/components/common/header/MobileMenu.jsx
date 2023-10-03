@@ -13,10 +13,10 @@ const MobileMenu = () => {
               width={40}
               height={45}
               className="nav_logo_img contain mt20"
-              src="/assets/images/header-logo2.png"
+              src="/assets/images/logo.png"
               alt="header-logo2.png"
             />
-            <span className="mt20">FindHouse</span>
+            <span className="mt20">TCM</span>
           </div>
           {/* main_logo_home2 */}
 
