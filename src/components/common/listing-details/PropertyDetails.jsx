@@ -77,7 +77,7 @@ const PropertyDetails = ({property}) => {
         </li>
         <li className="col-sm-6 col-md-4">
           <p>
-            Ceiling Height : <span>{property?.ceiling_height}"</span>
+            Ceiling Height : <span>{property?.ceiling_height}</span>
           </p>
         </li>
         

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
@@ -20,20 +19,20 @@ const PropertyLocation = ({latitude, longitude}) => {
     return () => map.remove();
   }, []);
 
-    const setMarkerOnMap = (map) => {
-        
-      const marker = new mapboxgl.Marker({
-          color: '#6449e7', // Marker color
-          draggable: false, // Allow the user to drag the marker
-      })
-      .setLngLat([longitude, latitude])
-      .addTo(map);
+  const setMarkerOnMap = (map) => {
+      
+    const marker = new mapboxgl.Marker({
+        color: '#6449e7', // Marker color
+        draggable: false, // Allow the user to drag the marker
+    })
+    .setLngLat([longitude, latitude])
+    .addTo(map);
 
-      map.flyTo({
-          center: [longitude, latitude], // Marker's coordinates
-          zoom: 15,     // Desired zoom level
-          essential: true      // Set to true for smooth animation
-      });
+    map.flyTo({
+        center: [longitude, latitude], // Marker's coordinates
+        zoom: 15,     // Desired zoom level
+        essential: true      // Set to true for smooth animation
+    });
   }
   return (
     <>

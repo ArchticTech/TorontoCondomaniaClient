@@ -1,17 +1,20 @@
-import CallToAction from "../common/CallToAction";
-import CopyrightFooter from "../common/footer/CopyrightFooter";
-import Footer from "../common/footer/Footer";
 import MobileMenu from "../common/header/MobileMenu";
-import Partners from "../common/Partners";
-import Blogs from "../common/Blogs";
+import WhyChoose from "../common/WhyChoose";
 import PropertiesSlider from "./PropertiesSlider";
 import FindProperties from "./FindProperties";
 import Header from "./Header";
-import Hero from "./Hero";
-import WhyChoose from "../common/WhyChoose";
+import RecentlyAddedProperties from "./RecentlyAddedProperties";
+import FeaturedAssignments from "./FeaturedAssignments";
+import Partners from "../common/Partners";
+import CallToAction from "../common/CallToAction";
+import Footer from "../common/footer/Footer";
+import CopyrightFooter from "../common/footer/CopyrightFooter";
+import Blogs from "../common/Blogs";
 import PopupSignInUp from "../common/PopupSignInUp";
+import Hero from "./Hero";
+import Link from "next/link";
 
-const Index = () => {
+const index = ({ properties , assignments, cities }) => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -26,41 +29,58 @@ const Index = () => {
       {/* <!-- Home Design --> */}
       <Hero />
 
-      {/* <!-- Feature Properties --> */}
-      <section id="feature-property" className="feature-property bgc-f7">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center mb40">
-                <h2>Featured Properties</h2>
-                <p>Handpicked properties by our team.</p>
-              </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="feature_property_slider gutter-x15">
-                <PropertiesSlider />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* <!-- Property Cities --> */}
       <section id="property-city" className="property-city pb30">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center">
-                <h2>Find Properties in These Cities</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div className="col-lg-12">
+              <div className="main-title mb40">
+                <h2>Find Properties in these cities</h2>
+                <p>
+                  Handpicked properties by our team.
+                  <Link className="float-end" href="/properties">
+                    {/* <a  > */}
+                      View All <span className="flaticon-next"></span>
+                    {/* </a> */}
+                  </Link>
+                </p>
               </div>
             </div>
+            {/* End .col */}
           </div>
           <div className="row">
-            <FindProperties />
+            <FindProperties cities={cities} />
           </div>
         </div>
       </section>
+
+      {/* <!-- Feature Properties --> */}
+      {(() => {
+        if (properties.length >= 3) {
+          return (
+            <section
+              id="feature-property"
+              className="property-city pb30 bg-ptrn1"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-6 offset-lg-3">
+                    <div className="main-title text-center mb40">
+                      <h2>Featured Properties</h2>
+                      <p>Handpicked properties by our team.</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="feature_property_slider gutter-x15">
+                      <PropertiesSlider properties={properties} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        }
+      })()}
 
       {/* <!-- Why Chose Us --> */}
       <section id="why-chose" className="whychose_us bgc-f7 pb30">
@@ -74,13 +94,60 @@ const Index = () => {
             </div>
           </div>
           <div className="row">
-            <WhyChoose />
+            <WhyChoose style="style2" />
           </div>
         </div>
       </section>
 
+      {/* <!-- Recently added Properties --> */}
+      <section id="feature-property" className="property-city pb30 bb1">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 offset-lg-3">
+              <div className="main-title text-center mb40">
+                <h2>New Rentals Recently added</h2>
+                <p>Rentals added recently.</p>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="feature_property_slider gutter-x15">
+                <RecentlyAddedProperties />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <!-- Featured Assignments --> */}
+      {(() => {
+        if (assignments.length >= 3) {
+          return (
+            <section
+              id="feature-assignment"
+              className="property-city pb30 bg-ptrn1"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-6 offset-lg-3">
+                    <div className="main-title text-center mb40">
+                      <h2>Featured Assignments</h2>
+                      <p>Handpicked properties by our team.</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="feature_property_slider gutter-x15">
+                      <PropertiesSlider properties={assignments} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        }
+      })()}
+
       {/* <!-- Our Blog --> */}
-      <section className="our-blog bgc-f7 pb30">
+      <section className="our-blog bg-ptrn2 pb30">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -121,7 +188,7 @@ const Index = () => {
       </section>
 
       {/* <!-- Our Footer --> */}
-      <section className="footer_one">
+      <section className="footer_one home5">
         <div className="container">
           <div className="row">
             <Footer />
@@ -139,4 +206,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default index;

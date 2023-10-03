@@ -13,27 +13,28 @@ import PropertyVideo from "../common/listing-details/PropertyVideo";
 import WalkScore from "../common/listing-details/WalkScore";
 import WhatsNearby from "../common/listing-details/WhatsNearby";
 
-const DetailsContent = ({property}) => {
+const DetailsContent = ({ property }) => {
   return (
     <>
-    {(property.description) ?
-      <div className="listing_single_description">
-        <div className="lsd_list">
-          <PropertyItem property={property}/>
-        </div>
-        {/* End .lsd_list */}
+      {property.description ? (
+        <div className="listing_single_description">
+          <div className="lsd_list">
+            <PropertyItem property={property} />
+          </div>
+          {/* End .lsd_list */}
 
           <h4 className="mb30">Description</h4>
-          <PropertyDescriptions property={property}/>
-      </div> : undefined}
+          <PropertyDescriptions property={property} />
+        </div>
+      ) : undefined}
       {/* End .listing_single_description */}
 
       <div className="additional_details">
         <div className="row">
           <div className="col-lg-12">
-            <h4 className="mb15">Property Details</h4>
+            <h4 className="mb15">Details</h4>
           </div>
-          <PropertyDetails property={property}/>
+          <PropertyDetails property={property} />
         </div>
       </div>
       {/* End .additional_details */}
@@ -43,7 +44,7 @@ const DetailsContent = ({property}) => {
           <div className="col-lg-12">
             <h4 className="mb15">Additional details</h4>
           </div>
-          <AdditionalDetails property={property}/>
+          <AdditionalDetails property={property} />
         </div>
       </div>
       {/* End .additional_details */}
@@ -55,38 +56,63 @@ const DetailsContent = ({property}) => {
         </div>
       </div>
       {/* End .property_attachment_area */}
+      {/* {property.features} */}
+      {/* 
+      {property.features? (
+        <div className="application_statics mt30">
+          <div className="row">
+            <div className="col-lg-12">
+              <h4 className="mb10">Features</h4>
+            </div>
 
-      {(PropertyFeatures.features) ?
-      <div className="application_statics mt30">
-        <div className="row">
-          <div className="col-lg-12">
-            <h4 className="mb10">Features</h4>
+            <PropertyFeatures features={property.features} />
           </div>
-          {/* End .col */}
-
-          <PropertyFeatures features={property.features}/>
         </div>
-      </div> : undefined}
+      ) : undefined} */}
+      {Object.keys(property.features).length > 0 ? (
+        <div className="application_statics mt30">
+          <div className="row">
+            <div className="col-lg-12">
+              <h4 className="mb10">Features</h4>
+            </div>
+            {/* End .col */}
+            <PropertyFeatures features={property.features} />
+          </div>
+        </div>
+      ) : null}
 
+{property.address && property.floorPlan.length > 0 ? (
       <div className="application_statics mt30">
         <h4 className="mb30">
-          Location{" "}
-          <small className="float-end">
-            {property.address}
-          </small>
+          Location <small className="float-end">{property.address}</small>
         </h4>
         <div className="property_video p0">
-          <PropertyLocation latitude={property.latitude} longitude={property.longitude}/>
+          <PropertyLocation
+            latitude={property.latitude}
+            longitude={property.longitude}
+          />
         </div>
       </div>
+      ) : null}
       {/* End .location_area */}
 
-      <div className="application_statics mt30">
-        <h4 className="mb30">Floor plans</h4>
-        <div className="faq_according style2">
-          <FloorPlans />
+      {/* {property.floorPlan ? (
+        <div className="application_statics mt30">
+          <h4 className="mb30">Floor plans</h4>
+          <div className="faq_according style2">
+            <FloorPlans floorPlan={property.floorPlan} />
+          </div>
         </div>
-      </div>
+      ) : null} */}
+      {property.floorPlan && property.floorPlan.length > 0 ? (
+        <div className="application_statics mt30">
+          <h4 className="mb30">Floor plans</h4>
+          <div className="faq_according style2">
+            <FloorPlans floorPlan={property.floorPlan} />
+          </div>
+        </div>
+      ) : null}
+
       {/* End .floor_plane */}
 
       <div className="shop_single_tab_content style2 mt30">

@@ -5292,12 +5292,6 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   margin-bottom: 10px;
 }
 
-.feat_property .thumb .thmb_cntnt ul.tag li:first-child,
-.feat_property.home8 ul.tag li:first-child,
-.properti_city.home6 .thumb .thmb_cntnt ul.tag li:first-child,
-.feat_property.list .dtls_headr ul.tag li:first-child {
-  background-color: rgb(228, 228, 228);
-}
 
 .feat_property .thumb .thmb_cntnt ul.tag li:last-child,
 .feat_property.home8 ul.tag li:last-child,
@@ -5307,6 +5301,12 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   margin-right: 0;
 }
 
+.feat_property .thumb .thmb_cntnt ul.tag li:first-child,
+.feat_property.home8 ul.tag li:first-child,
+.properti_city.home6 .thumb .thmb_cntnt ul.tag li:first-child,
+.feat_property.list .dtls_headr ul.tag li:first-child {
+  background-color: rgb(228, 228, 228);
+}
 .feat_property .thumb .thmb_cntnt ul.tag li a,
 .properti_city.home6 .thumb .thmb_cntnt ul.tag li a,
 .feat_property.home8 ul.tag li a,

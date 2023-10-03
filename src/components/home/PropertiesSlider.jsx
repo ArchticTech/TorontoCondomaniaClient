@@ -97,7 +97,7 @@ const PropertiesSlider = ({ properties }) => {
           <div className="tc_content">
             <p className="text-thm">{property.type}</p>
             <h4>
-              <Link href={`/property/${property.id}`}>{property.name}</Link>
+              <Link href={'/' + ((property.isAssignment) ? 'assignment': 'property') + `/${property.slug}`}>{property.name}</Link>
             </h4>
             <p className="d-flex justify-content-between flex-wrap">
               <div className="my-1"><span className="flaticon-placeholder"></span> {property.address}</div>

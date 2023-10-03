@@ -21,20 +21,20 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul className="list-unstyled">
             <li>
-              <Link href="/">About Us</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="/">Terms & Conditions</Link>
+              <Link href="/terms">Terms & Conditions</Link>
             </li>
             <li>
-              <Link href="/">User’s Guide</Link>
+              <Link href="/service">Services</Link>
             </li>
             <li>
-              <Link href="/">Support Center</Link>
+              <Link href="/contact">Support Center</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/">Press Info</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
@@ -45,13 +45,13 @@ const Footer = () => {
           <h4>Contact Us</h4>
           <ul className="list-unstyled">
             <li>
-              <a href="mailto:info@findhouse.com">info@findhouse.com</a>
+              <a href="mailto:info@findhouse.com">admin@TorontoCondomania.com</a>
             </li>
             <li>
-              <a href="#">Collins Street West, Victoria</a>
+              <a href="#">Collins Street West, Toronto</a>
             </li>
             <li>
-              <a href="#">8007, Australia.</a>
+              <a href="#">8007, Canada.</a>
             </li>
             <li>
               <a href="tel:+4733378901">+1 246-345-0699</a>

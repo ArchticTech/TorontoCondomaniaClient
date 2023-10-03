@@ -1,33 +1,22 @@
-import Image from "next/image";
-import HeroFilter from "./HeroFilter";
+import GlobalHeroFilter from "../common/GlobalHeroFilter";
 
 const Hero = () => {
   return (
-    <section className="home-one home1-overlay home1_bgi1">
+    <section className="home-six home6-overlay">
       <div className="container">
         <div className="row posr">
           <div className="col-lg-12">
-            <HeroFilter />
+            <div className="home_content home6">
+              <div className="home-text home6 text-center">
+                <h2 className="fz55">Enjoy The Finest Homes</h2>
+                <p className="fz18">
+                  From as low as $10 per day with limited time offer discounts.
+                </p>
+              </div>
+              <GlobalHeroFilter className="home6" />
+            </div>
           </div>
         </div>
-      </div>
-      {/* End .container */}
-
-      <div className="mouse_scroll">
-        <a href="#feature-property">
-          <div className="icon">
-            <h4>Scroll Down</h4>
-            <p>to discover more</p>
-          </div>
-          <div className="thumb">
-            <Image
-              width={21}
-              height={35}
-              src="/assets/images/resource/mouse.png"
-              alt="mouse.png"
-            />
-          </div>
-        </a>
       </div>
     </section>
   );
