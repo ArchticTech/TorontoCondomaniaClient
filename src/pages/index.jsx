@@ -1,14 +1,14 @@
 import dynamic from "next/dynamic";
 import Seo from "../components/common/seo";
 import HomeMain from "../components/home";
-import { fetchAllProperties ,fetchAllAssignments, fetchCityCount } from '../utils/api';
+import { fetchAllProperties ,fetchAllAssignments, fetchCityCount, fetchAllRentals } from '../utils/api';
 import mainCities from '../data/cityPropertiesCount'
 
-const index = ({ properties , assignments, citiesCount }) => {
+const index = ({ properties , assignments, citiesCount, rentals }) => {
   return (
     <>
       <Seo pageTitle="TorontoCondomania | Find Your Dream Condo" />
-      <HomeMain properties={properties} assignments={assignments} cities={citiesCount}/>
+      <HomeMain properties={properties} assignments={assignments} rentals={rentals} cities={citiesCount}/>
     </>
   );
 };
@@ -16,6 +16,7 @@ const index = ({ properties , assignments, citiesCount }) => {
 export async function getStaticProps() {
   const properties = await fetchAllProperties();
   const assignments = await fetchAllAssignments();
+  const rentals = await fetchAllRentals();
   const cityPromises = mainCities.map(async (city) => {
     city.count = await fetchCityCount(city.name);
     return city;
@@ -24,6 +25,7 @@ export async function getStaticProps() {
     props: {
       'properties': properties.data,
       'assignments': assignments.data,
+      'rentals': rentals.data,
       'citiesCount': await Promise.all(cityPromises)
     },
   };

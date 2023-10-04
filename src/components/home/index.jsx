@@ -14,7 +14,7 @@ import PopupSignInUp from "../common/PopupSignInUp";
 import Hero from "./Hero";
 import Link from "next/link";
 
-const index = ({ properties , assignments, cities }) => {
+const index = ({ properties , assignments, rentals, cities }) => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}

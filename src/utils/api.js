@@ -36,6 +36,24 @@ export async function fetchAssignment(id) {
 
     return assignment;
 }
+export async function fetchAllRentals() {
+    const response = await fetch(global.apiURL + 'api/getAllRentals');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const rentals = await response.json();
+    return rentals;
+}
+
+export async function fetchRental(id) {
+    const response = await fetch(global.apiURL + 'api/getRental/' + id);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const rental = await response.json();
+
+    return rental;
+}
 
 // export async function fetchCityCount(name) 
 // {
