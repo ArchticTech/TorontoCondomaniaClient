@@ -8285,6 +8285,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 .footer_mailchimp_form .col-auto button:hover {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+  color: #fff;
 }
 
 .footer_mailchimp_form.home3 .col-auto button {

@@ -65,7 +65,7 @@ const FeaturedAssignments = () => {
                   </ul>
 
                   <Link
-                    href={`/listing-details-v1/${item.id}`}
+                    href='#'
                     className="fp_price"
                   >
                     ${item.price}

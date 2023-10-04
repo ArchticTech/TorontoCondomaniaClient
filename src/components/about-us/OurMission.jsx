@@ -25,28 +25,29 @@ const OurMission = () => {
 
   return (
     <>
-      <div className="col-lg-8 col-xl-7">
-        <div className="about_content">
+      <div className="col-10">
+        <div className="about_content " style={{ textAlign:'' }}>
           <p className="large">
-            Mauris ac consectetur ante, dapibus gravida tellus. Nullam aliquet
-            eleifend dapibus. Cras sagittis, ex euismod lacinia tempor.
+          Welcome to TorontoCondomania, where innovation meets real estate excellence. At TorontoCondomania, we've reimagined the way buyers, sellers, and realtors interact in the dynamic world of real estate. Our mission is to bring it all together for a seamless, efficient, and exceptional real estate experience in Ontario, Canada.
           </p>
+          <h3>Our Vision</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            quis ligula eu lectus vulputate porttitor sed feugiat nunc. Mauris
-            ac consectetur ante, dapibus gravida tellus. Nullam aliquet eleifend
-            dapibus. Cras sagittis, ex euismod lacinia tempor, lectus orci
-            elementum augue, eget auctor metus ante sit amet velit.
+          We believe in the power of technology to transform the real estate industry. With our cutting-edge platform, we're redefining how properties are bought and sold. Whether you're a seasoned realtor looking to expand your reach or a discerning buyer or seller seeking the perfect deal, TorontoCondomania is here to make your real estate journey smoother, smarter, and more satisfying.
           </p>
+          <h3>Empowering Realtors</h3>
           <p>
-            Maecenas quis viverra metus, et efficitur ligula. Nam congue augue
-            et ex congue, sed luctus lectus congue. Integer convallis
-            condimentum sem. Duis elementum tortor eget condimentum tempor.
-            Praesent sollicitudin lectus ut pharetra pulvinar. Donec et libero
-            ligula. Vivamus semper at orci at placerat.Placeat Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit. Quod libero amet, laborum
-            qui nulla quae alias tempora.
+          For realtors, TorontoCondomania is your digital partner, offering an array of advanced features to market your listings with precision. With our platform, you can effortlessly showcase preconstruction projects, rentals, assignments, and MLS listings to a diverse and eager audience. We empower you to harness your full potential and excel in the competitive real estate marketplace.
           </p>
+          <h3>Seamless Interactions</h3>
+          <p>
+          We're not just a marketplace; we're a community where buyers and sellers connect seamlessly. Our platform is designed to foster meaningful interactions, enabling you to engage with realtors, explore properties, and negotiate deals—all in one place. Say goodbye to the hassle of traditional real estate transactions; we've made it easy for you to buy or sell your dream property with confidence.
+          </p>
+          <h3>Advanced Features</h3>
+          <p>
+          TorontoCondomania offers a comprehensive suite of advanced features, including robust search filters, comprehensive property information, and real-time updates. We bring you the most up-to-date listings and market insights, so you can make informed decisions.
+          </p>
+          <p>Experience the future of real estate with TorontoCondomania. Join us today, and let's embark on a journey where innovation and excellence converge to create exceptional real estate opportunities for everyone. Together, we'll bring it all together—your dream property, your real estate success, and your satisfaction.</p>
+          
 
           <ul className="ab_counting">
             {missionContent.map((item) => (
@@ -68,7 +69,7 @@ const OurMission = () => {
       </div>
       {/* End .col */}
 
-      <div className="col-lg-4 col-xl-5">
+      {/* <div className="col-lg-4 col-xl-5">
         <div className="about_thumb">
           <Image
             width={461}
@@ -80,7 +81,7 @@ const OurMission = () => {
           />
           <PopupVideo />
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

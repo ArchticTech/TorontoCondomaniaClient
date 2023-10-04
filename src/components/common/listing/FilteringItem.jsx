@@ -19,10 +19,12 @@ import {
   addType,
   addOccupencyYear,
   resetAmenities,
+  addCity,
 } from "../../../features/properties/propertiesSlice";
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
+import ClearAllFilters from "./ClearAllFilters";
 
 const FilteringItem = () => {
   const {
@@ -93,11 +95,6 @@ const FilteringItem = () => {
     dispatch(addStatus(getStatus));
   }, [dispatch, getStatus]);
 
-  // properties type
-  useEffect(() => {
-    dispatch(addPropertyType(getPropertiesType));
-  }, [dispatch, getPropertiesType]);
-
   // bathroom
   useEffect(() => {
     dispatch(addBathrooms(getBathroom));
@@ -125,26 +122,27 @@ const FilteringItem = () => {
 
   // clear filter
   const clearHandler = () => {
-    clearAllFilters();
+    ClearAllFilters(dispatch);
   };
 
-  const clearAllFilters = () => {
-    setKeyword("");
-    setType("");
-    setLocation("");
-    setStatus("");
-    setPropertiesType("");
-    dispatch(addPrice({ min: -1, max: -1 }));
-    setBathroom("");
-    setBedroom("");
-    setBedroom("");
-    setOccupencyYear("");
-    setAreaMin("");
-    setAreaMax("");
-    dispatch(resetAmenities());
-    dispatch(addStatusType(""));
-    dispatch(addFeatured(""));
-  };
+  // const clearAllFilters = () => {
+  //   setKeyword("");
+  //   setType("");
+  //   setLocation("");
+  //   setStatus("");
+  //   setPropertiesType("");
+  //   dispatch(addPrice({ min: -1, max: -1 }));
+  //   setBathroom("");
+  //   setBedroom("");
+  //   setBedroom("");
+  //   setOccupencyYear("");
+  //   setAreaMin("");
+  //   setAreaMax("");
+  //   dispatch(resetAmenities());
+  //   dispatch(addStatusType(""));
+  //   dispatch(addFeatured(""));
+  //   dispatch(addCity(""));
+  // };
 
   return (
     <ul className="sasw_list mb0">

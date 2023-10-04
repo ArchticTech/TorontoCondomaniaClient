@@ -6,7 +6,7 @@ const Creaator = ({agent}) => {
       <img
         width={90}
         className="me-3"
-        src={global.apiURL + 'profile-pictures/' + agent.image}
+        src={global.apiURL + 'profile-pictures/' + agent?.image}
         alt={agent?.name}
       />
       <div className="media-body">
