@@ -3,7 +3,7 @@ import GlobalFilter from "./GlobalFilter";
 
 const GlobalHeroFilter = ({ className = "" }) => {
   return (
-    <div className={`home_adv_srch_opt ${className}`}>
+    <div className={`px-4 col-lg-12 home_adv_srch_opt ${className}`}>
       <ul
         className="nav nav-pills"
         style={{
@@ -20,18 +20,14 @@ const GlobalHeroFilter = ({ className = "" }) => {
         <Link
               className="nav-link active"
               id="pills-home-tab"
-              // data-bs-toggle="pill"
               href="/buy"
-              // role="tab"
-              // aria-controls="pills-home"
-              // aria-selected="true"
             >
               Buy   
           </Link>
         </li>
 
         <li className="nav-item">
-          <a
+          <Link
             className="nav-link"
             id="pills-profile-tab"
             // data-bs-toggle="pill"
@@ -41,11 +37,11 @@ const GlobalHeroFilter = ({ className = "" }) => {
             // aria-selected="false"
           >
             Rent
-          </a>
+          </Link>
         </li>
 
         <li className="nav-item">
-          <a
+          <Link
             className="nav-link"
             id="pills-profile-tab"
             // data-bs-toggle="pill"
@@ -55,7 +51,7 @@ const GlobalHeroFilter = ({ className = "" }) => {
             // aria-selected="false"
           >
             Assignment
-          </a>
+          </Link>
         </li>
       </ul>
       {/* End nav-pills */}
