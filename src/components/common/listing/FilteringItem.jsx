@@ -121,28 +121,28 @@ const FilteringItem = () => {
   }, [dispatch, getAreaMax]);
 
   // clear filter
-  const clearHandler = () => {
-    ClearAllFilters(dispatch);
-  };
-
-  // const clearAllFilters = () => {
-  //   setKeyword("");
-  //   setType("");
-  //   setLocation("");
-  //   setStatus("");
-  //   setPropertiesType("");
-  //   dispatch(addPrice({ min: -1, max: -1 }));
-  //   setBathroom("");
-  //   setBedroom("");
-  //   setBedroom("");
-  //   setOccupencyYear("");
-  //   setAreaMin("");
-  //   setAreaMax("");
-  //   dispatch(resetAmenities());
-  //   dispatch(addStatusType(""));
-  //   dispatch(addFeatured(""));
-  //   dispatch(addCity(""));
+  // const clearHandler = () => {
+  //   ClearAllFilters(dispatch);
   // };
+
+const clearHandler = () => {
+  setKeyword("");
+    setType("");
+    setLocation("");
+    setStatus("");
+    setPropertiesType("");
+    dispatch(addPrice({ min: -1, max: -1 }));
+    setBathroom("");
+    setBedroom("");
+    setBedroom("");
+    setOccupencyYear("");
+    setAreaMin("");
+    setAreaMax("");
+    dispatch(resetAmenities());
+    dispatch(addStatusType(""));
+    dispatch(addFeatured(""));
+    dispatch(addCity(""));
+};
 
   return (
     <ul className="sasw_list mb0">

@@ -49,7 +49,7 @@ const OurMission = () => {
           <p>Experience the future of real estate with TorontoCondomania. Join us today, and let's embark on a journey where innovation and excellence converge to create exceptional real estate opportunities for everyone. Together, we'll bring it all together—your dream property, your real estate success, and your satisfaction.</p>
           
 
-          <ul className="ab_counting">
+          {/* <ul className="ab_counting">
             {missionContent.map((item) => (
               <li className="list-inline-item" key={item.id}>
                 <div className="about_counting">
@@ -63,7 +63,7 @@ const OurMission = () => {
                 </div>
               </li>
             ))}
-          </ul>
+          </ul> */}
           {/* End .ab_counting */}
         </div>
       </div>

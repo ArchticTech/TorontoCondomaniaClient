@@ -10,8 +10,8 @@ const initialState = {
     },
     amenities: [],
     status: "",
-    bathrooms: 0,
-    bedrooms: 0,
+    bathrooms: '',
+    bedrooms: '',
     garages: "",
     occupencyYear: "",
     area: {

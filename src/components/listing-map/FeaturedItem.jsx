@@ -68,7 +68,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
 
   const occupencyYearsHandler = (item) => {
     if (occupencyYear == "") return true;
-    else return item.occupencyYear.toLowerCase() == occupencyYear.toLowerCase();
+    else return item.yearBuilt.toLowerCase() == occupencyYear.toLowerCase();
   };
 
   // price handler

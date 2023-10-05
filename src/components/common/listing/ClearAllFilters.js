@@ -1,6 +1,5 @@
 
 import {
-  addAmenities,
   addAreaMax,
   addAreaMin,
   addBathrooms,
@@ -8,7 +7,6 @@ import {
   addKeyword,
   addLocation,
   addPrice,
-  addPropertyType,
   addStatus,
   addType,
   addOccupencyYear,
