@@ -11,10 +11,8 @@ import {
   addLocation,
   addPrice,
   addAmenities,
-  addStatus,
   addBathrooms,
   addBedrooms,
-  addGarages,
   addAvailabilityDate,
   addLaundry,
   addPetPolicy,
@@ -151,14 +149,14 @@ const FilteringItemRental = () => {
     setKeyword("");
     setType("");
     setLocation("");
-    setPrice("");
+    dispatch(addPrice({ min: -1, max: -1 }));
     setBathroom("");
     setBedroom("");
-    setLaundry("");
-    setPetPolicy("");
-    setSmokingPolicy("");
-    setBasement("");
-    setParking("");
+    setLaundry(false);
+    setPetPolicy(false);
+    setSmokingPolicy(false);
+    setBasement(false);
+    setParking(false);
     dispatch(resetAmenities());
     dispatch(addStatusType(""));
     dispatch(addFeatured(""));
@@ -280,6 +278,29 @@ const FilteringItemRental = () => {
         </div>
       </div>
       {/* End li */}
+ 
+      <li className="col-12">
+        <div className="small_dropdown2">
+          <div
+            id="prncgs2"
+            className="btn dd_btn"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+          >
+            <span>Price Range</span>
+            <label htmlFor="prncgs2">
+              <span className="fa fa-angle-down"></span>
+            </label>
+          </div>
+          <div className="dd_content2 style2 dropdown-menu">
+            <div className="pricing_acontent ">
+              <PricingRangeSlider priceReducer={addPrice} min={1} max={20000}/>
+            </div>
+          </div>
+        </div>
+      </li> 
+      {/* End li */}
 
       <li>
         <div id="accordion" className="panel-group mt-2">
@@ -302,16 +323,17 @@ const FilteringItemRental = () => {
               <div className="panel-body row">
                 {/* End li */}
 
-                <div className="container ">
+                <div className="container mb-2">
                   <li>
-                    <div className="row my-2">
+                    <div className="row mb-2">
                       <div className="col-8">
                         <h4 class="badge bg-secondary">Laundry Available</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
-                          onChange={(e) => setLaundry(e.target.value)}
+                          onChange={(e) => setLaundry(e.target.checked)}
                           value={getLaundry}
+                          checked={getLaundry}
                           className="form-check-input"
                           type="checkbox"
                           id="flexSwitchCheckReverse"
@@ -322,14 +344,15 @@ const FilteringItemRental = () => {
                   {/* End li */}
 
                   <li>
-                    <div className="row my-2">
+                    <div className="row mb-2">
                       <div className="col-8">
                         <h4 class="badge bg-secondary">Pets Allowed</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
-                          onChange={(e) => setPetPolicy(e.target.value)}
+                          onChange={(e) => setPetPolicy(e.target.checked)}
                           value={getPetPolicy}
+                          checked={getPetPolicy}
                           className="form-check-input"
                           type="checkbox"
                           id="flexSwitchCheckReverse"
@@ -340,14 +363,15 @@ const FilteringItemRental = () => {
                   {/* End li */}
 
                   <li>
-                    <div className="row my-2">
+                    <div className="row mb-2">
                       <div className="col-8">
                         <h4 class="badge bg-secondary">Smoking Allowed</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
-                          onChange={(e) => setSmokingPolicy(e.target.value)}
+                          onChange={(e) => setSmokingPolicy(e.target.checked)}
                           value={getSmokingPolicy}
+                          checked={getSmokingPolicy }
                           className="form-check-input"
                           type="checkbox"
                           id="flexSwitchCheckReverse"
@@ -358,14 +382,15 @@ const FilteringItemRental = () => {
                   {/* End li */}
 
                   <li>
-                    <div className="row my-2">
+                    <div className="row mb-2">
                       <div className="col-8">
                         <h4 class="badge bg-secondary">Basement Available</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
-                          onChange={(e) => setBasement(e.target.value)}
+                          onChange={(e) => setBasement(e.target.checked)}
                           value={getBasement}
+                          checked={getBasement}
                           className="form-check-input"
                           type="checkbox"
                           id="flexSwitchCheckReverse"
@@ -382,8 +407,9 @@ const FilteringItemRental = () => {
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
-                          onChange={(e) => setParking(e.target.value)}
+                          onChange={(e) => setParking(e.target.checked)}
                           value={getParking}
+                          checked={getParking}
                           className="form-check-input"
                           type="checkbox"
                           id="flexSwitchCheckReverse"

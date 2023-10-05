@@ -39,7 +39,7 @@ const DetailsContent = ({rental}) => {
       </div>
       {/* End .additional_details */}
       <div className="property_attachment_area">
-        <h4 className="mb30">Property Attachments</h4>
+        <h4 className="mb30">Rental Attachments</h4>
         <div className="iba_container style2">
           <Attachments />
         </div>

@@ -55,20 +55,6 @@ const DetailsContent = ({ property }) => {
           <Attachments />
         </div>
       </div>
-      {/* End .property_attachment_area */}
-      {/* {property.features} */}
-      {/* 
-      {property.features? (
-        <div className="application_statics mt30">
-          <div className="row">
-            <div className="col-lg-12">
-              <h4 className="mb10">Features</h4>
-            </div>
-
-            <PropertyFeatures features={property.features} />
-          </div>
-        </div>
-      ) : undefined} */}
       {Object.keys(property.features).length > 0 ? (
         <div className="application_statics mt30">
           <div className="row">
@@ -93,17 +79,6 @@ const DetailsContent = ({ property }) => {
           />
         </div>
       </div>
-      
-      {/* End .location_area */}
-
-      {/* {property.floorPlan ? (
-        <div className="application_statics mt30">
-          <h4 className="mb30">Floor plans</h4>
-          <div className="faq_according style2">
-            <FloorPlans floorPlan={property.floorPlan} />
-          </div>
-        </div>
-      ) : null} */}
       {property.floorPlan && property.floorPlan.length > 0 ? (
         <div className="application_statics mt30">
           <h4 className="mb30">Floor plans</h4>
@@ -115,9 +90,9 @@ const DetailsContent = ({ property }) => {
 
       {/* End .floor_plane */}
 
-      <div className="shop_single_tab_content style2 mt30">
+      {/* <div className="shop_single_tab_content style2 mt30">
         <PropertyVideo />
-      </div>
+      </div> */}
       {/* End property-video  */}
 
       <div className="walkscore_area mt30">

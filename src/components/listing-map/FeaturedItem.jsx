@@ -142,16 +142,16 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(statusHandler)
     ?.filter(areaHandler)
     ?.filter(occupencyYearsHandler)
-    ?.filter(priceHandler)
+    // ?.filter(priceHandler)
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
     ?.filter(cityHandler);
   let content = filteredProperties.map((item) => {
 
-      var markerElement = item.marker.getElement();
-      markerElement.style.display = 'block';
-      console.log(markerElement.style);
+      // var markerElement = item.marker.getElement();
+      // markerElement.style.display = 'block';
+      // console.log(markerElement.style);
 
       const priceFrom = item?.price_from;
       const priceTo = item?.price_to;
