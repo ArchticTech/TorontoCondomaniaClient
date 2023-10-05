@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 import Seo from "../../components/common/seo";
-import ListingMapV4 from "../../components/listing-map";
+import ListingMapV4 from "../../components/listing-map-rentals";
 import Head from "next/head";
-import {  fetchAllAssignments } from "../../utils/api";
+import {  fetchAllRentals } from "../../utils/api";
 
-const index = ({  assignments }) => {
+const index = ({  rentals }) => {
   return (
     <>
       <Head>
@@ -13,18 +13,18 @@ const index = ({  assignments }) => {
           rel="stylesheet"
         />
       </Head>
-      <Seo pageTitle="Latest Properties" />
-      <ListingMapV4 properties={assignments} isAssignment={true}/>
+      <Seo pageTitle="Latest Rentals" />
+      <ListingMapV4 rentals={rentals} />
     </>
   );
 };
 
 export async function getServerSideProps() {
-  var assignments = await fetchAllAssignments();
+  var rentals = await fetchAllRentals();
 
   return {
     props: {
-      assignments: assignments.data
+      rentals: rentals.data
     },
   };
 }
