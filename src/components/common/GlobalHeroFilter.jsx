@@ -13,51 +13,70 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
         id="pills-tab"
         role="tablist"
       >
-        <li className="nav-item">
-          <Link
-              className="nav-link"
-              id="pills-profile-tab"
-              data-bs-toggle="pill"
-              role="tab"
-              aria-controls="pills-profile"
-              aria-selected="true"
-              href="/properties" >
-              Buy   
-          </Link>
-        </li>
 
-        <li className="nav-item">
-          <Link
-            className="nav-link"
+        <li className="nav-item" role="presentation">
+          <a
+            className="nav-link active"
+            href="#buy-search-box"
             id="pills-profile-tab"
             data-bs-toggle="pill"
             role="tab"
             aria-controls="pills-profile"
-            aria-selected="false"
-            href="/properties" >
-            Assignment
-          </Link>
+            // aria-selected="true"
+          >
+          Buy
+          </a>
         </li>
-
-        <li className="nav-item">
-          <Link
+        <li className="nav-item" role="presentation">
+          <a
             className="nav-link"
             id="pills-profile-tab"
             data-bs-toggle="pill"
             role="tab"
+            href="#rent-search-box"
             aria-controls="pills-profile"
-            aria-selected="false"
-            href="/rent" >
+            // aria-selected="false"
+          >
             Rent
-          </Link>
+          </a>
         </li>
+        <li className="nav-item" role="presentation">
+          <a
+            className="nav-link"
+            id="pills-profile-tab"
+            data-bs-toggle="pill"
+            role="tab" 
+            href="#assignment-search-box"
+            aria-controls="pills-profile"
+            // aria-selected="false"
+          >
+            Assignment
+          </a>
+        </li>
+
       </ul>
       {/* End nav-pills */}
 
       <div className="tab-content home1_adsrchfrm" id="pills-tabContent">
         <div
           className="tab-pane fade show active"
-          id="pills-home"
+          id="buy-search-box"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <GlobalFilter />
+        </div>
+        <div
+          className="tab-pane fade fade"
+          id="rent-search-box"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
+        >
+          <GlobalFilter />
+        </div>
+        <div
+          className="tab-pane fade fade"
+          id="assignment-search-box"
           role="tabpanel"
           aria-labelledby="pills-home-tab"
         >
