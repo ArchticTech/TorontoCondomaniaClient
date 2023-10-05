@@ -14,10 +14,14 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
         role="tablist"
       >
         <li className="nav-item">
-        <Link
-              className="nav-link active"
-              id="pills-home-tab"
-              href="/buy" >
+          <Link
+              className="nav-link"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="true"
+              href="/properties" >
               Buy   
           </Link>
         </li>
@@ -27,12 +31,11 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
             className="nav-link"
             id="pills-profile-tab"
             data-bs-toggle="pill"
-            href="/rent"
             role="tab"
             aria-controls="pills-profile"
             aria-selected="false"
-          >
-            Rent
+            href="/properties" >
+            Assignment
           </Link>
         </li>
 
@@ -41,12 +44,11 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
             className="nav-link"
             id="pills-profile-tab"
             data-bs-toggle="pill"
-            href="/assignments"
             role="tab"
             aria-controls="pills-profile"
             aria-selected="false"
-          >
-            Assignment
+            href="/rent" >
+            Rent
           </Link>
         </li>
       </ul>
