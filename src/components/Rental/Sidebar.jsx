@@ -7,16 +7,14 @@ import FeatureProperties from "../common/listing/FeatureProperties";
 const Sidebar = () => {
   return (
     <>
-      <div className="sidebar_listing_list">
+      {/* <div className="sidebar_listing_list">
         <div className="sidebar_advanced_search_widget">
           <div className="sl_creator">
-            <h4 className="mb25">Listed By</h4>
-            <ListingCreator />
+            <h4 className="mb25">Contact with agent</h4>
           </div>
-          {/* End .sl_creator */}
           <ContactWithAgent />
         </div>
-      </div>
+      </div> */}
       {/* End .sidebar_listing_list */}
 
       <div className="terms_condition_widget">

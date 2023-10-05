@@ -9,6 +9,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const {
     keyword,
     type,
+    city,
     location,
     status,
     price,
@@ -41,6 +42,11 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const locationHandler = (item) => {
     return item.address.toLowerCase().includes(location.toLowerCase());
   };
+  
+  // city handler
+  const cityHandler = (item) => {
+    return item.city.toLowerCase().includes(city.toLowerCase());
+  };
 
   const statusHandler = (item) => {
     if (status == "") return true;
@@ -62,7 +68,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
 
   const occupencyYearsHandler = (item) => {
     if (occupencyYear == "") return true;
-    else return item.occupencyYear.toLowerCase() == occupencyYear.toLowerCase();
+    else return item.yearBuilt.toLowerCase() == occupencyYear.toLowerCase();
   };
 
   // price handler
@@ -141,6 +147,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
+    ?.filter(cityHandler)
     .map((item) => {
       const priceFrom = item?.price_from;
       const priceTo = item?.price_to;
@@ -243,7 +250,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link href="/agent-v2">{item.agent.name}</Link>
+                    <Link href="/">{item.agent.name}</Link>
                   </li>
                 </ul>
                 <div className="fp_pdate float-end">{item.postedYear}</div>

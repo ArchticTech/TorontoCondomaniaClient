@@ -32,7 +32,7 @@ const index = () => {
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
-                <h2 className="mt0">Our Mission Is To FindHouse</h2>
+                <h2 className="mt0">We bring it all together</h2>
               </div>
             </div>
           </div>
@@ -43,31 +43,29 @@ const index = () => {
           </div>
           {/* End .row */}
 
-          <div className="row mt80">
+          {/* <div className="row mt80">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
                 <h2>Why Choose Us</h2>
                 <p>We provide full service at every step.</p>
               </div>
             </div>
-          </div>
-          {/* End .row */}
+          </div> */}
 
-          <div className="row">
+          {/* <div className="row">
             <WhyChoose />
-          </div>
-          {/* End .row */}
+          </div> */}
         </div>
       </section>
 
       {/* <!-- Our Team --> */}
-      <section className="our-team bgc-f7">
+      {/* <section className="our-team bgc-f7">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
                 <h2>Our Team</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>We bring it all together.</p>
               </div>
             </div>
           </div>
@@ -79,7 +77,7 @@ const index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Testimonials --> */}
       {/* <section className="our-testimonials">
@@ -103,7 +101,7 @@ const index = () => {
       </section> */}
 
       {/* <!-- Our Partners --> */}
-      <section id="our-partners" className="our-partners">
+      {/* <section id="our-partners" className="our-partners">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -117,7 +115,7 @@ const index = () => {
             <Partners />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Start Call to Action --> */}
       <section className="start-partners bgc-thm pt50 pb50">

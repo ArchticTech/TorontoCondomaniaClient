@@ -19,10 +19,12 @@ import {
   addType,
   addOccupencyYear,
   resetAmenities,
+  addCity,
 } from "../../../features/properties/propertiesSlice";
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
+import ClearAllFilters from "./ClearAllFilters";
 
 const FilteringItem = () => {
   const {
@@ -93,11 +95,6 @@ const FilteringItem = () => {
     dispatch(addStatus(getStatus));
   }, [dispatch, getStatus]);
 
-  // properties type
-  useEffect(() => {
-    dispatch(addPropertyType(getPropertiesType));
-  }, [dispatch, getPropertiesType]);
-
   // bathroom
   useEffect(() => {
     dispatch(addBathrooms(getBathroom));
@@ -124,12 +121,12 @@ const FilteringItem = () => {
   }, [dispatch, getAreaMax]);
 
   // clear filter
-  const clearHandler = () => {
-    clearAllFilters();
-  };
+  // const clearHandler = () => {
+  //   ClearAllFilters(dispatch);
+  // };
 
-  const clearAllFilters = () => {
-    setKeyword("");
+const clearHandler = () => {
+  setKeyword("");
     setType("");
     setLocation("");
     setStatus("");
@@ -144,7 +141,8 @@ const FilteringItem = () => {
     dispatch(resetAmenities());
     dispatch(addStatusType(""));
     dispatch(addFeatured(""));
-  };
+    dispatch(addCity(""));
+};
 
   return (
     <ul className="sasw_list mb0">

@@ -81,7 +81,7 @@ const DetailsContent = ({ property }) => {
         </div>
       ) : null}
 
-{property.address && property.floorPlan.length > 0 ? (
+        
       <div className="application_statics mt30">
         <h4 className="mb30">
           Location <small className="float-end">{property.address}</small>
@@ -93,7 +93,7 @@ const DetailsContent = ({ property }) => {
           />
         </div>
       </div>
-      ) : null}
+      
       {/* End .location_area */}
 
       {/* {property.floorPlan ? (

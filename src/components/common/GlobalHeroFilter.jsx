@@ -26,11 +26,11 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           <Link
             className="nav-link"
             id="pills-profile-tab"
-            // data-bs-toggle="pill"
+            data-bs-toggle="pill"
             href="/rent"
-            // role="tab"
-            // aria-controls="pills-profile"
-            // aria-selected="false"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
           >
             Rent
           </Link>
@@ -40,11 +40,11 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           <Link
             className="nav-link"
             id="pills-profile-tab"
-            // data-bs-toggle="pill"
+            data-bs-toggle="pill"
             href="/assignments"
-            // role="tab"
-            // aria-controls="pills-profile"
-            // aria-selected="false"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
           >
             Assignment
           </Link>

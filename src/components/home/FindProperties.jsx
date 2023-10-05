@@ -3,15 +3,24 @@ import findProperties from "../../data/cityPropertiesCount";
 import Image from "next/image";
 import { addLocation } from "../../pages/properties/index";
 import { useDispatch } from "react-redux";
+import { addCity } from "../../features/properties/propertiesSlice";
+import Router, { useRouter } from "next/router";
 
 const FindProperties = ({cities}) => {
-  const dispatch = useDispatch()
+
+  const route = useRouter();
+
+  const dispatch = useDispatch();
+  const submitHandler = (city) => {
+    dispatch(addCity(city));
+    Router.push("/properties");
+  };
   return (
     <>
       {cities.map((city) => (
         <div className={`col-lg-4 ${city.column}`} key={city.id}>
           {/* onClick={dispatch(addLocation(city.name))} */}
-          <Link href="/properties" className="properti_city home5 d-block">
+          <a onClick={() => submitHandler(city.name)} className="properti_city home5 d-block">
             <div className="thumb">
               <Image
                 width={650}
@@ -29,7 +38,7 @@ const FindProperties = ({cities}) => {
                 <p>{city.count} Properties</p>
               </div>
             </div>
-          </Link>
+          </a>
         </div>
       ))}
     </>

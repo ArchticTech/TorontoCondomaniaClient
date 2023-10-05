@@ -13,8 +13,28 @@ import Blogs from "../common/Blogs";
 import PopupSignInUp from "../common/PopupSignInUp";
 import Hero from "./Hero";
 import Link from "next/link";
+import RentalSlider from "./RentalSlider";
+import { useEffect } from "react";
+import ClearAllFilters from "../common/listing/ClearAllFilters";
+import { useDispatch } from "react-redux";
 
-const index = ({ properties , assignments, cities }) => {
+const index = ({ properties, assignments, rentals, cities }) => {
+
+  // const dispatch = useDispatch;
+  
+  // useEffect(() => {
+  //   ClearAllFilters(dispatch);
+  // }, []);
+  const dispatch = useDispatch();
+
+  const clearHandler = () => {
+    ClearAllFilters(dispatch);
+  };
+
+  useEffect(() => {
+    // Call the clearHandler function when the home route is rendered
+    clearHandler();
+  }, []);
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -40,7 +60,7 @@ const index = ({ properties , assignments, cities }) => {
                   Handpicked properties by our team.
                   <Link className="float-end" href="/properties">
                     {/* <a  > */}
-                      View All <span className="flaticon-next"></span>
+                    View All <span className="flaticon-next"></span>
                     {/* </a> */}
                   </Link>
                 </p>
@@ -99,24 +119,33 @@ const index = ({ properties , assignments, cities }) => {
         </div>
       </section>
 
-      {/* <!-- Recently added Properties --> */}
-      <section id="feature-property" className="property-city pb30 bb1">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center mb40">
-                <h2>New Rentals Recently added</h2>
-                <p>Rentals added recently.</p>
+      {/* <!-- Recently Added Rentals --> */}
+      {(() => {
+        if (rentals.length >= 3) {
+          return (
+            <section
+              id="feature-property"
+              className="property-city pb30 bg-ptrn1"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-6 offset-lg-3">
+                    <div className="main-title text-center mb40">
+                      <h2>New Rentals Recently added</h2>
+                      <p>Rentals added recently.</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="feature_property_slider gutter-x15">
+                      <RentalSlider rentals={rentals} />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="feature_property_slider gutter-x15">
-                <RecentlyAddedProperties />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
+          );
+        }
+      })()}
 
       {/* <!-- Featured Assignments --> */}
       {(() => {

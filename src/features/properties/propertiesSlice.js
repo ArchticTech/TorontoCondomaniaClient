@@ -4,15 +4,14 @@ const initialState = {
     keyword: "",
     type: "",
     location: "",
-    propertyType: "",
     price: {
         min: -1,
         max: -1,
     },
     amenities: [],
     status: "",
-    bathrooms: 0,
-    bedrooms: 0,
+    bathrooms: '',
+    bedrooms: '',
     garages: "",
     occupencyYear: "",
     area: {
@@ -20,6 +19,7 @@ const initialState = {
         max: "",
     },
     length: 0,
+    city: '',
 };
 
 export const propertiesSlice = createSlice({
@@ -34,9 +34,6 @@ export const propertiesSlice = createSlice({
         },
         addLocation: (state, action) => {
             state.location = action.payload;
-        },
-        addPropertyType: (state, action) => {
-            state.propertyType = action.payload;
         },
         addPrice: (state, action) => {
             state.price.min = action.payload.min;
@@ -81,6 +78,9 @@ export const propertiesSlice = createSlice({
         addLength: (state, action) => {
             state.length = action.payload;
         },
+        addCity: (state, action) => {
+            state.city = action.payload;
+        },
     },
 });
 
@@ -99,6 +99,7 @@ export const {
     addAreaMin,
     addAreaMax,
     addLength,
+    addCity,
     resetAmenities,
 } = propertiesSlice.actions;
 export default propertiesSlice.reducer;
