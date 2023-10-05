@@ -1,18 +1,15 @@
 import Link from "next/link";
 import GlobalFilter from "./GlobalFilter";
+import { useSelector } from "react-redux";
+import DropdownListing from "./listing/dropdown-listing";
 
-const GlobalHeroFilter = ({ className = "" }) => {
+const GlobalHeroFilter = ({ properties, className = "" }) => {
+  const {keyword} = useSelector((state) => state.properties);
+
   return (
-    <div className={`px-4 col-lg-12 home_adv_srch_opt ${className}`}>
+    <div className={`container px-4 col-lg-12 home_adv_srch_opt ${className}`}>
       <ul
         className="nav nav-pills"
-        style={{
-          display: "flex",
-          gap: "1rem",
-          alignItems: 'space-between',
-          alignItems: "center",
-          width: "100%",
-        }}
         id="pills-tab"
         role="tablist"
       >
@@ -20,8 +17,7 @@ const GlobalHeroFilter = ({ className = "" }) => {
         <Link
               className="nav-link active"
               id="pills-home-tab"
-              href="/buy"
-            >
+              href="/buy" >
               Buy   
           </Link>
         </li>
@@ -64,6 +60,7 @@ const GlobalHeroFilter = ({ className = "" }) => {
           aria-labelledby="pills-home-tab"
         >
           <GlobalFilter />
+          <DropdownListing properties={properties}/>
         </div>
       </div>
     </div>

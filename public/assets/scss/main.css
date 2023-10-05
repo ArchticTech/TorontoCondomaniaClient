@@ -14,6 +14,12 @@ Tag: advanced custom search, agency, agent, business, clean, corporate, director
 @import url(../scss/font-awesome-animation.min.css);
 @import url(../scss/flaticon.css);
 
+@font-face {
+  font-family: "Acumin";
+  src: url("../fonts/Acumin-Variable-Concept.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Table of contents */
 
@@ -2707,6 +2713,11 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 .home_adv_srch_opt.home3 .nav-pills,
 .home_adv_srch_opt.home6 .nav-pills {
   margin: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: space-between;
+  justify-content: end;
+  width: 100%;
 }
 
 .home_adv_srch_opt .nav-pills li.nav-item a.nav-link:first-child {
@@ -2764,6 +2775,8 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   margin-top: 0;
   position: absolute;
   bottom: -33px;
+  left: 0;
+  right: 0;
 }
 
 .home_adv_srch_opt.home6 .nav-pills li.nav-item a.nav-link.active {
@@ -4269,6 +4282,10 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   background-size: cover;
   background-position: center center;
   height: 100vh;
+  margin-bottom: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 576px) {
   .home-six {
@@ -4277,7 +4294,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 
 .home6-overlay:before {
-  background-image: linear-gradient(90deg, rgb(182, 210, 230), rgb(109, 158, 180));
+  background-image: linear-gradient(40deg, #cee4e9, #319ecf);
   bottom: 0;
   content: "";
   opacity: 0.7;
@@ -5473,6 +5490,19 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 
 .feat_property.list.favorite_page.style2 .details .tc_content p {
   margin-bottom: 0;
+}
+
+.dropdown {
+  margin: 10px 0;
+}
+.dropdown .thumb img {
+  min-height: 130px;
+}
+.dropdown .thumb {
+  width: 253px !important;
+}
+.dropdown .details {
+  padding-right: 33px;
 }
 
 .status_tag.badge {
@@ -19827,4 +19857,11 @@ button.gm-ui-hover-effect:focus {
   position: absolute;
   left: 0;
   bottom: 0;
+  width: 45%;
+}
+
+.home-text .hero-title {
+  font-size: calc(5vh + 21px);
+  text-transform: uppercase;
+  font-family: 'Acumin';
 }

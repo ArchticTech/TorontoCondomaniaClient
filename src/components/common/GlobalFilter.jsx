@@ -1,17 +1,8 @@
 import Router from "next/router";
 import {
-  addAmenities,
-  addAreaMax,
-  addAreaMin,
-  addBathrooms,
-  addBedrooms,
   addKeyword,
   addLocation,
-  addPropertyType,
-  addStatus,
   addType,
-  addYearBuilt,
-  resetAmenities
 } from "../../features/properties/propertiesSlice";
 import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";

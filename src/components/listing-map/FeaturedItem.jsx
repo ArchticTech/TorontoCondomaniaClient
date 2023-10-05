@@ -73,7 +73,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
 
   // bathroom handler
   const bathroomHandler = (item) => {
-    if (bathrooms !== "") {
+    if (bathrooms > 0) {
       return item.baths == bathrooms;
     }
     return true;
@@ -81,7 +81,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
 
   // bedroom handler
   const bedroomHandler = (item) => {
-    if (bedrooms !== "") {
+    if (bedrooms > 0) {
       return item.beds == bedrooms;
     }
     return true;
@@ -186,7 +186,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                   <a href="#">Featured</a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="#" className="text-capitalize">
+                  <a href="" className="text-capitalize">
                     {item.vip_feature_promotion}
                   </a>
                 </li>

@@ -27,7 +27,7 @@ const index = ({ properties , assignments, cities }) => {
       <PopupSignInUp />
 
       {/* <!-- Home Design --> */}
-      <Hero />
+      <Hero properties={properties}/>
 
       {/* <!-- Property Cities --> */}
       <section id="property-city" className="property-city pb30">
