@@ -32,7 +32,6 @@ const FilteringItem = () => {
     type,
     location,
     status,
-    propertyType,
     bathrooms,
     bedrooms,
     occupencyYear,
@@ -45,7 +44,6 @@ const FilteringItem = () => {
   const [getType, setType] = useState(type);
   const [getLocation, setLocation] = useState(location);
   const [getStatus, setStatus] = useState(status);
-  const [getPropertiesType, setPropertiesType] = useState(propertyType);
   const [getBathroom, setBathroom] = useState(bathrooms);
   const [getBedroom, setBedroom] = useState(bedrooms);
   const [getOccupencyYear, setOccupencyYear] = useState(occupencyYear);
@@ -120,17 +118,11 @@ const FilteringItem = () => {
     dispatch(dispatch(addAreaMax(getAreaMax)));
   }, [dispatch, getAreaMax]);
 
-  // clear filter
-  // const clearHandler = () => {
-  //   ClearAllFilters(dispatch);
-  // };
-
 const clearHandler = () => {
   setKeyword("");
     setType("");
     setLocation("");
     setStatus("");
-    setPropertiesType("");
     dispatch(addPrice({ min: -1, max: -1 }));
     setBathroom("");
     setBedroom("");
@@ -255,7 +247,7 @@ const clearHandler = () => {
           </div>
           <div className="dd_content2 style2 dropdown-menu">
             <div className="pricing_acontent ">
-              <PricingRangeSlider />
+              <PricingRangeSlider priceReducer={addPrice} min={100000} max={2000000}/>
             </div>
           </div>
         </div>

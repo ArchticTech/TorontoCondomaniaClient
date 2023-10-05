@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../features/properties/propertiesSlice";
 import global from "../../config/env";
-import assignments from "../../pages/assignments";
 
 const FeaturedItem = ({ properties, isAssignment }) => {
   const {
@@ -135,7 +134,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   }, [activeMarker])
 
   // status handler
-  let content = properties
+  let filteredProperties = properties
     ?.slice(0, 8)
     ?.filter(keywordHandler)
     ?.filter(typeHandler)
@@ -147,8 +146,13 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
-    ?.filter(cityHandler)
-    .map((item) => {
+    ?.filter(cityHandler);
+  let content = filteredProperties.map((item) => {
+
+      var markerElement = item.marker.getElement();
+      markerElement.style.display = 'block';
+      console.log(markerElement.style);
+
       const priceFrom = item?.price_from;
       const priceTo = item?.price_to;
 
@@ -265,6 +269,13 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   // add length of filter items
   useEffect(() => {
     dispatch(addLength(content.length));
+    
+    properties.filter(property => !filteredProperties.includes(property)).map(
+      (property) => {
+        var markerElement = property.marker.getElement();
+        markerElement.style.display = 'none';
+      }
+    )
   }, [dispatch, content]);
 
   return <>{content}</>;

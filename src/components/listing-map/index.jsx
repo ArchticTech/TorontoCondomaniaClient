@@ -13,10 +13,6 @@ import global from "../../config/env";
 
 mapboxgl.accessToken = global.mapboxAccessToken; 
 
-const addLocation =({name})=>{
- console.log(name);
-}
-
 const ListingMap = ({ properties, isAssignment=true }) => {
 
   useEffect(() => {
@@ -33,6 +29,7 @@ const ListingMap = ({ properties, isAssignment=true }) => {
         property.latitude,
         property.longitude
       );
+      property.marker.getElement().setAttribute('data-marker-id', property.slug);
     });
 
     // Clean up the map instance when the component unmounts

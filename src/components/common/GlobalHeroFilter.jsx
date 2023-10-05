@@ -1,7 +1,7 @@
-import Link from "next/link";
 import GlobalFilter from "./GlobalFilter";
 import { useSelector } from "react-redux";
 import DropdownListing from "./listing/dropdown-listing";
+import GlobalFilterRent from "./GlobalFilterRent";
 
 const GlobalHeroFilter = ({ properties, className = "" }) => {
   const {keyword} = useSelector((state) => state.properties);
@@ -22,7 +22,6 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
             data-bs-toggle="pill"
             role="tab"
             aria-controls="pills-profile"
-            // aria-selected="true"
           >
           Buy
           </a>
@@ -35,7 +34,6 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
             role="tab"
             href="#rent-search-box"
             aria-controls="pills-profile"
-            // aria-selected="false"
           >
             Rent
           </a>
@@ -48,7 +46,6 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
             role="tab" 
             href="#assignment-search-box"
             aria-controls="pills-profile"
-            // aria-selected="false"
           >
             Assignment
           </a>
@@ -72,7 +69,7 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           role="tabpanel"
           aria-labelledby="pills-home-tab"
         >
-          <GlobalFilter />
+          <GlobalFilterRent />
         </div>
         <div
           className="tab-pane fade fade"

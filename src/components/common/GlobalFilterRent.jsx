@@ -10,7 +10,7 @@ import GlobalSelectBox from "./GlobalSelectBox";
 import { useDispatch } from 'react-redux';
 import { addPrice } from "../../features/properties/propertiesSlice";
 
-const GlobalFilter = ({ className = "" }) => {
+const GlobalFilterRent = ({ className = "" }) => {
   const dispatch = useDispatch();
   // submit handler
   const submitHandler = () => {
@@ -38,7 +38,7 @@ const GlobalFilter = ({ className = "" }) => {
               <select className="selectpicker w100 form-select show-tick"
               onChange={(e) => dispatch(addType(e.target.value))}
               >
-                <option value="">Property Type</option>
+                <option value="">Rental Type</option>
                 <option value="Condo">Condo</option>
                 <option value="Townhouse">Townhouse</option>
                 <option value="Condo Townhomes">Condo Townhomes</option>
@@ -73,14 +73,14 @@ const GlobalFilter = ({ className = "" }) => {
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-              <span>Price</span>
+              <span>Monthly Rent</span>
               <label htmlFor="InputEmail2">
                 <span className="fa fa-angle-down"></span>
               </label>
             </div>
             <div className="dd_content2 dropdown-menu">
               <div className="pricing_acontent">
-                <PricingRangeSlider priceReducer={addPrice} min={100000} max={2000000}/>
+                <PricingRangeSlider priceReducer={addPrice} min={100} max={30000}/>
               </div>
             </div>
           </div>
@@ -102,14 +102,14 @@ const GlobalFilter = ({ className = "" }) => {
               <div className="dropdown-content dropdown-menu">
 
                 <div className="row p15 pt0-xsd">
-                  <div className="col-lg-12 col-xl-12">
+                <div className="col-lg-12 col-xl-12">
                     <ul className="apeartment_area_list mb0">
-                      <GlobalSelectBox />
+                    <GlobalSelectBox />
                     </ul>
-                  </div>
+                </div>
                 </div>
                 {/* End .row */}
-                
+
                 <div className="row p15">
                   <div className="col-lg-12">
                     <h4 className="text-thm3 mb-4">Amenities</h4>
@@ -142,4 +142,4 @@ const GlobalFilter = ({ className = "" }) => {
   );
 };
 
-export default GlobalFilter;
+export default GlobalFilterRent;

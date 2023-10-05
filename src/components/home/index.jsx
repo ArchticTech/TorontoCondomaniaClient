@@ -20,11 +20,6 @@ import { useDispatch } from "react-redux";
 
 const index = ({ properties, assignments, rentals, cities }) => {
 
-  // const dispatch = useDispatch;
-  
-  // useEffect(() => {
-  //   ClearAllFilters(dispatch);
-  // }, []);
   const dispatch = useDispatch();
 
   const clearHandler = () => {
