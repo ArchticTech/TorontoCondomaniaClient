@@ -3,8 +3,6 @@ import WhyChoose from "../common/WhyChoose";
 import PropertiesSlider from "./PropertiesSlider";
 import FindProperties from "./FindProperties";
 import Header from "./Header";
-import RecentlyAddedProperties from "./RecentlyAddedProperties";
-import FeaturedAssignments from "./FeaturedAssignments";
 import Partners from "../common/Partners";
 import CallToAction from "../common/CallToAction";
 import Footer from "../common/footer/Footer";

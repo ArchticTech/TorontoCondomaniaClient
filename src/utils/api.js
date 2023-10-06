@@ -1,5 +1,7 @@
 import global from '../config/env';
 
+const axios = require('axios');
+
 export async function fetchAllProperties() {
     const response = await fetch(global.apiURL + 'api/getAllProperties');
     if (!response.ok) {
@@ -55,15 +57,6 @@ export async function fetchRental(id) {
     return rental;
 }
 
-// export async function fetchCityCount(name) 
-// {
-//      const response = await fetch(global.apiURL + 'api/getCityPropertyCount/' + name);
-//     if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//     }
-
-//     return await response.text();
-// }
 export async function fetchCityCount(name) {
     try {
         const response = await fetch(global.apiURL + 'api/getCityPropertyCount/' + name);
@@ -77,5 +70,18 @@ export async function fetchCityCount(name) {
         // Handle the error here
         console.error('Error fetching API:', error);
         throw error; // Re-throw the error to propagate it to the caller if needed
+    }
+}
+
+export async function registerUser(userData)
+{
+    try {
+        const response = await axios.get(global.apiURL + 'api/register/', 
+        userData['name'] + '/'
+        + userData['email'] + '/'
+        + userData['password']);
+        return response.data;
+    } catch (error) {
+        throw error;
     }
 }
