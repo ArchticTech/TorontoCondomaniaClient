@@ -26,7 +26,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const dispatch = useDispatch();
 
   // keyword filter
-  const keywordHandler = (item) => 
+  const keywordHandler = (item) =>
     item.name.toLowerCase().includes(keyword?.toLowerCase()) ||
     item.address.toLowerCase().includes(keyword?.toLowerCase()) ||
     item.code.toLowerCase().includes(keyword?.toLowerCase());
@@ -41,7 +41,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const locationHandler = (item) => {
     return item.address.toLowerCase().includes(location.toLowerCase());
   };
-  
+
   // city handler
   const cityHandler = (item) => {
     return item.city.toLowerCase().includes(city.toLowerCase());
@@ -72,7 +72,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
 
   // price handler
   const priceHandler = (item) => {
-    if ((price?.min < 0) || (price?.max < 0)) return true;
+    if (price?.min < 0 || price?.max < 0) return true;
     else return item.price_from <= price?.max && item.price_to >= price?.min;
   };
 
@@ -96,9 +96,12 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const advanceHandler = (item) => {
     if (amenities.length !== 0) {
       return amenities.some((searchedFeature) =>
-        item.features.find((feature) => feature.toLowerCase().includes(searchedFeature.toLowerCase())));
+        item.features.find((feature) =>
+          feature.toLowerCase().includes(searchedFeature.toLowerCase())
+        )
+      );
     }
-     return true;
+    return true;
   };
 
   // status filter
@@ -121,17 +124,16 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   };
 
   useEffect(() => {
-
-    const markers = document.querySelectorAll('.mapboxgl-marker');
-    markers.forEach(marker => {
-      marker.classList.remove('marker-active');
+    const markers = document.querySelectorAll(".mapboxgl-marker");
+    markers.forEach((marker) => {
+      marker.classList.remove("marker-active");
     });
 
     if (activeMarker) {
       const markerElement = activeMarker.getElement();
-      markerElement.classList.add('marker-active');
+      markerElement.classList.add("marker-active");
     }
-  }, [activeMarker])
+  }, [activeMarker]);
 
   // status handler
   let filteredProperties = properties
@@ -142,34 +144,33 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(statusHandler)
     ?.filter(areaHandler)
     ?.filter(occupencyYearsHandler)
-    // ?.filter(priceHandler)
+    ?.filter(priceHandler)
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
     ?.filter(cityHandler);
   let content = filteredProperties.map((item) => {
+    // var markerElement = item.marker.getElement();
+    // markerElement.style.display = 'block';
+    // console.log(markerElement.style);
 
-      // var markerElement = item.marker.getElement();
-      // markerElement.style.display = 'block';
-      // console.log(markerElement.style);
+    const priceFrom = item?.price_from;
+    const priceTo = item?.price_to;
 
-      const priceFrom = item?.price_from;
-      const priceTo = item?.price_to;
+    const formattedPriceFrom = priceFrom.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+    const formattedPriceTo = priceTo.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
 
-      const formattedPriceFrom = priceFrom.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      });
-      const formattedPriceTo = priceTo.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      });
-
-      return (
+    return (
       <div
         className={`${
           isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
@@ -188,19 +189,23 @@ const FeaturedItem = ({ properties, isAssignment }) => {
               width={316}
               height={220}
               className="img-whp w-100 h-100 cover"
-              src={global.apiURL + 'images/' + item.image}
+              src={global.apiURL + "images/" + item.image}
               alt="fp1.jpg"
             />
             <div className="thmb_cntnt">
               <ul className="tag mb0">
                 <li className="list-inline-item">
-                  <a href="#">Featured</a>
+                  <a href="#">{item.vip_featured_promotion}</a>
                 </li>
-                <li className="list-inline-item">
-                  <a href="" className="text-capitalize">
-                    {item.vip_feature_promotion}
-                  </a>
-                </li>
+                {item.isHot ? (
+                  <li className="list-inline-item">
+                    <a href="" className="text-capitalize">
+                      Hot
+                    </a>
+                  </li>
+                ) : (
+                  ""
+                )}
               </ul>
               <ul className="icon mb0">
                 <li className="list-inline-item">
@@ -214,68 +219,78 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                   </a>
                 </li>
               </ul>
-                <Link
-                  href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}
-                  className="fp_price"
-                >
-                  {formattedPriceFrom} - {formattedPriceTo}
-                </Link>
-              </div>
-            </div>
-            <div className="details">
-              <div className="tc_content">
-                <p className="text-thm">{item.type}</p>
-                <h4>
-                  <Link href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}>
-                    {item.name}
-                  </Link>
-                </h4>
-                <p>
-                  <span className="flaticon-placeholder"></span>
-                  {item.address}
-                </p>
-
-                <ul className="prop_details mb0"></ul>
-              </div>
-              {/* End .tc_content */}
-
-              <div className="fp_footer">
-                <ul className="fp_meta float-start mb0">
-                  <li className="list-inline-item">
-                    <Link href="/agent-v2">
-                      <img
-                        width={40}
-                        height={40}
-                        src={
-                          global.apiURL + "profile-pictures/" + item.agent.image
-                        }
-                        alt="pposter1.png"
-                      />
-                    </Link>
-                  </li>
-                  <li className="list-inline-item">
-                    <Link href="/">{item.agent.name}</Link>
-                  </li>
-                </ul>
-                <div className="fp_pdate float-end">{item.postedYear}</div>
-              </div>
-              {/* End .fp_footer */}
+              <Link
+                href={
+                  "/" +
+                  (isAssignment ? "assignment" : "property") +
+                  `/${item.slug}`
+                }
+                className="fp_price"
+              >
+                {formattedPriceFrom} - {formattedPriceTo}
+              </Link>
             </div>
           </div>
+          <div className="details">
+            <div className="tc_content">
+              <p className="text-thm">{item.type}</p>
+              <h4>
+                <Link
+                  href={
+                    "/" +
+                    (isAssignment ? "assignment" : "property") +
+                    `/${item.slug}`
+                  }
+                >
+                  {item.name}
+                </Link>
+              </h4>
+              <p>
+                <span className="flaticon-placeholder"></span>
+                {item.address}
+              </p>
+
+              <ul className="prop_details mb0"></ul>
+            </div>
+            {/* End .tc_content */}
+
+            <div className="fp_footer">
+              <ul className="fp_meta float-start mb0">
+                <li className="list-inline-item">
+                  <Link href="/agent-v2">
+                    <img
+                      width={40}
+                      height={40}
+                      src={
+                        global.apiURL + "profile-pictures/" + item.agent.image
+                      }
+                      alt="pposter1.png"
+                    />
+                  </Link>
+                </li>
+                <li className="list-inline-item">
+                  <Link href="/">{item.agent.name}</Link>
+                </li>
+              </ul>
+              <div className="fp_pdate float-end">{item.postedYear}</div>
+            </div>
+            {/* End .fp_footer */}
+          </div>
         </div>
-      );
-    });
+      </div>
+    );
+  });
 
   // add length of filter items
   useEffect(() => {
     dispatch(addLength(content.length));
-    
-    properties.filter(property => !filteredProperties.includes(property)).map(
-      (property) => {
+
+    properties
+      .filter((property) => !filteredProperties.includes(property))
+      .map((property) => {
         var markerElement = property.marker.getElement();
-        markerElement.style.display = 'none';
-      }
-    )
+        markerElement.style.display = "none";
+      });
   }, [dispatch, content]);
 
   return <>{content}</>;
