@@ -80,7 +80,7 @@ const GlobalFilter = ({ className = "" }) => {
             </div>
             <div className="dd_content2 dropdown-menu">
               <div className="pricing_acontent">
-                <PricingRangeSlider priceReducer={addPrice} min={1} max={2000000}/>
+                <PricingRangeSlider priceReducer={addPrice} min={100000} max={2000000}/>
               </div>
             </div>
           </div>

@@ -29,6 +29,7 @@ const ListingMap = ({ properties, isAssignment=true }) => {
         property.latitude,
         property.longitude
       );
+      property.marker.getElement().setAttribute('data-marker-id', property.slug);
     });
 
     // Clean up the map instance when the component unmounts

@@ -147,140 +147,136 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
     ?.filter(cityHandler);
-  
   let content = filteredProperties.map((item) => {
 
-    const priceFrom = item?.price_from;
-    const priceTo = item?.price_to;
+      var markerElement = item.marker.getElement();
+      markerElement.style.display = 'block';
+      console.log(markerElement.style);
 
-    const formattedPriceFrom = priceFrom.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    });
-    const formattedPriceTo = priceTo.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    });
+      const priceFrom = item?.price_from;
+      const priceTo = item?.price_to;
 
-    return (
-    <div
-      className={`${
-        isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
-      } `}
-      key={item.id}
-    >
+      const formattedPriceFrom = priceFrom.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      });
+      const formattedPriceTo = priceTo.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      });
+
+      return (
       <div
-        className={`feat_property home7 style4 ${
-          isGridOrList ? "d-flex align-items-center" : undefined
-        }`}
-        onMouseEnter={() => setActiveMarker(item.marker)}
-        onMouseLeave={() => setActiveMarker(null)}
+        className={`${
+          isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
+        } `}
+        key={item.id}
       >
-        <div className="thumb">
-          <img
-            width={316}
-            height={220}
-            className="img-whp w-100 h-100 cover"
-            src={global.apiURL + 'images/' + item.image}
-            alt="fp1.jpg"
-          />
-          <div className="thmb_cntnt">
-            <ul className="tag mb0">
-              <li className="list-inline-item">
-                <a href="#">Featured</a>
-              </li>
-              <li className="list-inline-item">
-                <a href="" className="text-capitalize">
-                  {item.vip_feature_promotion}
-                </a>
-              </li>
-            </ul>
-            <ul className="icon mb0">
-              <li className="list-inline-item">
-                <a href="#">
-                  <span className="flaticon-transfer-1"></span>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#">
-                  <span className="flaticon-heart"></span>
-                </a>
-              </li>
-            </ul>
-              <Link
-                href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}
-                className="fp_price"
-              >
-                {formattedPriceFrom} - {formattedPriceTo}
-              </Link>
-            </div>
-          </div>
-          <div className="details">
-            <div className="tc_content">
-              <p className="text-thm">{item.type}</p>
-              <h4>
-                <Link href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}>
-                  {item.name}
-                </Link>
-              </h4>
-              <p>
-                <span className="flaticon-placeholder"></span>
-                {item.address}
-              </p>
-
-              <ul className="prop_details mb0"></ul>
-            </div>
-            {/* End .tc_content */}
-
-            <div className="fp_footer">
-              <ul className="fp_meta float-start mb0">
+        <div
+          className={`feat_property home7 style4 ${
+            isGridOrList ? "d-flex align-items-center" : undefined
+          }`}
+          onMouseEnter={() => setActiveMarker(item.marker)}
+          onMouseLeave={() => setActiveMarker(null)}
+        >
+          <div className="thumb">
+            <img
+              width={316}
+              height={220}
+              className="img-whp w-100 h-100 cover"
+              src={global.apiURL + 'images/' + item.image}
+              alt="fp1.jpg"
+            />
+            <div className="thmb_cntnt">
+              <ul className="tag mb0">
                 <li className="list-inline-item">
-                  <Link href="/agent-v2">
-                    <img
-                      width={40}
-                      height={40}
-                      src={
-                        global.apiURL + "profile-pictures/" + item.agent.image
-                      }
-                      alt="pposter1.png"
-                    />
-                  </Link>
+                  <a href="#">Featured</a>
                 </li>
                 <li className="list-inline-item">
-                  <Link href="/">{item.agent.name}</Link>
+                  <a href="" className="text-capitalize">
+                    {item.vip_feature_promotion}
+                  </a>
                 </li>
               </ul>
-              <div className="fp_pdate float-end">{item.postedYear}</div>
+              <ul className="icon mb0">
+                <li className="list-inline-item">
+                  <a href="#">
+                    <span className="flaticon-transfer-1"></span>
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#">
+                    <span className="flaticon-heart"></span>
+                  </a>
+                </li>
+              </ul>
+                <Link
+                  href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}
+                  className="fp_price"
+                >
+                  {formattedPriceFrom} - {formattedPriceTo}
+                </Link>
+              </div>
             </div>
-            {/* End .fp_footer */}
+            <div className="details">
+              <div className="tc_content">
+                <p className="text-thm">{item.type}</p>
+                <h4>
+                  <Link href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}>
+                    {item.name}
+                  </Link>
+                </h4>
+                <p>
+                  <span className="flaticon-placeholder"></span>
+                  {item.address}
+                </p>
+
+                <ul className="prop_details mb0"></ul>
+              </div>
+              {/* End .tc_content */}
+
+              <div className="fp_footer">
+                <ul className="fp_meta float-start mb0">
+                  <li className="list-inline-item">
+                    <Link href="/agent-v2">
+                      <img
+                        width={40}
+                        height={40}
+                        src={
+                          global.apiURL + "profile-pictures/" + item.agent.image
+                        }
+                        alt="pposter1.png"
+                      />
+                    </Link>
+                  </li>
+                  <li className="list-inline-item">
+                    <Link href="/">{item.agent.name}</Link>
+                  </li>
+                </ul>
+                <div className="fp_pdate float-end">{item.postedYear}</div>
+              </div>
+              {/* End .fp_footer */}
+            </div>
           </div>
         </div>
-      </div>
-    );
-  });
+      );
+    });
 
   // add length of filter items
   useEffect(() => {
     dispatch(addLength(content.length));
     
-    filteredProperties.map(
-      (property) => {
-        var markerElement = property.marker?.getElement();
-        if(markerElement)
-          markerElement.style.display = 'block';
-    });
-
     properties.filter(property => !filteredProperties.includes(property)).map(
       (property) => {
-        var markerElement = property.marker?.getElement();
+        var markerElement = property.marker.getElement();
         markerElement.style.display = 'none';
       }
     )
-  }, [dispatch, content, properties, filteredProperties]);
+  }, [dispatch, content]);
 
   return <>{content}</>;
 };
