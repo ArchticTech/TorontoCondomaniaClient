@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addLength } from "../../features/properties/propertiesSlice";
+import { addLength } from "../../features/rentals/rentalsSlice";
 import global from "../../config/env";
 
 const FeaturedItem = ({ rentals }) => {

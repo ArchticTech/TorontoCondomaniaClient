@@ -241,7 +241,7 @@ const FilteringItemRental = () => {
       </li>
       {/* End li  */}
 
-      <div className="col-12 mb-3">
+      <div className="col-12 mb-3" >
         <div className="candidate_revew_select">
           <select
             onChange={(e) => setBathroom(e.target.value)}
@@ -325,9 +325,9 @@ const FilteringItemRental = () => {
 
                 <div className="container mb-2">
                   <li>
-                    <div className="row mb-2">
-                      <div className="col-8">
-                        <h4 class="badge bg-secondary">Laundry Available</h4>
+                    <div className="row rental_features_badge">
+                      <div className="col-8 ">
+                        <h4 class="badge">Laundry Available</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
@@ -344,9 +344,9 @@ const FilteringItemRental = () => {
                   {/* End li */}
 
                   <li>
-                    <div className="row mb-2">
+                    <div className="row rental_features_badge">
                       <div className="col-8">
-                        <h4 class="badge bg-secondary">Pets Allowed</h4>
+                        <h4 class="badge ">Pets Allowed</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
@@ -363,9 +363,9 @@ const FilteringItemRental = () => {
                   {/* End li */}
 
                   <li>
-                    <div className="row mb-2">
+                    <div className="row rental_features_badge">
                       <div className="col-8">
-                        <h4 class="badge bg-secondary">Smoking Allowed</h4>
+                        <h4 class="badge ">Smoking Allowed</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
@@ -382,9 +382,9 @@ const FilteringItemRental = () => {
                   {/* End li */}
 
                   <li>
-                    <div className="row mb-2">
+                    <div className="row rental_features_badge">
                       <div className="col-8">
-                        <h4 class="badge bg-secondary">Basement Available</h4>
+                        <h4 class="badge">Basement Available</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input
@@ -401,9 +401,9 @@ const FilteringItemRental = () => {
                   {/* End li */}
 
                   <li>
-                    <div className="row my-2">
+                    <div className="row rental_features_badge">
                       <div className="col-8">
-                        <h4 class="badge bg-secondary">Parking Available</h4>
+                        <h4 class="badge ">Parking Available</h4>
                       </div>
                       <div class="col-3 form-check form-switch form-check-reverse">
                         <input

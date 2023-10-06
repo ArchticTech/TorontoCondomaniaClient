@@ -1,3 +1,4 @@
+import { addAmenities } from "../../../features/properties/propertiesSlice";
 import CheckBoxFilter from "../../common/CheckBoxFilter";
 
 const DetailedInfo = () => {
@@ -102,7 +103,7 @@ const DetailedInfo = () => {
         <h4 className="mb10">Amenities</h4>
       </div>
 
-      <CheckBoxFilter />
+      <CheckBoxFilter addAmenities={addAmenities} />
 
       <div className="col-xl-12">
         <div className="my_profile_setting_input overflow-hidden mt20">

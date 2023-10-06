@@ -13,7 +13,7 @@ const GlobalSelectBox = () => {
 
   return (
     <>
-      <li className="list-inline-item">
+      <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
         <div className="candidate_revew_select">
           <select 
               onChange={(e) => dispatch(addBathrooms(e.target.value))}
@@ -32,8 +32,8 @@ const GlobalSelectBox = () => {
       </li>
       {/* End li */}
 
-      <li className="list-inline-item">
-        <div className="candidate_revew_select">
+      <li className="col-md-3 list-inline-item mx-auto px-2">
+        <div className="candidate_revew_select w-100">
           <select 
               onChange={(e) => dispatch(addBedrooms(e.target.value))}
               className="selectpicker w100 show-tick form-select"

@@ -288,8 +288,8 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     properties
       .filter((property) => !filteredProperties.includes(property))
       .map((property) => {
-        var markerElement = property.marker.getElement();
-        markerElement.style.display = "none";
+        // var markerElement = property.marker.getElement();
+        // markerElement.style.display = "none";
       });
   }, [dispatch, content]);
 

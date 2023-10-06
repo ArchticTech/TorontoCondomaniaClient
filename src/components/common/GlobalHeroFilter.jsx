@@ -62,6 +62,7 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           aria-labelledby="pills-home-tab"
         >
           <GlobalFilter />
+          <DropdownListing properties={properties}/>
         </div>
         <div
           className="tab-pane fade fade"
@@ -77,8 +78,7 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           role="tabpanel"
           aria-labelledby="pills-home-tab"
         >
-          <GlobalFilter />
-          <DropdownListing properties={properties}/>
+          <GlobalFilter isAssignment={true} />
         </div>
       </div>
     </div>

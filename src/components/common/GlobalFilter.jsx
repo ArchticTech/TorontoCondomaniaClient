@@ -3,19 +3,27 @@ import {
   addKeyword,
   addLocation,
   addType,
+  addAmenities,
 } from "../../features/properties/propertiesSlice";
 import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";
 import GlobalSelectBox from "./GlobalSelectBox";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { addPrice } from "../../features/properties/propertiesSlice";
 
-const GlobalFilter = ({ className = "" }) => {
+const GlobalFilter = ({ className = "", isAssignment = false }) => {
   const dispatch = useDispatch();
   // submit handler
   const submitHandler = () => {
-    Router.push("/properties");
+    if (isAssignment) {
+      Router.push("/assignments");
+
+    } else {
+      Router.push("/properties");
+    }
   };
+
+  const amenities =useSelector((state) => state.properties.amenities);
 
   return (
     <div className={`home1-advnc-search ${className}`}>
@@ -35,8 +43,9 @@ const GlobalFilter = ({ className = "" }) => {
         <li className="list-inline-item">
           <div className="search_option_two">
             <div className="candidate_revew_select">
-              <select className="selectpicker w100 form-select show-tick"
-              onChange={(e) => dispatch(addType(e.target.value))}
+              <select
+                className="selectpicker w100 form-select show-tick"
+                onChange={(e) => dispatch(addType(e.target.value))}
               >
                 <option value="">Property Type</option>
                 <option value="Condo">Condo</option>
@@ -80,7 +89,11 @@ const GlobalFilter = ({ className = "" }) => {
             </div>
             <div className="dd_content2 dropdown-menu">
               <div className="pricing_acontent">
-                <PricingRangeSlider priceReducer={addPrice} min={100000} max={2000000}/>
+                <PricingRangeSlider
+                  priceReducer={addPrice}
+                  min={1}
+                  max={200000}
+                />
               </div>
             </div>
           </div>
@@ -100,7 +113,6 @@ const GlobalFilter = ({ className = "" }) => {
               </span>
 
               <div className="dropdown-content dropdown-menu">
-
                 <div className="row p15 pt0-xsd">
                   <div className="col-lg-12 col-xl-12">
                     <ul className="apeartment_area_list mb0">
@@ -109,13 +121,13 @@ const GlobalFilter = ({ className = "" }) => {
                   </div>
                 </div>
                 {/* End .row */}
-                
+
                 <div className="row p15">
                   <div className="col-lg-12">
                     <h4 className="text-thm3 mb-4">Amenities</h4>
                   </div>
 
-                  <CheckBoxFilter />
+                  <CheckBoxFilter addAmenities={addAmenities} amenities={amenities} />
                 </div>
                 {/* End .row */}
               </div>
