@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { addAmenities } from "../../features/properties/propertiesSlice";
+// import { addAmenities } from "../../features/properties/propertiesSlice";
 
-const CheckBoxFilter = () => {
+const CheckBoxFilter = ({addAmenities, amenities=null}) => {
   
   const [features] = useState([
     { id: uuidv4(), name: "Air Conditioning" },
@@ -24,7 +24,6 @@ const CheckBoxFilter = () => {
   ]);
 
   const dispatch = useDispatch();
-  const {amenities} = useSelector((state) => state.properties);
 
   return (
     <>
@@ -41,7 +40,10 @@ const CheckBoxFilter = () => {
               onChange={(e) =>
                 dispatch(addAmenities(e.target.value))
               }
-              checked = {amenities.includes(feature.name)}
+              checked = {(amenities != null) ? 
+                amenities.includes(feature.name): false
+              }
+              
             />
             <label className="form-check-label" htmlFor={feature.id} >
               {feature.name}

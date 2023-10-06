@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addLength } from "../../features/properties/propertiesSlice";
+import { addLength } from "../../features/rentals/rentalsSlice";
 import global from "../../config/env";
 
 const FeaturedItem = ({ rentals }) => {
@@ -10,6 +10,7 @@ const FeaturedItem = ({ rentals }) => {
     type,
     location,
     price,
+    city,
     amenities,
     bathrooms,
     bedrooms,
@@ -28,7 +29,7 @@ const FeaturedItem = ({ rentals }) => {
   const dispatch = useDispatch();
 
   // keyword filter
-  const keywordHandler = (item) => 
+  const keywordHandler = (item) =>
     item.name.toLowerCase().includes(keyword?.toLowerCase()) ||
     item.address.toLowerCase().includes(keyword?.toLowerCase());
 
@@ -42,35 +43,18 @@ const FeaturedItem = ({ rentals }) => {
   const locationHandler = (item) => {
     return item.address.toLowerCase().includes(location.toLowerCase());
   };
-  
+
   // city handler
   const cityHandler = (item) => {
     return item.city.toLowerCase().includes(city.toLowerCase());
   };
 
-
-  // area handler
-  // const areaHandler = (item) => {
-  //   if (area.min !== 0 && area.max !== 0) {
-  //     if (area.min !== "" && area.max !== "") {
-  //       return (
-  //         parseInt(item.areaMin) <= area.max &&
-  //         parseInt(item.areaMax) >= area.min
-  //       );
-  //     }
-  //   }
-  //   return true;
-  // };
-
   const availabilityDateHandler = (item) => {
     if (item.availability_date == "") return true;
-    else return item.availability_date.toLowerCase() == availabilityDate.toLowerCase();
-  };
-
-  // price handler
-  const priceHandler = (item) => {
-    if ((price == 0 ) ) return true;
-    else return item.monthly_rent.toLowerCase() == price.toLowerCase();
+    else
+      return (
+        item.availability_date.toLowerCase() == availabilityDate.toLowerCase()
+      );
   };
 
   // bathroom handler
@@ -83,8 +67,54 @@ const FeaturedItem = ({ rentals }) => {
 
   // bedroom handler
   const bedroomHandler = (item) => {
-    if (bedrooms >0) {
+    if (bedrooms > 0) {
       return item.beds == bedrooms;
+    }
+    return true;
+  };
+
+   // price handler
+   const priceHandler = (item) => {
+    if ((price?.min < 0) || (price?.max < 0)) return true;
+    else return item.monthly_rent <= price?.max && item.monthly_rent >= price?.min;
+  };
+
+  // laundry handler
+  const laundryHandler = (item) => {
+    if (laundry) {
+      return item.laundry_located > 0;
+    }
+    return true;
+  };
+
+  // petPolicy handler
+  const petPolicyHandler = (item) => {
+    if (petPolicy) {
+      return item.pet_policy   > 0;
+    }
+    return true;
+  };
+
+  // smokingPolicy handler
+  const smokingPolicyHandler = (item) => {
+    if (smokingPolicy) {
+      return item.smoking_policy > 0;
+    }
+    return true;
+  };
+
+  // basement handler
+  const basementHandler = (item) => {
+    if (basement) {
+      return item.basement_available > 0;
+    }
+    return true;
+  };
+
+  // parking handler
+  const parkingHandler = (item) => {
+    if (parking) {
+      return item.parking_available > 0;
     }
     return true;
   };
@@ -93,9 +123,12 @@ const FeaturedItem = ({ rentals }) => {
   const advanceHandler = (item) => {
     if (amenities.length !== 0) {
       return amenities.some((searchedFeature) =>
-        item.features.find((feature) => feature.toLowerCase().includes(searchedFeature.toLowerCase())));
+        item.features.find((feature) =>
+          feature.toLowerCase().includes(searchedFeature.toLowerCase())
+        )
+      );
     }
-     return true;
+    return true;
   };
 
   // status filter
@@ -118,22 +151,33 @@ const FeaturedItem = ({ rentals }) => {
   };
 
   useEffect(() => {
-
-    const markers = document.querySelectorAll('.mapboxgl-marker');
-    markers.forEach(marker => {
-      marker.classList.remove('marker-active');
+    const markers = document.querySelectorAll(".mapboxgl-marker");
+    markers.forEach((marker) => {
+      marker.classList.remove("marker-active");
     });
 
     if (activeMarker) {
       const markerElement = activeMarker.getElement();
-      markerElement.classList.add('marker-active');
+      markerElement.classList.add("marker-active");
     }
-  }, [activeMarker])
+  }, [activeMarker]);
 
   // status handler
   let content = rentals
     ?.slice(0, 8)
     ?.filter(keywordHandler)
+    ?.filter(basementHandler)
+    ?.filter(typeHandler)
+    ?.filter(locationHandler)
+    ?.filter(cityHandler)
+    ?.filter(bathroomHandler)
+    ?.filter(bedroomHandler)
+    ?.filter(laundryHandler)
+    ?.filter(parkingHandler)
+    ?.filter(smokingPolicyHandler)
+    ?.filter(petPolicyHandler)
+    ?.filter(advanceHandler)
+    ?.filter(priceHandler)
     .map((item) => {
       const monthlyRent = item?.monthly_rent;
       // const priceTo = item?.price_to;
@@ -152,54 +196,51 @@ const FeaturedItem = ({ rentals }) => {
       // });
 
       return (
-      <div
-        className={`${
-          isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
-        } `}
-        key={item.id}
-      >
         <div
-          className={`feat_property home7 style4 ${
-            isGridOrList ? "d-flex align-items-center" : undefined
-          }`}
-          onMouseEnter={() => setActiveMarker(item.marker)}
-          onMouseLeave={() => setActiveMarker(null)}
+          className={`${
+            isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
+          } `}
+          key={item.id}
         >
-          <div className="thumb">
-            <img
-              width={316}
-              height={220}
-              className="img-whp w-100 h-100 cover"
-              src={global.apiURL + 'images/' + item.image}
-              alt="fp1.jpg"
-            />
-            <div className="thmb_cntnt">
-              <ul className="tag mb0">
-                {/* <li className="list-inline-item">
+          <div
+            className={`feat_property home7 style4 ${
+              isGridOrList ? "d-flex align-items-center" : undefined
+            }`}
+            onMouseEnter={() => setActiveMarker(item.marker)}
+            onMouseLeave={() => setActiveMarker(null)}
+          >
+            <div className="thumb">
+              <img
+                width={316}
+                height={220}
+                className="img-whp w-100 h-100 cover"
+                src={global.apiURL + "images/" + item.image}
+                alt="fp1.jpg"
+              />
+              <div className="thmb_cntnt">
+                <ul className="tag mb0">
+                  {/* <li className="list-inline-item">
                   <a href="#">Featured</a>
                 </li> */}
-                <li className="list-inline-item">
-                  <a href="#" className="text-capitalize">
-                    {item.type}
-                  </a>
-                </li>
-              </ul>
-              <ul className="icon mb0">
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-transfer-1"></span>
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-heart"></span>
-                  </a>
-                </li>
-              </ul>
-                <Link
-                  href={`/${item.slug}`}
-                  className="fp_price"
-                >
+                  <li className="list-inline-item">
+                    <a href="#" className="text-capitalize">
+                      {item.type}
+                    </a>
+                  </li>
+                </ul>
+                <ul className="icon mb0">
+                  <li className="list-inline-item">
+                    <a href="#">
+                      <span className="flaticon-transfer-1"></span>
+                    </a>
+                  </li>
+                  <li className="list-inline-item">
+                    <a href="#">
+                      <span className="flaticon-heart"></span>
+                    </a>
+                  </li>
+                </ul>
+                <Link href={`/rental/${item.slug}`} className="fp_price">
                   {formattedMonthlyRent} / <small>mo</small>
                 </Link>
               </div>
@@ -208,9 +249,7 @@ const FeaturedItem = ({ rentals }) => {
               <div className="tc_content">
                 <p className="text-thm">{item.type}</p>
                 <h4>
-                  <Link href={`/rental/${item.slug}`}>
-                    {item.name}
-                  </Link>
+                  <Link href={`/rental/${item.slug}`}>{item.name}</Link>
                 </h4>
                 <p>
                   <span className="flaticon-placeholder"></span>

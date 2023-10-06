@@ -100,24 +100,6 @@ const HeaderMenuContent = ({ float = "" }) => {
           ))}
         </ul>
       </li>
-      {/* <li className={`dropitem ${isOpen ? 'active' : ''}`}>
-      <a href="#" onClick={toggleDropdown}>
-        <span className="title">Top Cities</span>
-        <span className={`arrow ${isOpen ? 'open' : ''}`}></span>
-      </a>
-      <ul className={`sub-menu ${isOpen ? 'open' : ''}`}>
-        {topCities.map((item) => (
-          <li key={item.id}>
-            <Link href={item.routerPath}>
-              <Link className={route.pathname === item.routerPath ? 'ui-active' : ''}>
-                {item.name}
-              </Link>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </li> */}
-      {/* End .dropitem */}
 
       {/* End .dropitem */}
 
@@ -179,12 +161,6 @@ const HeaderMenuContent = ({ float = "" }) => {
       </li>
       {/* End .dropitem */}
 
-      {/* <li className={`list-inline-item add_listing ${float}`}>
-      <button onClick={handleCreateListingClick}>
-        <span className="flaticon-plus"></span>
-        <span className="dn-lg"> Create Listing</span>
-      </button>
-    </li> */}
       <li className={`list-inline-item add_listing ${float}`}>
         <Link href="/create-listing">
           <span className="flaticon-plus"></span>

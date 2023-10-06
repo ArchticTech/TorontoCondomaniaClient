@@ -55,15 +55,6 @@ export async function fetchRental(id) {
     return rental;
 }
 
-// export async function fetchCityCount(name) 
-// {
-//      const response = await fetch(global.apiURL + 'api/getCityPropertyCount/' + name);
-//     if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//     }
-
-//     return await response.text();
-// }
 export async function fetchCityCount(name) {
     try {
         const response = await fetch(global.apiURL + 'api/getCityPropertyCount/' + name);

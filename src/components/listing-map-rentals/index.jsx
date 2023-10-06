@@ -11,6 +11,7 @@ import FeaturedItem from "./FeaturedItem";
 import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
+import { useDispatch, useSelector } from "react-redux";
 
 mapboxgl.accessToken = global.mapboxAccessToken;
 
@@ -126,7 +127,7 @@ const ListingMap = ({ rentals }) => {
                 <div className="col-md-12">
                   <div className="grid_list_search_result ">
                     <div className="row align-items-center">
-                      <FilterTopBar2 />
+                      <FilterTopBar2 length={useSelector((state) => state.rentals.length)}/>
                     </div>
                   </div>
                   {/* End .row */}
