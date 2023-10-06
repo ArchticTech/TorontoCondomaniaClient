@@ -4,6 +4,7 @@ import MobileMenu from "../common/header/MobileMenu";
 import FilterTopBar2 from "../common/listing/FilterTopBar2";
 import GridListButton from "../common/listing/GridListButton";
 import ShowFilter from "../common/listing/ShowFilter";
+import FilteringItemRental from "../common/listing/FilteringItemRental";
 import SidebarListing2 from "../common/listing/SidebarListing2";
 import PopupSignInUp from "../common/PopupSignInUp";
 import FeaturedItem from "./FeaturedItem";
@@ -11,14 +12,13 @@ import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
 
-mapboxgl.accessToken = global.mapboxAccessToken; 
+mapboxgl.accessToken = global.mapboxAccessToken;
 
-const addLocation =({name})=>{
- console.log(name);
-}
+const addLocation = ({ name }) => {
+  console.log(name);
+};
 
 const ListingMap = ({ rentals }) => {
-
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "mapbox",
@@ -28,11 +28,7 @@ const ListingMap = ({ rentals }) => {
     });
 
     rentals?.map((rental) => {
-      rental.marker = setMarkerOnMap(
-        map,
-        rental.latitude,
-        rental.longitude
-      );
+      rental.marker = setMarkerOnMap(map, rental.latitude, rental.longitude);
     });
 
     // Clean up the map instance when the component unmounts
@@ -92,7 +88,15 @@ const ListingMap = ({ rentals }) => {
                 {/* End .offcanvas-heade */}
 
                 <div className="offcanvas-body">
-                  <SidebarListing2 />
+                  <div className="sidebar_listing_grid1">
+                    <div className="sidebar_listing_list">
+                      <div className="sidebar_advanced_search_widget">
+                        <FilteringItemRental />
+                      </div>
+                    </div>
+                    {/* End .sidebar_listing_list */}
+                  </div>
+                  {/* <SidebarListing2 /> */}
                 </div>
               </div>
               {/* End mobile sidebar listing  */}

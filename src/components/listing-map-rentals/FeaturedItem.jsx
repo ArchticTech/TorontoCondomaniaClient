@@ -8,16 +8,18 @@ const FeaturedItem = ({ rentals }) => {
   const {
     keyword,
     type,
-    city,
     location,
-    status,
     price,
+    amenities,
     bathrooms,
     bedrooms,
-    occupencyYear,
-    area,
-    amenities,
-  } = useSelector((state) => state.properties);
+    availabilityDate,
+    laundry,
+    petPolicy,
+    smokingPolicy,
+    basement,
+    parking,
+  } = useSelector((state) => state.rentals);
   const { statusType, featured, isGridOrList } = useSelector(
     (state) => state.filter
   );
@@ -28,8 +30,7 @@ const FeaturedItem = ({ rentals }) => {
   // keyword filter
   const keywordHandler = (item) => 
     item.name.toLowerCase().includes(keyword?.toLowerCase()) ||
-    item.address.toLowerCase().includes(keyword?.toLowerCase()) ||
-    item.code.toLowerCase().includes(keyword?.toLowerCase());
+    item.address.toLowerCase().includes(keyword?.toLowerCase());
 
   // type handler
   const typeHandler = (item) => {
@@ -47,33 +48,29 @@ const FeaturedItem = ({ rentals }) => {
     return item.city.toLowerCase().includes(city.toLowerCase());
   };
 
-  const statusHandler = (item) => {
-    if (status == "") return true;
-    else return item.status.toLowerCase() == status.toLowerCase();
-  };
 
   // area handler
-  const areaHandler = (item) => {
-    if (area.min !== 0 && area.max !== 0) {
-      if (area.min !== "" && area.max !== "") {
-        return (
-          parseInt(item.areaMin) <= area.max &&
-          parseInt(item.areaMax) >= area.min
-        );
-      }
-    }
-    return true;
-  };
+  // const areaHandler = (item) => {
+  //   if (area.min !== 0 && area.max !== 0) {
+  //     if (area.min !== "" && area.max !== "") {
+  //       return (
+  //         parseInt(item.areaMin) <= area.max &&
+  //         parseInt(item.areaMax) >= area.min
+  //       );
+  //     }
+  //   }
+  //   return true;
+  // };
 
-  const occupencyYearsHandler = (item) => {
-    if (occupencyYear == "") return true;
-    else return item.yearBuilt.toLowerCase() == occupencyYear.toLowerCase();
+  const availabilityDateHandler = (item) => {
+    if (item.availability_date == "") return true;
+    else return item.availability_date.toLowerCase() == availabilityDate.toLowerCase();
   };
 
   // price handler
   const priceHandler = (item) => {
-    if ((price?.min < 0) || (price?.max < 0)) return true;
-    else return item.price_from <= price?.max && item.price_to >= price?.min;
+    if ((price == 0 ) ) return true;
+    else return item.monthly_rent.toLowerCase() == price.toLowerCase();
   };
 
   // bathroom handler
@@ -137,32 +134,22 @@ const FeaturedItem = ({ rentals }) => {
   let content = rentals
     ?.slice(0, 8)
     ?.filter(keywordHandler)
-    ?.filter(typeHandler)
-    ?.filter(locationHandler)
-    ?.filter(statusHandler)
-    ?.filter(areaHandler)
-    ?.filter(occupencyYearsHandler)
-    ?.filter(priceHandler)
-    ?.filter(bathroomHandler)
-    ?.filter(bedroomHandler)
-    ?.filter(advanceHandler)
-    ?.filter(cityHandler)
     .map((item) => {
-      const priceFrom = item?.price_from;
-      const priceTo = item?.price_to;
+      const monthlyRent = item?.monthly_rent;
+      // const priceTo = item?.price_to;
 
-      const formattedPriceFrom = priceFrom.toLocaleString("en-US", {
+      const formattedMonthlyRent = monthlyRent.toLocaleString("en-US", {
         style: "currency",
         currency: "USD",
         minimumFractionDigits: 0,
         maximumFractionDigits: 0,
       });
-      const formattedPriceTo = priceTo.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      });
+      // const formattedPriceTo = priceTo.toLocaleString("en-US", {
+      //   style: "currency",
+      //   currency: "USD",
+      //   minimumFractionDigits: 0,
+      //   maximumFractionDigits: 0,
+      // });
 
       return (
       <div
@@ -188,12 +175,12 @@ const FeaturedItem = ({ rentals }) => {
             />
             <div className="thmb_cntnt">
               <ul className="tag mb0">
-                <li className="list-inline-item">
+                {/* <li className="list-inline-item">
                   <a href="#">Featured</a>
-                </li>
+                </li> */}
                 <li className="list-inline-item">
                   <a href="#" className="text-capitalize">
-                    {item.vip_feature_promotion}
+                    {item.type}
                   </a>
                 </li>
               </ul>
@@ -210,10 +197,10 @@ const FeaturedItem = ({ rentals }) => {
                 </li>
               </ul>
                 <Link
-                  href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}
+                  href={`/${item.slug}`}
                   className="fp_price"
                 >
-                  {formattedPriceFrom} - {formattedPriceTo}
+                  {formattedMonthlyRent} / <small>mo</small>
                 </Link>
               </div>
             </div>
@@ -221,7 +208,7 @@ const FeaturedItem = ({ rentals }) => {
               <div className="tc_content">
                 <p className="text-thm">{item.type}</p>
                 <h4>
-                  <Link href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}>
+                  <Link href={`/rental/${item.slug}`}>
                     {item.name}
                   </Link>
                 </h4>
@@ -235,7 +222,7 @@ const FeaturedItem = ({ rentals }) => {
               {/* End .tc_content */}
 
               <div className="fp_footer">
-                <ul className="fp_meta float-start mb0">
+                {/* <ul className="fp_meta float-start mb0">
                   <li className="list-inline-item">
                     <Link href="/agent-v2">
                       <img
@@ -251,7 +238,7 @@ const FeaturedItem = ({ rentals }) => {
                   <li className="list-inline-item">
                     <Link href="/">{item.agent.name}</Link>
                   </li>
-                </ul>
+                </ul> */}
                 <div className="fp_pdate float-end">{item.postedYear}</div>
               </div>
               {/* End .fp_footer */}
