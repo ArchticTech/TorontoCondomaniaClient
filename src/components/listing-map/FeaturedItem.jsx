@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../features/properties/propertiesSlice";
 import global from "../../config/env";
+import IconPropertyHeart from "../common/IconPropertyHeart";
 
 const FeaturedItem = ({ properties, isAssignment }) => {
   const {
@@ -213,11 +214,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                     <span className="flaticon-transfer-1"></span>
                   </a>
                 </li>
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-heart"></span>
-                  </a>
-                </li>
+                <IconPropertyHeart id={item.id}/>
               </ul>
               <Link
                 href={

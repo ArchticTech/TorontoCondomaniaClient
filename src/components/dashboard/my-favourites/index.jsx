@@ -6,7 +6,7 @@ import Filtering from "./Filtering";
 import Pagination from "./Pagination";
 import SearchBox from "./SearchBox";
 
-const index = () => {
+const index = ({favProperties}) => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -43,7 +43,7 @@ const index = () => {
                         data-bs-target="#DashboardOffcanvasMenu"
                         aria-controls="DashboardOffcanvasMenu"
                       >
-                        <i className="fa fa-bars pr10"></i> Dashboard Navigation
+                        <i className="fa fa-bars pr10"></i> Dashboard Navigation 
                       </button>
                     </div>
                   </div>
@@ -80,7 +80,7 @@ const index = () => {
                 <div className="col-lg-12">
                   <div className="my_dashboard_review mb40">
                     <div className="favorite_item_list">
-                      <FavouritProducts />
+                      <FavouritProducts favProperties={favProperties}/>
 
                       <div className="mbp_pagination">
                         <Pagination />

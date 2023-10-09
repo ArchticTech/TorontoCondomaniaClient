@@ -10,6 +10,7 @@ import DetailsContent from "../../components/listing-details-v1/DetailsContent";
 import Sidebar from "../../components/listing-details-v1/Sidebar";
 import Head from "next/head";
 import global from "../../config/env";
+import IconPropertyHeart from "../common/IconPropertyHeart";
 
 const PropertyView = ({property}) => {
 
@@ -98,11 +99,7 @@ const PropertyView = ({property}) => {
                           <span className="flaticon-transfer-1"></span>
                         </a>
                       </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-heart"></span>
-                        </a>
-                      </li>
+                      <IconPropertyHeart id={property.id}/>
                       <li className="list-inline-item">
                         <a href="#">
                           <span className="flaticon-share"></span>

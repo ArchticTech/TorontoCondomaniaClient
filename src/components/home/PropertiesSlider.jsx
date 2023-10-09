@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import global from "../../config/env";
 import BedIcon from '@mui/icons-material/Bed';
 import BathIcon from '@mui/icons-material/Bathtub';
+import IconPropertyHeart from "../common/IconPropertyHeart";
 
 const PropertiesSlider = ({ properties }) => {
   const settings = {
@@ -80,11 +81,7 @@ const PropertiesSlider = ({ properties }) => {
                   <span className="flaticon-transfer-1"></span>
                 </a>
               </li>
-              <li className="list-inline-item">
-                <a href="#">
-                  <span className="flaticon-heart"></span>
-                </a>
-              </li>
+              <IconPropertyHeart id={property.id}/>
             </ul>
             {/* End .icon */}
 

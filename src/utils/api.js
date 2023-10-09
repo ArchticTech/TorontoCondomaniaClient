@@ -46,13 +46,23 @@ export async function fetchAllRentals() {
 }
 
 export async function fetchRental(id) {
-    const response = await fetch(global.apiURL + 'api/getRental/' + id);
+    const response = await fetch(global.apiURL + 'api/getAllFavorites/'  + id);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
     const rental = await response.json();
 
     return rental;
+}
+
+export async function fetchAllFavProperties() {
+    const response = await fetch(global.apiURL + 'api/getAllFavorites');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const favProperties = await response.json();
+
+    return favProperties;
 }
 
 export async function fetchCityCount(name) {
@@ -67,6 +77,7 @@ export async function fetchCityCount(name) {
     } catch (error) {
         // Handle the error here
         console.error('Error fetching API:', error);
+        
         throw error; // Re-throw the error to propagate it to the caller if needed
     }
 }

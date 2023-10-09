@@ -9,8 +9,10 @@ import {
   SidebarContent,
 } from "react-pro-sidebar";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { addCity } from "../../../features/properties/propertiesSlice";
 
 const home = { name: "Home", routerPath: "/" };
 
@@ -41,6 +43,11 @@ const homeLoan = [
 ];
 const MobileMenuContent = () => {
   const route = useRouter();
+  const dispatch = useDispatch();
+  const submitHandler = (city) => {
+    dispatch(addCity(city));
+    Router.push("/properties");
+  };
   return (
     <ProSidebar>
       <SidebarHeader>
@@ -120,19 +127,21 @@ const MobileMenuContent = () => {
               ))}
             </SubMenu>
           }
-          
+
           {/* end listing */}
-          
+
           {
             <SubMenu
               title="Top Cities"
               className={
-                topCities.some((topCities) => topCities.routerPath === route.pathname)
+                topCities.some(
+                  (topCities) => topCities.routerPath === route.pathname
+                )
                   ? "parent-menu-active"
                   : undefined
               }
             >
-              {topCities.map((val, i) => (
+              {/* {topCities.map((val, i) => (
                 <MenuItem key={i}>
                   <Link
                     href={val.routerPath}
@@ -145,6 +154,16 @@ const MobileMenuContent = () => {
                     {val.name}
                   </Link>
                 </MenuItem>
+              ))} */}
+              {topCities.map((item) => (
+                <MenuItem key={item.id}>
+                  <a
+                    onClick={() => submitHandler(item.name)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {item.name}
+                  </a>
+                </MenuItem>
               ))}
             </SubMenu>
           }
@@ -154,7 +173,9 @@ const MobileMenuContent = () => {
             <SubMenu
               title="Home Loan"
               className={
-                homeLoan.some((homeLoan) => homeLoan.routerPath === route.pathname)
+                homeLoan.some(
+                  (homeLoan) => homeLoan.routerPath === route.pathname
+                )
                   ? "parent-menu-active"
                   : undefined
               }
@@ -190,23 +211,37 @@ const MobileMenuContent = () => {
           </MenuItem>
 
           <MenuItem>
-            <Link
+            {/* <Link
               href="/login"
               className={route.pathname === "/login" ? "ui-active" : undefined}
             >
               <span className="flaticon-user"></span> Login
-            </Link>
+            </Link> */}
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target=".bd-example-modal-lg"
+            >
+              <span className="flaticon-user"> Login</span>
+            </a>
           </MenuItem>
 
           <MenuItem>
-            <Link
+            {/* <Link
               href="/register"
               className={
                 route.pathname === "/register" ? "ui-active" : undefined
               }
             >
               <span className="flaticon-edit"></span> Register
-            </Link>
+            </Link> */}
+            <a
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target=".bd-example-modal-lg"
+            >
+              <span className="flaticon-edit"> Register</span>
+            </a>
           </MenuItem>
         </Menu>
       </SidebarContent>
