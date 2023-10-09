@@ -10699,6 +10699,26 @@ a.btn.btn_error {
   border: 1px solid #dd4b39;
   color: #ffffff !important;
 }
+.login_form .error, 
+.sign_up_form .error {
+  color: red;
+  font-weight: 400;
+  font-size: 14px;
+}
+.login_form .error-bg, 
+.sign_up_form .error-bg {
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #ffe5e5;
+  padding: 5px 21px;
+  border-radius: 5px;
+  color: #c90000;
+  border: 1px solid #c90000;
+}
+.login_form .error-bg:empty,
+.login_form .error-bg:empty {
+  display: none;
+}
 
 .login_form button i,
 .sign_up_form button i {

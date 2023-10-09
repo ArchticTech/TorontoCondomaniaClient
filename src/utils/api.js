@@ -75,13 +75,10 @@ export async function fetchCityCount(name) {
 
 export async function registerUser(userData)
 {
-    try {
-        const response = await axios.get(global.apiURL + 'api/register/', 
-        userData['name'] + '/'
-        + userData['email'] + '/'
-        + userData['password']);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+    const response = await fetch(global.apiURL + 'api/register/' + 
+    encodeURIComponent(userData['name']) + '/' + 
+    encodeURIComponent(userData['email']) + '/' + 
+    encodeURIComponent(userData['password']));
+
+    return await response.json();
 }

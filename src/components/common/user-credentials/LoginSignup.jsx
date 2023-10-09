@@ -1,7 +1,42 @@
+import { registerUser } from "../../../utils/api"
 import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 const LoginSignup = () => {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('')
+
+  const signupSubmit = (e) =>
+  {
+    e.preventDefault();
+
+    const userData = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    registerUser(userData)
+    .then((response) => 
+    {
+        if(response.error) 
+        {
+          if(response.error.code == 'user_already_exists')
+          {
+            setErrorMsg('This User Already Exists');
+          }
+        }
+        else 
+        {
+          setErrorMsg(response.msg);
+        }
+    });
+  }
+
   return (
     <div className="modal-content">
       <div className="modal-header">
@@ -193,7 +228,7 @@ const LoginSignup = () => {
                 </div>
                 {/* End .heading */}
 
-                <form action="#">
+                <form onSubmit={signupSubmit}>
                   <div className="row ">
                     <div className="col-lg-12">
                       <button type="submit" className="btn btn-fb w-100">
@@ -212,12 +247,21 @@ const LoginSignup = () => {
 
                   <hr />
 
+                  { errorMsg ? 
+                  <div className="error-bg form-group input-group mb-3">
+                    {errorMsg}
+                  </div> 
+                  : undefined }
+
                   <div className="form-group input-group mb-3">
                     <input
                       type="text"
                       className="form-control"
                       id="exampleInputName"
                       placeholder="User Name"
+                      value = {name}
+                      onChange={(e) => {setName(e.target.value)}}
+                      required
                     />
                     <div className="input-group-prepend">
                       <div className="input-group-text">
@@ -233,6 +277,9 @@ const LoginSignup = () => {
                       className="form-control"
                       id="exampleInputEmail2"
                       placeholder="Email"
+                      value = {email}
+                      onChange={(e) => {setEmail(e.target.value)}}
+                      required
                     />
                     <div className="input-group-prepend">
                       <div className="input-group-text">
@@ -248,6 +295,9 @@ const LoginSignup = () => {
                       className="form-control"
                       id="exampleInputPassword2"
                       placeholder="Password"
+                      value = {password}
+                      onChange={(e) => {setPassword(e.target.value)}}
+                      required
                     />
                     <div className="input-group-prepend">
                       <div className="input-group-text">
@@ -257,33 +307,27 @@ const LoginSignup = () => {
                   </div>
                   {/* End .row */}
 
-                  <div className="form-group input-group  mb-3">
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="exampleInputPassword3"
-                      placeholder="Re-enter password"
-                    />
-                    <div className="input-group-prepend">
-                      <div className="input-group-text">
-                        <i className="flaticon-password"></i>
+                  <div className="mb-3">
+                    <div className="form-group input-group mb-1">
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="exampleInputPassword3"
+                        placeholder="Re-enter password"
+                        value = {confirmPassword}
+                        onChange={(e) => {setConfirmPassword(e.target.value)}}
+                        required
+                      />
+                      <div className="input-group-prepend">
+                        <div className="input-group-text">
+                          <i className="flaticon-password"></i>
+                        </div>
                       </div>
                     </div>
+                    {(confirmPassword == '') || (confirmPassword == password) ? undefined: 
+                    <div class="error mb-3 px-2">Password Does Not Match</div> }
                   </div>
                   {/* End .row */}
-
-                  <div className="form-group ui_kit_select_search mb-3">
-                    <select
-                      className="form-select"
-                      data-live-search="true"
-                      data-width="100%"
-                    >
-                      <option data-tokens="SelectRole">Single User</option>
-                      <option data-tokens="Agent/Agency">Agent</option>
-                      <option data-tokens="SingleUser">Multi User</option>
-                    </select>
-                  </div>
-                  {/* End from-group */}
 
                   <div className="form-group form-check custom-checkbox mb-3">
                     <input
@@ -291,12 +335,13 @@ const LoginSignup = () => {
                       type="checkbox"
                       value=""
                       id="terms"
+                      required
                     />
                     <label
                       className="form-check-label form-check-label"
                       htmlFor="terms"
                     >
-                      I have accept the Terms and Privacy Policy.
+                      I have accepted the Terms and Privacy Policy.
                     </label>
                   </div>
                   {/* End from-group */}
