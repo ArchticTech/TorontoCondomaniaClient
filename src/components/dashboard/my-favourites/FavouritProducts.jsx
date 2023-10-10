@@ -77,10 +77,10 @@ const FavouritProducts = ({ favProperties }) => {
 
       <ul className="view_edit_delete_list mb0 mt35">
         <li
-          className="list-inline-item"
-          data-toggle="tooltip"
-          data-placement="top"
-          title="Delete"
+          className="list-inline-item delete_fav"
+          // data-toggle="tooltip"
+          // data-placement="top"
+          // title="Delete"
         >
           {/* <a href="#">
             <span className="flaticon-garbage"></span>

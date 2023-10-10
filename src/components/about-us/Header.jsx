@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import HeaderMenuContent from "./HeaderMenuContent";
+import HeaderMenuContent from "../common/header/HeaderMenuContent";
 import Image from "next/image";
 
 const Header = () => {
@@ -20,7 +20,10 @@ const Header = () => {
 
   return (
     <header 
-      className={`header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu  ${
+    //   className={`header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu  ${
+    //     navbar ? "stricky-fixed " : ""
+    //   }`}
+    className={`header-nav menu_style_home_one home5 navbar-scrolltofixed stricky main-menu  ${
         navbar ? "stricky-fixed " : ""
       }`}
     >

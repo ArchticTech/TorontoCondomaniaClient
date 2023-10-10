@@ -28,9 +28,10 @@ const IconPropertyHeart = ({ id }) => {
   };
   return (
     <>
-      <li className="list-inline-item">
+      <li className="list-inline-item" style={{ color: isSaved ? "white" : "", backgroundColor: isSaved ? "var(--color-primary)" : "",
+    opacity: isSaved ? "1" : "" }} >
         <a href="#" onClick={(e) => handleFavoriteClick(e, id)}>
-          <span className="flaticon-heart" style={{ color: isSaved ? "red" : "" }} ></span>
+          <span className="flaticon-heart"  ></span>
         </a>
       </li>
     </>
