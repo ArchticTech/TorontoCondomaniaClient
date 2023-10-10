@@ -76,9 +76,23 @@ export async function fetchCityCount(name) {
 export async function registerUser(userData)
 {
     const response = await fetch(global.apiURL + 'api/register/' + 
-    encodeURIComponent(userData['name']) + '/' + 
-    encodeURIComponent(userData['email']) + '/' + 
-    encodeURIComponent(userData['password']));
+        encodeURIComponent(userData['name']) + '/' + 
+        encodeURIComponent(userData['email']) + '/' + 
+        encodeURIComponent(userData['password']));
+
+    return await response.json();
+}
+export async function resendVerificationEmail(email)
+{
+    await fetch(global.apiURL + 
+        'api/resendEmail/' + 
+        encodeURIComponent(email));
+}
+export async function authenticateUser(userData)
+{
+    const response = await fetch(global.apiURL + 'api/authenticate/' + 
+        encodeURIComponent(userData['email']) + '/' + 
+        encodeURIComponent(userData['password']));
 
     return await response.json();
 }

@@ -1,7 +1,6 @@
-import { registerUser } from "../../../utils/api"
+import { registerUser, resendVerificationEmail } from "../../../utils/api"
 import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/router";
 
 const LoginSignup = () => {
 
@@ -9,9 +8,13 @@ const LoginSignup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [errorMsg, setErrorMsg] = useState('')
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState(null)
+  const [successMsg, setSuccessMsg] = useState(null)
+  const [verifyEmailPopup, setVerifyEmailPopup] = useState(false)
 
-  const signupSubmit = (e) =>
+  const signupSubmit = async (e) =>
   {
     e.preventDefault();
 
@@ -20,6 +23,9 @@ const LoginSignup = () => {
       email: email,
       password: password,
     };
+    setPassword('');
+    setConfirmPassword('');
+
     registerUser(userData)
     .then((response) => 
     {
@@ -30,16 +36,70 @@ const LoginSignup = () => {
             setErrorMsg('This User Already Exists');
           }
         }
-        else 
+        else if(response.msg == 'user_not_verified')
         {
-          setErrorMsg(response.msg);
+          setSuccessMsg('You Need to Verify your Email to Proceed!');
+          setVerifyEmailPopup(true);
+        }
+        else if(response.msg == 'new_user_created')
+        {
+          setSuccessMsg('You are Registered Successfully. Verify Your Email to Proceed!');
+          setVerifyEmailPopup(true);
         }
     });
+  }
+  const loginSubmit = (e) => 
+  {
+    e.preventDefault();
+
+    const userData = {
+      email: loginEmail,
+      password: loginPassword,
+    };
+    authenticateUser(userData)
+    .then((response) => 
+    {
+        if(response.error) 
+        {
+          if(response.error.code == 'user_already_exists')
+          {
+            setErrorMsg('This User Already Exists');
+          }
+        }
+        else if(response.msg == 'user_not_verified')
+        {
+          setSuccessMsg('You Need to Verify your Email to Proceed!');
+          setVerifyEmailPopup(true);
+        }
+        else if(response.msg == 'new_user_created')
+        {
+          setSuccessMsg('You are Registered Successfully. Verify Your Email to Proceed!');
+          setVerifyEmailPopup(true);
+        }
+    });
+  }
+  const resendEmail = () =>
+  {
+    resendVerificationEmail(email)
+    .then(() => {
+      setSuccessMsg('Verification Email Resent Successfully!');
+    });
+  }
+  const closePopup = () => 
+  {
+    setName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+    setErrorMsg(null);
+    setSuccessMsg(null);
+    setVerifyEmailPopup(false);
   }
 
   return (
     <div className="modal-content">
-      <div className="modal-header">
+      <div className="modal-header"
+      onClick={closePopup}>
         <button
           type="button"
           data-bs-dismiss="modal"
@@ -110,7 +170,7 @@ const LoginSignup = () => {
 
             <div className="col-lg-6 col-xl-6">
               <div className="login_form">
-                <form action="#">
+                <form action={loginSubmit}>
                   <div className="heading">
                     <h4>Login</h4>
                   </div>
@@ -140,7 +200,11 @@ const LoginSignup = () => {
                       className="form-control"
                       id="inlineFormInputGroupUsername2"
                       placeholder="User Name Or Email"
+                      value={loginEmail}
+                      onChange={(e) => {setLoginEmail(e.target.value)}}
+                      required
                     />
+                    {loginEmail}
                     <div className="input-group-prepend">
                       <div className="input-group-text">
                         <i className="flaticon-user"></i>
@@ -155,6 +219,9 @@ const LoginSignup = () => {
                       className="form-control"
                       id="exampleInputPassword1"
                       placeholder="Password"
+                      value={loginPassword}
+                      onChange={(e) => {setLoginPassword(e.target.value)}}
+                      required
                     />
                     <div className="input-group-prepend">
                       <div className="input-group-text">
@@ -170,6 +237,7 @@ const LoginSignup = () => {
                       type="checkbox"
                       value=""
                       id="remeberMe"
+                      required
                     />
                     <label
                       className="form-check-label form-check-label"
@@ -178,7 +246,7 @@ const LoginSignup = () => {
                       Remember me
                     </label>
 
-                    <a className="btn-fpswd float-end" href="#">
+                    <a className="btn-fpswd float-end" href="">
                       Lost your password?
                     </a>
                   </div>
@@ -191,7 +259,7 @@ const LoginSignup = () => {
 
                   <p className="text-center">
                     Dont have an account?{" "}
-                    <a className="text-thm" href="#">
+                    <a className="text-thm">
                       Register
                     </a>
                   </p>
@@ -248,7 +316,7 @@ const LoginSignup = () => {
                   <hr />
 
                   { errorMsg ? 
-                  <div className="error-bg form-group input-group mb-3">
+                  <div className="msg-box error-bg form-group input-group mb-3">
                     {errorMsg}
                   </div> 
                   : undefined }
@@ -259,7 +327,7 @@ const LoginSignup = () => {
                       className="form-control"
                       id="exampleInputName"
                       placeholder="User Name"
-                      value = {name}
+                      value={name}
                       onChange={(e) => {setName(e.target.value)}}
                       required
                     />
@@ -277,7 +345,7 @@ const LoginSignup = () => {
                       className="form-control"
                       id="exampleInputEmail2"
                       placeholder="Email"
-                      value = {email}
+                      value={email}
                       onChange={(e) => {setEmail(e.target.value)}}
                       required
                     />
@@ -295,7 +363,7 @@ const LoginSignup = () => {
                       className="form-control"
                       id="exampleInputPassword2"
                       placeholder="Password"
-                      value = {password}
+                      value={password}
                       onChange={(e) => {setPassword(e.target.value)}}
                       required
                     />
@@ -314,7 +382,7 @@ const LoginSignup = () => {
                         className="form-control"
                         id="exampleInputPassword3"
                         placeholder="Re-enter password"
-                        value = {confirmPassword}
+                        value={confirmPassword}
                         onChange={(e) => {setConfirmPassword(e.target.value)}}
                         required
                       />
@@ -325,7 +393,7 @@ const LoginSignup = () => {
                       </div>
                     </div>
                     {(confirmPassword == '') || (confirmPassword == password) ? undefined: 
-                    <div class="error mb-3 px-2">Password Does Not Match</div> }
+                    <div className="error mb-3 px-2">Password Does Not Match</div> }
                   </div>
                   {/* End .row */}
 
@@ -366,6 +434,30 @@ const LoginSignup = () => {
           {/* End .tab-pane */}
         </div>
       </div>
+      
+      {
+        verifyEmailPopup ? 
+        <div className="verify-email modal-body container pb20">
+          <div className="border-box">
+            <Image 
+              className="d-block"
+              src={'/assets/images/email-verify.png'}
+              width={153}
+              height={153}
+              alt={'Verify Email Gif'}
+            />
+            <h2 className="mt-3">Welcome {name}</h2>
+            <h6>{successMsg}</h6>
+            <p>To access all the features on our website and ensure 
+              the security of your account, please verify your email 
+              by clicking the link we&apos;ve sent to your inbox.</p>
+            <p>If you haven&apos;t received the email, please check your 
+              spam folder. If you encounter any issues, please contact our support team.</p>
+
+            <button onClick={resendEmail} className="btn btn-primary mt-3">Resend Email</button>
+        </div>
+      </div> : undefined
+      }
     </div>
   );
 };

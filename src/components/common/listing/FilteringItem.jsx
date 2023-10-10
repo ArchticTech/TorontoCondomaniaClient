@@ -14,7 +14,6 @@ import {
   addKeyword,
   addLocation,
   addPrice,
-  addPropertyType,
   addStatus,
   addType,
   addOccupencyYear,
