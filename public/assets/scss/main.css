@@ -10718,6 +10718,17 @@ a.btn.btn_error {
   color: #c90000;
   border: 1px solid #c90000;
 }
+.login_form .loading, 
+.sign_up_form .loading {
+  background-color: #947eff !important;
+  border-color: #947eff !important;
+  cursor: progress !important;
+}
+.login_form .loading:hover, 
+.sign_up_form .loading:hover {
+  background-color: #947eff !important;
+  border-color: #947eff !important;
+}
 
 .login_form button i,
 .sign_up_form button i {
@@ -19919,3 +19930,65 @@ button.gm-ui-hover-effect:focus {
   text-transform: uppercase;
   font-family: 'Acumin';
 }
+
+
+@keyframes ldio-anxmmbev13s {
+  0% { transform: translate(8px,42px) scale(0); }
+ 25% { transform: translate(8px,42px) scale(0); }
+ 50% { transform: translate(8px,42px) scale(1); }
+ 75% { transform: translate(42px,42px) scale(1); }
+100% { transform: translate(76px,42px) scale(1); }
+}
+@keyframes ldio-anxmmbev13s-r {
+  0% { transform: translate(76px,42px) scale(1); }
+100% { transform: translate(76px,42px) scale(0); }
+}
+@keyframes ldio-anxmmbev13s-c {
+  0% { background: #ffffff }
+ 25% { background: #ffffff }
+ 50% { background: #ffffff }
+ 75% { background: #ffffff }
+100% { background: #ffffff }
+}
+.ldio-anxmmbev13s div {
+ position: absolute;
+ width: 16px;
+ height: 16px;
+ border-radius: 50%;
+ transform: translate(42px,42px) scale(1);
+ background: #ffffff;
+ animation: ldio-anxmmbev13s 1.8867924528301885s infinite cubic-bezier(0,0.5,0.5,1);
+}
+.ldio-anxmmbev13s div:nth-child(1) {
+ background: #ffffff;
+ transform: translate(76px,42px) scale(1);
+ animation: ldio-anxmmbev13s-r 0.4716981132075471s infinite cubic-bezier(0,0.5,0.5,1), ldio-anxmmbev13s-c 1.8867924528301885s infinite step-start;
+}.ldio-anxmmbev13s div:nth-child(2) {
+ animation-delay: -0.4716981132075471s;
+ background: #ffffff;
+}.ldio-anxmmbev13s div:nth-child(3) {
+ animation-delay: -0.9433962264150942s;
+ background: #ffffff;
+}.ldio-anxmmbev13s div:nth-child(4) {
+ animation-delay: -1.4150943396226414s;
+ background: #ffffff;
+}.ldio-anxmmbev13s div:nth-child(5) {
+ animation-delay: -1.8867924528301885s;
+ background: #ffffff;
+}
+.loadingio-spinner-ellipsis-sdz4jl5neqp {
+ width: 30px;
+ height: 30px;
+ display: inline-block;
+ overflow: hidden;
+ background: transparent;
+}
+.ldio-anxmmbev13s {
+ width: 100%;
+ height: 100%;
+ position: relative;
+ transform: translateZ(0) scale(0.3);
+ backface-visibility: hidden;
+ transform-origin: 0 0; /* see note above */
+}
+.ldio-anxmmbev13s div { box-sizing: content-box; }

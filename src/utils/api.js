@@ -94,5 +94,25 @@ export async function authenticateUser(userData)
         encodeURIComponent(userData['email']) + '/' + 
         encodeURIComponent(userData['password']));
 
-    return await response.json();
+    const data = await response.json();
+    if (response.ok) {
+
+        if (data.token) {
+            // Store the token in localStorage
+            localStorage.setItem('token', data.token);
+            // $response = new Response('Token set in a cookie');
+
+            // // Set the token in an HttpOnly cookie
+            // $response->withCookie(cookie('token', $token, 60)); // 'token' is the name of the cookie
+
+            // return $response;
+        }
+    }
+
+    return await data;
+}
+
+export async function validateUser()
+{
+    
 }

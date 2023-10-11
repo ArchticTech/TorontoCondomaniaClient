@@ -1,6 +1,8 @@
-import { registerUser, resendVerificationEmail } from "../../../utils/api"
+import { registerUser, resendVerificationEmail, authenticateUser } from "../../../utils/api"
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import LoadingIcon from '../LoadingIcon'
 
 const LoginSignup = () => {
 
@@ -8,75 +10,92 @@ const LoginSignup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [successMsg, setSuccessMsg] = useState(null);
+
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const [errorMsg, setErrorMsg] = useState(null)
-  const [successMsg, setSuccessMsg] = useState(null)
-  const [verifyEmailPopup, setVerifyEmailPopup] = useState(false)
+
+  const [loginErrorMsg, setLoginErrorMsg] = useState(null);
+
+  const [verifyEmailPopup, setVerifyEmailPopup] = useState(false);
+
+  const [loading, setLoading] = useState(false)
+
+  const router = useRouter();
 
   const signupSubmit = async (e) =>
   {
     e.preventDefault();
 
-    const userData = {
-      name: name,
-      email: email,
-      password: password,
-    };
-    setPassword('');
-    setConfirmPassword('');
-
-    registerUser(userData)
-    .then((response) => 
+    if(!loading)
     {
-        if(response.error) 
-        {
-          if(response.error.code == 'user_already_exists')
+      setLoading(true);
+      const userData = {
+        name: name,
+        email: email,
+        password: password,
+      };
+      setPassword('');
+      setConfirmPassword('');
+
+      registerUser(userData)
+      .then((response) => 
+      {
+          setLoading(false);
+          if(response.error) 
           {
-            setErrorMsg('This User Already Exists');
+            if(response.error == 'user_already_exists')
+            {
+              setErrorMsg('This User Already Exists');
+            }
           }
-        }
-        else if(response.msg == 'user_not_verified')
-        {
-          setSuccessMsg('You Need to Verify your Email to Proceed!');
-          setVerifyEmailPopup(true);
-        }
-        else if(response.msg == 'new_user_created')
-        {
-          setSuccessMsg('You are Registered Successfully. Verify Your Email to Proceed!');
-          setVerifyEmailPopup(true);
-        }
-    });
+          else if(response.msg == 'user_not_verified')
+          {
+            setSuccessMsg('You Need to Verify your Email to Proceed!');
+            setVerifyEmailPopup(true);
+          }
+          else if(response.msg == 'new_user_created')
+          {
+            setSuccessMsg('You are Registered Successfully. Verify Your Email to Proceed!');
+            setVerifyEmailPopup(true);
+          }
+      });
+    }
   }
   const loginSubmit = (e) => 
   {
     e.preventDefault();
 
-    const userData = {
-      email: loginEmail,
-      password: loginPassword,
-    };
-    authenticateUser(userData)
-    .then((response) => 
+    if(!loading)
     {
-        if(response.error) 
-        {
-          if(response.error.code == 'user_already_exists')
+      setLoading(true);
+      const userData = {
+        email: loginEmail,
+        password: loginPassword,
+      };
+      authenticateUser(userData)
+      .then((response) => 
+      {
+          setLoading(false);
+          if(response.error) 
           {
-            setErrorMsg('This User Already Exists');
+            if(response.error == 'invalid_credentials')
+            {
+              setLoginErrorMsg('Invalid email or password. Please check your credentials and try again.');
+            }
+            else if(response.error == 'email_not_verified')
+            {
+              setSuccessMsg('Your email address has not been verified yet. A verification email has been sent to you. Please verify your email before proceeding.');
+              setVerifyEmailPopup(true);
+            }
           }
-        }
-        else if(response.msg == 'user_not_verified')
-        {
-          setSuccessMsg('You Need to Verify your Email to Proceed!');
-          setVerifyEmailPopup(true);
-        }
-        else if(response.msg == 'new_user_created')
-        {
-          setSuccessMsg('You are Registered Successfully. Verify Your Email to Proceed!');
-          setVerifyEmailPopup(true);
-        }
-    });
+          else {
+            router.push('/dashboard');
+          }
+      });
+    }
   }
   const resendEmail = () =>
   {
@@ -91,20 +110,27 @@ const LoginSignup = () => {
     setEmail('');
     setPassword('');
     setConfirmPassword('');
+
     setErrorMsg(null);
     setSuccessMsg(null);
+
+    setLoginEmail('');
+    setLoginPassword('');
+
+    setLoginErrorMsg(null);
+
     setVerifyEmailPopup(false);
   }
 
   return (
     <div className="modal-content">
-      <div className="modal-header"
-      onClick={closePopup}>
+      <div className="modal-header">
         <button
           type="button"
           data-bs-dismiss="modal"
           aria-label="Close"
           className="btn-close"
+          onClick={closePopup}
         ></button>
       </div>
       {/* End .modal-header */}
@@ -170,7 +196,7 @@ const LoginSignup = () => {
 
             <div className="col-lg-6 col-xl-6">
               <div className="login_form">
-                <form action={loginSubmit}>
+                <form onSubmit={loginSubmit}>
                   <div className="heading">
                     <h4>Login</h4>
                   </div>
@@ -194,17 +220,22 @@ const LoginSignup = () => {
 
                   <hr />
 
+                  { loginErrorMsg ? 
+                  <div className="msg-box error-bg form-group input-group mb-3">
+                    {loginErrorMsg}
+                  </div> 
+                  : undefined }
+
                   <div className="input-group mb-2 mr-sm-2">
                     <input
-                      type="text"
+                      type="email"
                       className="form-control"
                       id="inlineFormInputGroupUsername2"
-                      placeholder="User Name Or Email"
+                      placeholder="Email"
                       value={loginEmail}
                       onChange={(e) => {setLoginEmail(e.target.value)}}
                       required
                     />
-                    {loginEmail}
                     <div className="input-group-prepend">
                       <div className="input-group-text">
                         <i className="flaticon-user"></i>
@@ -237,7 +268,6 @@ const LoginSignup = () => {
                       type="checkbox"
                       value=""
                       id="remeberMe"
-                      required
                     />
                     <label
                       className="form-check-label form-check-label"
@@ -252,8 +282,12 @@ const LoginSignup = () => {
                   </div>
                   {/* End remember me checkbox */}
 
-                  <button type="submit" className="btn btn-log w-100 btn-thm">
-                    Log In
+                  
+                  <button type="submit" 
+                    className={loading ? 
+                    "btn btn-log w-100 btn-thm loading": 
+                    "btn btn-log w-100 btn-thm"}>
+                    {loading ? <LoadingIcon />: 'Log In'}
                   </button>
                   {/* End submit button */}
 
@@ -326,7 +360,7 @@ const LoginSignup = () => {
                       type="text"
                       className="form-control"
                       id="exampleInputName"
-                      placeholder="User Name"
+                      placeholder="Name"
                       value={name}
                       onChange={(e) => {setName(e.target.value)}}
                       required
@@ -414,8 +448,11 @@ const LoginSignup = () => {
                   </div>
                   {/* End from-group */}
 
-                  <button type="submit" className="btn btn-log w-100 btn-thm">
-                    Sign Up
+                  <button type="submit" 
+                  className={loading ? 
+                    "btn btn-log w-100 btn-thm loading": 
+                    "btn btn-log w-100 btn-thm"}>
+                    {loading ? <LoadingIcon />: 'Sign Up'}
                   </button>
                   {/* End btn */}
 
@@ -446,7 +483,7 @@ const LoginSignup = () => {
               height={153}
               alt={'Verify Email Gif'}
             />
-            <h2 className="mt-3">Welcome {name}</h2>
+            {name ? <h2 className="mt-3">Welcome {name}</h2>: undefined}
             <h6>{successMsg}</h6>
             <p>To access all the features on our website and ensure 
               the security of your account, please verify your email 
