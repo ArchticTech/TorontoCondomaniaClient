@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 
 const IconPropertyHeart = ({ id }) => {
-    const [isSaved, setIsSaved] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
   const handleFavoriteClick = async (e, propertyId) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/storeFavorite/${propertyId}`, {
-        // method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/storeFavorite/${propertyId}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         setIsSaved(true);
@@ -28,10 +30,16 @@ const IconPropertyHeart = ({ id }) => {
   };
   return (
     <>
-      <li className="list-inline-item" style={{ color: isSaved ? "white" : "", backgroundColor: isSaved ? "var(--color-primary)" : "",
-    opacity: isSaved ? "1" : "" }} >
+      <li
+        className="list-inline-item"
+        style={{
+          color: isSaved ? "white" : "",
+          backgroundColor: isSaved ? "var(--color-primary)" : "",
+          opacity: isSaved ? "1" : "",
+        }}
+      >
         <a href="#" onClick={(e) => handleFavoriteClick(e, id)}>
-          <span className="flaticon-heart"  ></span>
+          <span className="flaticon-heart"></span>
         </a>
       </li>
     </>

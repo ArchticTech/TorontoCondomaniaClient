@@ -12,7 +12,7 @@ import Head from "next/head";
 import global from "../../config/env";
 import IconPropertyHeart from "../common/IconPropertyHeart";
 
-const PropertyView = ({property}) => {
+const PropertyView = ({property, assignment}) => {
 
   const priceFrom = property?.price_from;
   const priceTo = property?.price_to;
@@ -173,12 +173,12 @@ const PropertyView = ({property}) => {
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-lg-8">
-              <DetailsContent property={property}/>
+              <DetailsContent property={property} assignment={assignment}/>
             </div>
             {/* End details content .col-lg-8 */}
 
             <div className="col-lg-4 col-xl-4">
-              <Sidebar agent={property?.agent}/>
+              <Sidebar property={property}/>
             </div>
             {/* End sidebar content .col-lg-4 */}
           </div>

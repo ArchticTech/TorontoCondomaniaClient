@@ -14,7 +14,7 @@ const index = ({ properties }) => {
         />
       </Head>
       <Seo pageTitle="Latest Properties" />
-      <ListingMapV4 properties={properties}  />
+      <ListingMapV4 properties={properties}  isAssignment={false}/>
     </>
   );
 };

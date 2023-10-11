@@ -48,8 +48,9 @@ const FloorPlans = ({ floorPlan }) => {
             >
               <div className="card-body text-center">
                 <img
-                  style={{ height: "20%", width: "100px" }}
-                  className="img-fluid w-100 h-100 cover"
+                //  height={200}
+                //  width={200}
+                  className="floor_plane_image"
                   // src={`/images/${plan.image}`}
                   src={`${global.apiURL}images/${plan.image}`}
                   alt={`Suite ${plan.suite_no}`}

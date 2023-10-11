@@ -16,8 +16,8 @@ const HowitWorks = () => {
           </div>
 
           <div className="main_container">
-            <div className="main_howitworks_div">
-              <div className="howitworks_div">
+            <div className="row main_howitworks_div">
+              <div className="col-md-3 howitworks_div">
                 <span className="icon_span">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ const HowitWorks = () => {
                   and scrambled it to
                 </p>
               </div>
-              <div className="howitworks_div">
+              <div className="col-md-3 howitworks_div">
                 <span className="icon_span">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ const HowitWorks = () => {
                   and scrambled it to
                 </p>
               </div>
-              <div className="howitworks_div">
+              <div className="col-md-3 howitworks_div">
                 <span className="icon_span">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +165,7 @@ const HowitWorks = () => {
                   and scrambled it to
                 </p>
               </div>
-              <div className="howitworks_div">
+              <div className="col-md-3 howitworks_div">
                 <span className="icon_span">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

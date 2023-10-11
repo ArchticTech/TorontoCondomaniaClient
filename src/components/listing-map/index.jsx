@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 mapboxgl.accessToken = global.mapboxAccessToken; 
 
-const ListingMap = ({ properties, isAssignment=true }) => {
+const ListingMap = ({ properties, isAssignment }) => {
 
   useEffect(() => {
     const map = new mapboxgl.Map({

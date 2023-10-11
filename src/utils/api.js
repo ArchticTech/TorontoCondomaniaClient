@@ -27,8 +27,8 @@ export async function fetchAllAssignments() {
     return assignments;
 }
 
-export async function fetchAssignment(id) {
-    const response = await fetch(global.apiURL + 'api/getAssignment/' + id);
+export async function fetchAssignment(slug) {
+    const response = await fetch(global.apiURL + 'api/getAssignment/' + slug);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }

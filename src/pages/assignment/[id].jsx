@@ -238,7 +238,7 @@ const PropertyView = ({assignment}) => {
         />
       </Head>
       <Seo pageTitle="Latest Properties" />
-      <SingleProperty property={assignment}  />
+      <SingleProperty property={assignment.property} assignment={true} />
     </>
   );
 }
