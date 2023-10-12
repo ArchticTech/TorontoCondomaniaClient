@@ -12,7 +12,7 @@ import Head from "next/head";
 import global from "../../config/env";
 import IconPropertyHeart from "../common/IconPropertyHeart";
 
-const PropertyView = ({property, assignment}) => {
+const PropertyView = ({assignmentVal,property, assignment}) => {
 
   const priceFrom = property?.price_from;
   const priceTo = property?.price_to;
@@ -167,13 +167,14 @@ const PropertyView = ({property, assignment}) => {
           </Gallery>
         </div>
       </section>
+      {/* {console.log(property)}; */}
 
       {/* <!-- Agent Single Grid View --> */}
       <section className="our-agent-single bgc-f7 pb30-991">
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-lg-8">
-              <DetailsContent property={property} assignment={assignment}/>
+              <DetailsContent assignmentVal={assignmentVal} property={property} assignment={assignment}/>
             </div>
             {/* End details content .col-lg-8 */}
 

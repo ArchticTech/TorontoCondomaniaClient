@@ -21628,3 +21628,13 @@ padding-top: 10px;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.floor_reservation_image{
+  height: 300px;
+  padding: 10px;
+}
+
+.floor_reservation_image .img{
+  background-size: cover;
+  background-position: center;
+}

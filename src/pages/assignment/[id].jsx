@@ -229,6 +229,9 @@ import Seo from "../../components/common/seo";
 // import global from "../../config/env";
 
 const PropertyView = ({assignment}) => {
+
+  console.log('logging from main file ' + assignment.tentative_occ_date);
+
   return (
     <>
       <Head>
@@ -238,7 +241,7 @@ const PropertyView = ({assignment}) => {
         />
       </Head>
       <Seo pageTitle="Latest Properties" />
-      <SingleProperty property={assignment.property} assignment={true} />
+      <SingleProperty assignmentVal={assignment} property={assignment.property} assignment={true} />
     </>
   );
 }
