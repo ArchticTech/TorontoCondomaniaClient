@@ -1,17 +1,53 @@
 import global from '../config/env';
-
-const axios = require('axios');
+import apiProxy from '../pages/api/apiProxy';
 
 export async function fetchAllProperties() {
-    const response = await fetch(global.apiURL + 'api/getAllProperties');
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
+    try {
+        const response = await fetch('/api/apiProxy', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+        return response;
+
+        // const requestData = {
+        //     method: 'GET',
+        //     url: 'api/getAllProperties/',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        // };
+
+        // const response = await apiProxy(requestData);
+        // return response;
+    } 
+    catch (error) {
+        console.error('Error fetching property:', error);
+        throw error; // Optionally re-throw the error
     }
-    const properties = await response.json();
-    return properties;
 }
 
 export async function fetchProperty(slug) {
+    try {
+        const requestData = {
+            method: 'GET',
+            url: 'api/getProperty/' + slug,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        const property = await apiProxy(requestData);
+        return property;
+    } 
+    catch (error) {
+        console.error('Error fetching property:', error);
+        throw error; // Optionally re-throw the error
+    }
+}
+export async function fetchProperty2(slug) {
     const response = await fetch(global.apiURL + 'api/getProperty/' + slug);
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -90,26 +126,23 @@ export async function resendVerificationEmail(email)
 }
 export async function authenticateUser(userData)
 {
-    const response = await fetch(global.apiURL + 'api/authenticate/' + 
-        encodeURIComponent(userData['email']) + '/' + 
-        encodeURIComponent(userData['password']));
+    const email = userData['email'];
+    const password = userData['password'];
+    try {
+        const response = await fetch('/api/authenticationProxy', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
 
-    const data = await response.json();
-    if (response.ok) {
-
-        if (data.token) {
-            // Store the token in localStorage
-            localStorage.setItem('token', data.token);
-            // $response = new Response('Token set in a cookie');
-
-            // // Set the token in an HttpOnly cookie
-            // $response->withCookie(cookie('token', $token, 60)); // 'token' is the name of the cookie
-
-            // return $response;
-        }
+        return response;
+    } 
+    catch (error) {
+        console.error('Authentication Error:', error);
+        throw error; // Optionally re-throw the error
     }
-
-    return await data;
 }
 
 export async function validateUser()
