@@ -3,28 +3,20 @@ import apiProxy from '../pages/api/apiProxy';
 
 export async function fetchAllProperties() {
     try {
-        const response = await fetch('/api/apiProxy', {
-            method: 'POST',
+        const requestData = {
+            method: 'GET',
+            url: 'api/getAllProperties/',
             headers: {
-              'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
-          });
+        };
+
+        const response = await apiProxy(requestData)
 
         return response;
-
-        // const requestData = {
-        //     method: 'GET',
-        //     url: 'api/getAllProperties/',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // };
-
-        // const response = await apiProxy(requestData);
-        // return response;
     } 
     catch (error) {
-        console.error('Error fetching property:', error);
+        console.error('Error fetching properties:', error);
         throw error; // Optionally re-throw the error
     }
 }

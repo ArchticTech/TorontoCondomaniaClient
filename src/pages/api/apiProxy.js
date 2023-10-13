@@ -5,13 +5,14 @@ import global from '../../config/env'
 const apiProxy = async (req, res) => {
     // Read the HTTP-only cookie
     const cookies = parse(req.headers.cookie || '');
-    const authToken = cookies['auth-token']; // Adjust the cookie name as needed
-    console.log('Huzaifa', cookies);
+    const authToken = '35|wlMsmvAAsOcFZwZ10u0NTHvJFta7OefA58f8eOz7'; // cookies['auth-token'];
+    
+    console.log('Auth Token', authToken);
     
     // Make the API request with the auth token in the headers
     const apiResponse = await axios({
         method: req.method,
-        url: global.apiURL + req.url,
+        url: global.apiURL + 'api/getAllProperties', 
         headers: {
         'Authorization': `Bearer ${authToken}`,
         },

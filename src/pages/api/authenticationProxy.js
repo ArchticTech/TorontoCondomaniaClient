@@ -23,6 +23,8 @@ const AuthenticationProxy = async (req, res) => {
 
         res.setHeader('Set-Cookie', [cookieSerialized]);
         res.status(200).json({success: true});
+
+        console.log('Cookie', res.headers.cookie['auth-token']);
     }
     else {
         const cookieSerialized = serialize('auth-token', '', {
