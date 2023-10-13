@@ -1,18 +1,10 @@
 import global from "../../config/env";
 import { useState } from "react";
 import FloorPlanReservation1 from "./FloorPlanReservation1";
+import { redirect } from "next/dist/server/api-utils";
 
 const FloorPlanReservationModal = ({ data, closeModal }) => {
-  // const [isNextModalOpen, setNextModalOpen] = useState(false);
   const [currentModal, setCurrentModal] = useState("initial");
-
-  // const openNextModal = () => {
-  //   setNextModalOpen(true);
-  // };
-
-  // const closeNextModal = () => {
-  //   setNextModalOpen(false);
-  // };
 
   const openNextModal = () => {
     setCurrentModal("next");
@@ -45,6 +37,78 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
       ...purchaser,
       [stateName]: newValue,
     });
+  };
+
+  const clearFormData = () => {
+    setPurchaser({
+      first_name_1: "",
+      last_name_1: "",
+      email_1: "",
+      phone_number_1: "",
+      street_address_1: "",
+      city_1: "",
+      postal_code_1: "",
+      occupation_1: "",
+      first_name_2: "",
+      last_name_2: "",
+      email_2: "",
+      phone_number_2: "",
+      street_address_2: "",
+      city_2: "",
+      postal_code_2: "",
+      occupation_2: "",
+    });
+  };
+
+  //store floor plan reservation through api
+
+  const handleSubmitClick = async (e) => {
+    e.preventDefault();
+    const formData = {
+      property_floor_plan_id: data.id,
+      tbl_user_id: 3,
+      first_name_1: purchaser.first_name_1,
+      last_name_1: purchaser.last_name_1,
+      email_1: purchaser.email_1,
+      phone_number_1: purchaser.phone_number_1,
+      street_address_1: purchaser.street_address_1,
+      city_1: purchaser.city_1,
+      postal_code_1: purchaser.postal_code_1,
+      occupation_1: purchaser.occupation_1,
+      first_name_2: purchaser.first_name_2,
+      last_name_2: purchaser.last_name_2,
+      email_2: purchaser.email_2,
+      phone_number_2: purchaser.phone_number_2,
+      street_address_2: purchaser.street_address_2,
+      city_2: purchaser.city_2,
+      postal_code_2: purchaser.postal_code_2,
+      occupation_2: purchaser.occupation_2,
+    };
+
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/addFloorPlanReservation`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      console.log(response);
+      if (response.ok) {
+        clearFormData();
+        closeModal();
+        // console.log(JSON.stringify(formData));
+        alert("Floor plan reserved");
+      } else {
+        console.log("Error in sending data to api");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
   return (
     <>
@@ -128,7 +192,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
                   </li>
                 </ul>
               </div>
-              <div>
+              {/* <div>
                 {purchaser.first_name_1}
                 {purchaser.last_name_1}
                 {purchaser.email_1}
@@ -145,7 +209,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
                 {purchaser.city_2}
                 {purchaser.postal_code_2}
                 {purchaser.occupation_2}
-              </div>
+              </div> */}
 
               <div className="col-lg-12 mt-5">
                 <button className="btn btn-primary" onClick={openNextModal}>
@@ -162,6 +226,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
           purchaser={purchaser}
           setPurchaser={handleStateChange}
           closeNextModal={closeNextModal}
+          handleSubmitClick={handleSubmitClick}
         />
       )}
     </>

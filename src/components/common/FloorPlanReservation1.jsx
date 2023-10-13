@@ -1,21 +1,49 @@
 import React from "react";
 import { useState } from "react";
 
-const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
+const FloorPlanReservation1 = ({ handleSubmitClick, purchaser, setPurchaser, closeNextModal }) => {
   const [currentModal, setCurrentModal] = useState(1);
+  const [errorMessage, setErrorMessage] = useState(false);
 
   const openNextModal = () => {
-    if (currentModal === 1) {
-      setCurrentModal(2);
-    } else {
+    // if (currentModal === 1) {
+    //   setCurrentModal(2);
+
+    // if (currentModal === 1) {
+    //   // Check if any of the fields in the first modal are empty
+    //   const isFirstModalEmpty = Object.values(purchaser).some(
+    //     (value) => value === ""
+    //   );
+
+    //   if (!isFirstModalEmpty) {
+    //     // If not empty, proceed to the second modal
+    //     setCurrentModal(2);
+    //     setErrorMessage(false);
+    //   } else {
+    //     setErrorMessage(true)
+    //   }
+    // } else {
+      if (currentModal === 1) {
+        // Check specific fields for validation
+        if (purchaser.first_name_1 === "" || purchaser.last_name_1 === "" || purchaser.email_1 === "" || purchaser.phone_number_1 === ""
+        || purchaser.street_address_1 === "" || purchaser.city_1 === "" || purchaser.postal_code_1 === "" || purchaser.occupation_1 === "") {
+          setErrorMessage(true);
+          return; // Exit early if validation fails
+        } else {
+          setErrorMessage(false); // Clear error message
+        }
+  
+        // Proceed to the second modal
+        setCurrentModal(2);
+      } else {
       // Handle when all modals have been shown or if there are only two.
       // You can also close the modal here.
     }
   };
 
-  const closeNextModaldata = () => {
-    alert("Floor plan reserved");
-  };
+  // const closeNextModaldata = () => {
+  //   alert("Floor plan reserved");
+  // };
   return (
     <>
       {currentModal === 1 && (
@@ -37,6 +65,9 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   Step 1: First Purchaser Details
                 </h2>
               </div>
+              <div>
+              {errorMessage && <p className="text-danger">Please Fill all the fields first!</p>}
+              </div>
           <div className="col-md-12 col-sm-12 text-start">
             <div className="row p-3">
               <div className="col-md-6 my-2">
@@ -51,6 +82,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.first_name_1}
                   onChange={(e) => {setPurchaser('first_name_1', e.target.value)}}
+                  required
                 />
               </div>
               <div className="col-md-6 my-2">
@@ -65,6 +97,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.last_name_1}
                   onChange={(e) => {setPurchaser('last_name_1', e.target.value)}}
+                  required
                 />
               </div>
               <div className="col-md-12 my-2">
@@ -79,6 +112,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.email_1}
                   onChange={(e) => {setPurchaser('email_1', e.target.value)}}
+                  required
                 />
               </div>
               <div className="col-md-12 my-2">
@@ -93,6 +127,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.phone_number_1}
                   onChange={(e) => {setPurchaser('phone_number_1', e.target.value)}}
+                  required
                 />
               </div>
               <div className="col-md-12 my-2">
@@ -107,6 +142,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.street_address_1}
                   onChange={(e) => {setPurchaser('street_address_1', e.target.value)}}
+                  required
                 />
               </div>
               <div className="col-md-6 my-2">
@@ -121,6 +157,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.city_1}
                   onChange={(e) => {setPurchaser('city_1', e.target.value)}}
+                  required
                 />
               </div>
               <div className="col-md-6 my-2">
@@ -135,6 +172,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.postal_code_1}
                   onChange={(e) => {setPurchaser('postal_code_1', e.target.value)}}
+                  required
                 />
               </div>
               <div className="col-md-12 my-2">
@@ -149,6 +187,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
                   aria-describedby="passwordHelpBlock"
                   value={purchaser.occupation_1}
                   onChange={(e) => {setPurchaser('occupation_1', e.target.value)}}
+                  required
                 />
               </div>
             </div>
@@ -300,7 +339,7 @@ const FloorPlanReservation1 = ({ purchaser, setPurchaser, closeNextModal }) => {
           </div>
 
               <div className="col-lg-12 mt-5 text-white ">
-                <button onClick={closeNextModaldata} className="btn btn-info">
+                <button onClick={(e) => handleSubmitClick(e)} className="btn btn-info">
                   Reserve
                 </button>
               </div>
