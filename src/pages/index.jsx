@@ -3,8 +3,11 @@ import Seo from "../components/common/seo";
 import HomeMain from "../components/home";
 import { fetchAllProperties ,fetchAllAssignments, fetchCityCount, fetchAllRentals } from '../utils/api';
 import mainCities from '../data/cityPropertiesCount'
+import { useEffect } from "react";
+import { useState } from "react";
 
-const index = ({ properties , assignments, citiesCount, rentals }) => {
+const Index = ({properties, assignments, citiesCount, rentals }) => {
+
   return (
     <>
       <Seo pageTitle="TorontoCondomania | Find Your Dream Condo" />
@@ -14,6 +17,7 @@ const index = ({ properties , assignments, citiesCount, rentals }) => {
 };
 
 export async function getStaticProps() {
+  
   const properties = await fetchAllProperties();
   const assignments = await fetchAllAssignments();
   const rentals = await fetchAllRentals();
@@ -35,4 +39,4 @@ export async function getStaticProps() {
 //secondary #19232f
 //gray #282828
 
-export default dynamic(() => Promise.resolve(index), { ssr: false });
+export default dynamic(() => Promise.resolve(Index), { ssr: false });

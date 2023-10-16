@@ -3,8 +3,10 @@ import Seo from "../../components/common/seo";
 import ListingMapV4 from "../../components/listing-map";
 import Head from "next/head";
 import { fetchAllProperties } from "../../utils/api";
+import { useEffect, useState } from "react";
 
-const index = ({ properties }) => {
+const Index = (properties) => {
+
   return (
     <>
       <Head>
@@ -14,19 +16,18 @@ const index = ({ properties }) => {
         />
       </Head>
       <Seo pageTitle="Latest Properties" />
-      <ListingMapV4 properties={properties}  />
+      <ListingMapV4 properties={properties} />
     </>
   );
 };
 
 export async function getServerSideProps() {
-  var properties = await fetchAllProperties();
-
+  const properties = await fetchAllProperties();
   return {
     props: {
-      properties: properties.data,
+      properties: properties.data
     },
   };
 }
 
-export default dynamic(() => Promise.resolve(index), { ssr: false });
+export default dynamic(() => Promise.resolve(Index), { ssr: false });

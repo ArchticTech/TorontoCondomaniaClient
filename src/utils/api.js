@@ -2,44 +2,15 @@ import global from '../config/env';
 import apiProxy from '../pages/api/apiProxy';
 
 export async function fetchAllProperties() {
-    try {
-        const requestData = {
-            method: 'GET',
-            url: 'api/getAllProperties/',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const response = await apiProxy(requestData)
-
-        return response;
-    } 
-    catch (error) {
-        console.error('Error fetching properties:', error);
-        throw error; // Optionally re-throw the error
+    const response = await fetch(global.apiURL + 'api/getAllProperties/');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
     }
-}
+    const properties = await response.json();
 
+    return properties;
+}
 export async function fetchProperty(slug) {
-    try {
-        const requestData = {
-            method: 'GET',
-            url: 'api/getProperty/' + slug,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const property = await apiProxy(requestData);
-        return property;
-    } 
-    catch (error) {
-        console.error('Error fetching property:', error);
-        throw error; // Optionally re-throw the error
-    }
-}
-export async function fetchProperty2(slug) {
     const response = await fetch(global.apiURL + 'api/getProperty/' + slug);
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -48,6 +19,25 @@ export async function fetchProperty2(slug) {
 
     return property;
 }
+
+// export async function fetchAllProperties() {
+//     try {
+//         const url = '/api/apiProxy';
+        
+//         const response = await fetch(url);
+
+//         console.log(response);
+        
+//         const properties = response.json();
+
+//         return properties;
+//     } 
+//     catch (error) {
+//         console.error('Error fetching properties:', error);
+//         throw error; // Optionally re-throw the error
+//     }
+// }
+
 export async function fetchAllAssignments() {
     const response = await fetch(global.apiURL + 'api/getAllAssignments');
     if (!response.ok) {
@@ -128,7 +118,6 @@ export async function authenticateUser(userData)
             },
             body: JSON.stringify({ email, password }),
           });
-
         return response;
     } 
     catch (error) {
