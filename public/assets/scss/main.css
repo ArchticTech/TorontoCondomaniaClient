@@ -13,8 +13,7 @@ Tag: advanced custom search, agency, agent, business, clean, corporate, director
 @import url(../scss/font-awesome.min.css);
 @import url(../scss/font-awesome-animation.min.css);
 @import url(../scss/flaticon.css);
-@import url("https://fonts.googleapis.com/css2?family=Istok+Web&family=Montserrat:wght@600&family=Poppins:wght@600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&family=Montserrat:wght@600&family=Poppins:wght@600&family=Roboto+Slab:wght@700&display=swap");
 @font-face {
   font-family: "Acumin";
   src: url("../fonts/Acumin-Variable-Concept.ttf") format("truetype");
@@ -1246,6 +1245,7 @@ header.header-nav a.navbar_brand {
   -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
   -o-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  z-index: 1000;
 }
 
 header.header-nav a.navbar_brand .logo2 {
@@ -1275,6 +1275,7 @@ header.header-nav.menu_style_home_one
   ul.ace-responsive-menu
   li.add_listing.home2.style10 {
   top: 20px;
+  z-index: 1000;
 }
 
 header.header-nav.menu_style_home_one.home9
@@ -3528,6 +3529,9 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   box-shadow: 0px 0px 50px 0px rgba(32, 32, 32, 0.15);
 }
 @media (max-width: 576px) {
+  /* .inner_page_breadcrumb .breadcrumb_content .breadcrumb_title {
+  font-size: 2.5rem;
+} */
   .home_adv_srch_opt.home3 {
     margin-top: 0;
   }
@@ -3542,7 +3546,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   display: flex;
   gap: 1rem;
   align-items: space-between;
-  justify-content: end;
+  justify-content: start;
   width: 100%;
 }
 
@@ -3606,13 +3610,13 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 }
 
 .home_adv_srch_opt.home6 .nav-pills li.nav-item a.nav-link.active {
-  background-color: #3e4c66;
+  background-color: var(--color-primary);
   border-color: #3e4c66;
   color: #ffffff;
 }
 
 .home_adv_srch_opt.home6 .nav-pills li.nav-item a.nav-link.active:before {
-  background-color: #3e4c66;
+  background-color: var(--color-primary);
 }
 
 .home_adv_srch_opt .tab-content {
@@ -4941,6 +4945,9 @@ form.home5_advanced_search_form
   height: 800px;
 }
 @media (max-width: 767px) {
+  /* .inner_page_breadcrumb .breadcrumb_content .breadcrumb_title {
+  font-size: 3rem;
+} */
   .home-seven {
     height: auto;
   }
@@ -4949,7 +4956,7 @@ form.home5_advanced_search_form
   background-image: url(../images/background/12.jpg);
   -webkit-background-size: cover;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   height: 960px;
   z-index: 0 !important;
 }
@@ -7132,7 +7139,7 @@ form.home5_advanced_search_form
 }
 
 .properti_city.home5 .overlay .details .left:before {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-primary);
   border-radius: 17.5px;
   bottom: -5px;
   content: "";
@@ -7149,6 +7156,9 @@ form.home5_advanced_search_form
   font-weight: bold;
   line-height: 2.3;
   margin: 0;
+  color: #fff;
+  position: relative;
+  z-index: 10;
 }
 
 .properti_city.home5 .overlay .details p {
@@ -10076,10 +10086,41 @@ form.home5_advanced_search_form
   right: 0;
   top: 0;
 }
+.inner_page_breadcrumb {
+  background-image: url(/assets/images/background/header-terms.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 370px;
+  margin-top: 88px;
+  position: relative;
+}
+
+.inner_page_breadcrumb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.inner_page_breadcrumb .breadcrumb_title {
+  color: #fff;
+  font-feature-settings: "case" on;
+  font-family: Istok Web;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px; /* 78.125% */
+  text-transform: capitalize;
+}
 
 .inner_page_breadcrumb .breadcrumb_content {
   margin-top: 85px;
   position: relative;
+  width: 700px;
 }
 @media (max-width: 767px) {
   /* .header_inner_page_section .about_us_header_content {
@@ -10091,12 +10132,12 @@ form.home5_advanced_search_form
   margin-top: 100px;
 }
 
-.inner_page_breadcrumb .breadcrumb_content .breadcrumb {
-  background-color: transparent;
+/* .inner_page_breadcrumb .breadcrumb_content .breadcrumb_title {
+  font-size: 3rem;
+  /* background-color: transparent;
   display: inline-flex;
   margin-bottom: 0;
-  padding-left: 0;
-}
+  padding-left: 0; */
 
 .header_inner_page_section .about_us_header {
   /* font-size: 3vw; */
@@ -14910,13 +14951,13 @@ legend span {
   .half_map_area_content {
     height: auto;
   }
-  .mission_commitment .mission_text{
+  .mission_commitment .mission_text {
     gap: 5rem;
   }
 
   .header_inner_page_section .about_us_header_content .about_us_header {
-  text-align: left;
-  font-size: 2.5rem;
+    text-align: left;
+    font-size: 2.5rem;
   }
 }
 
@@ -18927,6 +18968,7 @@ section {
   line-height: 1.2;
   margin-bottom: 10px;
   margin-top: 0;
+  font-weight: 500;
 }
 
 .main-title h3 {
@@ -21357,7 +21399,6 @@ button.gm-ui-hover-effect:focus {
 }
 
 .about_us_header_content .about_us_header {
-
   /* text-align: left; */
   justify-content: center;
   color: #fff !important;
@@ -21425,11 +21466,7 @@ button.gm-ui-hover-effect:focus {
   padding: 80px 0;
 }
 
-.mission_section .mission_header,
-.mission_section2 .mission_header,
-.services_section_about .mission_header,
-.how_it_works_about .mission_header
- {
+.mission_header {
   display: flex;
   padding: 40px 0;
   align-items: center;
@@ -21459,13 +21496,13 @@ button.gm-ui-hover-effect:focus {
   padding: 80px 0;
 } */
 
-.mission_commitment .mission_text{
+.mission_commitment .mission_text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.mission_commitment .mission_text h3{
+.mission_commitment .mission_text h3 {
   color: #000;
   font-family: "Istok Web", sans-serif;
   font-size: 28px;
@@ -21475,7 +21512,7 @@ button.gm-ui-hover-effect:focus {
   gap: 2rem;
 }
 
-.mission_commitment .mission_text p{
+.mission_commitment .mission_text p {
   color: #000;
   font-family: "Istok Web", sans-serif;
   font-size: 16px;
@@ -21488,7 +21525,7 @@ button.gm-ui-hover-effect:focus {
 
 /* Mission2 section  */
 .mission_section2 {
-  background: #F6F6F6;
+  background: #f6f6f6;
   /* display: flex;
   flex-direction: column; */
   align-items: center;
@@ -21498,23 +21535,23 @@ button.gm-ui-hover-effect:focus {
 
 /* services section  */
 
-.services_section_about .heading_mission  {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 17px;
-width: 400px;
-padding: 25px;
+.services_section_about .heading_mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  width: 400px;
+  padding: 25px;
 }
 
-.services_section_about .heading_mission .mission_p{
+.services_section_about .heading_mission .mission_p {
   text-align: justify;
 }
 
 /* How it works section ABOUT */
 
-.how_it_works_about{
-  background: #F1F1F1;
+.how_it_works_about {
+  background: #f1f1f1;
 }
 
 .how_it_works_about .main_howitworks_div {
@@ -21526,19 +21563,19 @@ padding: 25px;
 
 .how_it_works_about .main_header_works {
   color: #000;
-font-family: Istok Web;
-font-size: 36px;
-font-style: normal;
-font-weight: 700;
-line-height: 35px;
-text-transform: capitalize;
+  font-family: Istok Web;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  text-transform: capitalize;
 }
 
-.how_it_works_about .main_container{
+.how_it_works_about .main_container {
   width: 100%;
 }
 
-.how_it_works_about .main_header_works strong{
+.how_it_works_about .main_header_works strong {
   color: #ff3636;
 }
 
@@ -21557,12 +21594,12 @@ text-transform: capitalize;
 }
 .how_it_works_about .howitworks_div h3 {
   color: #000;
-    font-family: Istok Web;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 35px;
-    text-transform: capitalize;
+  font-family: Istok Web;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  text-transform: capitalize;
 }
 
 .how_it_works_about .howitworks_div p {
@@ -21588,11 +21625,11 @@ text-transform: capitalize;
 
 .owner_message_main h2 {
   color: #000;
-font-family: Istok Web;
-font-size: 36px;
-font-style: normal;
-font-weight: 700;
-line-height: 157.5%;
+  font-family: Istok Web;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 157.5%;
 }
 
 .owner_message_main h3 {
@@ -21606,12 +21643,12 @@ line-height: 157.5%;
 
 .owner_message_main p {
   color: #000;
-font-family: Poppins;
-font-size: 14px;
-font-style: normal;
-font-weight: normal;
-line-height: 161.5%;
-padding-top: 10px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 161.5%;
+  padding-top: 10px;
 }
 
 .owner_message_main .owner_message_content {
@@ -21620,7 +21657,7 @@ padding-top: 10px;
   justify-content: center;
 }
 
-.floor_plane_image{
+.floor_plane_image {
   height: 200px;
   width: 70%;
   background-position: center center;
@@ -21629,12 +21666,197 @@ padding-top: 10px;
   background-repeat: no-repeat;
 }
 
-.floor_reservation_image{
+.floor_reservation_image {
   height: 300px;
   padding: 10px;
 }
 
-.floor_reservation_image .img{
+.floor_reservation_image .img {
   background-size: cover;
   background-position: center;
 }
+
+.home_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.home_header .home-hero-title {
+  color: #fff;
+  text-align: center;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 100;
+  width: 685px;
+}
+
+.home_header .home-hero-title span {
+  color: var(--color-primary);
+  font-family: "Roboto Slab", serif;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.home_header .home-hero-para {
+  color: var(--cold-grey-5, #f3f4f6);
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  z-index: 100;
+  width: 490px;
+  padding-top: 1rem;
+}
+
+/* Home page */
+.main_cities_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 40px 0;
+}
+
+.main_cities_header .main_cities_header_left {
+  display: flex;
+  padding: 40px 0;
+  align-items: center;
+  gap: 17px;
+}
+
+.main_cities_header .view-all a {
+  color: #292d32 !important;
+  font-family: Istok Web;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  margin-right: 1rem;
+  text-align: center;
+}
+/* .main_cities_header .view-all{
+  display: flex;
+} */
+
+.how_it_works_card .heading h4 {
+  color: #000;
+  font-family: Istok Web;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+.how_it_works_card .para p {
+  color: #929292;
+  font-family: Istok Web;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* our experts home */
+.our_experts {
+  padding: 70px 0;
+}
+
+.our_experts .heading_main h2 {
+  color: #000;
+
+  font-family: Istok Web;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.our_experts .cards {
+  display: flex;
+  margin: 1rem;
+  /* padding-top: 2rem; */
+  gap: 1rem;
+  width: 400px;
+  text-align: justify;
+}
+
+.our_experts .single_image {
+  display: flex;
+  justify-content: center;
+  display: flex;
+  height: 600px;
+  align-items: center;
+}
+
+.our_experts .double_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* home loan  */
+
+.home_loan .heading_main h2{
+  color: #2C2C2C;
+  font-family: Istok Web;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px
+}
+
+.home_loan .main_card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_loan .cards p{
+  color: #929292;
+font-family: Istok Web;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px
+}
+
+.home_loan .image{
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+.home_loan .image img{
+border: 1px solid red;
+}
+
+/* .home_loan .image::before{
+  content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 10px solid #000;
+} */

@@ -5,7 +5,6 @@ import Header from "./Header";
 import MobileMenu from "../common/header/MobileMenu";
 import Partners from "../common/Partners";
 import PopupSignInUp from "../common/PopupSignInUp";
-import WhyChoose from "../common/WhyChoose";
 // import Testimonial from "../home-7/Testimonials";
 import BreadCrumbBanner from "./BreadCrumbBanner";
 import Team from "./Team";

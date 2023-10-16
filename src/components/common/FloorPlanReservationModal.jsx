@@ -102,7 +102,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
         clearFormData();
         closeModal();
         // console.log(JSON.stringify(formData));
-        alert("Floor plan reserved");
+        confirm('Floor plan reserved');
       } else {
         console.log("Error in sending data to api");
       }
