@@ -14,6 +14,7 @@ import Link from "next/link";
 import RentalSlider from "./RentalSlider";
 import { useEffect } from "react";
 import ClearAllFilters from "../common/listing/ClearAllFilters";
+import clearallrentals from "../common/listing/clearallrentals";
 import { useDispatch } from "react-redux";
 
 const index = ({ properties, assignments, rentals, cities }) => {
@@ -22,6 +23,7 @@ const index = ({ properties, assignments, rentals, cities }) => {
 
   const clearHandler = () => {
     ClearAllFilters(dispatch);
+    clearallrentals(dispatch);
   };
 
   useEffect(() => {

@@ -47,8 +47,8 @@ export async function fetchAllAssignments() {
     return assignments;
 }
 
-export async function fetchAssignment(id) {
-    const response = await fetch(global.apiURL + 'api/getAssignment/' + id);
+export async function fetchAssignment(slug) {
+    const response = await fetch(global.apiURL + 'api/getAssignment/' + slug);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -66,13 +66,29 @@ export async function fetchAllRentals() {
 }
 
 export async function fetchRental(id) {
-    const response = await fetch(global.apiURL + 'api/getRental/' + id);
+    const response = await fetch(global.apiURL + 'api/getAllFavorites/'  + id);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
     const rental = await response.json();
 
     return rental;
+}
+
+export async function fetchAllFavProperties() {
+    try {
+        const url = 'api/getAllFavorites';
+        
+        const response = await fetch(url);
+        
+        const favorites = response.json();
+
+        return favorites;
+    } 
+    catch (error) {
+        console.error('Error fetching properties:', error);
+        throw error; // Optionally re-throw the error
+    }
 }
 
 export async function fetchCityCount(name) {
@@ -87,6 +103,7 @@ export async function fetchCityCount(name) {
     } catch (error) {
         // Handle the error here
         console.error('Error fetching API:', error);
+        
         throw error; // Re-throw the error to propagate it to the caller if needed
     }
 }

@@ -34,13 +34,13 @@ const Header = () => {
             src="/assets/images/logo.png"
             alt="header-logo2.png"
           />
-          <Image
+          {/* <Image
             width={40}
             height={45}
             className="logo2 img-fluid"
             src="/assets/images/logo.png"
             alt="header-logo2.png"
-          />
+          /> */}
           <span>TCM</span>
         </Link>
         {/* site logo brand */}

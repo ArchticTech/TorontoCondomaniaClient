@@ -10,10 +10,11 @@ import FeaturedItem from "./FeaturedItem";
 import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
+import { useDispatch, useSelector } from "react-redux";
 
 mapboxgl.accessToken = global.mapboxAccessToken; 
 
-const ListingMap = ({ properties, isAssignment=true }) => {
+const ListingMap = ({ properties, isAssignment }) => {
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -29,6 +30,7 @@ const ListingMap = ({ properties, isAssignment=true }) => {
         property.latitude,
         property.longitude
       );
+      property.marker.getElement().setAttribute('data-marker-id', property.slug);
     });
 
     // Clean up the map instance when the component unmounts
@@ -118,7 +120,7 @@ const ListingMap = ({ properties, isAssignment=true }) => {
                 <div className="col-md-12">
                   <div className="grid_list_search_result ">
                     <div className="row align-items-center">
-                      <FilterTopBar2 />
+                      <FilterTopBar2 length={useSelector((state) => state.properties.length)} />
                     </div>
                   </div>
                   {/* End .row */}

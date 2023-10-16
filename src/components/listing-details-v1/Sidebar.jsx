@@ -1,20 +1,21 @@
-import ContactWithAgent from "../common/agent-view/ContactWithAgent";
+import ContactConsultation from "../common/agent-view/ContactConsultation";
 import Categorie from "../common/listing/Categorie";
 import ListingCreator from "../common/listing/ListingCreator";
 import FeaturedListings from "../common/listing/FeaturedListings";
 import FeatureProperties from "../common/listing/FeatureProperties";
 
-const Sidebar = ({agent}) => {
+const Sidebar = ({property}) => {
   return (
     <>
       <div className="sidebar_listing_list">
         <div className="sidebar_advanced_search_widget">
           <div className="sl_creator">
-            <h4 className="mb25">Listed By</h4>
-            <ListingCreator agent={agent}/>
+            <h4 className="">Interested In Buying?</h4>
+            <p>Submit Purchase Request</p>
+            {/* <ListingCreator agent={agent}/> */}
           </div>
           {/* End .sl_creator */}
-          <ContactWithAgent />
+          <ContactConsultation property={property.name} />
         </div>
       </div>
       {/* End .sidebar_listing_list */}
@@ -27,20 +28,20 @@ const Sidebar = ({agent}) => {
       </div>
       {/* End .Featured Properties */}
 
-      <div className="terms_condition_widget">
-        <h4 className="title">Categories Property</h4>
-        <div className="widget_list">
-          <ul className="list_details">
-            <Categorie />
-          </ul>
-        </div>
-      </div>
+        {/* <div className="terms_condition_widget">
+          <h4 className="title">Categories Property</h4>
+          <div className="widget_list">
+            <ul className="list_details">
+              <Categorie />
+            </ul>
+          </div>
+        </div> */}
       {/* End .Categories Property */}
-
+{/* 
       <div className="sidebar_feature_listing">
         <h4 className="title">Recently Viewed</h4>
         <FeaturedListings />
-      </div>
+      </div> */}
       {/* End .Recently Viewed */}
     </>
   );

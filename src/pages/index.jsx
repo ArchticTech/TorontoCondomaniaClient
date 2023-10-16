@@ -32,6 +32,7 @@ export async function getStaticProps() {
       'rentals': rentals.data,
       'citiesCount': await Promise.all(cityPromises)
     },
+    revalidate: 240,
   };
 }
 

@@ -4,18 +4,20 @@ const initialState = {
     keyword: "",
     type: "",
     location: "",
-    price: " ",
+    price: {
+        min: -1, max: -1
+    },
     amenities: [],
     bathrooms: '',
     bedrooms: '',
     availabilityDate: "",
     length: 0,
     city: '',
-    laundry: '',
-    petPolicy: '',
-    smokingPolicy: '',
-    basement: '',
-    parking: '',
+    laundry: false,
+    petPolicy: false,
+    smokingPolicy: false,
+    basement: false,
+    parking: false,
 };
 
 export const rentalsSlice = createSlice({

@@ -22,9 +22,15 @@ const MobileMenu = () => {
 
           <ul className="menu_bar_home2">
             <li className="list-inline-item list_s">
-              <Link href="/login">
+             
+                {/* <span className="flaticon-user"></span> */}
+                <a
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target=".bd-example-modal-lg"
+              >
                 <span className="flaticon-user"></span>
-              </Link>
+              </a>
             </li>
             <li
               className="list-inline-item"

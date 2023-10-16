@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../features/properties/propertiesSlice";
 import global from "../../config/env";
+import IconPropertyHeart from "../common/IconPropertyHeart";
 
 const FeaturedItem = ({ properties, isAssignment }) => {
   const {
@@ -26,7 +27,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const dispatch = useDispatch();
 
   // keyword filter
-  const keywordHandler = (item) => 
+  const keywordHandler = (item) =>
     item.name.toLowerCase().includes(keyword?.toLowerCase()) ||
     item.address.toLowerCase().includes(keyword?.toLowerCase()) ||
     item.code.toLowerCase().includes(keyword?.toLowerCase());
@@ -41,7 +42,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const locationHandler = (item) => {
     return item.address.toLowerCase().includes(location.toLowerCase());
   };
-  
+
   // city handler
   const cityHandler = (item) => {
     return item.city.toLowerCase().includes(city.toLowerCase());
@@ -72,7 +73,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
 
   // price handler
   const priceHandler = (item) => {
-    if ((price?.min < 0) || (price?.max < 0)) return true;
+    if (price?.min < 0 || price?.max < 0) return true;
     else return item.price_from <= price?.max && item.price_to >= price?.min;
   };
 
@@ -96,9 +97,12 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   const advanceHandler = (item) => {
     if (amenities.length !== 0) {
       return amenities.some((searchedFeature) =>
-        item.features.find((feature) => feature.toLowerCase().includes(searchedFeature.toLowerCase())));
+        item.features.find((feature) =>
+          feature.toLowerCase().includes(searchedFeature.toLowerCase())
+        )
+      );
     }
-     return true;
+    return true;
   };
 
   // status filter
@@ -121,17 +125,16 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   };
 
   useEffect(() => {
-
-    const markers = document.querySelectorAll('.mapboxgl-marker');
-    markers.forEach(marker => {
-      marker.classList.remove('marker-active');
+    const markers = document.querySelectorAll(".mapboxgl-marker");
+    markers.forEach((marker) => {
+      marker.classList.remove("marker-active");
     });
 
     if (activeMarker) {
       const markerElement = activeMarker.getElement();
-      markerElement.classList.add('marker-active');
+      markerElement.classList.add("marker-active");
     }
-  }, [activeMarker])
+  }, [activeMarker]);
 
   // status handler
   let filteredProperties = properties
@@ -147,8 +150,10 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
     ?.filter(cityHandler);
-  
   let content = filteredProperties.map((item) => {
+    // var markerElement = item.marker.getElement();
+    // markerElement.style.display = 'block';
+    // console.log(markerElement.style);
 
     const priceFrom = item?.price_from;
     const priceTo = item?.price_to;
@@ -167,52 +172,56 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     });
 
     return (
-    <div
-      className={`${
-        isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
-      } `}
-      key={item.id}
-    >
       <div
-        className={`feat_property home7 style4 ${
-          isGridOrList ? "d-flex align-items-center" : undefined
-        }`}
-        onMouseEnter={() => setActiveMarker(item.marker)}
-        onMouseLeave={() => setActiveMarker(null)}
+        className={`${
+          isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
+        } `}
+        key={item.id}
       >
-        <div className="thumb">
-          <img
-            width={316}
-            height={220}
-            className="img-whp w-100 h-100 cover"
-            src={global.apiURL + 'images/' + item.image}
-            alt="fp1.jpg"
-          />
-          <div className="thmb_cntnt">
-            <ul className="tag mb0">
-              <li className="list-inline-item">
-                <a href="#">Featured</a>
-              </li>
-              <li className="list-inline-item">
-                <a href="" className="text-capitalize">
-                  {item.vip_feature_promotion}
-                </a>
-              </li>
-            </ul>
-            <ul className="icon mb0">
-              <li className="list-inline-item">
-                <a href="#">
-                  <span className="flaticon-transfer-1"></span>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="#">
-                  <span className="flaticon-heart"></span>
-                </a>
-              </li>
-            </ul>
+        <div
+          className={`feat_property home7 style4 ${
+            isGridOrList ? "d-flex align-items-center" : undefined
+          }`}
+          onMouseEnter={() => setActiveMarker(item.marker)}
+          onMouseLeave={() => setActiveMarker(null)}
+        >
+          <div className="thumb">
+            <img
+              width={316}
+              height={220}
+              className="img-whp w-100 h-100 cover"
+              src={global.apiURL + "images/" + item.image}
+              alt="fp1.jpg"
+            />
+            <div className="thmb_cntnt">
+              <ul className="tag mb0">
+                <li className="list-inline-item">
+                  <a href="#">{item.vip_featured_promotion}</a>
+                </li>
+                {item.isHot ? (
+                  <li className="list-inline-item">
+                    <a href="" className="text-capitalize">
+                      Hot
+                    </a>
+                  </li>
+                ) : (
+                  ""
+                )}
+              </ul>
+              <ul className="icon mb0">
+                <li className="list-inline-item">
+                  <a href="#">
+                    <span className="flaticon-transfer-1"></span>
+                  </a>
+                </li>
+                <IconPropertyHeart id={item.id}/>
+              </ul>
               <Link
-                href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}
+                href={
+                  "/" +
+                  (isAssignment ? "assignment" : "property") +
+                  `/${item.slug}`
+                }
                 className="fp_price"
               >
                 {formattedPriceFrom} - {formattedPriceTo}
@@ -223,7 +232,13 @@ const FeaturedItem = ({ properties, isAssignment }) => {
             <div className="tc_content">
               <p className="text-thm">{item.type}</p>
               <h4>
-                <Link href={'/' + ((isAssignment) ? 'assignment': 'property') + `/${item.slug}`}>
+                <Link
+                  href={
+                    "/" +
+                    (isAssignment ? "assignment" : "property") +
+                    `/${item.slug}`
+                  }
+                >
                   {item.name}
                 </Link>
               </h4>
@@ -266,21 +281,14 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   // add length of filter items
   useEffect(() => {
     dispatch(addLength(content.length));
-    
-    filteredProperties.map(
-      (property) => {
-        var markerElement = property.marker?.getElement();
-        if(markerElement)
-          markerElement.style.display = 'block';
-    });
 
-    properties.filter(property => !filteredProperties.includes(property)).map(
-      (property) => {
-        var markerElement = property.marker?.getElement();
-        markerElement.style.display = 'none';
-      }
-    )
-  }, [dispatch, content, properties, filteredProperties]);
+    properties
+      .filter((property) => !filteredProperties.includes(property))
+      .map((property) => {
+        // var markerElement = property.marker.getElement();
+        // markerElement.style.display = "none";
+      });
+  }, [dispatch, content]);
 
   return <>{content}</>;
 };
