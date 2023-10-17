@@ -27,21 +27,21 @@ const Header = () => {
       <div className="container-fluid p0">
         {/* <!-- Menu Toggle btn--> */}
         <Link href="/" className="navbar_brand float-start dn-smd">
-          <Image
-            width={40}
-            height={45}
-            className="logo1 img-fluid"
-            src="/assets/images/header-logo2.png"
-            alt="header-logo2.png"
-          />
-          <Image
+        <Image
+              width={100}
+              height={80}
+              className="logo1 img-fluid contain"
+              src="/assets/images/TCM-LOGO-1.png"
+              alt="header-logo.png"
+            />
+          {/* <Image
             width={40}
             height={45}
             className="logo2 img-fluid"
             src="/assets/images/header-logo2.png"
             alt="header-logo2.png"
           />
-          <span>TCM</span>
+          <span>TCM</span> */}
         </Link>
         {/* site logo brand */}
 

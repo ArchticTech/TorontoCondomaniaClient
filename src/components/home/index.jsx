@@ -20,6 +20,8 @@ import clearallrentals from "../common/listing/clearallrentals";
 import { useDispatch } from "react-redux";
 import OurExperts from "../common/OurExperts";
 import HomeLoan from "../common/HomeLoan";
+import BlogSlider from "./BlogSlider";
+import OurPartnerSlider from "./OurPartnerSlider";
 
 const index = ({ properties, assignments, rentals, cities }) => {
   const dispatch = useDispatch();
@@ -43,6 +45,8 @@ const index = ({ properties, assignments, rentals, cities }) => {
 
       {/* <!-- Modal --> */}
       <PopupSignInUp />
+
+      {/* implement a filter button component on react using tableau dashboard if I gave you the code .It would a filter component created in the same way as the Sidebar component and can be implemented on the different pages such as Average Credit hours and the other dashboards */}
 
       {/* <!-- Home Design --> */}
       <Hero properties={properties} />
@@ -77,7 +81,25 @@ const index = ({ properties, assignments, rentals, cities }) => {
             </div>
             <div className="view-all">
               <Link className="float-end" href="/properties">
-                <span className="flaticon-calendar"></span> View All
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="13"
+                    viewBox="0 0 15 13"
+                    fill="none"
+                  >
+                    <path
+                      d="M0.550304 4.19681C2.24517 1.53345 4.72511 0 7.33711 0C8.64311 0 9.91243 0.381529 11.0717 1.09323C12.2309 1.81226 13.2728 2.86146 14.1239 4.19681C14.8576 5.34874 14.8576 7.2197 14.1239 8.37162C12.429 11.0423 9.94911 12.5684 7.33711 12.5684C6.03111 12.5684 4.76179 12.1869 3.60253 11.4752C2.44327 10.7562 1.40141 9.70697 0.550304 8.37162C-0.183404 7.22704 -0.183404 5.34874 0.550304 4.19681ZM7.33711 9.25207C8.98062 9.25207 10.3013 7.92406 10.3013 6.28789C10.3013 4.65171 8.98062 3.3237 7.33711 3.3237C5.6936 3.3237 4.37293 4.65171 4.37293 6.28789C4.37293 7.92406 5.6936 9.25207 7.33711 9.25207Z"
+                      fill="#292D32"
+                    />
+                    <path
+                      d="M7.33828 4.19019C8.4902 4.19019 9.42932 5.12932 9.42932 6.28858C9.42932 7.4405 8.4902 8.37965 7.33828 8.37965C6.18636 8.37965 5.23987 7.4405 5.23987 6.28858C5.23987 5.13665 6.18636 4.19019 7.33828 4.19019Z"
+                      fill="#292D32"
+                    />
+                  </svg>
+                </span>{" "}
+                View All
               </Link>
             </div>
           </div>
@@ -173,7 +195,20 @@ const index = ({ properties, assignments, rentals, cities }) => {
               <div className="main-title text-start">
                 <h2>How it works?</h2>
                 <h2>
-                  Find a <span style={{ fontWeight: "900" }}>Perfect Home</span>
+                  Find a{" "}
+                  <span
+                    style={{
+                      color: "#292D32",
+                      fontFeatureSettings: '"case" on',
+                      fontFamily: "Poppins",
+                      fontSize: "32px",
+                      fontStyle: "normal",
+                      fontWeight: "700",
+                      lineHeight: "31px",
+                    }}
+                  >
+                    Perfect Home
+                  </span>
                 </h2>
               </div>
             </div>
@@ -336,19 +371,145 @@ const index = ({ properties, assignments, rentals, cities }) => {
       {/* <!-- Our Experts --> */}
       <section id="our_experts" className="our_experts">
         <div className="container">
-          <OurExperts/>
+          <OurExperts />
         </div>
       </section>
-      
+
       {/* <!-- Home loan options --> */}
       <section id="home_loan" className="home_loan bg-ptrn2">
         <div className="container">
-          <HomeLoan/>
+          <HomeLoan />
+        </div>
+      </section>
+
+      {/* <!-- News & Articles --> */}
+      <section id="news-articles" className="news-articles pb40 pt40">
+        <div className="container">
+          <div className="row">
+            <div className="main_cities_header">
+              <div className="main_cities_header_left">
+                <div className="mission_icon">
+                  <span className="icon_span">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="64"
+                      height="58"
+                      viewBox="0 0 64 58"
+                      fill="none"
+                    >
+                      <path
+                        d="M0 0V41.4286L8 33.1429H16V8.28571H40V0H0ZM24 16.5714V49.7143H56L64 58V16.5714H24Z"
+                        fill="#FF3636"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div className="mission-text">
+                  <h2>News & Articles</h2>
+                  <p>
+                    Experience the future of real estate with TorontoCondomania
+                  </p>
+                </div>
+              </div>
+              <div className="view-all">
+                <Link className="float-end" href="/blogs">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="13"
+                      viewBox="0 0 15 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.550304 4.19681C2.24517 1.53345 4.72511 0 7.33711 0C8.64311 0 9.91243 0.381529 11.0717 1.09323C12.2309 1.81226 13.2728 2.86146 14.1239 4.19681C14.8576 5.34874 14.8576 7.2197 14.1239 8.37162C12.429 11.0423 9.94911 12.5684 7.33711 12.5684C6.03111 12.5684 4.76179 12.1869 3.60253 11.4752C2.44327 10.7562 1.40141 9.70697 0.550304 8.37162C-0.183404 7.22704 -0.183404 5.34874 0.550304 4.19681ZM7.33711 9.25207C8.98062 9.25207 10.3013 7.92406 10.3013 6.28789C10.3013 4.65171 8.98062 3.3237 7.33711 3.3237C5.6936 3.3237 4.37293 4.65171 4.37293 6.28789C4.37293 7.92406 5.6936 9.25207 7.33711 9.25207Z"
+                        fill="#292D32"
+                      />
+                      <path
+                        d="M7.33828 4.19019C8.4902 4.19019 9.42932 5.12932 9.42932 6.28858C9.42932 7.4405 8.4902 8.37965 7.33828 8.37965C6.18636 8.37965 5.23987 7.4405 5.23987 6.28858C5.23987 5.13665 6.18636 4.19019 7.33828 4.19019Z"
+                        fill="#292D32"
+                      />
+                    </svg>
+                  </span>{" "}
+                  View All
+                </Link>
+              </div>
+            </div>
+
+            <div className="col-lg-12">
+              <div className="feature_property_slider gutter-x15">
+                <BlogSlider/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+     
+      {/* <!-- Our Partners --> */}
+      <section id="our-partners" className="our-partners pb40 pt40 bg-ptrn2">
+        <div className="container">
+          <div className="row">
+            <div className="main_cities_header">
+              <div className="main_cities_header_left">
+                <div className="mission_icon">
+                  <span className="icon_span">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="64"
+                      height="58"
+                      viewBox="0 0 64 58"
+                      fill="none"
+                    >
+                      <path
+                        d="M0 0V41.4286L8 33.1429H16V8.28571H40V0H0ZM24 16.5714V49.7143H56L64 58V16.5714H24Z"
+                        fill="#FF3636"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div className="mission-text">
+                  <h2>Our Partners</h2>
+                  <p>
+                    Experience the future of real estate with TorontoCondomania
+                  </p>
+                </div>
+              </div>
+              {/* <div className="view-all">
+                <Link className="float-end" href="/blogs">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="13"
+                      viewBox="0 0 15 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.550304 4.19681C2.24517 1.53345 4.72511 0 7.33711 0C8.64311 0 9.91243 0.381529 11.0717 1.09323C12.2309 1.81226 13.2728 2.86146 14.1239 4.19681C14.8576 5.34874 14.8576 7.2197 14.1239 8.37162C12.429 11.0423 9.94911 12.5684 7.33711 12.5684C6.03111 12.5684 4.76179 12.1869 3.60253 11.4752C2.44327 10.7562 1.40141 9.70697 0.550304 8.37162C-0.183404 7.22704 -0.183404 5.34874 0.550304 4.19681ZM7.33711 9.25207C8.98062 9.25207 10.3013 7.92406 10.3013 6.28789C10.3013 4.65171 8.98062 3.3237 7.33711 3.3237C5.6936 3.3237 4.37293 4.65171 4.37293 6.28789C4.37293 7.92406 5.6936 9.25207 7.33711 9.25207Z"
+                        fill="#292D32"
+                      />
+                      <path
+                        d="M7.33828 4.19019C8.4902 4.19019 9.42932 5.12932 9.42932 6.28858C9.42932 7.4405 8.4902 8.37965 7.33828 8.37965C6.18636 8.37965 5.23987 7.4405 5.23987 6.28858C5.23987 5.13665 6.18636 4.19019 7.33828 4.19019Z"
+                        fill="#292D32"
+                      />
+                    </svg>
+                  </span>{" "}
+                  View All
+                </Link>
+              </div> */}
+            </div>
+
+            <div className="col-lg-12">
+              <div className="feature_property_slider gutter-x15">
+                <OurPartnerSlider/>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* <!-- Our Blog --> */}
-      <section className="our-blog pb30">
+      {/* <section className="our-blog pb30">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -362,10 +523,10 @@ const index = ({ properties, assignments, rentals, cities }) => {
             <Blogs />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Partners --> */}
-      <section id="our-partners" className="our-partners">
+      {/* <section id="our-partners" className="our-partners ">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -379,7 +540,7 @@ const index = ({ properties, assignments, rentals, cities }) => {
             <Partners />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Start Call to Action --> */}
       <section className="start-partners bgc-thm pt50 pb50">

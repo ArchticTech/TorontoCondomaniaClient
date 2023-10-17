@@ -3,16 +3,17 @@ import Image from "next/image";
 
 const Hero = ({ properties }) => {
   return (
-    <section className="home-six home6-overlay">
-      <div className="home-hero-image">
+    <section className="home-six">
+      {/* <div className="home-hero-image">
         <Image
           layout="responsive"
           width={100}
           height={100}
-          src="/assets/images/home/background-building.png"
+          src="/assets/images/home/header.png"
           alt="Background Building Image"
+          style={{ backgroundPosition:'center',backgroundSize:'cover' }}
         />
-      </div>
+      </div> */}
       <div className="container home_header">
         {/* <div className="row posr">
           <div className="col-lg-12">

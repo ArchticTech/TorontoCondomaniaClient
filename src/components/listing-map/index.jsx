@@ -39,7 +39,7 @@ const ListingMap = ({ properties, isAssignment }) => {
 
   const setMarkerOnMap = (map, latitude, longitude) => {
     const marker = new mapboxgl.Marker({
-      color: "#6449e7", // Marker color
+      color: "#ff3636", // Marker color
       draggable: false, // Allow the user to drag the marker
     })
       .setLngLat([longitude, latitude])

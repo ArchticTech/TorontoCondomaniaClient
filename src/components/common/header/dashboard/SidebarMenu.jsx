@@ -39,13 +39,13 @@ const SidebarMenu = () => {
       <ul className="sidebar-menu">
         <li className="sidebar_header header">
           <Link href="/">
-            <Image
-              width={40}
-              height={45}
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
+          <Image
+              width={100}
+              height={80}
+              className="logo1 img-fluid contain"
+              src="/assets/images/TCM-LOGO-2.png"
+              alt="header-logo.png"
             />
-            <span>TCM</span>
           </Link>
         </li>
         {/* End header */}

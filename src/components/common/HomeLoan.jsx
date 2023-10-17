@@ -10,7 +10,7 @@ const HomeLoan = () => {
               <img
                 // width={602}
                 height={396}
-                src="../../assets/images/home/home-loan-2.jpg"
+                src="../../assets/images/home/home-loan-2.png"
                 alt=""
                 className="m-4"
               />

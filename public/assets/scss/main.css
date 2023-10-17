@@ -1263,6 +1263,7 @@ header.header-nav.menu_style_home_one ul.ace-responsive-menu li.add_listing {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  /* z-index: 1000; */
 }
 
 header.header-nav.menu_style_home_one
@@ -1423,6 +1424,7 @@ header.header-nav.menu_style_home_eight .ace-responsive-menu li ul.sub-menu {
   -moz-box-shadow: 0px 0px 50px 0px rgba(32, 32, 32, 0.15);
   -o-box-shadow: 0px 0px 50px 0px rgba(32, 32, 32, 0.15);
   box-shadow: 0px 0px 50px 0px rgba(32, 32, 32, 0.15);
+  z-index: 1000;
 }
 
 header.header-nav.menu_style_home_one
@@ -5254,10 +5256,12 @@ form.home5_advanced_search_form
 }
 
 .home-six {
-  background-color: #ffffff;
-  -webkit-background-size: cover;
+  /* background-color: #ffffff;
+  -webkit-background-size: cover; */
+  background: url(../images/home/header.png);
   background-size: cover;
-  background-position: center center;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   margin-bottom: 53px;
   display: flex;
@@ -10109,7 +10113,7 @@ form.home5_advanced_search_form
 .inner_page_breadcrumb .breadcrumb_title {
   color: #fff;
   font-feature-settings: "case" on;
-  font-family: Istok Web;
+  /* font-family: Istok Web; */
   font-size: 54px;
   font-style: normal;
   font-weight: 700;
@@ -21301,7 +21305,7 @@ button.gm-ui-hover-effect:focus {
 
 /* nav active */
 .ui-active {
-  color: #8e77ff !important;
+  color: #ff3636 !important;
   font-weight: 900 !important;
 }
 
@@ -21367,10 +21371,11 @@ button.gm-ui-hover-effect:focus {
 }
 
 .home-hero-image {
-  position: absolute;
+  /* position: absolute;
   left: 0;
-  bottom: 0;
-  width: 45%;
+  bottom: 0; */
+  width: 100%;
+  height: 100%;
 }
 
 .home-text .hero-title {
@@ -21399,8 +21404,8 @@ button.gm-ui-hover-effect:focus {
 }
 
 .about_us_header_content .about_us_header {
-  /* text-align: left; */
-  justify-content: center;
+  text-align: left;
+  /* justify-content: center;
   color: #fff !important;
   text-align: center;
   font-family: Montserrat;
@@ -21409,8 +21414,16 @@ button.gm-ui-hover-effect:focus {
   margin-top: 1rem;
   font-weight: 600;
   line-height: normal;
-  z-index: 10;
-  /* max-width: 80%; */
+  z-index: 10; */
+  color: #fff;
+  text-align: center;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 100;
+  /* width: 685px; */
+  max-width: 80%;
 }
 
 .about_us_header span {
@@ -21438,7 +21451,7 @@ button.gm-ui-hover-effect:focus {
   color: #000;
   text-align: center;
   font-feature-settings: "case" on;
-  font-family: "Istok Web", sans-serif;
+  font-family: "Nunito";
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
@@ -21449,7 +21462,7 @@ button.gm-ui-hover-effect:focus {
 .about_stats_page_section .stats_div p {
   color: #929292;
   text-align: center;
-  font-family: "Istok Web", sans-serif;
+  font-family: "Nunito";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -21476,7 +21489,7 @@ button.gm-ui-hover-effect:focus {
 .mission_section .heading_mission {
   color: #ff3636;
   text-align: center;
-  font-family: Montserrat;
+  font-family: "Nunito";
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -21485,16 +21498,12 @@ button.gm-ui-hover-effect:focus {
 
 .mission_section .mission_p {
   font-size: 12px;
-  font-family: Montserrat;
+  font-family: "Nunito";
   color: #484848;
   line-height: 15px;
 }
 
 /* commitment section */
-
-/* .mission_commitment{
-  padding: 80px 0;
-} */
 
 .mission_commitment .mission_text {
   display: flex;
@@ -21504,7 +21513,7 @@ button.gm-ui-hover-effect:focus {
 
 .mission_commitment .mission_text h3 {
   color: #000;
-  font-family: "Istok Web", sans-serif;
+  font-family: "Nunito";
   font-size: 28px;
   font-style: normal;
   font-weight: 600;
@@ -21514,7 +21523,7 @@ button.gm-ui-hover-effect:focus {
 
 .mission_commitment .mission_text p {
   color: #000;
-  font-family: "Istok Web", sans-serif;
+  font-family: "Nunito";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -21563,7 +21572,7 @@ button.gm-ui-hover-effect:focus {
 
 .how_it_works_about .main_header_works {
   color: #000;
-  font-family: Istok Web;
+  font-family: "Nunito";
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -21594,7 +21603,7 @@ button.gm-ui-hover-effect:focus {
 }
 .how_it_works_about .howitworks_div h3 {
   color: #000;
-  font-family: Istok Web;
+  /* font-family: Istok Web; */
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -21604,7 +21613,7 @@ button.gm-ui-hover-effect:focus {
 
 .how_it_works_about .howitworks_div p {
   color: #929292;
-  font-family: Istok Web;
+  /* font-family: Istok Web; */
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
@@ -21625,7 +21634,7 @@ button.gm-ui-hover-effect:focus {
 
 .owner_message_main h2 {
   color: #000;
-  font-family: Istok Web;
+  /* font-family: Istok Web; */
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -21643,7 +21652,7 @@ button.gm-ui-hover-effect:focus {
 
 .owner_message_main p {
   color: #000;
-  font-family: Poppins;
+  font-family: "Nunito";
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
@@ -21678,19 +21687,30 @@ button.gm-ui-hover-effect:focus {
 
 .home_header {
   display: flex;
+  /* background: url(../images/home/header.png); */
+  background-position: center;
+  background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .home_header::before {
-  content: "";
+  /* content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 01); */
+  background-color: rgb(29, 41, 62);
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .home_header .home-hero-title {
@@ -21700,13 +21720,13 @@ button.gm-ui-hover-effect:focus {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  z-index: 100;
+  z-index: 1;
   width: 685px;
 }
 
 .home_header .home-hero-title span {
   color: var(--color-primary);
-  font-family: "Roboto Slab", serif;
+  font-family: "Nunito";
   font-size: 52px;
   font-style: normal;
   font-weight: 700;
@@ -21716,7 +21736,7 @@ button.gm-ui-hover-effect:focus {
 .home_header .home-hero-para {
   color: var(--cold-grey-5, #f3f4f6);
   text-align: center;
-  font-family: "Roboto Slab", serif;
+  font-family: "Nunito";
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -21743,9 +21763,19 @@ button.gm-ui-hover-effect:focus {
   gap: 17px;
 }
 
+.main_cities_header .main_cities_header_left h2 {
+  color: #292d32;
+  font-feature-settings: "case" on;
+  font-family: "Nunito";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 31px;
+}
+
 .main_cities_header .view-all a {
   color: #292d32 !important;
-  font-family: Istok Web;
+  font-family: "Nunito";
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -21759,7 +21789,7 @@ button.gm-ui-hover-effect:focus {
 
 .how_it_works_card .heading h4 {
   color: #000;
-  font-family: Istok Web;
+  font-family: "Nunito";
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -21768,7 +21798,7 @@ button.gm-ui-hover-effect:focus {
 
 .how_it_works_card .para p {
   color: #929292;
-  font-family: Istok Web;
+  font-family: "Nunito";
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
@@ -21782,8 +21812,7 @@ button.gm-ui-hover-effect:focus {
 
 .our_experts .heading_main h2 {
   color: #000;
-
-  font-family: Istok Web;
+  font-family: "Nunito";
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -21816,40 +21845,42 @@ button.gm-ui-hover-effect:focus {
 
 /* home loan  */
 
-.home_loan .heading_main h2{
-  color: #2C2C2C;
-  font-family: Istok Web;
+.home_loan .heading_main h2 {
+  color: #2c2c2c;
+  font-family: "Nunito";
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
-  line-height: 35px
+  line-height: 35px;
 }
 
-.home_loan .main_card{
+.home_loan .main_card {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3rem;
 }
 
-.home_loan .cards p{
+.home_loan .cards p {
   color: #929292;
-font-family: Istok Web;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 20px
+  font-family: "Nunito";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
 }
 
-.home_loan .image{
+.home_loan .image {
   display: flex;
   height: 600px;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
+  padding: 2rem;
 }
-.home_loan .image img{
-border: 1px solid red;
-}
+/* .home_loan .image img{
+    border-bottom: 10px solid var(--color-primary);
+    border-left: 10px solid var(--color-primary);
+} */
 
 /* .home_loan .image::before{
   content: "";
@@ -21859,4 +21890,226 @@ border: 1px solid red;
             right: -10px;
             bottom: -10px;
             border: 10px solid #000;
+} */
+
+/* Mortgage Process  */
+
+.mortgage_process_header_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header_inner_page_section .mortgage_process_header {
+  /* font-size: 3vw; */
+  font-family: "Nunito";
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+.mortgage_process_header_content .mortgage_process_header {
+  text-align: left;
+  color: #fff;
+  text-align: center;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1;
+  /* width: 685px; */
+  max-width: 70%;
+}
+.mortgage_process_header span {
+  color: #ff3636;
+}
+
+.mortgage_process_header_content p {
+  color: #fff;
+
+  text-align: center;
+  /* Sub Heading */
+  font-family: "Nunito";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  z-index: 10;
+  width: 500px;
+  padding: 1rem 0;
+}
+
+.mortgage_process_header_content .btn_mortgage {
+  cursor: pointer;
+  z-index: 10;
+  width: 250px;
+  height: 61px;
+  font-size: 18px;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* paragraph  */
+.mortgage_process_para_section {
+  padding: 80px 40px;
+}
+
+.mortgage_process_para_section .mortgage_process_container {
+  padding: 0 4rem;
+  text-align: center;
+  color: #515151;
+  text-align: center;
+  font-family: "Nunito";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.keytakeaway_section {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+.keytakeaway_container {
+  height: 100%;
+  padding: 50px;
+
+  background: linear-gradient(
+        to right,
+        var(--color-primary) 4px,
+        transparent 4px
+      )
+      0 0,
+    linear-gradient(to right, var(--color-primary) 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, var(--color-primary) 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, var(--color-primary) 4px, transparent 4px) 100%
+      100%,
+    linear-gradient(to bottom, var(--color-primary) 10px, transparent 4px) 0 0,
+    linear-gradient(to bottom, var(--color-primary) 10px, transparent 4px) 100% 0,
+    linear-gradient(to top, var(--color-primary) 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, var(--color-primary) 4px, transparent 4px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+
+  padding: 1rem 2rem;
+}
+
+.keytakeaway_container .keytakeaway_header h2 {
+  color: var(--primary-colors-black, #02021d);
+  text-align: center;
+  font-family: "Nunito";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+}
+
+.keytakeaway_container .keytakeaway_ul ul {
+  color: #1e1e1e;
+  font-family: "Nunito";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: capitalize;
+  list-style: disc;
+  width: 900px;
+}
+
+.keytakeaway_container .keytakeaway_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* preapproval section   */
+.preapproval_section {
+  padding: 60px 110px;
+}
+
+.preapproval_section .heading_main {
+  color: #000;
+  font-feature-settings: "case" on;
+  font-family: "Nunito";
+  font-size: 33px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px;
+  text-transform: capitalize;
+  margin: 1rem 0;
+}
+.preapproval_section p {
+  color: #515151;
+  font-family: "Nunito";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  text-transform: capitalize;
+  padding: 8px 0;
+}
+
+.preapproval_section .find_property_ul {
+  list-style: disc;
+  padding: 0 20px;
+  font-weight: 800;
+  font-family: "Nunito";
+  font-size: 14px;
+}
+
+.preapproval_section .apply-mortgage .ul_heading {
+  font-weight: 900;
+  font-size: 20px;
+}
+.preapproval_section .apply-mortgage .apply_mortgage_ul {
+  list-style: disc;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+.common_div {
+  margin-top: 3rem;
+}
+
+/* FAQ  */
+.faq_mortgage_process{
+  padding: 0 !important;
+}
+.faq_mortgage_process .main_card .heading_main h2 {
+  color: #000;
+  font-feature-settings: "case" on;
+  font-family: "Nunito";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px; /* 125% */
+  text-transform: capitalize;
+}
+
+.faq_mortgage_process .sub_heading {
+  color: #000;
+  font-family: "Nunito";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px; 
+  text-transform: capitalize;
+}
+
+.faq_mortgage_process .text {
+  color: #515151;
+  font-family: "Nunito";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  text-transform: capitalize;
+}
+
+/* header{
+  z-index: 100;
 } */
