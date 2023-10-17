@@ -2,20 +2,34 @@ import axios from 'axios';
 import global from '../../config/env'
 
 const apiProxy = async (req,res) => {
-    // Read the HTTP-only cookie
-    console.log('Auth Token', req.cookies);
+    
+    const { query } = req;
+    const { method, url } = query;
+
     const authToken = req.cookies['auth-token'] || '';
     
     // Make the API request with the auth token in the headers
-    const apiResponse = await axios({
-        method: 'GET',
-        url: global.apiURL + 'api/getAllProperties', 
-        headers: {
-            'Authorization': `Bearer ${authToken}`,
-        },
-    });
-
-    res.status(200).send(apiResponse.data);
+    try {
+        const apiResponse = await axios({
+            method: method,
+            url: global.apiURL + url,
+            headers: {
+                'Authorization': `Bearer ${authToken}`,
+            },
+        });
+    
+        res.status(200).send(apiResponse.data);
+    }
+    catch(error)
+    {
+        if(error.response.status === 401)
+        {
+            res.status(200).send({'error': 'Unauthenticated'});
+        }
+        else {
+            res.status(error.response.status).send({'error': error.message});
+        }
+    }
 };
 
 export default apiProxy;

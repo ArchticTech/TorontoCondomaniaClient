@@ -3,9 +3,8 @@ import Seo from "../../components/common/seo";
 import ListingMapV4 from "../../components/listing-map";
 import Head from "next/head";
 import { fetchAllProperties } from "../../utils/api";
-import { useEffect, useState } from "react";
 
-const Index = (properties) => {
+const Index = ({properties}) => {
 
   return (
     <>
@@ -16,17 +15,19 @@ const Index = (properties) => {
         />
       </Head>
       <Seo pageTitle="Latest Properties" />
-      <ListingMapV4 properties={properties}  isAssignment={false}/>
+      <ListingMapV4 properties={properties} isAssignment={false}/>
     </>
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const properties = await fetchAllProperties();
+  
   return {
     props: {
       properties: properties.data
     },
+    revalidate: 240,
   };
 }
 

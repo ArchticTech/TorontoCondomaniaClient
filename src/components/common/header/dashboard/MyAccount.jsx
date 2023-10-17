@@ -2,16 +2,21 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { isSinglePageActive } from "../../../../utils/daynamicNavigation";
 import Image from "next/image";
+import logout from '../../../../utils/api';
+import axios from 'axios';
 
 const MyAccount = () => {
   const profileMenuItems = [
     { id: 1, name: "My Profile", ruterPath: "/my-profile" },
-    { id: 2, name: " My Message", ruterPath: "/my-message" },
-    { id: 3, name: " My Favourite", ruterPath: "/my-favourites" },
-    { id: 4, name: " My Package", ruterPath: "/my-package" },
-    { id: 5, name: " Log out", ruterPath: "/login" },
+    { id: 2, name: " My Favourite", ruterPath: "/favorites" },
   ];
   const route = useRouter();
+  
+  const logoutUser = async () => {
+    const response = await axios.get('/api/logout');
+    route.push('/');
+  }
+
   return (
     <>
       <div className="user_set_header">
@@ -44,6 +49,9 @@ const MyAccount = () => {
             {item.name}
           </Link>
         ))}
+        <a href='#' className="dropdown-item" onClick={logoutUser} >
+            Logout
+          </a>
       </div>
     </>
   );

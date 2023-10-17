@@ -3,8 +3,6 @@ import Seo from "../components/common/seo";
 import HomeMain from "../components/home";
 import { fetchAllProperties ,fetchAllAssignments, fetchCityCount, fetchAllRentals } from '../utils/api';
 import mainCities from '../data/cityPropertiesCount'
-import { useEffect } from "react";
-import { useState } from "react";
 
 const Index = ({properties, assignments, citiesCount, rentals }) => {
 

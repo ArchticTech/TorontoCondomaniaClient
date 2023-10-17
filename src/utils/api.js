@@ -1,5 +1,5 @@
 import global from '../config/env';
-import apiProxy from '../pages/api/apiProxy';
+import axios from 'axios';
 
 export async function fetchAllProperties() {
     const response = await fetch(global.apiURL + 'api/getAllProperties/');
@@ -19,24 +19,6 @@ export async function fetchProperty(slug) {
 
     return property;
 }
-
-// export async function fetchAllProperties() {
-//     try {
-//         const url = '/api/apiProxy';
-        
-//         const response = await fetch(url);
-
-//         console.log(response);
-        
-//         const properties = response.json();
-
-//         return properties;
-//     } 
-//     catch (error) {
-//         console.error('Error fetching properties:', error);
-//         throw error; // Optionally re-throw the error
-//     }
-// }
 
 export async function fetchAllAssignments() {
     const response = await fetch(global.apiURL + 'api/getAllAssignments');
@@ -77,17 +59,32 @@ export async function fetchRental(id) {
 
 export async function fetchAllFavProperties() {
     try {
-        const url = 'api/getAllFavorites';
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/getAllFavorites'
+            },
+        });
         
-        const response = await fetch(url);
-        
-        const favorites = response.json();
-
-        return favorites;
-    } 
+        return response.data;
+    }
     catch (error) {
-        console.error('Error fetching properties:', error);
-        throw error; // Optionally re-throw the error
+        console.log(error)
+    }
+}
+export async function storePropertyFavorite(propertyID) {
+    try {
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/storeFavorite/' + propertyID
+            },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
     }
 }
 
@@ -142,8 +139,16 @@ export async function authenticateUser(userData)
         throw error; // Optionally re-throw the error
     }
 }
-
-export async function validateUser()
+export async function logout()
 {
-    
+    try {
+        const response = await axios.get('/api/logout');
+        
+        console.log(response);
+        return true;
+    }
+    catch (error) {
+        console.log(error)
+        return;
+    }
 }
