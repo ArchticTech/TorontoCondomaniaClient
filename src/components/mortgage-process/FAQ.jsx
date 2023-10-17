@@ -5,8 +5,7 @@ const FAQ = () => {
     <>
       <div className="row">
         <div className="col-lg-6 p-5">
-          <div className="row" style={{ height: "600px" }}>
-            <div className="image col-lg-12" style={{ height: "600px" }}>
+            <div className="image col-lg-12" >
               <img
                 // width={602}
                 height={396}
@@ -15,7 +14,6 @@ const FAQ = () => {
                 className="m-4"
               />
             </div>
-          </div>
         </div>
         <div className="main_card col-lg-6 p-5">
           <div className="heading_main">
