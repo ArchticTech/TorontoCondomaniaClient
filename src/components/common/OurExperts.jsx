@@ -4,8 +4,8 @@ import Image from "next/image";
 const OurExperts = () => {
   return (
     <>
-      <div className="row">
-        <div className="col-lg-6">
+      <div className="row experts_main_div">
+        <div className="col-lg-6 experts_div_left">
           <div className="heading_main">
             <h2>Our expert will help you make the right Decission</h2>
           </div>
@@ -152,7 +152,7 @@ const OurExperts = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-6 experts_div_right">
           <div className="row" style={{ height:'600px' }}>
             <div className="single_image col-lg-6" style={{ height:'600px' }}>
              
@@ -162,6 +162,7 @@ const OurExperts = () => {
                   src="/assets/images/home/expert-single.png"
                   alt=""
                 />
+                <button className="btn btn-thm my-3">Learn More</button>
               
             </div>
             <div className="double_image col-lg-6">

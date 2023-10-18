@@ -205,16 +205,36 @@ const PreApproval = () => {
           <div className="common_div pre-approval">
             <h3 className="heading_main">Close on the Property</h3>
             <p>
-            Once your mortgage application secures approval, it's time to move on to the closing phase. Here, an extensive set of documents will be printed, and you'll be invited to the title company or attorney's office for a closing meeting
+              Once your mortgage application secures approval, it's time to move
+              on to the closing phase. Here, an extensive set of documents will
+              be printed, and you'll be invited to the title company or
+              attorney's office for a closing meeting
             </p>
             <p>
-            Among the crucial documents presented during this meeting is your closing disclosure form. This form displays an itemized comparison of the originally estimated closing costs and the final closing costs, highlighting any cost discrepancies.
+              Among the crucial documents presented during this meeting is your
+              closing disclosure form. This form displays an itemized comparison
+              of the originally estimated closing costs and the final closing
+              costs, highlighting any cost discrepancies.
             </p>
             <p>
-            Typically, closing costs range from 2% to 5% of the home's purchase price. For instance, if you're purchasing a $200,000 house, expect closing costs in the range of $4,000 to $10,000. Keep in mind that closing fees can vary depending on factors such as your state, loan type, and mortgage lender, so it's essential to closely review these charges.
+              Typically, closing costs range from 2% to 5% of the home's
+              purchase price. For instance, if you're purchasing a $200,000
+              house, expect closing costs in the range of $4,000 to $10,000.
+              Keep in mind that closing fees can vary depending on factors such
+              as your state, loan type, and mortgage lender, so it's essential
+              to closely review these charges.
             </p>
-            <p>In the event you observe new fees that were not included in the initial loan estimate or notice a substantial increase in your closing costs, don't hesitate to seek clarification from your lender or real estate agent.</p>
-            <p>If everything appears satisfactory, you'll proceed to sign to accept the mortgage, and you'll exit the office with the keys to your new home. </p>
+            <p>
+              In the event you observe new fees that were not included in the
+              initial loan estimate or notice a substantial increase in your
+              closing costs, don't hesitate to seek clarification from your
+              lender or real estate agent.
+            </p>
+            <p>
+              If everything appears satisfactory, you'll proceed to sign to
+              accept the mortgage, and you'll exit the office with the keys to
+              your new home.{" "}
+            </p>
           </div>
         </div>
       </section>

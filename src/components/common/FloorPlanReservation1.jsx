@@ -193,7 +193,7 @@ const FloorPlanReservation1 = ({ handleSubmitClick, purchaser, setPurchaser, clo
             </div>
           </div>
           <div className="col-lg-12 my-2 text-white ">
-                <button onClick={openNextModal} className="btn btn-primary">
+                <button onClick={openNextModal} className="btn btn-thm">
                   Next
                 </button>
               </div>

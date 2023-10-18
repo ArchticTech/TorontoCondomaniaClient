@@ -199,12 +199,7 @@ const index = ({ properties, assignments, rentals, cities }) => {
                   <span
                     style={{
                       color: "#292D32",
-                      fontFeatureSettings: '"case" on',
-                      fontFamily: "Poppins",
-                      fontSize: "32px",
-                      fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "31px",
                     }}
                   >
                     Perfect Home

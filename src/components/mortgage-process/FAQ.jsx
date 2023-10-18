@@ -3,9 +3,8 @@ import React from "react";
 const FAQ = () => {
   return (
     <>
-      <div className="row">
-        <div className="col-lg-6 p-5">
-            <div className="image col-lg-12" >
+      <div className="main_card">
+            <div className="image" >
               <img
                 // width={602}
                 height={396}
@@ -14,8 +13,8 @@ const FAQ = () => {
                 className="m-4"
               />
             </div>
-        </div>
-        <div className="main_card col-lg-6 p-5">
+        
+        <div className="text_card ">
           <div className="heading_main">
             <h2>Frequently Asked Questions</h2>
           </div>

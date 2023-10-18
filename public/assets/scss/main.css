@@ -3537,14 +3537,6 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   .home_adv_srch_opt.home3 {
     margin-top: 0;
   }
-  
-.faq_mortgage_process .image img{
-  display: none;
-}
-
-.faq_mortgage_process .main_card{
-  padding-top: 0;
-}
 }
 .home_adv_srch_opt.home4 {
   margin-top: 40px;
@@ -4962,7 +4954,7 @@ form.home5_advanced_search_form
     height: auto;
   }
 
-  .faq_mortgage_process .main_card .heading_main h2 {
+  .faq_mortgage_process .heading_main {
     font-size: 25px;
   }
 }
@@ -5124,6 +5116,9 @@ form.home5_advanced_search_form
 @media (max-width: 767px) {
   .home3_home_content .popup_video_btn:after {
     display: none;
+  }
+  .preapproval_section .heading_main {
+    font-size: 20px;
   }
 }
 .row_style.home8 {
@@ -10145,6 +10140,9 @@ form.home5_advanced_search_form
   /* .header_inner_page_section .about_us_header_content {
     margin-top: 116px;
   } */
+  .preapproval_section .heading_main {
+    font-size: 20px;
+  }
 }
 .inner_page_breadcrumb.csv2 .breadcrumb_content,
 .inner_page_breadcrumb.csv3 .breadcrumb_content {
@@ -12311,6 +12309,7 @@ a.btn.btn_error {
   font-family: "Nunito";
   color: #484848;
   font-weight: bold;
+  padding: 2rem 1rem;
 }
 
 .faq_according .accordion .card .card-header .btn-link:not(.collapsed),
@@ -14815,6 +14814,9 @@ legend span {
   .grid_list_search_result .left_area p {
     margin-top: 20px;
   }
+  .preapproval_section .heading_main {
+    font-size: 20px;
+  }
 }
 
 .grid_list_search_result .right_area ul {
@@ -14966,18 +14968,21 @@ legend span {
   overflow-y: scroll;
   padding: 0 15px;
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) { */
+  @media screen and (max-width: 1024px) {
   .half_map_area_content {
     height: auto;
   }
   .mission_commitment .mission_text {
     gap: 5rem;
   }
+  
 
-  .header_inner_page_section .about_us_header_content .about_us_header {
+
+  /* .header_inner_page_section .about_us_header_content .about_us_header {
     text-align: left;
     font-size: 2.5rem;
-  }
+  } */
 }
 
 .half_map_area.version4 {
@@ -15712,6 +15717,9 @@ legend span {
   }
   .message_container .message_input form textarea.form-control {
     padding-right: 20px;
+  }
+  .preapproval_section .heading_main {
+    font-size: 20px;
   }
 }
 .message_container .message_input form input.form-control::placeholder {
@@ -18988,6 +18996,7 @@ section {
   margin-bottom: 10px;
   margin-top: 0;
   font-weight: 500;
+  font-size: 32px;
 }
 
 .main-title h3 {
@@ -21736,16 +21745,11 @@ button.gm-ui-hover-effect:focus {
   font-weight: 700;
   line-height: normal;
   z-index: 1;
-  width: 685px;
+  /* width: 685px; */
 }
 
 .home_header .home-hero-title span {
   color: var(--color-primary);
-  font-family: "Nunito";
-  font-size: 52px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 }
 
 .home_header .home-hero-para {
@@ -21756,8 +21760,8 @@ button.gm-ui-hover-effect:focus {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  z-index: 100;
-  width: 490px;
+  z-index: 1;
+  /* width: 490px; */
   padding-top: 1rem;
 }
 
@@ -21766,7 +21770,7 @@ button.gm-ui-hover-effect:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 1rem;
   padding: 40px 0;
 }
@@ -21839,7 +21843,6 @@ button.gm-ui-hover-effect:focus {
   margin: 1rem;
   /* padding-top: 2rem; */
   gap: 1rem;
-  width: 400px;
   text-align: justify;
 }
 
@@ -21848,6 +21851,7 @@ button.gm-ui-hover-effect:focus {
   justify-content: center;
   display: flex;
   height: 600px;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -21949,8 +21953,7 @@ button.gm-ui-hover-effect:focus {
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
-  z-index: 10;
-  width: 500px;
+  z-index: 1;
   padding: 1rem 0;
 }
 
@@ -21982,6 +21985,10 @@ button.gm-ui-hover-effect:focus {
   font-style: normal;
   font-weight: 400;
   line-height: 27px;
+}
+
+.mortgage_process_para_section .mortgage_process_container p {
+  font-size: 16px;
 }
 
 .keytakeaway_section {
@@ -22031,7 +22038,7 @@ button.gm-ui-hover-effect:focus {
   line-height: 20px;
   text-transform: capitalize;
   list-style: disc;
-  width: 900px;
+  padding: 23px;
 }
 
 .keytakeaway_container .keytakeaway_list {
@@ -22041,9 +22048,9 @@ button.gm-ui-hover-effect:focus {
 }
 
 /* preapproval section   */
-.preapproval_section {
+/* .preapproval_section {
   padding: 60px 110px;
-}
+} */
 
 .preapproval_section .heading_main {
   color: #000;
@@ -22059,7 +22066,7 @@ button.gm-ui-hover-effect:focus {
 .preapproval_section p {
   color: #515151;
   font-family: "Nunito";
-  font-size: 14px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 19px;
@@ -22072,7 +22079,7 @@ button.gm-ui-hover-effect:focus {
   padding: 0 20px;
   font-weight: 800;
   font-family: "Nunito";
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .preapproval_section .apply-mortgage .ul_heading {
@@ -22081,7 +22088,7 @@ button.gm-ui-hover-effect:focus {
 }
 .preapproval_section .apply-mortgage .apply_mortgage_ul {
   list-style: disc;
-  font-size: 14px;
+  font-size: 15px;
   padding: 0 15px;
 }
 
@@ -22092,6 +22099,29 @@ button.gm-ui-hover-effect:focus {
 /* FAQ  */
 .faq_mortgage_process{
   padding: 0 !important;
+}
+
+.faq_mortgage_process .main_card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.faq_mortgage_process .text_card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 47%;
+}
+
+.faq_mortgage_process .image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47%;
 }
 
 .faq_mortgage_process .main_card .heading_main h2 {

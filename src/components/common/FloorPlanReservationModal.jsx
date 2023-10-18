@@ -212,7 +212,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
               </div> */}
 
               <div className="col-lg-12 mt-5">
-                <button className="btn btn-primary" onClick={openNextModal}>
+                <button className="btn btn-thm" onClick={openNextModal}>
                   Next
                 </button>
               </div>

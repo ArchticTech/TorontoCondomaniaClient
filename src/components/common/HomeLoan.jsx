@@ -3,8 +3,8 @@ import React from "react";
 const HomeLoan = () => {
   return (
     <>
-      <div className="row">
-        <div className="col-lg-6">
+      <div className="row home_loan_main">
+        <div className="col-lg-6 home_loan_left">
           <div className="row" style={{ height: "600px" }}>
             <div className="image col-lg-12" style={{ height: "600px" }}>
               <img
