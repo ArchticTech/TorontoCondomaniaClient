@@ -137,9 +137,9 @@ const GlobalFilterRent = ({ className = "" }) => {
                     <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
                       <div className="row rental_features_badge w-100 mx-auto">
                         <div className="col-md-8 col-sm-3">
-                          <h4 class="badge d-flex">Laundry Available</h4>
+                          <h4 className="badge d-flex">Laundry Available</h4>
                         </div>
-                        <div class="col-3 form-check form-switch form-check-reverse">
+                        <div className="col-3 form-check form-switch form-check-reverse">
                           <input
                             onChange={(e) =>
                               dispatch(addLaundry(e.target.checked))
@@ -157,9 +157,9 @@ const GlobalFilterRent = ({ className = "" }) => {
                     <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
                       <div className="row rental_features_badge w-100 mx-auto">
                         <div className="col-md-8 col-sm-3">
-                          <h4 class="badge d-flex">Pets Allowed</h4>
+                          <h4 classname="badge d-flex">Pets Allowed</h4>
                         </div>
-                        <div class="col-3 form-check form-switch form-check-reverse">
+                        <div classname="col-3 form-check form-switch form-check-reverse">
                           <input
                             onChange={(e) =>
                               dispatch(addPetPolicy(e.target.checked))
@@ -179,9 +179,9 @@ const GlobalFilterRent = ({ className = "" }) => {
                     <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
                       <div className="row rental_features_badge w-100 mx-auto">
                         <div className="col-md-8 col-sm-3">
-                          <h4 class="badge d-flex">Smoking Allowed</h4>
+                          <h4 classname="badge d-flex">Smoking Allowed</h4>
                         </div>
-                        <div class="col-3 form-check form-switch form-check-reverse">
+                        <div classname="col-3 form-check form-switch form-check-reverse">
                           <input
                             onChange={(e) =>
                               dispatch(addSmokingPolicy(e.target.checked))
@@ -200,9 +200,9 @@ const GlobalFilterRent = ({ className = "" }) => {
                     <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
                       <div className="row rental_features_badge w-100 mx-auto">
                         <div className="col-md-8 col-sm-3">
-                          <h4 class="badge d-flex">Basement Available</h4>
+                          <h4 classname="badge d-flex">Basement Available</h4>
                         </div>
-                        <div class="col-3 form-check form-switch form-check-reverse">
+                        <div classname="col-3 form-check form-switch form-check-reverse">
                           <input
                             onChange={(e) =>
                               dispatch(addBasement(e.target.checked))
@@ -221,9 +221,9 @@ const GlobalFilterRent = ({ className = "" }) => {
                     <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
                       <div className="row rental_features_badge w-100 mx-auto">
                         <div className="col-md-8 col-sm-3">
-                          <h4 class="badge d-flex">Parking Available</h4>
+                          <h4 classname="badge d-flex">Parking Available</h4>
                         </div>
-                        <div class="col-3 form-check form-switch form-check-reverse">
+                        <div classname="col-3 form-check form-switch form-check-reverse">
                           <input
                             onChange={(e) =>
                               dispatch(addParking(e.target.checked))
@@ -257,9 +257,9 @@ const GlobalFilterRent = ({ className = "" }) => {
                   {/* <li>
                     <div className="row mx-1 rental_features_badge">
                       <div className="col-8 ">
-                        <h4 class="badge d-flex">Laundry Available</h4>
+                        <h4 classname="badge d-flex">Laundry Available</h4>
                       </div>
-                      <div class="col-3 form-check form-switch form-check-reverse">
+                      <div classname="col-3 form-check form-switch form-check-reverse">
                         <input
                           onChange={(e) =>
                             dispatch(addLaundry(e.target.checked))

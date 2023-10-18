@@ -1,6 +1,11 @@
 import global from '../config/env';
 import axios from 'axios';
 
+
+/*************************************************************/
+/***** API Requests that does not require Authentication *****/
+/*************************************************************/
+
 export async function fetchAllProperties() {
     const response = await fetch(global.apiURL + 'api/getAllProperties/');
     if (!response.ok) {
@@ -57,37 +62,6 @@ export async function fetchRental(id) {
     return rental;
 }
 
-export async function fetchAllFavProperties() {
-    try {
-        const response = await axios.get('/api/apiProxy', {
-            params: {
-                method: 'GET',
-                url: 'api/getAllFavorites'
-            },
-        });
-        
-        return response.data;
-    }
-    catch (error) {
-        console.log(error)
-    }
-}
-export async function storePropertyFavorite(propertyID) {
-    try {
-        const response = await axios.get('/api/apiProxy', {
-            params: {
-                method: 'GET',
-                url: 'api/storeFavorite/' + propertyID
-            },
-        });
-        
-        return response.data;
-    }
-    catch (error) {
-        console.log(error)
-    }
-}
-
 export async function fetchCityCount(name) {
     try {
         const response = await fetch(global.apiURL + 'api/getCityPropertyCount/' + name);
@@ -120,6 +94,76 @@ export async function resendVerificationEmail(email)
         'api/resendEmail/' + 
         encodeURIComponent(email));
 }
+
+export async function sendConsultationRequest(consultationData)
+{
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: global.apiURL + 'api/sendConsultationRequest',
+            data: consultationData
+        });
+        return response;
+    }
+    catch (error) {
+        console.error('Error', error);
+    }
+}
+
+
+/****************************************************/
+/***** API Requests that require Authentication *****/
+/****************************************************/
+
+export async function fetchAllFavoriteProperties() {
+    try {
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/getAllFavorites'
+            },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+export async function storeFavoriteProperty(propertyID) {
+    try {
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/storeFavorite/' + propertyID
+            },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+export async function deleteFavoriteProperty(propertyID) {
+    try {
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/deleteFavorite/' + propertyID
+            },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+
 export async function authenticateUser(userData)
 {
     const email = userData['email'];

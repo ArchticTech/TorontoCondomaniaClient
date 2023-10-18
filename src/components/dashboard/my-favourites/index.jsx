@@ -1,7 +1,7 @@
 import Header from "../../common/header/dashboard/Header";
 import SidebarMenu from "../../common/header/dashboard/SidebarMenu";
 import MobileMenu from "../../common/header/MobileMenu";
-import FavouritProducts from "./FavouritProducts";
+import FavouriteProducts from "./FavouriteProducts";
 import Filtering from "./Filtering";
 import Pagination from "./Pagination";
 import SearchBox from "./SearchBox";
@@ -80,7 +80,7 @@ const index = ({favProperties}) => {
                 <div className="col-lg-12">
                   <div className="my_dashboard_review mb40">
                     <div className="favorite_item_list">
-                      <FavouritProducts favProperties={favProperties}/>
+                      <FavouriteProducts favProperties={favProperties}/>
 
                       <div className="mbp_pagination">
                         <Pagination />

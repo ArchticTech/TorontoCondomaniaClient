@@ -1,33 +1,23 @@
 import React, { useState } from "react";
+import { storeFavoriteProperty } from "../../utils/api";
 
-const IconPropertyHeart = ({ id }) => {
+const IconPropertyHeart = ({ propertyId }) => {
   const [isSaved, setIsSaved] = useState(false);
-  const handleFavoriteClick = async (e, propertyId) => {
+
+  const handleFavoriteClick = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(
-        `http://127.0.0.1:8000/api/storeFavorite/${propertyId}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      if (response.ok) {
-        setIsSaved(true);
-        // Handle success (e.g., show a success message)
-      } else {
-        // Handle errors (e.g., show an error message)
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      // Handle network or other errors
+    
+    setIsSaved(true);
+    const response = await storeFavoriteProperty(propertyId);
+    
+    if(response.error == 'Unauthenticated') {
+      console.log('You are not Logged in');
     }
-
-    // Use the propertyId for further processing, e.g., send it to your API to add to favorites
-    console.log(`Clicked on property with ID: ${propertyId}`);
+    else if (response.error) {
+      console.log('Error: ', response.data)
+    }
   };
+
   return (
     <>
       <li
@@ -38,7 +28,7 @@ const IconPropertyHeart = ({ id }) => {
           opacity: isSaved ? "1" : "",
         }}
       >
-        <a href="#" onClick={(e) => handleFavoriteClick(e, id)}>
+        <a href="#" onClick={(e) => handleFavoriteClick(e)}>
           <span className="flaticon-heart"></span>
         </a>
       </li>

@@ -1,4 +1,7 @@
+import { sendConsultationRequest } from "../../../utils/api";
+
 const ContactConsultation = ({ property }) => {
+
   const handleSubmitClick = async (e) => {
     e.preventDefault();
 
@@ -17,29 +20,18 @@ const ContactConsultation = ({ property }) => {
         .value,
       message_consultation: document.getElementById("floatingTextarea").value,
     };
-    console.log(formData);
 
     try {
-      const response = await fetch(
-        `http://127.0.0.1:8000/api/addConsultingForm`,
-        {
-          method: "POST", // Assuming you want to use the POST method
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData), // Serialize the data to JSON
-        }
-      );
+      const response = await sendConsultationRequest(formData);
 
       if (response.ok) {
         document.getElementById("free_consultant_form_side").reset();
-        console.log("Send data successfully!");
+        console.log("Data sent successfully!");
       } else {
         console.log("Error in sending data to api");
       }
     } catch (error) {
       console.error("Error:", error);
-      // Handle network or other errors
     }
   };
   return (

@@ -1,14 +1,12 @@
 import Link from "next/link";
-
-// import properties from "../../../data/properties";
-import Image from "next/image";
 import global from "../../../config/env";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { deleteFavoriteProperty } from "../../../utils/api";
 
 const FavouritProducts = ({ favProperties }) => {
   const [favoriteProperties, setFavoriteProperties] = useState(favProperties);
 
-  const handleDeleteProperty = async (propertyId) => {
+  const handleDeletePropertyadfa = async (propertyId) => {
     try {
       const response = await fetch(
         `http://127.0.0.1:8000/api/deleteFavorite/${propertyId}`,
@@ -32,6 +30,21 @@ const FavouritProducts = ({ favProperties }) => {
     } catch (error) {
       console.error("Error:", error);
       // Handle the error (e.g., display an error message to the user)
+    }
+  };
+
+  const handleDeleteProperty = async (propertyId) => {
+
+    setFavoriteProperties((prevProperties) =>
+      prevProperties.filter((property) => property.id !== propertyId));
+
+    const response = await deleteFavoriteProperty(propertyId);
+    
+    if(response.error == 'Unauthenticated') {
+      console.log('You are not Logged in');
+    }
+    else if (response.error) {
+      console.log('Error: ', response.data)
     }
   };
 

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Seo from "../../components/common/seo";
 import MyFavourites from "../../components/dashboard/my-favourites";
-import { fetchAllFavProperties } from "../../utils/api";
+import { fetchAllFavoriteProperties } from "../../utils/api";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -15,7 +15,7 @@ const Favorites = () => {
   useEffect(() => {
     const getFavorites = async () => {
       try {
-        const response = await fetchAllFavProperties();
+        const response = await fetchAllFavoriteProperties();
         if(response.error == 'Unauthenticated')
         {
             router.push('/');
@@ -25,7 +25,7 @@ const Favorites = () => {
           setLoading(false); 
         }
       } catch (error) {
-        // router.push('/');
+        router.push('/');
       }
     };
 
