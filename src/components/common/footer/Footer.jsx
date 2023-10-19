@@ -24,17 +24,17 @@ const Footer = () => {
               <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="/terms">Terms & Conditions</Link>
+              <Link href="/contact">Contact Us</Link>
             </li>
             <li>
               <Link href="/service">Services</Link>
             </li>
             <li>
-              <Link href="/contact">Support Center</Link>
+              <Link href="/customer-support">Support Center</Link>
             </li>
-            {/* <li>
-              <Link href="/">Press Info</Link>
-            </li> */}
+            <li>
+              <Link href="/terms">Terms & Conditions</Link>
+            </li>
           </ul>
         </div>
       </div>

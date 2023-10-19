@@ -121,7 +121,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
               aria-label="Close"
               className="btn btn-close"
               onClick={closeModal}
-              style={{ border: "1px solid blue" }}
+              style={{ border: "1px solid gray" }}
             ></button>
           </div>
           {/* End .modal-header */}

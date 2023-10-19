@@ -10069,6 +10069,7 @@ form.home5_advanced_search_form
   max-width: 100%; /* Set the maximum width to 100% of its container */
   /* height: auto; */
 }
+
 .header_inner_page_section::before {
   content: ""; /* Pseudo-element content */
   position: absolute; /* Position the pseudo-element absolutely */
@@ -14969,15 +14970,13 @@ legend span {
   padding: 0 15px;
 }
 /* @media (max-width: 1024px) { */
-  @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .half_map_area_content {
     height: auto;
   }
   .mission_commitment .mission_text {
     gap: 5rem;
   }
-  
-
 
   /* .header_inner_page_section .about_us_header_content .about_us_header {
     text-align: left;
@@ -21989,6 +21988,7 @@ button.gm-ui-hover-effect:focus {
 
 .mortgage_process_para_section .mortgage_process_container p {
   font-size: 16px;
+  text-transform: capitalize;
 }
 
 .keytakeaway_section {
@@ -22097,11 +22097,11 @@ button.gm-ui-hover-effect:focus {
 }
 
 /* FAQ  */
-.faq_mortgage_process{
+.faq_mortgage_process {
   padding: 0 !important;
 }
 
-.faq_mortgage_process .main_card{
+.faq_mortgage_process .main_card {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22109,7 +22109,7 @@ button.gm-ui-hover-effect:focus {
   gap: 3rem;
 }
 
-.faq_mortgage_process .text_card{
+.faq_mortgage_process .text_card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22117,7 +22117,7 @@ button.gm-ui-hover-effect:focus {
   width: 47%;
 }
 
-.faq_mortgage_process .image{
+.faq_mortgage_process .image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22141,7 +22141,7 @@ button.gm-ui-hover-effect:focus {
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 27px; 
+  line-height: 27px;
   text-transform: capitalize;
 }
 
@@ -22158,3 +22158,173 @@ button.gm-ui-hover-effect:focus {
 /* header{
   z-index: 100;
 } */
+
+/* pre approval  */
+
+.pre_approval_section {
+  position: relative;
+  background: url(../images/pro-approval-header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 799px;
+  margin-top: 88px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  max-width: 100%; /* Set the maximum width to 100% of its container */
+  /* height: auto; */
+}
+/* .slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+} */
+.pre_approval_section::before {
+  content: ""; /* Pseudo-element content */
+  position: absolute; /* Position the pseudo-element absolutely */
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire container */
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Semi-transparent overlay color (adjust the alpha value to control the opacity) */
+  z-index: 1;
+}
+
+.pre_approval_header_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.header_inner_page_section .pre_approval_header {
+  /* font-size: 3vw; */
+  font-family: "Nunito";
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+.pre_approval_header_content .pre_approval_header {
+  text-align: left;
+  color: #fff;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1;
+  /* width: 685px; */
+  /* max-width: 70%; */
+}
+
+.pre_approval_header_content .btn_mortgage {
+  cursor: pointer;
+  z-index: 10;
+  width: 250px;
+  height: 61px;
+  font-size: 18px;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Customer support  */
+
+.customer_support_section {
+  position: relative;
+  background: url(../images/support-center-header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 799px;
+  margin-top: 88px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  max-width: 100%;
+}
+.customer_support_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.customer_support_header_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* .customer_support_section .customer_support_header {
+  font-family: "Nunito";
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0;
+} */
+.customer_support_header_content .customer_support_header {
+  text-align: left;
+  color: #fff;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1;
+  font-size: 62px;
+  /* width: 685px; */
+  /* max-width: 70%; */
+}
+
+.customer_support_header_content .header_input {
+  z-index: 10;
+  position: relative;
+  /* display: inline-block; */
+  width: fit-content;
+}
+
+/* .customer_support_header_content .header_input i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #fff;
+} */
+
+.input-container input {
+  padding: 2rem 4rem;
+  margin: 1rem
+}
+
+.customer_support_header_content .customer_support_btn {
+  cursor: pointer;
+  z-index: 10;
+  width: 250px;
+  height: 61px;
+  font-size: 18px;
+  /* background-color: transparent; */
+  /* border: 2px solid var(--color-primary); */
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* customer support */
+.text_row_section .main_row_container{
+
+}
