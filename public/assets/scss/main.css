@@ -21801,9 +21801,10 @@ button.gm-ui-hover-effect:focus {
   margin-right: 1rem;
   text-align: center;
 }
-/* .main_cities_header .view-all{
-  display: flex;
-} */
+.main_cities_header .view-all{
+  align-self: flex-end;
+  padding-bottom: 35px;
+}
 
 .how_it_works_card .heading h4 {
   color: #000;
