@@ -91,6 +91,9 @@ const Calculator = () => {
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
+    if (myChart) {
+      myChart.destroy(); // Destroy the existing Chart instance
+    }
     setMyChart(
       new Chart(ctx, {
         type: "pie",
@@ -124,14 +127,14 @@ const Calculator = () => {
     const processingFees = Math.ceil(updatedLoanAmount * (processingFee / 100));
     setTotalDownPaymentValue(downPayment + processingFees);
 
-    const totalInterestPayable = Math.ceil(
-      emi * loanTenure - updatedLoanAmount
-    );
-    setTotalInterestValue(totalInterestPayable);
+    const totalInterestPayable = Math.ceil(emi * loanTenure - updatedLoanAmount);
+  setTotalInterestValue(totalInterestPayable);
 
     const totalAmountPayable =
       updatedLoanAmount + totalInterestPayable + processingFees;
     setTotalAmountValue(totalAmountPayable);
+    // const totalAmountPayable = updatedLoanAmount + processingFees;
+    // setTotalAmountValue(totalAmountPayable);
 
     if (myChart) {
       updateChart(totalInterestPayable, processingFees, updatedLoanAmount);
