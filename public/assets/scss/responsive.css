@@ -2411,6 +2411,31 @@
   }
 }
 @media only screen and (max-width: 630px) {
+  .main_cities_header .view-all {
+    align-self: center;
+    padding-bottom: 0;
+}
+.main_cities_header .main_cities_header_left p {
+  display: none;
+}
+.main_cities_header .view-all span {
+  display: none;
+}
+.main_cities_header .main_cities_header_left {
+  align-items: center;
+}
+  .feat_property.list .thumb {
+    display: none;
+  }
+  .feat_property .details .tc_content p {
+    display: none;
+  }
+  .feat_property .details .tc_content p {
+    display: none;
+  }
+  .d-inline-block{
+    display: block !important;
+  }
   .keytakeaway_container .keytakeaway_header h2,
   .keytakeaway_container .keytakeaway_header .h2 {
     font-size: 30px;

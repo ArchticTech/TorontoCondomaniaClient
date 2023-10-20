@@ -3606,7 +3606,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 .home_adv_srch_opt.home6 {
   margin-top: 0;
   position: absolute;
-  bottom: -33px;
+  top: calc(100vh - 150px);
   left: 0;
   right: 0;
 }
