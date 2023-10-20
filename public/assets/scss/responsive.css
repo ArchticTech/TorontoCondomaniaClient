@@ -1673,6 +1673,9 @@
     padding-top: 50px;
     padding-bottom: 0;
   }
+  .home_adv_srch_opt.home6 {
+    top: calc(100vh - 254px);
+}
   .home_loan .heading_main h2,
   .home_loan .heading_main .h2 {
     font-size: 30px;
@@ -2411,6 +2414,34 @@
   }
 }
 @media only screen and (max-width: 630px) {
+  .home_adv_srch_opt.home6 {
+    top: calc(100vh - 310px);
+}
+  .main_cities_header .view-all {
+    align-self: center;
+    padding-bottom: 0;
+}
+.main_cities_header .main_cities_header_left p {
+  display: none;
+}
+.main_cities_header .view-all span {
+  display: none;
+}
+.main_cities_header .main_cities_header_left {
+  align-items: center;
+}
+  .feat_property.list .thumb {
+    display: none;
+  }
+  .feat_property .details .tc_content p {
+    display: none;
+  }
+  .feat_property .details .tc_content p {
+    display: none;
+  }
+  .d-inline-block{
+    display: block !important;
+  }
   .keytakeaway_container .keytakeaway_header h2,
   .keytakeaway_container .keytakeaway_header .h2 {
     font-size: 30px;
@@ -2524,7 +2555,7 @@
     margin-bottom: 24rem;
   }
   .home_adv_srch_opt.home6 {
-    bottom: -70px;
+    top: calc(100vh - 610px);
   }
   .home_adv_srch_opt .nav-pills li.nav-item a.nav-link:first-child {
 	margin-right: 0;
@@ -2764,9 +2795,7 @@
   .home_content.home6 {
     padding: 120px 0 !important;
   }
-  .home_adv_srch_opt.home6 {
-    margin-top: 35px;
-  }
+  
   .home1-advnc-search.home7 ul li:nth-child(2),
   .home1-advnc-search.home7
     .search_option_two

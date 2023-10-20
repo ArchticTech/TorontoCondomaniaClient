@@ -101,8 +101,9 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
       if (response.ok) {
         clearFormData();
         closeModal();
-        // console.log(JSON.stringify(formData));
-        confirm('Floor plan reserved');
+         console.log(JSON.stringify(formData));
+         alert('Floor plan reserved');
+        
       } else {
         console.log("Error in sending data to api");
       }
@@ -121,7 +122,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
               aria-label="Close"
               className="btn btn-close"
               onClick={closeModal}
-              style={{ border: "1px solid blue" }}
+              style={{ border: "1px solid gray" }}
             ></button>
           </div>
           {/* End .modal-header */}

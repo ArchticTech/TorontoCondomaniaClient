@@ -3606,7 +3606,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 .home_adv_srch_opt.home6 {
   margin-top: 0;
   position: absolute;
-  bottom: -33px;
+  top: calc(100vh - 180px);
   left: 0;
   right: 0;
 }
@@ -10069,6 +10069,7 @@ form.home5_advanced_search_form
   max-width: 100%; /* Set the maximum width to 100% of its container */
   /* height: auto; */
 }
+
 .header_inner_page_section::before {
   content: ""; /* Pseudo-element content */
   position: absolute; /* Position the pseudo-element absolutely */
@@ -15033,15 +15034,13 @@ legend span {
   padding: 0 15px;
 }
 /* @media (max-width: 1024px) { */
-  @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .half_map_area_content {
     height: auto;
   }
   .mission_commitment .mission_text {
     gap: 5rem;
   }
-  
-
 
   /* .header_inner_page_section .about_us_header_content .about_us_header {
     text-align: left;
@@ -21867,9 +21866,10 @@ button.gm-ui-hover-effect:focus {
   margin-right: 1rem;
   text-align: center;
 }
-/* .main_cities_header .view-all{
-  display: flex;
-} */
+.main_cities_header .view-all{
+  align-self: flex-end;
+  padding-bottom: 35px;
+}
 
 .how_it_works_card .heading h4 {
   color: #000;
@@ -22054,6 +22054,7 @@ button.gm-ui-hover-effect:focus {
 
 .mortgage_process_para_section .mortgage_process_container p {
   font-size: 16px;
+  text-transform: capitalize;
 }
 
 .keytakeaway_section {
@@ -22162,11 +22163,11 @@ button.gm-ui-hover-effect:focus {
 }
 
 /* FAQ  */
-.faq_mortgage_process{
+.faq_mortgage_process {
   padding: 0 !important;
 }
 
-.faq_mortgage_process .main_card{
+.faq_mortgage_process .main_card {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22174,7 +22175,7 @@ button.gm-ui-hover-effect:focus {
   gap: 3rem;
 }
 
-.faq_mortgage_process .text_card{
+.faq_mortgage_process .text_card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22182,7 +22183,7 @@ button.gm-ui-hover-effect:focus {
   width: 47%;
 }
 
-.faq_mortgage_process .image{
+.faq_mortgage_process .image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22206,7 +22207,7 @@ button.gm-ui-hover-effect:focus {
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 27px; 
+  line-height: 27px;
   text-transform: capitalize;
 }
 
@@ -22223,6 +22224,324 @@ button.gm-ui-hover-effect:focus {
 /* header{
   z-index: 100;
 } */
+
+/* pre approval  */
+
+.pre_approval_section {
+  position: relative;
+  background: url(../images/pro-approval-header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 799px;
+  margin-top: 88px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  max-width: 100%; /* Set the maximum width to 100% of its container */
+  /* height: auto; */
+}
+/* .slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+} */
+.pre_approval_section::before {
+  content: ""; /* Pseudo-element content */
+  position: absolute; /* Position the pseudo-element absolutely */
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire container */
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Semi-transparent overlay color (adjust the alpha value to control the opacity) */
+  z-index: 1;
+}
+
+.pre_approval_header_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.header_inner_page_section .pre_approval_header {
+  /* font-size: 3vw; */
+  font-family: "Nunito";
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+.pre_approval_header_content .pre_approval_header {
+  text-align: left;
+  color: #fff;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1;
+  /* width: 685px; */
+  /* max-width: 70%; */
+}
+
+.pre_approval_header_content .btn_mortgage {
+  cursor: pointer;
+  z-index: 10;
+  width: 250px;
+  height: 61px;
+  font-size: 18px;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Customer support  */
+
+.customer_support_section {
+  position: relative;
+  background: url(../images/support-center-header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 799px;
+  margin-top: 88px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  max-width: 100%;
+}
+.customer_support_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.customer_support_header_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* .customer_support_section .customer_support_header {
+  font-family: "Nunito";
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0;
+} */
+.customer_support_header_content .customer_support_header {
+  text-align: left;
+  color: #fff;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1;
+  font-size: 62px;
+  /* width: 685px; */
+  /* max-width: 70%; */
+}
+
+.customer_support_header_content .header_input {
+  z-index: 10;
+  position: relative;
+  /* display: inline-block; */
+  width: fit-content;
+}
+
+/* .customer_support_header_content .header_input i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #fff;
+} */
+
+.input-container input {
+  padding: 2rem 4rem;
+  margin: 1rem
+}
+
+.customer_support_header_content .customer_support_btn {
+  cursor: pointer;
+  z-index: 10;
+  width: 250px;
+  height: 61px;
+  font-size: 18px;
+  /* background-color: transparent; */
+  /* border: 2px solid var(--color-primary); */
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Mortgage calculator */
+.mortgage_calculator_section{
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 0;
+  position: absolute;
+  top: calc(100vh - 261px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 90%;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.loan-calculator {
+  font-family: "Roboto", sans-serif;
+  width: 740px;
+  margin: 24px auto;
+  background: #fff;
+  box-shadow: 0 12px 50px -11px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: #14213d;
+  overflow: hidden;
+}
+
+.loan-calculator,
+.loan-calculator * {
+  box-sizing: border-box;
+}
+
+.loan-calculator .top {
+  background: #050A30;
+  color: #fff;
+  padding: 32px;
+}
+
+.loan-calculator .top h2 {
+  margin-top: 0;
+}
+
+.loan-calculator form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}  
+  
+.loan-calculator form .group{
+  display: flex;
+  flex-direction:row;
+  gap: 10px;
+  padding-bottom: 4px;
+  justify-content: space-between;
+}
+  
+.loan-calculator form .groups{
+  display:flex;
+  flex-direction:row;
+  gap: 15px;
+  justify-content: center;
+}
+
+.loan-calculator .title {
+  margin-bottom: 12px;
+}
+
+.loan-calculator form input {
+  font-size: 20px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  width: 100%;
+  color:#000;
+}
+
+.loan-calculator .result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+
+.loan-calculator .result .left {
+  width: 100%;
+  padding: 8px 32px;
+}
+
+.loan-calculator .left h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.loan-calculator .result .value {
+  font-size: 30px;
+  font-weight: 900;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+}
+
+.loan-calculator .result .value::before {
+  content: "\20B9";
+  font-size: 27px;
+  font-weight: 400;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+
+.loan-calculator .group1{
+  padding-top: 32px;
+  text-align: center;
+}  
+  
+.loan-calculator .group1 .calculate-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 8px 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 24px 0;
+}
+
+.loan-calculator .right {
+  width: 50%;
+}
+
+@media (max-width: 650px) {
+  .loan-calculator {
+    width: 90%;
+    max-width: 500px;
+    min-height: 1400px;
+  }
+
+  .loan-calculator form .group {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .loan-calculator form .groups {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .loan-calculator .result {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 @keyframes ldio-anxmmbev13s {
   0% { transform: translate(8px,42px) scale(0); }

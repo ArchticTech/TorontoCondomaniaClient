@@ -63,7 +63,7 @@ const PropertiesSlider = ({ properties }) => {
           <div className="thmb_cntnt">
             <ul className="tag mb0">
                 {(property.vip_featured_promotion != null) ? (
-                  <li className="list-inline-item">
+                  <li className="list-inline-item px-2">
                   <a>{property.vip_featured_promotion}</a>
                   </li>
                 ) : undefined}

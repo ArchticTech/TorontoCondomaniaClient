@@ -55,7 +55,7 @@ const FloorPlanReservation1 = ({ handleSubmitClick, purchaser, setPurchaser, clo
               aria-label="Close"
               className="btn btn-close"
               onClick={closeNextModal}
-              style={{ border: "1px solid blue" }}
+              style={{ border: "1px solid gray" }}
             ></button>
           </div>
           {/* End .modal-header */}
@@ -209,7 +209,7 @@ const FloorPlanReservation1 = ({ handleSubmitClick, purchaser, setPurchaser, clo
               aria-label="Close"
               className="btn btn-close"
               onClick={closeNextModal}
-              style={{ border: "1px solid blue" }}
+              style={{ border: "1px solid gray" }}
             ></button>
           </div>
           {/* End .modal-header */}
@@ -339,7 +339,7 @@ const FloorPlanReservation1 = ({ handleSubmitClick, purchaser, setPurchaser, clo
           </div>
 
               <div className="col-lg-12 mt-5 text-white ">
-                <button onClick={(e) => handleSubmitClick(e)} className="btn btn-info">
+                <button onClick={(e) => handleSubmitClick(e)} className="btn btn-thm ">
                   Reserve
                 </button>
               </div>
