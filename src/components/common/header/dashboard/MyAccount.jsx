@@ -2,8 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { isSinglePageActive } from "../../../../utils/daynamicNavigation";
 import Image from "next/image";
-import logout from '../../../../utils/api';
-import axios from 'axios';
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const MyAccount = () => {
   const profileMenuItems = [
@@ -13,7 +13,9 @@ const MyAccount = () => {
   const route = useRouter();
   
   const logoutUser = async () => {
+    console.log('Huzaifa');
     const response = await axios.get('/api/logout');
+    Cookies.set('loginStatus', false);
     route.push('/');
   }
 
@@ -49,7 +51,8 @@ const MyAccount = () => {
             {item.name}
           </Link>
         ))}
-        <a href='#' className="dropdown-item" onClick={logoutUser} >
+
+          <a href='#' className="dropdown-item" onClick={logoutUser} >
             Logout
           </a>
       </div>

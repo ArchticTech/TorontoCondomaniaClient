@@ -15,8 +15,6 @@ import {
 } from "../../../features/properties/propertiesSlice";
 
 const ClearAllFilters = (dispatch) => {
-
-
     dispatch(addKeyword(""));
     dispatch(addType(""));
     dispatch(addLocation(""));

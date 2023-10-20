@@ -34,8 +34,8 @@ export async function getStaticProps() {
   };
 }
 
-//primary #c03030
-//secondary #19232f
-//gray #282828
+// primary #c03030
+// secondary #19232f
+// gray #282828
 
 export default dynamic(() => Promise.resolve(Index), { ssr: false });

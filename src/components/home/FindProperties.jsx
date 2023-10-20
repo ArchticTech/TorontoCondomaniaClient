@@ -30,6 +30,7 @@ const FindProperties = ({cities}) => {
                 alt="pc1.jpg"
               />
             </div>
+            {console.log(city)}
             <div className="overlay">
               <div className="details">
                 <div className="left">

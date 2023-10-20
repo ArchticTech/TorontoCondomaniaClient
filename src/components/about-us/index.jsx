@@ -1,11 +1,10 @@
 import CallToAction from "../common/CallToAction";
 import CopyrightFooter from "../common/footer/CopyrightFooter";
 import Footer from "../common/footer/Footer";
-import Header from "./Header";
+import Header from "../home/Header";
 import MobileMenu from "../common/header/MobileMenu";
 import Partners from "../common/Partners";
 import PopupSignInUp from "../common/PopupSignInUp";
-import WhyChoose from "../common/WhyChoose";
 // import Testimonial from "../home-7/Testimonials";
 import BreadCrumbBanner from "./BreadCrumbBanner";
 import Team from "./Team";

@@ -43,7 +43,7 @@ const FloorPlans = ({ floorPlan }) => {
                   aria-expanded="false"
                   aria-controls={`collapse${index}`}
                 >
-                  <ul className="mb0 d-flex align-items-cener flex-wrap">
+                  <ul className="mb0 d-flex align-items-cener flex-wrap h-auto ">
                     <li className="d-inline-flex list-inline-item">
                       {plan.terrace_balcony}
                     </li>
@@ -93,7 +93,7 @@ const FloorPlans = ({ floorPlan }) => {
               </div>
               <div style={{ textAlign: "center" }} className="mb-3">
                 <a href="#" className="btn btn-thm" onClick={() => openModal(plan)} >
-                  <span className="dn-lg">Reserve now</span>
+                  <span className="">Reserve now</span>
                 </a>
 
                 {/* Background overlay */}

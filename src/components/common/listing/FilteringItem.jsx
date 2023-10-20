@@ -23,7 +23,6 @@ import {
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
-import ClearAllFilters from "./ClearAllFilters";
 
 const FilteringItem = () => {
   const {

@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
-  isParentPageActive,
   isSinglePageActive,
 } from "../../../../utils/daynamicNavigation";
 import Image from "next/image";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const SidebarMenu = () => {
   const route = useRouter();
@@ -31,21 +32,26 @@ const SidebarMenu = () => {
       route: "/reserved-floor-plans",
       icon: "flaticon-box",
     },
-    { id: 3, name: "Logout", route: "/login", icon: "flaticon-logout" },
   ];
+  
+  const logoutUser = async () => {
+    const response = await axios.get('/api/logout');
+    Cookies.set('loginStatus', false);
+    route.push('/');
+  }
 
   return (
     <>
       <ul className="sidebar-menu">
         <li className="sidebar_header header">
           <Link href="/">
-            <Image
-              width={40}
-              height={45}
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
+          <Image
+              width={100}
+              height={80}
+              className="logo1 img-fluid contain"
+              src="/assets/images/TCM-LOGO-2.png"
+              alt="header-logo.png"
             />
-            <span>TCM</span>
           </Link>
         </li>
         {/* End header */}
@@ -55,7 +61,7 @@ const SidebarMenu = () => {
           <ul>
             <li
               className={`treeview ${
-                isSinglePageActive("/my-dashboard", route.pathname)
+                isSinglePageActive("/dashboard", route.pathname)
                   ? "active"
                   : ""
               }`}
@@ -141,12 +147,12 @@ const SidebarMenu = () => {
 
             <li
               className={`treeview ${
-                isSinglePageActive("/my-favourites", route.pathname)
+                isSinglePageActive("/favorites", route.pathname)
                   ? "active"
                   : ""
               }`}
             >
-              <Link href="/my-favourites">
+              <Link href="/favorites">
                 <i className="flaticon-heart"></i>
                 <span> My Favorites</span>
               </Link>
@@ -194,6 +200,11 @@ const SidebarMenu = () => {
                 </Link>
               </li>
             ))}
+            <li onClick={logoutUser} >
+              <a href='#' className="dropdown-item" >
+                <i className='flaticon-logout'></i> <span>Logout</span>
+              </a>
+            </li>
           </ul>
         </li>
       </ul>

@@ -4,6 +4,7 @@ import { api } from "../features/api/api";
 import filterSlice from "../features/filter/filterSlice";
 import propertiesSlice from "../features/properties/propertiesSlice";
 import rentalsSlice from "../features/rentals/rentalsSlice";
+import userSlice from "../features/user/userSlice";
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         rentals: rentalsSlice,
         filter: filterSlice,
         agent: agentSlice,
+        user: userSlice
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(api.middleware),

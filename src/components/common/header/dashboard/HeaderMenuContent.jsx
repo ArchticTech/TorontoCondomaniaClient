@@ -46,36 +46,6 @@ const HeaderMenuContent = ({ float = "" }) => {
       className="ace-responsive-menu text-end d-lg-block d-none"
       data-menu-style="horizontal"
     >
-      {/* <li className="dropitem">
-        <a
-          href="#"
-          className={
-            home.some((page) => page.routerPath === route.pathname)
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title">Home</span>
-          <span className="arrow"></span>
-        </a>
-        
-
-        <ul className="sub-menu ">
-          {home.map((item) => (
-            <li key={item.id}>
-              <Link
-                href={item.routerPath}
-                className={
-                  route.pathname === item.routerPath ? "ui-active" : undefined
-                }
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </li> */}
-      {/* End .dropitem */}
 
       <li className="dropitem">
         <a
@@ -168,16 +138,6 @@ const HeaderMenuContent = ({ float = "" }) => {
       </li>
       {/* End .dropitem */}
 
-      {/* <li className="last">
-        <Link
-          href="/articles"
-          className={route.pathname === "/articles" ? "ui-active" : undefined}
-        >
-          Articles
-        </Link>
-      </li> */}
-      {/* End .dropitem */}
-
       <li className="last">
         <Link
           href="/contact"
@@ -190,7 +150,7 @@ const HeaderMenuContent = ({ float = "" }) => {
 
       <li className="user_setting">
         <div className="dropdown">
-          <a className="btn dropdown-toggle" href="#" data-bs-toggle="dropdown">
+          <a className="btn dropdown-toggle" href="" data-bs-toggle="dropdown">
             <Image
               width={45}
               height={45}
@@ -208,9 +168,9 @@ const HeaderMenuContent = ({ float = "" }) => {
       {/* End ."user_setting */}
 
       <li className={`list-inline-item add_listing ${float}`}>
-        <Link href="/create-listing">
-          <span className="flaticon-plus"></span>
-          <span className="dn-lg"> Create Listing</span>
+        <Link href='/'>
+          <span className="flaticon-home"></span>
+          <span className="dn-lg">Home</span>
         </Link>
       </li>
       {/* End .dropitem */}

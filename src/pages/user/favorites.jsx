@@ -4,12 +4,11 @@ import MyFavourites from "../../components/dashboard/my-favourites";
 import { fetchAllFavoriteProperties } from "../../utils/api";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
+import DashboardLayout from "./layout";
 
 const Favorites = () => {
 
   const [favorites, setFavorites] = useState([]);
-  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -18,11 +17,11 @@ const Favorites = () => {
         const response = await fetchAllFavoriteProperties();
         if(response.error == 'Unauthenticated')
         {
+            console.error('You are Unauthenticated');
             router.push('/');
         }
         else {
           setFavorites(response.data);
-          setLoading(false); 
         }
       } catch (error) {
         router.push('/');
@@ -32,13 +31,12 @@ const Favorites = () => {
     getFavorites();
   }, []);
 
-  if (loading) {
-    return <div className="text-center">Loading...</div>;
-  }
   return (
     <>
       <Seo pageTitle="My Favourites" />
-      <MyFavourites favProperties={favorites} />
+      <DashboardLayout>
+        <MyFavourites favProperties={favorites} />
+      </DashboardLayout>
     </>
   );
 };

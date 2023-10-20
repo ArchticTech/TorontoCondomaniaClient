@@ -51,20 +51,20 @@ const Header = () => {
         <div className="d-flex align-items-center flex-wrap home6-nav">
           <Link href="/" className="navbar_brand float-start dn-smd">
             <Image
-              width={40}
-              height={45}
+              width={100}
+              height={80}
               className="logo1 img-fluid contain"
-              src="/assets/images/logo.png"
+              src="/assets/images/TCM-LOGO-2.png"
               alt="header-logo.png"
             />
             <Image
-              width={40}
-              height={45}
+              width={100}
+              height={80}
               className="logo2 img-fluid contain"
-              src="/assets/images/logo.png"
+              src="/assets/images/TCM-LOGO-1.png"
               alt="header-logo2.png"
             />
-            <span>TCM</span>
+            {/* <span>TCM</span> */}
           </Link>
           {/* site logo brand */}
           {showSearchButton && (

@@ -31,15 +31,15 @@ const logout = async (req,res) => {
         {
             if(error?.response?.status === 401)
             {
-                res.status(200).send('Already Logged Out');
+                res.status(200).send('Auth Token Not Available');
             }
             else {
-                res.status(500).send(error);
+                res.status(200).send(error);
             }
         }
     }
     else {
-        res.status(401).send('Already Logged Out');
+        res.status(200).send('Already Logged Out');
     }
 };
 

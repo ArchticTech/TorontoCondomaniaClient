@@ -248,10 +248,10 @@ const MobileMenuContent = () => {
 
       <SidebarFooter>
         <Link
-          href="/create-listing"
+          href="/dashboard"
           className="btn btn-block btn-lg btn-thm circle"
         >
-          <span className="flaticon-plus"></span> Create Listing
+          <span className="flaticon-home"></span> Dashboard
         </Link>
       </SidebarFooter>
     </ProSidebar>

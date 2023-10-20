@@ -1,7 +1,6 @@
 import global from '../config/env';
 import axios from 'axios';
 
-
 /*************************************************************/
 /***** API Requests that does not require Authentication *****/
 /*************************************************************/
@@ -181,18 +180,5 @@ export async function authenticateUser(userData)
     catch (error) {
         console.error('Authentication Error:', error);
         throw error; // Optionally re-throw the error
-    }
-}
-export async function logout()
-{
-    try {
-        const response = await axios.get('/api/logout');
-        
-        console.log(response);
-        return true;
-    }
-    catch (error) {
-        console.log(error)
-        return;
     }
 }

@@ -2,14 +2,15 @@ import Link from "next/link";
 import Router, { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { addCity } from "../../../features/properties/propertiesSlice";
+import Cookies from 'js-cookie';
+import { useEffect, useState } from "react";
 
 const HeaderMenuContent = ({ float = "" }) => {
+  const [loginStatus] = useState(Cookies.get('loginStatus') == 'true')
   const route = useRouter();
 
-  const home = { name: "Home", routerPath: "/" };
-
   const listing = [
-    { id: 1, name: "Pre Construction", routerPath: "/pre-construction" },
+    { id: 1, name: "Pre Construction", routerPath: "/properties" },
     { id: 2, name: "Rentals", routerPath: "/rentals" },
     { id: 3, name: "Assignments", routerPath: "/assignments" },
   ];
@@ -150,22 +151,26 @@ const HeaderMenuContent = ({ float = "" }) => {
       {/* End .dropitem */}
 
       <li className={`list-inline-item list_s ${float}`}>
-        <a
-          href="#"
-          className="btn flaticon-user"
-          data-bs-toggle="modal"
-          data-bs-target=".bd-example-modal-lg"
-        >
-          <span className="dn-lg">Login/Register</span>
-        </a>
+        
       </li>
       {/* End .dropitem */}
 
       <li className={`list-inline-item add_listing ${float}`}>
-        <Link href="/create-listing">
-          <span className="flaticon-plus"></span>
-          <span className="dn-lg mx-1">Create Listing</span>
-        </Link>
+        {
+        loginStatus ? 
+          <Link href="/user">
+            <span className="flaticon-home"></span>
+            <span className="dn-lg mx-1">Dashboard</span>
+          </Link>
+        : <a
+            href="#"
+            className="btn flaticon-user"
+            data-bs-toggle="modal"
+            data-bs-target=".bd-example-modal-lg"
+          >
+            <span className="dn-lg">Login/Register</span>
+          </a>
+          }
       </li>
       {/* End .dropitem */}
     </ul>

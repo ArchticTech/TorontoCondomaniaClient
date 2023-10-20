@@ -2,7 +2,8 @@ import { registerUser, resendVerificationEmail, authenticateUser } from "../../.
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import LoadingIcon from '../LoadingIcon'
+import LoadingIcon from '../LoadingIcon';
+import Cookies from "js-cookie";
 
 const LoginSignup = () => {
 
@@ -71,11 +72,11 @@ const LoginSignup = () => {
     if(!loading)
     {
       setLoading(true);
-      const userData = {
+      const authData = {
         email: loginEmail,
         password: loginPassword,
       };
-      authenticateUser(userData)
+      authenticateUser(authData)
       .then((response) => 
       {
           setLoading(false);
@@ -92,7 +93,13 @@ const LoginSignup = () => {
             }
           }
           else {
-            router.push('/dashboard');
+            const userData = {
+              firstname: 'Berta',
+              lastname: 'Sam',
+              email: 'berta@gmail.com',
+            }
+            Cookies.set('loginStatus', true);
+            router.push('/user');
           }
       });
     }
