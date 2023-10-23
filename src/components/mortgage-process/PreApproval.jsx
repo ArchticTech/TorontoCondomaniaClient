@@ -10,7 +10,7 @@ const PreApproval = () => {
             <p>
               To initiate the mortgage process, start by determining the most
               suitable mortgage type, calculating your affordable monthly
-              payment, and securing pre-approval for the loan. It's crucial to
+              payment, and securing pre-approval for the loan. It`&APOS;s crucial to
               acquaint yourself with the various mortgage options available and
               select the one that aligns with your needs. When evaluating
               mortgage choices, consider several factors, with the foremost
@@ -19,8 +19,8 @@ const PreApproval = () => {
             </p>
             <p>
               not only the repayment of the principal loan but also the interest
-              charges. Additionally, if you're unable to make a 20% down payment
-              on the property, you'll be responsible for private mortgage
+              charges. Additionally, if you`&APOS;re unable to make a 20% down payment
+              on the property, you`&APOS;ll be responsible for private mortgage
               insurance (PMI).
             </p>
             <p>
@@ -34,12 +34,12 @@ const PreApproval = () => {
             <p>
               Many individuals embark on their property search well in advance
               of obtaining mortgage pre-approval, sometimes even before
-              considering home purchase. However, if you've diligently followed
-              the steps mentioned earlier and secured pre-approval, you're now
+              considering home purchase. However, if you`&APOS;ve diligently followed
+              the steps mentioned earlier and secured pre-approval, you`&APOS;re now
               primed to begin your search in earnest. There are multiple avenues
               for house hunting, such as utilizing online real estate platforms
               like Zillow or Trulia, exploring properties at auctions, or even
-              seeking off-market homes. It's essential to steer clear of common
+              seeking off-market homes. It`&APOS;s essential to steer clear of common
               house-hunting pitfalls.
             </p>
             <p>
@@ -48,8 +48,8 @@ const PreApproval = () => {
               deposits ranging from 1% to 2% of the sale price.Many individuals
               embark on their property search well in advance of obtaining
               mortgage pre-approval, sometimes even before considering home
-              purchase. However, if you've diligently followed the steps
-              mentioned earlier and secured pre-approval, you're now primed to
+              purchase. However, if you`&APOS;ve diligently followed the steps
+              mentioned earlier and secured pre-approval, you`&APOS;re now primed to
               begin your search in earnest.
             </p>
             <p>
@@ -71,16 +71,16 @@ const PreApproval = () => {
           <div className="common_div apply-mortgage">
             <h3 className="heading_main">Apply For Mortgage</h3>
             <p>
-              Now, you're prepared to initiate the application for your ultimate
+              Now, you`&APOS;re prepared to initiate the application for your ultimate
               mortgage. To proceed, you should reach out to a mortgage lender,
               typically the one that granted you pre-approval. Nevertheless,
-              it's advisable to explore different options to secure the most
+              it`&APOS;s advisable to explore different options to secure the most
               favorable deal.
             </p>
             <p>
               Every mortgage lender will require specific information to extend
               an offer, which may include details they already possess, but they
-              may need additional data. You'll also be tasked with providing
+              may need additional data. You`&APOS;ll also be tasked with providing
               your lender with a set of essential documents.{" "}
             </p>
             <p>
@@ -159,7 +159,7 @@ const PreApproval = () => {
             <h3 className="heading_main">Complete Loan Processing</h3>
             <p>
               Once you receive a loan estimate, it remains valid for 10 business
-              days. If you intend to accept the loan offer, it's advisable to do
+              days. If you intend to accept the loan offer, it`&APOS;s advisable to do
               so within this timeframe. Delaying your decision might prompt the
               lender to modify the terms and issue a revised loan estimate. Upon
               accepting the loan estimate, your mortgage application enters the
@@ -167,7 +167,7 @@ const PreApproval = () => {
             </p>
             <p>
               your mortgage lender will meticulously review and authenticate the
-              information you've supplied to them, which involves:
+              information you`&APOS;ve supplied to them, which involves:
             </p>
             <ul className="find_property_ul">
               <li>
@@ -198,17 +198,17 @@ const PreApproval = () => {
             </p>
             <p>
               This appraisal is utilized to ascertain whether the proceeds from
-              the property's sale are sufficient to cover the loan amount you're
+              the property`&APOS;s sale are sufficient to cover the loan amount you`&APOS;re
               seeking in your mortgage.
             </p>
           </div>
           <div className="common_div pre-approval">
             <h3 className="heading_main">Close on the Property</h3>
             <p>
-              Once your mortgage application secures approval, it's time to move
+              Once your mortgage application secures approval, it`&APOS;s time to move
               on to the closing phase. Here, an extensive set of documents will
-              be printed, and you'll be invited to the title company or
-              attorney's office for a closing meeting
+              be printed, and you`&APOS;ll be invited to the title company or
+              attorney`&APOS;s office for a closing meeting
             </p>
             <p>
               Among the crucial documents presented during this meeting is your
@@ -217,22 +217,22 @@ const PreApproval = () => {
               costs, highlighting any cost discrepancies.
             </p>
             <p>
-              Typically, closing costs range from 2% to 5% of the home's
-              purchase price. For instance, if you're purchasing a $200,000
+              Typically, closing costs range from 2% to 5% of the home`&APOS;s
+              purchase price. For instance, if you`&APOS;re purchasing a $200,000
               house, expect closing costs in the range of $4,000 to $10,000.
               Keep in mind that closing fees can vary depending on factors such
-              as your state, loan type, and mortgage lender, so it's essential
+              as your state, loan type, and mortgage lender, so it`&APOS;s essential
               to closely review these charges.
             </p>
             <p>
               In the event you observe new fees that were not included in the
               initial loan estimate or notice a substantial increase in your
-              closing costs, don't hesitate to seek clarification from your
+              closing costs, don`&APOS;t hesitate to seek clarification from your
               lender or real estate agent.
             </p>
             <p>
-              If everything appears satisfactory, you'll proceed to sign to
-              accept the mortgage, and you'll exit the office with the keys to
+              If everything appears satisfactory, you`&APOS;ll proceed to sign to
+              accept the mortgage, and you`&APOS;ll exit the office with the keys to
               your new home.{" "}
             </p>
           </div>

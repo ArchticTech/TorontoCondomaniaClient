@@ -38,8 +38,8 @@ const OurMission2 = () => {
               </h3>
               <p>
                 We believe in the power of technology to transform the real
-                estate industry. With our cutting-edge platform, we're
-                redefining how properties are bought and sold. Whether you're a
+                estate industry. With our cutting-edge platform, we`&APOS;re
+                redefining how properties are bought and sold. Whether you`&APOS;re a
                 seasoned realtor looking to expand your reach or a discerning
                 buyer or seller seeking the perfect deal, TorontoCondomania is
                 here to make your real estate journey smoother, smarter, and

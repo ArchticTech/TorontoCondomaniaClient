@@ -11,22 +11,22 @@ const QualifyingforMortgage = () => {
           <div className="common_div find-property">
             <h3 className="heading_main">Why Is Pre-Approval Necessary?</h3>
             <p>
-              Now, you're prepared to initiate the application for your ultimate
+              Now, you`&APOS;re prepared to initiate the application for your ultimate
               mortgage. To proceed, you should reach out to a mortgage lender,
               typically the one that granted you pre-approval. Nevertheless,
-              it's advisable to explore different options to secure the most
+              it`&APOS;s advisable to explore different options to secure the most
               favorable deal.
             </p>
             <p>
               Every mortgage lender will require specific information to extend
               an offer, which may include details they already possess, but they
-              may need additional data. You'll also be tasked with providing
+              may need additional data. You`&APOS;ll also be tasked with providing
               your lender with a set of essential documents.
             </p>
             <p>
-              To qualify for mortgage pre-approval, you'll need to meet specific
+              To qualify for mortgage pre-approval, you`&APOS;ll need to meet specific
               criteria and provide documentation to support your financial
-              standing. Here's what you need to do:
+              standing. Here`&APOS;s what you need to do:
             </p>
             <div className="my-4">
               <h4
@@ -36,7 +36,7 @@ const QualifyingforMortgage = () => {
                 Review Your Credit Report
               </h4>
               <p className="p-0 ">
-                Before applying for mortgage pre-approval, it's crucial to
+                Before applying for mortgage pre-approval, it`&APOS;s crucial to
                 obtain a copy of your credit report. This step is essential
                 because your credit history plays a significant role in
                 determining your eligibility for a mortgage. When reviewing your
@@ -94,12 +94,12 @@ const QualifyingforMortgage = () => {
                 for the most recent two years.
               </p>
               <p>
-                Additionally, you'll need to supply asset statements such as
+                Additionally, you`&APOS;ll need to supply asset statements such as
                 bank account statements, investment account documentation, and
                 statements indicating the balances in your retirement accounts.
                 To verify your identity and establish your legal eligibility for
-                a mortgage, you'll also need a valid government-issued ID, such
-                as your driver's license.
+                a mortgage, you`&APOS;ll also need a valid government-issued ID, such
+                as your driver`&APOS;s license.
               </p>
             </div>
             <div className="my-4">
@@ -131,10 +131,10 @@ const QualifyingforMortgage = () => {
                 Down Payment
               </h4>
               <p className="p-0">
-                While the pre-approval stage doesn't mandate an immediate down
+                While the pre-approval stage doesn`&APOS;t mandate an immediate down
                 payment, you should be prepared to make a down payment when
                 purchasing a home. The traditional standard is a 20% down
-                payment based on the home's purchase price.
+                payment based on the home`&APOS;s purchase price.
               </p>
               <p>
                 but down payment requirements may differ based on factors like
@@ -151,7 +151,7 @@ const QualifyingforMortgage = () => {
                 Avoid Major Financial Changes
               </h4>
               <p className="p-0">
-                During the pre-approval process, it's advisable to maintain
+                During the pre-approval process, it`&APOS;s advisable to maintain
                 financial stability by avoiding significant financial changes
                 that could affect your eligibility. Taking on new debt, such as
                 additional loans or credit cards, changing jobs.
@@ -170,7 +170,7 @@ const QualifyingforMortgage = () => {
                 Choose a Lender and apply
               </h4>
               <p className="p-0">
-                Once you've taken these preparatory steps, you can proceed to
+                Once you`&APOS;ve taken these preparatory steps, you can proceed to
                 choose a mortgage lender and submit your pre-approval
                 application, along with the necessary documentation. To make
                 this process smoother, take time to research different lenders,

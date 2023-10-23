@@ -45,7 +45,7 @@ const RightContainer = () => {
         </a>
         <a href="#">
           {" "}
-          <p>Is homeowner's insurance considered in the calculations?</p>
+          <p>Is homeowner`&APOS;s insurance considered in the calculations?</p>
         </a>
         <a href="#">
           <p>

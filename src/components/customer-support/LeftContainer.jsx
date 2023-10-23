@@ -54,7 +54,7 @@ const PreApproval = () => {
         </h3>
         <a href="#">
           {" "}
-          <p>What do the calculator's results include?</p>
+          <p>What do the calculator`&APOS;s results include?</p>
         </a>
         <a href="#">
           <p>How is the monthly mortgage payment calculated?</p>

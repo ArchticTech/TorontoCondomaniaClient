@@ -86,7 +86,7 @@ const OurVisionMission = () => {
                           </h3>
                           <span className="mission_p">
                            
-                          We're not just a marketplace; we're a community where buyers and sellers connect seamlessly. Our platform is designed to foster meaningful interactions, enabling you to engage with realtors, explore properties, and negotiate deals.
+                          We`&APOS;re not just a marketplace; we`&APOS;re a community where buyers and sellers connect seamlessly. Our platform is designed to foster meaningful interactions, enabling you to engage with realtors, explore properties, and negotiate deals.
                           </span>
 
                         </div>

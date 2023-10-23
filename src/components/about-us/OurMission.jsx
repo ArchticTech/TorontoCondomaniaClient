@@ -28,11 +28,11 @@ const OurMission = () => {
       <div className="col-10">
         <div className="about_content " style={{ textAlign:'' }}>
           <p className="large">
-          Welcome to TorontoCondomania, where innovation meets real estate excellence. At TorontoCondomania, we've reimagined the way buyers, sellers, and realtors interact in the dynamic world of real estate. Our mission is to bring it all together for a seamless, efficient, and exceptional real estate experience in Ontario, Canada.
+          Welcome to TorontoCondomania, where innovation meets real estate excellence. At TorontoCondomania, we`&APOS;ve reimagined the way buyers, sellers, and realtors interact in the dynamic world of real estate. Our mission is to bring it all together for a seamless, efficient, and exceptional real estate experience in Ontario, Canada.
           </p>
           <h3>Our Vision</h3>
           <p>
-          We believe in the power of technology to transform the real estate industry. With our cutting-edge platform, we're redefining how properties are bought and sold. Whether you're a seasoned realtor looking to expand your reach or a discerning buyer or seller seeking the perfect deal, TorontoCondomania is here to make your real estate journey smoother, smarter, and more satisfying.
+          We believe in the power of technology to transform the real estate industry. With our cutting-edge platform, we`&APOS;re redefining how properties are bought and sold. Whether you`&APOS;re a seasoned realtor looking to expand your reach or a discerning buyer or seller seeking the perfect deal, TorontoCondomania is here to make your real estate journey smoother, smarter, and more satisfying.
           </p>
           <h3>Empowering Realtors</h3>
           <p>
@@ -40,13 +40,13 @@ const OurMission = () => {
           </p>
           <h3>Seamless Interactions</h3>
           <p>
-          We're not just a marketplace; we're a community where buyers and sellers connect seamlessly. Our platform is designed to foster meaningful interactions, enabling you to engage with realtors, explore properties, and negotiate deals—all in one place. Say goodbye to the hassle of traditional real estate transactions; we've made it easy for you to buy or sell your dream property with confidence.
+          We`&APOS;re not just a marketplace; we`&APOS;re a community where buyers and sellers connect seamlessly. Our platform is designed to foster meaningful interactions, enabling you to engage with realtors, explore properties, and negotiate deals—all in one place. Say goodbye to the hassle of traditional real estate transactions; we`&APOS;ve made it easy for you to buy or sell your dream property with confidence.
           </p>
           <h3>Advanced Features</h3>
           <p>
           TorontoCondomania offers a comprehensive suite of advanced features, including robust search filters, comprehensive property information, and real-time updates. We bring you the most up-to-date listings and market insights, so you can make informed decisions.
           </p>
-          <p>Experience the future of real estate with TorontoCondomania. Join us today, and let's embark on a journey where innovation and excellence converge to create exceptional real estate opportunities for everyone. Together, we'll bring it all together—your dream property, your real estate success, and your satisfaction.</p>
+          <p>Experience the future of real estate with TorontoCondomania. Join us today, and let`&APOS;s embark on a journey where innovation and excellence converge to create exceptional real estate opportunities for everyone. Together, we`&APOS;ll bring it all together—your dream property, your real estate success, and your satisfaction.</p>
           
 
           {/* <ul className="ab_counting">

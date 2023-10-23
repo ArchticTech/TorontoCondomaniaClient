@@ -9,7 +9,7 @@ const BreadCrumbBanner = () => {
             <div className="mortgage_process_header_content">
               <h1 className="mortgage_process_header">
               <span>Mortgage</span> Process Explained Your Step-by-Step <span>Guide</span> </h1>
-              <p>We focus on ergonomics and meeting you where you work. It's only a keystroke away.</p>
+              <p>We focus on ergonomics and meeting you where you work. It`&APOS;s only a keystroke away.</p>
               <button className="btn_mortgage mt-2">Try Calculator</button>
             </div>
           </div>

@@ -77,7 +77,7 @@ const OurExperts = () => {
             <div className="card_text">
               <h4>Requirements Assessment</h4>
               <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
+                Lorem Ipsum has been the industry`&APOS;s standard dummy text ever
                 since the 1500s, when an unknown printer took a galley of type
                 and scrambled it to make a type specimen.
               </p>
@@ -113,7 +113,7 @@ const OurExperts = () => {
             <div className="card_text">
               <h4>Market Analysis</h4>
               <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
+                Lorem Ipsum has been the industry`&APOS;s standard dummy text ever
                 since the 1500s, when an unknown printer took a galley of type
                 and scrambled it to make a type specimen.
               </p>
@@ -145,7 +145,7 @@ const OurExperts = () => {
             <div className="card_text">
               <h4>Property Tours</h4>
               <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
+                Lorem Ipsum has been the industry`&APOS;s standard dummy text ever
                 since the 1500s, when an unknown printer took a galley of type
                 and scrambled it to make a type specimen.
               </p>
