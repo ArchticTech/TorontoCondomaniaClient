@@ -6,236 +6,55 @@ const PreApproval = () => {
       <section className="preapproval_section">
         <div className="container">
           <div className="common_div pre-approval">
-            <h3 className="heading_main">get Your Pre-Approval</h3>
+            <h3 className="heading_main">How to use the mortgage calculator?</h3>
             <p>
-              To initiate the mortgage process, start by determining the most
-              suitable mortgage type, calculating your affordable monthly
-              payment, and securing pre-approval for the loan. It's crucial to
-              acquaint yourself with the various mortgage options available and
-              select the one that aligns with your needs. When evaluating
-              mortgage choices, consider several factors, with the foremost
-              being a precise understanding of your monthly expenses. This
-              encompasses
-            </p>
-            <p>
-              not only the repayment of the principal loan but also the interest
-              charges. Additionally, if you're unable to make a 20% down payment
-              on the property, you'll be responsible for private mortgage
-              insurance (PMI).
-            </p>
-            <p>
-              {" "}
-              A handy tool for assessing the impact of different interest rates
-              on your monthly payments is a mortgage calculator.
+            Using a mortgage calculator is a straightforward process that can help you estimate your monthly mortgage payments and other financial details. Here are the steps on how to use a mortgage calculator with fields for home price, down payment, loan term, interest rate, and zip code:
             </p>
           </div>
           <div className="common_div find-property">
-            <h3 className="heading_main">Find A property</h3>
+            <h3 className="heading_main">Step 1: Enter Home Price </h3>
             <p>
-              Many individuals embark on their property search well in advance
-              of obtaining mortgage pre-approval, sometimes even before
-              considering home purchase. However, if you've diligently followed
-              the steps mentioned earlier and secured pre-approval, you're now
-              primed to begin your search in earnest. There are multiple avenues
-              for house hunting, such as utilizing online real estate platforms
-              like Zillow or Trulia, exploring properties at auctions, or even
-              seeking off-market homes. It's essential to steer clear of common
-              house-hunting pitfalls.
+            In the "Home Price" field, input the total cost of the home you wish to purchase. This should include the purchase price and any additional costs associated with the property, such as closing costs.
             </p>
-            <p>
-              Typically, this stage involves placing earnest money, a deposit
-              that signifies your serious interest in the property, with usual
-              deposits ranging from 1% to 2% of the sale price.Many individuals
-              embark on their property search well in advance of obtaining
-              mortgage pre-approval, sometimes even before considering home
-              purchase. However, if you've diligently followed the steps
-              mentioned earlier and secured pre-approval, you're now primed to
-              begin your search in earnest.
-            </p>
-            <p>
-              Normally, your offer will also contain contingencies that allow
-              you to pull out of the deal. These are designed to protect you and
-              your money if the house you’ve chosen is not quite what it seems.
-              Common contingencies include:
-            </p>
-            <ul className="find_property_ul">
-              <li>
-                Appraisals must come in close to the loan amount, not lower
-              </li>
-              <li>
-                Home inspections do not find major issues with the property
-              </li>
-              <li>You are able to secure final mortgage approval</li>
-            </ul>
           </div>
           <div className="common_div apply-mortgage">
-            <h3 className="heading_main">Apply For Mortgage</h3>
+            <h3 className="heading_main">Step 2: Enter Down Payment </h3>
             <p>
-              Now, you're prepared to initiate the application for your ultimate
-              mortgage. To proceed, you should reach out to a mortgage lender,
-              typically the one that granted you pre-approval. Nevertheless,
-              it's advisable to explore different options to secure the most
-              favorable deal.
+            Input the amount you intend to pay as a down payment. Typically, down payments range from 3% to 20% or more of the home's purchase price. The calculator will subtract this amount from the home price to determine the loan amount.
             </p>
-            <p>
-              Every mortgage lender will require specific information to extend
-              an offer, which may include details they already possess, but they
-              may need additional data. You'll also be tasked with providing
-              your lender with a set of essential documents.{" "}
-            </p>
-            <p>
-              Your lender will offer guidance on what to provide and the
-              appropriate timing, but you can anticipate them to request the
-              following:
-            </p>
-            <div className="my-3">
-              <h4 className="ul_heading">Employment</h4>
-              <ul className="apply_mortgage_ul">
-                <li>Name of current employer, phone, and street address</li>
-                <li>Length of time at current employer</li>
-                <li>Position/title</li>
-                <li>Salary, including overtime, bonuses, or commissions</li>
-              </ul>
-            </div>
-            <div className="my-3">
-              <h4 className="ul_heading">Income</h4>
-              <ul className="apply_mortgage_ul">
-                <li>Two years of W-2s</li>
-                <li>Profit and loss statement (if self-employed)</li>
-                <li>Pensions, Social Security</li>
-                <li>Public assistance</li>
-                <li>Child support</li>
-                <li>Alimony</li>
-              </ul>
-            </div>
-            <div className="my-3">
-              <h4 className="ul_heading">Assets</h4>
-              <ul className="apply_mortgage_ul">
-                <li>Bank accounts (savings, checking, brokerage accounts)</li>
-                <li>Real property</li>
-                <li>Investments (stocks, bonds, retirement accounts)</li>
-                <li>Proceeds from the sale of your current home</li>
-                <li>
-                  Gifted funds from relatives (e.g. a down payment gift for an
-                  FHA loan)
-                </li>
-              </ul>
-            </div>
-            <div className="my-3">
-              <h4 className="ul_heading">Debts</h4>
-              <ul className="apply_mortgage_ul">
-                <li>Current mortgage</li>
-                <li>Liens</li>
-                <li>Alimony</li>
-                <li>Child support</li>
-                <li>Car loans</li>
-                <li>Credit cards</li>
-                <li>Real property</li>
-              </ul>
-            </div>
-            <div className="my-3">
-              <h4 className="ul_heading">Property Information</h4>
-              <ul className="apply_mortgage_ul">
-                <li>Street address</li>
-                <li>Expected sales price</li>
-                <li>Type of home (single-family residence, condo, etc.)</li>
-                <li>Size of property</li>
-                <li>Real estate taxes (annual)</li>
-                <li>Homeowner’s association dues (HOA)</li>
-                <li>Estimated closing date</li>
-              </ul>
-            </div>
-            <div className="my-3">
-              <h4 className="ul_heading">Credit History</h4>
-              <ul className="apply_mortgage_ul">
-                <li>Bankruptcies</li>
-                <li>Collections</li>
-                <li>Foreclosures</li>
-                <li>Delinquencies</li>
-              </ul>
-            </div>
           </div>
           <div className="common_div complete-loan-processing">
-            <h3 className="heading_main">Complete Loan Processing</h3>
+            <h3 className="heading_main">Step 3: Specify Loan Term</h3>
             <p>
-              Once you receive a loan estimate, it remains valid for 10 business
-              days. If you intend to accept the loan offer, it's advisable to do
-              so within this timeframe. Delaying your decision might prompt the
-              lender to modify the terms and issue a revised loan estimate. Upon
-              accepting the loan estimate, your mortgage application enters the
-              processing phase. During this stage,
-            </p>
-            <p>
-              your mortgage lender will meticulously review and authenticate the
-              information you've supplied to them, which involves:
-            </p>
-            <ul className="find_property_ul">
-              <li>
-                Procuring a credit report (if not already completed during
-                pre-approval)
-              </li>
-              <li>
-                Confirming employment status (VOE) and verifying bank deposits
-                (VOD)
-              </li>
-              <li>Initiating a property inspection and appraisal</li>
-              <li>Initiating a title search</li>
-            </ul>
-          </div>
-          <div className="common_div pre-approval">
-            <h3 className="heading_main">Go Through Underwriting Process</h3>
-            <p>
-              While you may not interact with them directly, mortgage
-              underwriters play a pivotal role in the mortgage approval process,
-              serving as the ultimate decision-makers for your mortgage
-              approval.
-            </p>
-            <p>
-              Underwriters meticulously scrutinize every facet of your mortgage
-              application and perform various essential tasks. For instance,
-              when borrowers apply for a mortgage on a property, the underwriter
-              is responsible for commissioning an appraisal.
-            </p>
-            <p>
-              This appraisal is utilized to ascertain whether the proceeds from
-              the property's sale are sufficient to cover the loan amount you're
-              seeking in your mortgage.
+            Specify the number of years you plan to take out the mortgage for. Common loan terms are 15, 20, or 30 years.
             </p>
           </div>
-          <div className="common_div pre-approval">
-            <h3 className="heading_main">Close on the Property</h3>
+          <div className="common_div complete-loan-processing">
+            <h3 className="heading_main">Step 4: Enter Interest Rate </h3>
             <p>
-              Once your mortgage application secures approval, it's time to move
-              on to the closing phase. Here, an extensive set of documents will
-              be printed, and you'll be invited to the title company or
-              attorney's office for a closing meeting
-            </p>
-            <p>
-              Among the crucial documents presented during this meeting is your
-              closing disclosure form. This form displays an itemized comparison
-              of the originally estimated closing costs and the final closing
-              costs, highlighting any cost discrepancies.
-            </p>
-            <p>
-              Typically, closing costs range from 2% to 5% of the home's
-              purchase price. For instance, if you're purchasing a $200,000
-              house, expect closing costs in the range of $4,000 to $10,000.
-              Keep in mind that closing fees can vary depending on factors such
-              as your state, loan type, and mortgage lender, so it's essential
-              to closely review these charges.
-            </p>
-            <p>
-              In the event you observe new fees that were not included in the
-              initial loan estimate or notice a substantial increase in your
-              closing costs, don't hesitate to seek clarification from your
-              lender or real estate agent.
-            </p>
-            <p>
-              If everything appears satisfactory, you'll proceed to sign to
-              accept the mortgage, and you'll exit the office with the keys to
-              your new home.{" "}
+            Enter the annual interest rate you expect to receive from a lender. This rate can vary based on your credit score, the type of mortgage, and current market conditions.
             </p>
           </div>
+          <div className="common_div complete-loan-processing">
+            <h3 className="heading_main">Step 5: ZIP Code </h3>
+            <p>
+            We use your zip code to estimate property taxes and insurance costs, which can be part of your monthly payment. Enter your zip code accurately for more precise calculations.</p>
+          </div>
+          <div className="common_div complete-loan-processing">
+            <h3 className="heading_main">Step 6: Click Calculate Mortgage</h3>
+            <p>
+            Now click on the “Calculate Mortgage” button. The calculator will process the information you provided and generate the results.
+            </p>
+          </div>
+          <div className="common_div complete-loan-processing">
+            <h3 className="heading_main">Step 7: Review the Results </h3>
+            <p>
+            The calculator will display various details, including your estimated monthly mortgage payment, the total amount of interest you will pay over the life of the loan, and the total cost of the loan. Additionally, it may show an estimate of property taxes and insurance costs based on your zip code.
+            </p>
+          </div>
+          <p className="my-5">
+          If the initial results do not meet your financial goals, you can adjust the parameters. Try different down payment amounts, loan terms, or interest rates to see how they affect your monthly payments. Mortgage calculators allow you to compare different scenarios side by side. This can help you make informed decisions about your home purchase. Keep in mind that the calculated monthly payment is just one part of your homeownership expenses. You should also consider property taxes, homeowner's insurance, and other costs associated with owning a home. While mortgage calculators are helpful tools, it's a good idea to consult with a mortgage professional or a financial advisor to get personalized advice and to explore various mortgage options that best suit your financial situation and goals.
+          </p>
         </div>
       </section>
     </>

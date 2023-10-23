@@ -6,7 +6,7 @@ const OwnersMessage = () => {
     <section className="owner_message_main">
         <div className="container">
             <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-6 owner_img">
                     <img src="../assets/images/about/owner.jpg" alt="" />
                 </div>
                 <div className="col-lg-6 p-4 owner_message_content">

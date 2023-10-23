@@ -15,79 +15,6 @@ const Calculator = () => {
 
   const chartRef = useRef(null);
 
-  // const checkValues = () => {
-  //   // Implement the value checking logic
-  // };
-
-  // const displayChart = (totalInterestPayableValue, processingFees) => {
-  //   const ctx = chartRef.current.getContext("2d");
-  //   const chart = new Chart(ctx, {
-  //     type: "pie",
-  //     data: {
-  //       labels: ["Total Interest", "Principal Loan Amount", "Processing Fees"],
-  //       datasets: [
-  //         {
-  //           data: [totalInterestPayableValue, loanAmount, processingFees],
-  //           backgroundColor: ["#e63946", "#050A30", "#ff7415"],
-  //           borderWidth: 0,
-  //         },
-  //       ],
-  //     },
-  //   });
-  //   setMyChart(chart);
-  // };
-
-  // const updateChart = (totalInterestPayableValue, processingFees) => {
-  //   if (myChart) {
-  //     myChart.data.datasets[0].data[0] = totalInterestPayableValue;
-  //     myChart.data.datasets[0].data[1] = loanAmount;
-  //     myChart.data.datasets[0].data[2] = processingFees;
-  //     myChart.update();
-  //   } else {
-  //     displayChart(totalInterestPayableValue, processingFees);
-  //   }
-  // };
-
-  // const calculateEMI = () => {
-  //   checkValues();
-  //   let newAmount = loanAmount;
-  //   let interest = interestRate / 12 / 100;
-  //   let processFee = processingFee / 100;
-  //   let updatedLoanAmount = newAmount - downPayment;
-  //   let emi =
-  //     updatedLoanAmount *
-  //     interest *
-  //     (Math.pow(1 + interest, loanTenure) /
-  //       (Math.pow(1 + interest, loanTenure) - 1));
-  //   return emi;
-  // };
-
-  // const handleCalculate = () => {
-  //   let emi = calculateEMI();
-  //   updateData(emi);
-  // };
-
-  // const updateData = (emi) => {
-  //   setLoanEMIValue(Math.ceil(emi));
-
-  //   let processingFees = Math.ceil(loanAmount * (processingFee / 100));
-
-  //   let totalDownPay = Math.ceil(downPayment + processingFees);
-  //   setTotalDownPaymentValue(totalDownPay);
-
-  //   let totalAmount = Math.ceil(loanTenure * emi);
-  //   setTotalAmountValue(totalAmount);
-
-  //   let totalInterestPayable = Math.ceil(totalAmount - loanAmount);
-  //   setTotalInterestValue(totalInterestPayable);
-
-  //   updateChart(totalInterestPayable, processingFees);
-  // };
-
-  // useEffect(() => {
-  //   let emi = calculateEMI();
-  //   updateData(emi);
-  // }, []);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
@@ -127,8 +54,10 @@ const Calculator = () => {
     const processingFees = Math.ceil(updatedLoanAmount * (processingFee / 100));
     setTotalDownPaymentValue(downPayment + processingFees);
 
-    const totalInterestPayable = Math.ceil(emi * loanTenure - updatedLoanAmount);
-  setTotalInterestValue(totalInterestPayable);
+    const totalInterestPayable = Math.ceil(
+      emi * loanTenure - updatedLoanAmount
+    );
+    setTotalInterestValue(totalInterestPayable);
 
     const totalAmountPayable =
       updatedLoanAmount + totalInterestPayable + processingFees;
@@ -171,10 +100,10 @@ const Calculator = () => {
     setDownPayment(parseFloat(e.target.value));
   };
   return (
-    <div className="mortgage_calculator_section">
-      <div className="container p-5 ">
+    // <div className="mortgage_calculator_section">
+      <div className="container">
         <div className="main_calc_div row">
-          <div className="calc_heading col-lg-12 text-center ">
+          <div className="calc_heading col-lg-12 text-center py-5 ">
             <h5>
               Use our mortgage calculator to get an idea of your monthly payment
               by adjusting the interest rate, down payment, home price and more.
@@ -187,9 +116,9 @@ const Calculator = () => {
                 <div className="col-lg-6 calc_input_div"></div>
                 <div className="col-lg-6 calc_chart_div"></div>
               </div> */}
-            <div class="loan-calculator">
-              <div class="top">
-                <h2>Loan EMI Calculator</h2>
+            <div class="loan-calculator row">
+              <div class="col-lg-6 top">
+                {/* <h2>Loan EMI Calculator</h2> */}
 
                 <form action="#">
                   <div class="group">
@@ -222,8 +151,6 @@ const Calculator = () => {
                         onChange={handleLoanTenureChange}
                       />
                     </div>
-                  </div>
-                  <div class="groups">
                     <div>
                       <div class="title">Processing Fees (P) (in %)</div>
                       <input
@@ -246,68 +173,73 @@ const Calculator = () => {
                   </div>
                 </form>
                 <div class="group1">
-                  <button onClick={handleCalculate} class="calculate-btn">
+                  <button
+                    onClick={handleCalculate}
+                    class="btn btn-thm calculate-btn"
+                  >
                     Calculate
                   </button>
                 </div>
               </div>
 
-              <div class="result">
-                <div class="left">
-                  <div class="total-down-payment">
-                    <h3>
-                      Total Down Payment (TDP)
-                      <br />
-                      (TDP = D + P)
-                    </h3>
-                    <div className="value">{totalDownPaymentValue}</div>
+              <div className="col-lg-6">
+                <div class="result">
+                  <div class="left">
+                    <div class="total-down-payment">
+                      <h3>
+                        Total Down Payment (TDP)
+                        {/* <br />
+                        (TDP = D + P) */}
+                      </h3>
+                      <div className="value">{totalDownPaymentValue}</div>
+                    </div>
+
+                    <div class="loan-emi">
+                      <h3>
+                        Loan EMI (LE)
+                        <br />
+                        (PLA= A - D)
+                        {/* <br />
+                        (PLA = Principal Loan Amount) */}
+                        {/* <br />
+                        (LE = [PLA x R x (1+R)^T]/[(1+R)^T-1] ) */}
+                      </h3>
+                      <div className="value">{loanEMIValue}</div>
+                    </div>
+
+                    <div class="total-interest">
+                      <h3>
+                        Total Interest Payable (TIP)
+                        {/* <br /> (TIP = LE * T) */}
+                      </h3>
+                      <div className="value">{totalInterestValue}</div>
+                    </div>
+
+                    <div class="total-amount">
+                      <h3>
+                        Total Payment (TP)
+                        {/* <br />
+                        (TP = LA + TIP + P) */}
+                      </h3>
+                      <div className="value">{totalAmountValue}</div>
+                    </div>
                   </div>
 
-                  <div class="loan-emi">
-                    <h3>
-                      Loan EMI (LE)
-                      <br />
-                      (PLA= A - D)
-                      <br />
-                      (PLA = Principal Loan Amount)
-                      <br />
-                      (LE = [PLA x R x (1+R)^T]/[(1+R)^T-1] )
-                    </h3>
-                    <div className="value">{loanEMIValue}</div>
+                  <div class="right">
+                    <canvas
+                      ref={chartRef}
+                      height="300"
+                      id="myChart"
+                      width="300"
+                    ></canvas>
                   </div>
-
-                  <div class="total-interest">
-                    <h3>
-                      Total Interest Payable (TIP)
-                      <br /> (TIP = LE * T)
-                    </h3>
-                    <div className="value">{totalInterestValue}</div>
-                  </div>
-
-                  <div class="total-amount">
-                    <h3>
-                      Total Payment (TP)
-                      <br />
-                      (TP = LA + TIP + P)
-                    </h3>
-                    <div className="value">{totalAmountValue}</div>
-                  </div>
-                </div>
-
-                <div class="right">
-                  <canvas
-                    ref={chartRef}
-                    height="400"
-                    id="myChart"
-                    width="400"
-                  ></canvas>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
