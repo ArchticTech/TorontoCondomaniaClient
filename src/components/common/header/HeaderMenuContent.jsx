@@ -142,7 +142,7 @@ const HeaderMenuContent = ({ float = "" }) => {
 
       <li className="last">
         <Link
-          href="torontocondomania.ca/blog"
+          href="http://torontocondomania.ca/blog"
           className={route.pathname === "/articles" ? "ui-active" : undefined}
         >
           Articles
