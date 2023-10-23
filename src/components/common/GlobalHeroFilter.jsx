@@ -4,7 +4,6 @@ import DropdownListing from "./listing/dropdown-listing";
 import GlobalFilterRent from "./GlobalFilterRent";
 
 const GlobalHeroFilter = ({ properties, className = "" }) => {
-  const {keyword} = useSelector((state) => state.properties);
 
   return (
     <div className={`container px-4 col-lg-12 home_adv_srch_opt ${className}`}>
