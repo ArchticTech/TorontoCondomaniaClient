@@ -4,12 +4,14 @@ import MobileMenu from "../../common/header/MobileMenu";
 import Activities from "./Activities";
 import AllStatistics from "./AllStatistics";
 import StatisticsChart from "./StatisticsChart";
+import Cookies from "js-cookie";
 
 const index = () => {
+  const userData = JSON.parse(Cookies.get('userData'));
   return (
     <>
       {/* <!-- Main Header Nav --> */}
-      <Header />
+      <Header userData={userData}/>
 
       {/* <!--  Mobile Menu --> */}
       <MobileMenu />
@@ -51,7 +53,7 @@ const index = () => {
 
                 <div className="col-lg-12 mb10">
                   <div className="breadcrumb_content style2">
-                    <h2 className="breadcrumb_title">Howdy, Hasan</h2>
+                    <h2 className="breadcrumb_title">Howdy, {userData.name}</h2>
                     <p>We are glad to see you again!</p>
                   </div>
                 </div>

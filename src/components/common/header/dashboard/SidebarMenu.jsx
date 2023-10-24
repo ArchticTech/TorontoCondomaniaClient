@@ -23,13 +23,13 @@ const SidebarMenu = () => {
     {
       id: 1,
       name: "My Profile",
-      route: "/my-profile",
+      route: "/user/profile",
       icon: "flaticon-user",
     },
     {
       id: 2,
       name: "Reserved Floor Plans",
-      route: "/reserved-floor-plans",
+      route: "/user/reserved-floor-plans",
       icon: "flaticon-box",
     },
   ];
@@ -66,7 +66,7 @@ const SidebarMenu = () => {
                   : ""
               }`}
             >
-              <Link href="/my-dashboard">
+              <Link href="/user">
                 <i className="flaticon-layers"></i>
                 <span> Dashboard</span>
               </Link>
@@ -152,7 +152,7 @@ const SidebarMenu = () => {
                   : ""
               }`}
             >
-              <Link href="/favorites">
+              <Link href="/user/favorites">
                 <i className="flaticon-heart"></i>
                 <span> My Favorites</span>
               </Link>

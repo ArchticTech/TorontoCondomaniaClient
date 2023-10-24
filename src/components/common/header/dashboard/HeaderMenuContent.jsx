@@ -4,10 +4,8 @@ import MyAccount from "./MyAccount";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 
-const HeaderMenuContent = ({ float = "" }) => {
+const HeaderMenuContent = ({ userData, float = "" }) => {
   const route = useRouter();
-
-  const home = { name: "Home", routerPath: "/" };
 
   const listing = [
     { id: 1, name: "Pre Construction", routerPath: "/pre-construction" },
@@ -161,7 +159,7 @@ const HeaderMenuContent = ({ float = "" }) => {
             <span className="dn-1199 ms-1">User</span>
           </a>
           <div className="dropdown-menu">
-            <MyAccount />
+            <MyAccount userData={userData}/>
           </div>
         </div>
       </li>

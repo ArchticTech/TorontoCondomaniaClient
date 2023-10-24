@@ -167,18 +167,14 @@ export async function authenticateUser(userData)
 {
     const email = userData['email'];
     const password = userData['password'];
-    try {
-        const response = await fetch('/api/authenticationProxy', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-          });
-        return response;
-    } 
-    catch (error) {
-        console.error('Authentication Error:', error);
-        throw error; // Optionally re-throw the error
-    }
+    
+    const response = await fetch('/api/authenticationProxy', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+        });
+    const authResponse = await response.json();
+    return authResponse;
 }

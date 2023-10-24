@@ -18,12 +18,13 @@ const Favorites = () => {
         if(response.error == 'Unauthenticated')
         {
             console.error('You are Unauthenticated');
-            router.push('/');
+            //router.push('/');
         }
         else {
           setFavorites(response.data);
         }
       } catch (error) {
+        console.error('Error Fetching Favorites');
         router.push('/');
       }
     };

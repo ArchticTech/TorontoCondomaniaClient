@@ -65,7 +65,7 @@ const LoginSignup = () => {
       });
     }
   }
-  const loginSubmit = (e) => 
+  const loginSubmit = async (e) => 
   {
     e.preventDefault();
 
@@ -76,7 +76,7 @@ const LoginSignup = () => {
         email: loginEmail,
         password: loginPassword,
       };
-      authenticateUser(authData)
+      await authenticateUser(authData)
       .then((response) => 
       {
           setLoading(false);
@@ -94,10 +94,10 @@ const LoginSignup = () => {
           }
           else {
             const userData = {
-              firstname: 'Berta',
-              lastname: 'Sam',
-              email: 'berta@gmail.com',
+              name: response.name,
+              email: response.email
             }
+            Cookies.set('userData', JSON.stringify(userData));
             Cookies.set('loginStatus', true);
             router.push('/user');
           }

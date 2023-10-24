@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import HeaderMenuContent from "./HeaderMenuContent";
 import Image from "next/image";
 
-const Header = () => {
+const Header = ({userData}) => {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -46,7 +46,7 @@ const Header = () => {
         {/* site logo brand */}
 
         <nav>
-          <HeaderMenuContent />
+          <HeaderMenuContent userData={userData}/>
         </nav>
         {/* End .navbar */}
       </div>

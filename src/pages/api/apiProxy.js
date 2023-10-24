@@ -7,6 +7,7 @@ const apiProxy = async (req,res) => {
     const { method, url } = query;
 
     const authToken = req.cookies['auth-token'] || '';
+    console.log('Auth Token', authToken);
     
     // Make the API request with the auth token in the headers
     try {

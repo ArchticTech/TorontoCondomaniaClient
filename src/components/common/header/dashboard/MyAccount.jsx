@@ -5,15 +5,14 @@ import Image from "next/image";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const MyAccount = () => {
+const MyAccount = ({userData = []}) => {
   const profileMenuItems = [
-    { id: 1, name: "My Profile", ruterPath: "/my-profile" },
-    { id: 2, name: " My Favourite", ruterPath: "/favorites" },
+    { id: 1, name: "My Profile", ruterPath: "/user/profile" },
+    { id: 2, name: " My Favourite", ruterPath: "/user/favorites" },
   ];
   const route = useRouter();
   
   const logoutUser = async () => {
-    console.log('Huzaifa');
     const response = await axios.get('/api/logout');
     Cookies.set('loginStatus', false);
     route.push('/');
@@ -30,8 +29,8 @@ const MyAccount = () => {
           alt="e1.png"
         />
         <p>
-          Ali Tufan <br />
-          <span className="address">alitufan@gmail.com</span>
+          {userData.name}<br />
+          <span className="address">{userData.email}</span>
         </p>
       </div>
       {/* End user_set_header */}
