@@ -131,6 +131,9 @@
 }
 /*  (min-width:1280px)+++ */
 @media only screen and (max-width: 1280px) {
+  .home_header .home-hero-para {
+    padding: 0 26rem;
+  }
   .mouse_scroll {
     right: -50px;
   }
@@ -271,6 +274,12 @@
 }
 /*  (max-width:1200px)+++ */
 @media only screen and (max-width: 1200px) {
+  .home_adv_srch_opt.home6 {
+    top: 491px;
+  }
+  .home_header .home-hero-para {
+    padding: 0 20rem;
+  }
   .our_experts .double_image {
     display: none;
   }
@@ -883,6 +892,25 @@
   }
 }
 @media only screen and (max-width: 1024px) {
+  .banks_slider {
+    margin-top: 22rem;
+}
+  .main_calculator_div {
+    top: 410px;
+  }
+  .mortgage_process_header_content .mortgage_process_header {
+    position: absolute;
+    top: 200px;
+}
+  .home_header .home-hero-para {
+    top: 362px;
+  }
+  .home_adv_srch_opt.home6 {
+    top: 485px;
+  }
+  .home_header .home-hero-para {
+    padding: 0 16rem;
+  }
   .home_loan .home_loan_main .home_loan_left {
     display: none;
   }
@@ -1071,8 +1099,21 @@
   }
 }
 @media only screen and (max-width: 992px) {
+  .home_header .home-hero-title {
+    top: 130px;
+  }
+  .home_header .home-hero-para {
+    padding: 0 15rem;
+    top: 251px;
+  }
+  .home_adv_srch_opt.home6 {
+    top: 415px;
+  }
+  .loan-calculator .result {
+    flex-direction: row;
+  }
   .banks_slider {
-    margin-top: 91rem;
+    margin-top: 17rem;
   }
   .mortgage_calculator_section {
     top: 550px;
@@ -1242,6 +1283,38 @@
 }
 /* Medium devices (min-width:768px) (max-width: 991.98px) // (tablets, less than 992px) */
 @media only screen and (max-width: 991px) {
+  .about_stats_page_section .main_stats_div {
+    gap: 5rem;
+}
+  .mission_header {
+    padding: 0;
+    padding-bottom: 10px;
+  }
+  .mission_section {
+    padding: 0;
+  }
+  .services_section_about {
+    padding: 0;
+    padding-top: 30px;
+  }
+  .owner_message_main{
+    padding: 0;
+    padding-top: 20px;
+  }
+  .text_row_section {
+    padding: 0;
+  }
+  .text_row_section .left_container,
+  .text_row_section .right_container {
+    text-align: center;
+  }
+  .customer_support_header_content .customer_support_header {
+    font-size: 54px;
+  }
+  .inner_page_breadcrumb .breadcrumb_title {
+    text-align: center;
+    font-size: 48px;
+  }
   .mission_header {
     justify-content: center;
   }
@@ -1250,11 +1323,11 @@
     justify-content: center;
     padding: 2rem 0;
     width: 100%;
-}
-.mission_commitment .mission_text {
-  padding: 2rem;
-  text-align: center;
-}
+  }
+  .mission_commitment .mission_text {
+    padding: 2rem;
+    text-align: center;
+  }
   .mortgage_process_para_section {
     padding: 60px 20px;
   }
@@ -1687,13 +1760,40 @@
     top: 130px;
   }
 }
+@media only screen and (max-width: 899px) {
+  .banks_slider {
+    margin-top: 41rem;
+  }
+}
 @media only screen and (max-width: 768px) {
+  .mortgage_process_header_content .mortgage_process_header {
+    top: 180px;
+}
+  .how_it_works {
+    height: auto;
+  }
+  .head_br {
+    display: none;
+  }
+  .home_header .home-hero-para {
+    padding: 0 6rem;
+    top: 243px;
+  }
+  .loan-calculator .result {
+    flex-direction: column;
+  }
+  /* .banks_slider {
+    margin-top: 100rem;
+  } */
+  .mortgage_calculator_section {
+    top: 416px;
+  }
   section {
     padding-top: 50px;
     padding-bottom: 0;
   }
   .home_adv_srch_opt.home6 {
-    top: calc(100vh - 254px);
+    top: 330px;
   }
   .home_loan .heading_main h2,
   .home_loan .heading_main .h2 {
@@ -1724,6 +1824,7 @@
   }
   .home_header .home-hero-title {
     font-size: 35px;
+    padding: 0 2rem;
   }
   .home_header .home-hero-para {
     font-size: 16px;
@@ -1892,7 +1993,7 @@
     margin-right: 80px !important;
   }
   .mortgage_process_header_content .mortgage_process_header {
-    font-size: 35px;
+    font-size: 30px;
   }
   .mortgage_process_header_content .btn_mortgage {
     width: 150px;
@@ -1900,7 +2001,7 @@
     font-size: 14px;
   }
   .mortgage_process_header_content p {
-    font-size: 14px;
+    font-size: 13px;
     padding: 0 10px;
   }
   .mortgage_process_para_section {
@@ -1916,6 +2017,12 @@
 }
 /* Small devices (min-width: 576px) (max-width: 767.98px) // (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .banks_slider {
+    margin-top: 63rem;
+}
+  .customer_support_header_content .customer_support_header {
+    font-size: 50px;
+  }
   .header_inner_page_section {
     height: 450px;
   }
@@ -2459,9 +2566,51 @@
   }
 }
 @media only screen and (max-width: 630px) {
-  .home_adv_srch_opt.home6 {
-    top: calc(100vh - 310px);
+  .banks_slider {
+    margin-top: 59rem;
+}
+  .main_calculator_div {
+    top: 350px;
+}
+  .mortgage_process_header_content .mortgage_process_header {
+    top: 114px;
+}
+  .about_stats_page_section .stats_div h3, .about_stats_page_section .stats_div .h3 {
+    font-size: 54px;
   }
+  .home_header .home-hero-title {
+    font-size: 31px;
+  }
+  .home_header .home-hero-para {
+    top: 232px;
+  }
+  .home_adv_srch_opt.home6 {
+    top: 337px;
+  }
+  .home_header .home-hero-para {
+    padding: 0 6rem;
+  }
+  .inner_page_breadcrumb .breadcrumb_title {
+    font-size: 42px;
+  }
+  .about_stats_page_section .main_stats_div {
+    gap: 6rem;
+  }
+  .submit_btn_contact {
+    text-align: center;
+  }
+  .send_email_contact {
+    text-align: center;
+  }
+  .contact_localtion {
+    text-align: center;
+  }
+  .inner_page_breadcrumb .breadcrumb_title {
+    font-size: 44px;
+  }
+  /* .home_adv_srch_opt.home6 {
+    top: calc(100vh - 310px);
+  } */
   .main_cities_header .view-all {
     align-self: center;
     padding-bottom: 0;
@@ -2507,12 +2656,20 @@
   }
 }
 @media only screen and (max-width: 580px) {
+  .about_stats_page_section .stats_div h3, .about_stats_page_section .stats_div .h3 {
+    font-size: 44px;
+}
+  .customer_support_header_content .customer_support_header {
+    font-size: 44px;
+  }
+  .customer_support_header_content .header_input {
+    width: 90%;
+  }
+  .home_header .home-hero-para {
+    padding: 0 3rem;
+  }
   .about_stats_page_section .main_stats_div {
     gap: 4rem;
-  }
-  .about_stats_page_section .stats_div h3,
-  .about_stats_page_section .stats_div .h3 {
-    font-size: 50px;
   }
   .about_stats_page_section {
     padding: 0;
@@ -2564,6 +2721,9 @@
 }
 /* Extra small devices (min-width:361px) (max-width: 575.98px) // (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
+  .banks_slider {
+    margin-top: 65rem;
+  }
   .mortgage_process_header_content {
     padding-bottom: 5rem;
   }
@@ -2639,11 +2799,30 @@
 }
 /* (min-width:361px) (max-width:520px) */
 @media only screen and (max-width: 520px) {
-  .home_header {
-    margin-bottom: 24rem;
+  .mortgage_process_header_content .mortgage_process_header {
+    top: 106px;
+}
+  .customer_support_header_content .customer_support_header {
+    font-size: 42px;
   }
   .home_adv_srch_opt.home6 {
-    top: calc(100vh - 610px);
+    top: 213px;
+  }
+  .home_header .home-hero-title {
+    top: 112px;
+    font-size: 28px;
+  }
+  .home_header .home-hero-para {
+    top: 201px;
+  }
+  .home_header .home-hero-para {
+    padding: 0 2rem;
+  }
+  .inner_page_breadcrumb .breadcrumb_title {
+    font-size: 32 px;
+  }
+  .home_header {
+    margin-bottom: 24rem;
   }
   .home_adv_srch_opt .nav-pills li.nav-item a.nav-link:first-child {
     margin-right: 0;
@@ -3231,6 +3410,9 @@
 }
 /* (min-width:480px) (max-width:500px) */
 @media only screen and (max-width: 500px) {
+  .customer_support_header_content .customer_support_header {
+    font-size: 40px;
+  }
   .main_cities_header {
     flex-direction: column;
     padding: 20px 0;
@@ -3259,11 +3441,30 @@
 }
 /* (min-width:361px) (max-width:479px) */
 @media only screen and (max-width: 479px) {
+  .home_adv_srch_opt.home3 .nav-pills, .home_adv_srch_opt.home6 .nav-pills {
+    justify-content: center;
+  }
+  .customer_support_header_content .customer_support_header {
+    font-size: 32px;
+  }
+  .customer_support_header_content .header_input {
+    width: 75%;
+  }
+  .home_header .home-hero-para {
+    top: 144px;
+  }
+  .home_header .home-hero-title {
+    top: 69px;
+    font-size: 26px;
+  }
+  .home_adv_srch_opt.home6 {
+    top: 143px;
+  }
   .regstr_thumb,
-  .login_thumb{
+  .login_thumb {
     display: none;
   }
-   .mission_header .mission_icon {
+  .mission_header .mission_icon {
     display: none;
   }
   .main-title h2,
@@ -3284,6 +3485,21 @@
   }
 }
 @media only screen and (max-width: 414px) {
+
+  .customer_support_header_content .customer_support_header {
+    font-size: 28px;
+    line-height: normal;
+  }
+  .customer_support_header_content .header_input {
+    width: 75%;
+  }
+  .home_header .home-hero-title {
+    font-size: 24px;
+  }
+  .inner_page_breadcrumb .breadcrumb_title {
+    font-size: 28px;
+    line-height: 36px;
+  }
   .about_us_header_content .about_us_header {
     font-size: 26px;
   }
@@ -3297,10 +3513,6 @@
   .home_adv_srch_opt .nav-pills li.nav-item a.nav-link {
     min-width: 49px;
     height: 45px;
-  }
-  .nav-pills,
-  .home_adv_srch_opt.home6 .nav-pills {
-    justify-content: space-around;
   }
 
   .mt10-414 {
@@ -3545,6 +3757,13 @@
   }
 }
 @media only screen and (max-width: 400px) {
+  
+  .customer_support_header_content .customer_support_header {
+    font-size: 26px;
+  }
+  .customer_support_header_content .header_input {
+    width: 70%;
+  }
   /* ExTra Class Start*/
   .fn-400 {
     float: none !important;
@@ -3570,18 +3789,6 @@
   }
   .list-style-type-bullet li {
     margin-left: 50px;
-  }
-  .home_adv_srch_opt .nav-pills {
-    margin: 0;
-  }
-  .home_adv_srch_opt.home4 {
-    margin-top: 50px;
-  }
-  .home_content.home6 {
-    padding: 65px 0 0 0 !important;
-  }
-  .home_adv_srch_opt.home6 {
-    margin-top: 30px;
   }
   .feat_property .details .fp_footer .fp_pdate {
     margin-left: 0;

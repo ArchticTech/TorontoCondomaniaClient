@@ -1,6 +1,6 @@
 import CopyrightFooter from "../common/footer/CopyrightFooter";
 import Footer from "../common/footer/Footer";
-import Header from "../home/Header";
+import Header from "../common/header/DefaultHeader";
 import MobileMenu from "../common/header/MobileMenu";
 import PopupSignInUp from "../common/PopupSignInUp";
 import BreadCrumbBanner from "./BreadCrumbBanner";
@@ -32,7 +32,7 @@ const index = () => {
             <div className="col-lg-6 gap-5 left_container">
             <LeftContainer />
             </div>
-            <div className="col-lg-6 gap-5  left_container">
+            <div className="col-lg-6 gap-5  right_container">
             <RightContainer />
             </div>
           </div>
@@ -44,7 +44,7 @@ const index = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-7 col-xl-8">
-              <div className="form_grid">
+              <div className="form_grid send_email_contact">
                 <h4 className="mb5">Send Us An Email</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In

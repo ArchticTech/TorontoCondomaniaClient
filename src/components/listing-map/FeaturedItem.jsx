@@ -6,6 +6,9 @@ import global from "../../config/env";
 import IconPropertyHeart from "../common/IconPropertyHeart";
 
 const FeaturedItem = ({ properties, isAssignment }) => {
+  // const [showMore, setShowMore] = 
+  const [propertiesToShow, setPropertiesToShow] = useState(4);
+
   const {
     keyword,
     type,
@@ -105,25 +108,6 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     return true;
   };
 
-  // status filter
-  const statusTypeHandler = (a, b) => {
-    if (statusType === "recent") {
-      return a.created_at + b.created_at;
-    } else if (statusType === "old") {
-      return a.created_at - b.created_at;
-    } else if (statusType === "") {
-      return a.created_at + b.created_at;
-    }
-  };
-
-  // featured handler
-  const featuredHandler = (item) => {
-    if (featured !== "") {
-      return item.featured === featured;
-    }
-    return true;
-  };
-
   useEffect(() => {
     const markers = document.querySelectorAll(".mapboxgl-marker");
     markers.forEach((marker) => {
@@ -136,9 +120,14 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     }
   }, [activeMarker]);
 
-  // status handler
-  let filteredProperties = properties
-    ?.slice(0, 8)
+  let filteredProperties = properties;
+
+  // if (!showMore) {
+  //   filteredProperties = filteredProperties.slice(0, 4);
+  // }
+
+  filteredProperties = filteredProperties
+    // ?.slice(0, 8)
     ?.filter(keywordHandler)
     ?.filter(typeHandler)
     ?.filter(locationHandler)
@@ -150,7 +139,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
     ?.filter(cityHandler);
-  let content = filteredProperties.map((item) => {
+  let content = filteredProperties.slice(0, propertiesToShow).map((item) => {
     // var markerElement = item.marker.getElement();
     // markerElement.style.display = 'block';
     // console.log(markerElement.style);
@@ -196,10 +185,10 @@ const FeaturedItem = ({ properties, isAssignment }) => {
             <div className="thmb_cntnt">
               <ul className="tag mb0">
                 <li className="list-inline-item">
-                  <a href="#">{item.vip_featured_promotion}</a>
+                  <a href="#" className="text-capitalize">{item.vip_featured_promotion}</a>
                 </li>
                 {item.isHot ? (
-                  <li className="list-inline-item">
+                  <li className="list-inline-item" >
                     <a href="" className="text-capitalize">
                       Hot
                     </a>
@@ -214,7 +203,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                     <span className="flaticon-transfer-1"></span>
                   </a>
                 </li>
-                <IconPropertyHeart id={item.id}/>
+                <IconPropertyHeart id={item.id} />
               </ul>
               <Link
                 href={
@@ -254,7 +243,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
             <div className="fp_footer">
               <ul className="fp_meta float-start mb0">
                 <li className="list-inline-item">
-                  <Link href="/agent-v2">
+                  {/* <Link href="/agent-v2">
                     <img
                       width={40}
                       height={40}
@@ -263,10 +252,10 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                       }
                       alt="pposter1.png"
                     />
-                  </Link>
+                  </Link> */}
                 </li>
                 <li className="list-inline-item">
-                  <Link href="/">{item.agent.name}</Link>
+                  <Link href="/">Torontocondomania Support</Link>
                 </li>
               </ul>
               <div className="fp_pdate float-end">{item.postedYear}</div>
@@ -278,6 +267,14 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     );
   });
 
+  const readMoreButton = (
+    <div className="w-100 my-5 read_more_btn">
+      <button className="btn btn-thm" onClick={() => setPropertiesToShow(propertiesToShow + 4)}>
+      Load More
+    </button>
+    </div>
+  );
+
   // add length of filter items
   useEffect(() => {
     dispatch(addLength(content.length));
@@ -288,9 +285,14 @@ const FeaturedItem = ({ properties, isAssignment }) => {
         // var markerElement = property.marker.getElement();
         // markerElement.style.display = "none";
       });
-  }, [dispatch, content]);
+  }, [dispatch, content, propertiesToShow]);
 
-  return <>{content}</>;
+  return (
+    <>
+      {content}
+      {propertiesToShow < properties.length ? readMoreButton : null}
+    </>
+  );
 };
 
 export default FeaturedItem;

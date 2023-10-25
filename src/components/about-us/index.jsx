@@ -1,14 +1,9 @@
-import CallToAction from "../common/CallToAction";
 import CopyrightFooter from "../common/footer/CopyrightFooter";
 import Footer from "../common/footer/Footer";
 import Header from "../home/Header";
 import MobileMenu from "../common/header/MobileMenu";
-import Partners from "../common/Partners";
 import PopupSignInUp from "../common/PopupSignInUp";
-// import Testimonial from "../home-7/Testimonials";
 import BreadCrumbBanner from "./BreadCrumbBanner";
-import Team from "./Team";
-import OurMission from "./OurMission";
 import Stats from "./Stats";
 import OurVisionMission from "./OurVisionMission";
 import OurMission2 from "./OurMission2";

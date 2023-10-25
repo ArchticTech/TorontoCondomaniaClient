@@ -52,7 +52,7 @@ const index = ({ properties, assignments, rentals, cities }) => {
       <Hero properties={properties} />
 
       {/* <!-- Property Cities --> */}
-      <section id="property-city" className="property-city pb30">
+      <section id="property-city" className="property-city pb30" style={{ padding:'0' }}>
         <div className="container">
           <div className="main_cities_header">
             <div className="main_cities_header_left">
@@ -103,7 +103,7 @@ const index = ({ properties, assignments, rentals, cities }) => {
               </Link>
             </div>
           </div>
-          <div className="row">
+          <div className="row find_cities_row">
             <FindProperties cities={cities} />
           </div>
         </div>
@@ -371,7 +371,7 @@ const index = ({ properties, assignments, rentals, cities }) => {
       </section>
 
       {/* <!-- Home loan options --> */}
-      <section id="home_loan" className="home_loan bg-ptrn2">
+      <section id="home_loan" className="home_loan">
         <div className="container">
           <HomeLoan />
         </div>
@@ -448,7 +448,7 @@ const index = ({ properties, assignments, rentals, cities }) => {
               <div className="main_cities_header_left">
                 <div className="mission_icon">
                   <span className="icon_span">
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="64"
                       height="58"
@@ -459,7 +459,12 @@ const index = ({ properties, assignments, rentals, cities }) => {
                         d="M0 0V41.4286L8 33.1429H16V8.28571H40V0H0ZM24 16.5714V49.7143H56L64 58V16.5714H24Z"
                         fill="#FF3636"
                       />
-                    </svg>
+                    </svg> */}
+                    <img
+                      src="../../assets/images/home/OUR-PARTNERT-ICON.svg"
+                      style={{ width: "71px", height: "46px", fill: "#ff3636" }}
+                      alt=""
+                    />
                   </span>
                 </div>
                 <div className="mission-text">

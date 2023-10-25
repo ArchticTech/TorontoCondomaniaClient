@@ -51,7 +51,7 @@ const index = () => {
             {/* End details content .col-lg-8 */}
 
             <div className="col-lg-4 col-xl-4">
-              <Sidebar />
+              <Sidebar   />
             </div>
             {/* End sidebar content .col-lg-4 */}
           </div>

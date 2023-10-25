@@ -23,9 +23,9 @@ const index = () => {
       {/* <!-- Inner Page Breadcrumb --> */}
       <BreadCrumbBanner />
 
-      <section className="mortgage_calculator_section pt30">
+      {/* <section className="mortgage_calculator_section pt30"> */}
         <Calculator />
-      </section>
+      {/* </section> */}
 
       <section className="banks_slider">
         <Banks />

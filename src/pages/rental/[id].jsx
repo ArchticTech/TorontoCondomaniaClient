@@ -173,7 +173,7 @@ const RentalView = ({rental}) => {
             </div>
 
             <div className="col-lg-4 col-xl-4">
-              <Sidebar />
+              <Sidebar rental={rental.name}/>
             </div>
           </div>
           

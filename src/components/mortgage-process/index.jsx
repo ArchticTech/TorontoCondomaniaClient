@@ -1,21 +1,12 @@
-import CallToAction from "../common/CallToAction";
 import CopyrightFooter from "../common/footer/CopyrightFooter";
 import Footer from "../common/footer/Footer";
 import Header from "../home/Header";
 import MobileMenu from "../common/header/MobileMenu";
-import Partners from "../common/Partners";
 import PopupSignInUp from "../common/PopupSignInUp";
-// import Testimonial from "../home-7/Testimonials";
 import BreadCrumbBanner from "./BreadCrumbBanner";
-import Team from "./Team";
-import OurMission from "./OurMission";
 import Parargraph from "./Parargraph";
 import KeyTakeAways from "./KeyTakeAways";
 import PreApproval from "./PreApproval";
-import OurServices from "./OurServices";
-import HowitWorks from "./HowitWorks";
-import OwnersMessage from "./OwnersMessage";
-import Testimonial from "./Testimonial";
 import FAQ from "./FAQ";
 
 const index = () => {

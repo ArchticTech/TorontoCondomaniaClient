@@ -4,7 +4,7 @@ const BreadCrumbBanner = () => {
   return (
     <section className="customer_support_section">
       <div className="container">
-        <div className="customer_support_header_content">
+        <div className=" customer_support_header_content">
           <h1 className="customer_support_header">How can we help?</h1>
           <div className="header_input">
             {/* <i className="fa fa-magnifying-glass"></i> */}
@@ -12,9 +12,18 @@ const BreadCrumbBanner = () => {
             type="search"
               placeholder="What can we help you with"
               className="form-control customer_support_btn mt-2"
-            /> */}
+            />
+             */}
+            <div class="form-group has-search">
+              <span className="fa fa-search form-control-feedback"></span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="What can we help you with?"
+              />
+            </div>
 
-            <button className="btn btn-thm text-lg-center mt-2">What can we help you with</button>
+            {/* <button className="btn btn-thm text-lg-center mt-2">What can we help you with</button> */}
           </div>
         </div>
       </div>
