@@ -12,55 +12,74 @@ import DropdownListing from "./drop-down";
 import { useDispatch } from "react-redux";
 import { addKeyword } from "../../features/properties/propertiesSlice";
 
-const index = ({ properties, comparePropertyID }) => {
-  const [compareID, setCompareID] = useState(comparePropertyID);
-  const [compareProperty, setCompareProperty] = useState([]);
-  const [showSearchBox, setShowSearchBox] = useState(true);
+const index = ({ properties, property1 }) => {
+  const [selectedProperty1, setSelectedProperty1] = useState(null);
+  const [selectedProperty2, setSelectedProperty2] = useState("");
+  const [selectedProperty3, setSelectedProperty3] = useState("");
+  const [showSearchBox2, setShowSearchBox2] = useState(true);
+  const [showSearchBox3, setShowSearchBox3] = useState(false);
+  // const [resetDropdownKey, setResetDropdownKey] = useState(0);
 
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const removeProperty = (id) => {
-    const removeProperty = compareID.filter(item => item !== id);
-    setCompareID(removeProperty)
-    setShowSearchBox(true);
+  const removeProperty2 = () => {
+    setSelectedProperty2("");
+    setShowSearchBox2(true);
   };
-  
-  const addProperty = (id) => {
-    if(compareID.length >= 3){
-    const addProperty = compareID.concat(id)
-    setCompareID(addProperty); 
-    }
-    // setShowSearchBox2(true);
-  }; 
+ 
+  const removeProperty3 = () => {
+    setSelectedProperty3("");
+    setShowSearchBox3(true);
+  };
 
-  const filteredProperties = properties.filter(property => compareID.includes(property.id));
+  console.log(selectedProperty1, selectedProperty2, selectedProperty3);
+  const propertyIdFromQuery = router.query.property1;
 
   useEffect(() => {
     try {
-      setCompareProperty(filteredProperties);
-      
+      if (propertyIdFromQuery) {
+        const foundProperty = properties.find(
+          (property) => property.id == propertyIdFromQuery
+        );
+
+        if (foundProperty) {
+          setSelectedProperty1(foundProperty);
+        } else {
+          console.error("Property not found in properties array.");
+        }
+      } else {
+        console.error("No property ID found in router.query.");
+      }
     } catch (error) {
       console.error("An error occurred:", error);
     }
-  }, [compareID]);
+  }, [propertyIdFromQuery, properties]);
 
-  console.log(compareProperty);
-
-
-  // const handleSelectProperty2 = (property) => {
-  //   setSelectedProperty2(property);
-  //   setShowSearchBox2(false);
-  //   setShowSearchBox3(true);
-  //   // setResetDropdownKey((prevKey) => prevKey + 1);
-  // };
-
-  const handleSelectProperty = (property) => {
-    // setSelectedProperty3(property);
-    // addProperty(property);
-    // setShowSearchBox3(false);
+  const handleSelectProperty2 = (property) => {
+    setSelectedProperty2(property);
+    setShowSearchBox2(false);
+    setShowSearchBox3(true);
     // setResetDropdownKey((prevKey) => prevKey + 1);
   };
+
+  const handleSelectProperty3 = (property) => {
+    setSelectedProperty3(property);
+    setShowSearchBox3(false);
+    // setResetDropdownKey((prevKey) => prevKey + 1);
+  };
+
+  // console.log(selectedProperty1, selectedProperty2, selectedProperty3);
+
+  // useEffect(() => {
+  //   return () => {
+  //     setSelectedProperty1(null);
+  //     setSelectedProperty2("");
+  //     setSelectedProperty3("");
+  //     setShowSearchBox2(true);
+  //     setShowSearchBox3(false);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -89,9 +108,32 @@ const index = ({ properties, comparePropertyID }) => {
           </div>
 
           {/* search box for second property  */}
+          {showSearchBox2 && !showSearchBox3 && (
+            <div className="row mb-3">
+              <form className="contact_form" action="#">
+                <div className="col-lg-6 offset-lg-3">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search property to compare"
+                      onChange={(e) => dispatch(addKeyword(e.target.value))}
+                    />
+                    <DropdownListing
+                      properties={properties}
+                      onSelect={handleSelectProperty2}
+                      selectedProperty={selectedProperty2}
+                      removeProperty={removeProperty2}
+                      // key={resetDropdownKey}
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          )}
 
           <div className="row mb-3">
-            {showSearchBox && (
+            {showSearchBox3 && (
               <div className="col-lg-6 offset-lg-3">
                 <div className="form-group">
                   <input
@@ -102,9 +144,9 @@ const index = ({ properties, comparePropertyID }) => {
                   />
                   <DropdownListing
                     properties={properties}
-                    addProperty={(id) => addProperty(id)}
-                    // selectedProperty={selectedProperty3}
-                    // removeProperty={removeProperty3}
+                    onSelect={handleSelectProperty3}
+                    selectedProperty={selectedProperty3}
+                    removeProperty={removeProperty3}
                     // key={resetDropdownKey}
                   />
                 </div>
@@ -131,12 +173,13 @@ const index = ({ properties, comparePropertyID }) => {
                       <li>Year of build</li>
                       <li>Status</li>
                     </ul>
-                  </li> 
+                  </li>
                   <ComparePricing
-                    compareProperty={compareProperty}
-                    removeProperty={(id) => removeProperty(id)}
-                    // selectedProperty3={selectedProperty3}
-                    // removeProperty2={removeProperty2}
+                    selectedProperty1={selectedProperty1}
+                    selectedProperty2={selectedProperty2}
+                    selectedProperty3={selectedProperty3}
+                    removeProperty2={removeProperty2}
+                    removeProperty3={removeProperty3}
                   />
                 </ul>
                 {/* End .mc_parent_list */}
