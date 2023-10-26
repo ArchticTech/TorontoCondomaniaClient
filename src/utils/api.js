@@ -52,7 +52,7 @@ export async function fetchAllRentals() {
 }
 
 export async function fetchRental(id) {
-    const response = await fetch(global.apiURL + 'api/getAllFavorites/'  + id);
+    const response = await fetch(global.apiURL + 'api/getRental/'  + id);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }

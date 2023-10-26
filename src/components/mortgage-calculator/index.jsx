@@ -4,11 +4,9 @@ import Header from "../home/Header";
 import MobileMenu from "../common/header/MobileMenu";
 import PopupSignInUp from "../common/PopupSignInUp";
 import BreadCrumbBanner from "./BreadCrumbBanner";
-import Parargraph from "./Parargraph";
-import KeyTakeAways from "./KeyTakeAways";
 import PreApproval from "./PreApproval";
-import FAQ from "./FAQ";
 import Calculator from "./Calculator";
+import Banks from "./Banks";
 
 const index = () => {
   return (
@@ -25,19 +23,15 @@ const index = () => {
       {/* <!-- Inner Page Breadcrumb --> */}
       <BreadCrumbBanner />
 
-      <Calculator/>
+      {/* <section className="mortgage_calculator_section pt30"> */}
+        <Calculator />
+      {/* </section> */}
 
-      <Parargraph />
-
-      <KeyTakeAways />
+      <section className="banks_slider">
+        <Banks />
+      </section>
 
       <PreApproval />
-
-      <section id="faq_mortgage_process" className="faq_mortgage_process">
-        <div className="container">
-          <FAQ />
-        </div>
-      </section>
 
       {/* <HowitWorks/>
 

@@ -3604,9 +3604,8 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 }
 
 .home_adv_srch_opt.home6 {
-  margin-top: 0;
   position: absolute;
-  top: calc(100vh - 180px);
+  top: 545px;
   left: 0;
   right: 0;
 }
@@ -6259,6 +6258,7 @@ form.home5_advanced_search_form
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
+  margin-left: 1rem;
 }
 @media (max-width: 576px) {
   .feat_property.d-flex {
@@ -6356,6 +6356,7 @@ form.home5_advanced_search_form
 .feat_property.list .dtls_headr ul.tag li:first-child {
   background-color: rgb(228, 228, 228);
   width: fit-content;
+  padding: 0 10px;
 }
 .feat_property .thumb .thmb_cntnt ul.tag li a,
 .properti_city.home6 .thumb .thmb_cntnt ul.tag li a,
@@ -7717,6 +7718,7 @@ form.home5_advanced_search_form
   font-family: "Nunito";
   color: rgb(72, 72, 72);
   line-height: 1.2;
+  cursor: default;
 }
 
 .lsd_list li:hover a {
@@ -10085,11 +10087,9 @@ form.home5_advanced_search_form
   ); /* Semi-transparent overlay color (adjust the alpha value to control the opacity) */
   z-index: 1;
 }
-@media (max-width: 576px) {
-  .header_inner_page_section {
-    height: 350px;
-  }
-}
+/* @media (max-width: 576px) {
+  
+} */
 
 .header_inner_page_section:before {
   background-color: rgb(29, 41, 62);
@@ -10135,7 +10135,6 @@ form.home5_advanced_search_form
 .inner_page_breadcrumb .breadcrumb_content {
   margin-top: 85px;
   position: relative;
-  width: 700px;
 }
 @media (max-width: 767px) {
   /* .header_inner_page_section .about_us_header_content {
@@ -19025,22 +19024,39 @@ legend span {
 }
 
 .bg-ptrn1 {
-  background-attachment: scroll;
-  background-image: url("../images/pattern/1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: cover;
+  background: #f1f1f1;
 }
 
 .bg-ptrn2 {
+  background: #f1f1f1;
+  position: relative;
   background-attachment: scroll;
-  background-image: url("../images/pattern/2.png");
-  background-position: center;
+  background-image: url("../images/home/our-partners.png");
+  background-position: top right;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-size: cover;
 }
+
+.home_loan {
+  background: #f1f1f1;
+  position: relative;
+  background-attachment: scroll;
+  background-image: url("../images/home/home-loan-bg.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+/* .bg-ptrn2::before {
+  content: "";
+  background-image: url("../images/home/our-partners.png");
+  background-position: top right;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+} */
 
 section {
   padding: 60px 0;
@@ -21563,7 +21579,7 @@ button.gm-ui-hover-effect:focus {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 80px 0;
+  /* padding: 80px 0; */
 }
 
 .mission_header {
@@ -21645,6 +21661,12 @@ button.gm-ui-hover-effect:focus {
 }
 
 /* How it works section ABOUT */
+
+.how_it_works {
+  height: 856px;
+  display: flex;
+  align-items: center;
+}
 
 .how_it_works_about {
   background: #f1f1f1;
@@ -21809,7 +21831,8 @@ button.gm-ui-hover-effect:focus {
   font-weight: 700;
   line-height: normal;
   z-index: 1;
-  /* width: 685px; */
+  position: absolute;
+  top: 240px;
 }
 
 .home_header .home-hero-title span {
@@ -21825,8 +21848,9 @@ button.gm-ui-hover-effect:focus {
   font-weight: 400;
   line-height: normal;
   z-index: 1;
-  /* width: 490px; */
-  padding-top: 1rem;
+  position: absolute;
+  padding: 0 26rem;
+  top: 385px;
 }
 
 /* Home page */
@@ -21835,8 +21859,8 @@ button.gm-ui-hover-effect:focus {
   align-items: center;
   justify-content: space-between;
   /* flex-wrap: wrap; */
-  gap: 1rem;
-  padding: 40px 0;
+  /* gap: 1rem; */
+  /* padding: 40px 0; */
 }
 
 .main_cities_header .main_cities_header_left {
@@ -21866,7 +21890,7 @@ button.gm-ui-hover-effect:focus {
   margin-right: 1rem;
   text-align: center;
 }
-.main_cities_header .view-all{
+.main_cities_header .view-all {
   align-self: flex-end;
   padding-bottom: 35px;
 }
@@ -21936,6 +21960,7 @@ button.gm-ui-hover-effect:focus {
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
+  text-transform: capitalize;
 }
 
 .home_loan .main_card {
@@ -22115,11 +22140,11 @@ button.gm-ui-hover-effect:focus {
 
 /* preapproval section   */
 /* .preapproval_section {
-  padding: 60px 110px;
+  margin-top: 50rem
 } */
 
 .preapproval_section .heading_main {
-  color: #000;
+  /* color: #000;
   font-feature-settings: "case" on;
   font-family: "Nunito";
   font-size: 33px;
@@ -22127,17 +22152,17 @@ button.gm-ui-hover-effect:focus {
   font-weight: 900;
   line-height: 20px;
   text-transform: capitalize;
-  margin: 1rem 0;
+  margin: 1rem 0; */
 }
 .preapproval_section p {
-  color: #515151;
+  /* color: #515151;
   font-family: "Nunito";
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 19px;
   text-transform: capitalize;
-  padding: 8px 0;
+  padding: 8px 0; */
 }
 
 .preapproval_section .find_property_ul {
@@ -22309,18 +22334,19 @@ button.gm-ui-hover-effect:focus {
 
 .customer_support_section {
   position: relative;
-  background: url(../images/support-center-header.jpg);
+  /* background: url(../images/customer_header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  height: 799px;
+  background-position: center; */
+  background-color: #e3e5ed;
+  height: 500px;
   margin-top: 88px;
   display: flex;
   align-items: center;
   margin-top: 0;
   max-width: 100%;
 }
-.customer_support_section::before {
+/* .customer_support_section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -22329,13 +22355,14 @@ button.gm-ui-hover-effect:focus {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
-}
+} */
 
 .customer_support_header_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem 2rem;
 }
 /* .customer_support_section .customer_support_header {
   font-family: "Nunito";
@@ -22345,23 +22372,38 @@ button.gm-ui-hover-effect:focus {
   margin-bottom: 0;
 } */
 .customer_support_header_content .customer_support_header {
-  text-align: left;
-  color: #fff;
-  font-size: 52px;
+  color: var(--primary-colors-black, #02021d);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 56px;
   font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  z-index: 1;
-  font-size: 62px;
-  /* width: 685px; */
-  /* max-width: 70%; */
+  font-weight: 600;
+  line-height: 64px; /* 114.286% */
 }
 
 .customer_support_header_content .header_input {
+  width: 50%;
   z-index: 10;
   position: relative;
-  /* display: inline-block; */
-  width: fit-content;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+.has-search {
+  display: flex;
+  align-items: center;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
 }
 
 /* .customer_support_header_content .header_input i {
@@ -22374,44 +22416,52 @@ button.gm-ui-hover-effect:focus {
 
 .input-container input {
   padding: 2rem 4rem;
-  margin: 1rem
+  /* margin: 1rem; */
 }
 
-.customer_support_header_content .customer_support_btn {
+/* .customer_support_header_content .customer_support_btn {
   cursor: pointer;
   z-index: 10;
   width: 250px;
   height: 61px;
   font-size: 18px;
-  /* background-color: transparent; */
-  /* border: 2px solid var(--color-primary); */
   border-radius: 5px;
   color: #ffffff;
   transition: all 0.3s ease;
-}
+} */
 
 /* Mortgage calculator */
-.mortgage_calculator_section{
+.main_calculator_div {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
-  margin-top: 0;
+  /* margin-top: 0; */
   position: absolute;
-  top: calc(100vh - 261px);
+  top: 510px;
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 90%;
   background-color: #fff;
   z-index: 1;
+  border-radius: 15px;
+  padding-bottom: 4rem;
+}
+.left_calculator_div{
+  padding: 30px;
 }
 
-.loan-calculator {
-  font-family: "Roboto", sans-serif;
-  width: 740px;
+.left_calculator_div_span{
+color: var(--color-primary);
+}
+
+.left_calculator_div_input{
+  outline-color: var(--color-primary);
+}
+/* .loan-calculator {
+  font-family: "Nunito", sans-serif;
   margin: 24px auto;
   background: #fff;
-  box-shadow: 0 12px 50px -11px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   color: #14213d;
   overflow: hidden;
@@ -22423,13 +22473,17 @@ button.gm-ui-hover-effect:focus {
 }
 
 .loan-calculator .top {
-  background: #050A30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #fff;
   padding: 32px;
 }
 
 .loan-calculator .top h2 {
   margin-top: 0;
+  text-align: center;
+  color: #fff;
 }
 
 .loan-calculator form {
@@ -22437,40 +22491,47 @@ button.gm-ui-hover-effect:focus {
   flex-direction: column;
   gap: 10px;
   justify-content: space-between;
-}  
-  
-.loan-calculator form .group{
-  display: flex;
-  flex-direction:row;
-  gap: 10px;
-  padding-bottom: 4px;
-  justify-content: space-between;
 }
-  
-.loan-calculator form .groups{
-  display:flex;
-  flex-direction:row;
+
+.loan-calculator form .group {
+  padding-bottom: 4px;
+}
+
+.loan-calculator form .groups {
   gap: 15px;
-  justify-content: center;
 }
 
 .loan-calculator .title {
-  margin-bottom: 12px;
+  margin-top: 35px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "Nunito";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .loan-calculator form input {
-  font-size: 20px;
   padding: 8px 20px;
-  border-radius: 10px;
   width: 100%;
-  color:#000;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #484848;
+  font-size: 14px;
+  height: 50px;
+  line-height: 1.2;
+  padding-left: 20px;
+  outline-color: lightgray;
 }
 
 .loan-calculator .result {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 32px;
+  padding: 20px 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  flex-direction: column;
 }
 
 .loan-calculator .result .left {
@@ -22489,35 +22550,39 @@ button.gm-ui-hover-effect:focus {
   font-weight: 900;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .loan-calculator .result .value::before {
-  content: "\20B9";
+  content: "$";
   font-size: 27px;
   font-weight: 400;
   margin-right: 6px;
   opacity: 0.4;
 }
 
-.loan-calculator .group1{
+.loan-calculator .group1 {
   padding-top: 32px;
   text-align: center;
-}  
-  
-.loan-calculator .group1 .calculate-btn {
-  background: #e63946;
-  color: #fff;
-  border: none;
-  padding: 8px 32px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 900;
-  cursor: pointer;
-  margin: 24px 0;
 }
 
+.loan-calculator .group1 .calculate-btn {
+  padding: 8px 32px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 24px 0; */
+
+/* 
 .loan-calculator .right {
   width: 50%;
+} */
+/* mortgage calculator  */
+
+.banks_slider {
+  margin-top: 28rem;
+  background: #efefef;
 }
 
 @media (max-width: 650px) {
@@ -22531,7 +22596,7 @@ button.gm-ui-hover-effect:focus {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .loan-calculator form .groups {
     flex-direction: column;
     gap: 20px;
@@ -22603,3 +22668,37 @@ button.gm-ui-hover-effect:focus {
  transform-origin: 0 0; /* see note above */
 }
 .ldio-anxmmbev13s div { box-sizing: content-box; }
+
+.loan-calculator .result_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find_cities_row {
+  padding-bottom: 6rem;
+}
+
+.read_more_btn{
+  display: flex;
+    justify-content: center;
+}
+
+.grid_or_list_ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn_propertiesOrAssig{
+  background-color: #fff;
+  border-radius: 17px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}

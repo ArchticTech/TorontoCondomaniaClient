@@ -50,7 +50,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
       <Hero properties={properties} />
 
       {/* <!-- Property Cities --> */}
-      <section id="property-city" className="property-city pb30">
+      <section id="property-city" className="property-city pb30" style={{ padding:'0' }}>
         <div className="container">
           <div className="main_cities_header">
             <div className="main_cities_header_left">
@@ -101,7 +101,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
               </Link>
             </div>
           </div>
-          <div className="row">
+          <div className="row find_cities_row">
             <FindProperties cities={cities} />
           </div>
         </div>
@@ -369,7 +369,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
       </section>
 
       {/* <!-- Home loan options --> */}
-      <section id="home_loan" className="home_loan bg-ptrn2">
+      <section id="home_loan" className="home_loan">
         <div className="container">
           <HomeLoan />
         </div>
@@ -431,13 +431,13 @@ const Index = ({ properties, assignments, rentals, cities }) => {
 
             <div className="col-lg-12">
               <div className="feature_property_slider gutter-x15">
-                <BlogSlider/>
+                <BlogSlider />
               </div>
             </div>
           </div>
         </div>
       </section>
-     
+
       {/* <!-- Our Partners --> */}
       <section id="our-partners" className="our-partners pb40 pt40 bg-ptrn2">
         <div className="container">
@@ -446,7 +446,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
               <div className="main_cities_header_left">
                 <div className="mission_icon">
                   <span className="icon_span">
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="64"
                       height="58"
@@ -457,7 +457,12 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                         d="M0 0V41.4286L8 33.1429H16V8.28571H40V0H0ZM24 16.5714V49.7143H56L64 58V16.5714H24Z"
                         fill="#FF3636"
                       />
-                    </svg>
+                    </svg> */}
+                    <img
+                      src="../../assets/images/home/OUR-PARTNERT-ICON.svg"
+                      style={{ width: "71px", height: "46px", fill: "#ff3636" }}
+                      alt=""
+                    />
                   </span>
                 </div>
                 <div className="mission-text">
@@ -467,34 +472,11 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                   </p>
                 </div>
               </div>
-              {/* <div className="view-all">
-                <Link className="float-end" href="/blogs">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="15"
-                      height="13"
-                      viewBox="0 0 15 13"
-                      fill="none"
-                    >
-                      <path
-                        d="M0.550304 4.19681C2.24517 1.53345 4.72511 0 7.33711 0C8.64311 0 9.91243 0.381529 11.0717 1.09323C12.2309 1.81226 13.2728 2.86146 14.1239 4.19681C14.8576 5.34874 14.8576 7.2197 14.1239 8.37162C12.429 11.0423 9.94911 12.5684 7.33711 12.5684C6.03111 12.5684 4.76179 12.1869 3.60253 11.4752C2.44327 10.7562 1.40141 9.70697 0.550304 8.37162C-0.183404 7.22704 -0.183404 5.34874 0.550304 4.19681ZM7.33711 9.25207C8.98062 9.25207 10.3013 7.92406 10.3013 6.28789C10.3013 4.65171 8.98062 3.3237 7.33711 3.3237C5.6936 3.3237 4.37293 4.65171 4.37293 6.28789C4.37293 7.92406 5.6936 9.25207 7.33711 9.25207Z"
-                        fill="#292D32"
-                      />
-                      <path
-                        d="M7.33828 4.19019C8.4902 4.19019 9.42932 5.12932 9.42932 6.28858C9.42932 7.4405 8.4902 8.37965 7.33828 8.37965C6.18636 8.37965 5.23987 7.4405 5.23987 6.28858C5.23987 5.13665 6.18636 4.19019 7.33828 4.19019Z"
-                        fill="#292D32"
-                      />
-                    </svg>
-                  </span>{" "}
-                  View All
-                </Link>
-              </div> */}
             </div>
 
             <div className="col-lg-12">
               <div className="feature_property_slider gutter-x15">
-                <OurPartnerSlider/>
+                <OurPartnerSlider />
               </div>
             </div>
           </div>

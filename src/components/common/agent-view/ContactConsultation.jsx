@@ -165,6 +165,7 @@ const ContactConsultation = ({ property }) => {
               name="message_consultation"
               className="form-control"
               id="floatingTextarea"
+              readOnly
             >{`Hello, I am interested in ${property}`}</textarea>
           </div>
         </div>
@@ -181,5 +182,6 @@ const ContactConsultation = ({ property }) => {
     </form>
   );
 };
+
 
 export default ContactConsultation;

@@ -96,7 +96,7 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
                     <ul className="mb0">
                       <li className="list-inline-item">
                         <a href="#">
-                          <span className="flaticon-transfer-1"></span>
+                          <span className="compare_btn flaticon-transfer-1"></span>
                         </a>
                       </li>
                       <IconPropertyHeart id={property.id}/>
