@@ -1,7 +1,7 @@
 import global from "../../config/env";
 import { useState } from "react";
 import FloorPlanReservation1 from "./FloorPlanReservation1";
-import { redirect } from "next/dist/server/api-utils";
+import { reserveFloorPlan } from "../../utils/api";
 
 const FloorPlanReservationModal = ({ data, closeModal }) => {
   const [currentModal, setCurrentModal] = useState("initial");
@@ -66,7 +66,6 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
     e.preventDefault();
     const formData = {
       property_floor_plan_id: data.id,
-      tbl_user_id: 3,
       first_name_1: purchaser.first_name_1,
       last_name_1: purchaser.last_name_1,
       email_1: purchaser.email_1,
@@ -86,26 +85,14 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
     };
 
     try {
-      const response = await fetch(
-        `http://127.0.0.1:8000/api/addFloorPlanReservation`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await reserveFloorPlan(formData);
 
-      console.log(response);
       if (response.ok) {
         clearFormData();
         closeModal();
-         console.log(JSON.stringify(formData));
-         alert('Floor plan reserved');
         
       } else {
-        console.log("Error in sending data to api");
+        console.error(response.message);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -135,7 +122,7 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
               <div className="col-lg-12">
                 <div className="floor_reservation_image">
                   <img
-                    className="floor_plane_image w-100  h-100 "
+                    className="floor_plane_image w-100 h-100 "
                     src={`${global.apiURL}images/${data.image}`}
                     alt={`Suite ${data.suite_no}`}
                   />
@@ -193,24 +180,6 @@ const FloorPlanReservationModal = ({ data, closeModal }) => {
                   </li>
                 </ul>
               </div>
-              {/* <div>
-                {purchaser.first_name_1}
-                {purchaser.last_name_1}
-                {purchaser.email_1}
-                {purchaser.phone_number_1}
-                {purchaser.street_address_1}
-                {purchaser.city_1}
-                {purchaser.postal_code_1}
-                {purchaser.occupation_1}
-                {purchaser.first_name_2}
-                {purchaser.last_name_2}
-                {purchaser.email_2}
-                {purchaser.phone_number_2}
-                {purchaser.street_address_2}
-                {purchaser.city_2}
-                {purchaser.postal_code_2}
-                {purchaser.occupation_2}
-              </div> */}
 
               <div className="col-lg-12 mt-5">
                 <button className="btn btn-thm" onClick={openNextModal}>

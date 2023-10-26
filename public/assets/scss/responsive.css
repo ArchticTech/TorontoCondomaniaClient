@@ -21,6 +21,12 @@
   }
 }
 
+@media only screen and (max-height: 786px) {
+  .home_adv_srch_opt.home6 {
+    top: 400px;
+  }
+}
+
 @media only screen and (max-width: 1440px) {
   .dn-1440 {
     display: none;
@@ -131,9 +137,6 @@
 }
 /*  (min-width:1280px)+++ */
 @media only screen and (max-width: 1280px) {
-  .home_header .home-hero-para {
-    padding: 0 26rem;
-  }
   .mouse_scroll {
     right: -50px;
   }
@@ -276,9 +279,6 @@
 @media only screen and (max-width: 1200px) {
   .home_adv_srch_opt.home6 {
     top: 491px;
-  }
-  .home_header .home-hero-para {
-    padding: 0 20rem;
   }
   .our_experts .double_image {
     display: none;
@@ -908,9 +908,6 @@
   .home_adv_srch_opt.home6 {
     top: 485px;
   }
-  .home_header .home-hero-para {
-    padding: 0 16rem;
-  }
   .home_loan .home_loan_main .home_loan_left {
     display: none;
   }
@@ -1103,7 +1100,6 @@
     top: 130px;
   }
   .home_header .home-hero-para {
-    padding: 0 15rem;
     top: 251px;
   }
   .home_adv_srch_opt.home6 {
@@ -1776,7 +1772,6 @@
     display: none;
   }
   .home_header .home-hero-para {
-    padding: 0 6rem;
     top: 243px;
   }
   .loan-calculator .result {
@@ -2587,9 +2582,6 @@
   .home_adv_srch_opt.home6 {
     top: 337px;
   }
-  .home_header .home-hero-para {
-    padding: 0 6rem;
-  }
   .inner_page_breadcrumb .breadcrumb_title {
     font-size: 42px;
   }
@@ -2664,9 +2656,6 @@
   }
   .customer_support_header_content .header_input {
     width: 90%;
-  }
-  .home_header .home-hero-para {
-    padding: 0 3rem;
   }
   .about_stats_page_section .main_stats_div {
     gap: 4rem;

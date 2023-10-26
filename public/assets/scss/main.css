@@ -3605,7 +3605,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 
 .home_adv_srch_opt.home6 {
   position: absolute;
-  top: 545px;
+  top: calc(100vh - 400px);
   left: 0;
   right: 0;
 }
@@ -21849,7 +21849,8 @@ button.gm-ui-hover-effect:focus {
   line-height: normal;
   z-index: 1;
   position: absolute;
-  padding: 0 26rem;
+  padding: 0 2rem;
+  max-width: 900px;
   top: 385px;
 }
 
@@ -22701,4 +22702,30 @@ color: var(--color-primary);
   justify-content: center;
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
+}
+
+.locked-floor-plan {
+  position: relative;
+}
+.locked-floor-plan .prompt {
+  font-size: 17px;
+  font-weight: 300;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: 0;
+  right: 0;
+  background: #eeea;
+  color: #000;
+  padding: 7px 33px;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.locked-floor-plan img {
+  filter: blur(10px);
+}
+.floor-plan-reservation-locked {
+  font-size: 17px;
+  font-weight: 300;
+  color: #000;
 }

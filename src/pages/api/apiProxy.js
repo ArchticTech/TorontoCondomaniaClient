@@ -3,21 +3,24 @@ import global from '../../config/env'
 
 const apiProxy = async (req,res) => {
     
-    const { query } = req;
+    const { query, body } = req;
     const { method, url } = query;
 
     const authToken = req.cookies['auth-token'] || '';
-    console.log('Auth Token', authToken);
     
-    // Make the API request with the auth token in the headers
     try {
-        const apiResponse = await axios({
+        const config = {
             method: method,
             url: global.apiURL + url,
             headers: {
-                'Authorization': `Bearer ${authToken}`,
+              'Authorization': `Bearer ${authToken}`,
             },
-        });
+          };
+      
+          if (body) {
+            config.data = body;
+          }
+          const apiResponse = await axios(config);
     
         res.status(200).send(apiResponse.data);
     }

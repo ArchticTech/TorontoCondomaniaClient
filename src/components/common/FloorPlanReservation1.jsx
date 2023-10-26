@@ -6,23 +6,6 @@ const FloorPlanReservation1 = ({ handleSubmitClick, purchaser, setPurchaser, clo
   const [errorMessage, setErrorMessage] = useState(false);
 
   const openNextModal = () => {
-    // if (currentModal === 1) {
-    //   setCurrentModal(2);
-
-    // if (currentModal === 1) {
-    //   // Check if any of the fields in the first modal are empty
-    //   const isFirstModalEmpty = Object.values(purchaser).some(
-    //     (value) => value === ""
-    //   );
-
-    //   if (!isFirstModalEmpty) {
-    //     // If not empty, proceed to the second modal
-    //     setCurrentModal(2);
-    //     setErrorMessage(false);
-    //   } else {
-    //     setErrorMessage(true)
-    //   }
-    // } else {
       if (currentModal === 1) {
         // Check specific fields for validation
         if (purchaser.first_name_1 === "" || purchaser.last_name_1 === "" || purchaser.email_1 === "" || purchaser.phone_number_1 === ""
@@ -40,10 +23,7 @@ const FloorPlanReservation1 = ({ handleSubmitClick, purchaser, setPurchaser, clo
       // You can also close the modal here.
     }
   };
-
-  // const closeNextModaldata = () => {
-  //   alert("Floor plan reserved");
-  // };
+  
   return (
     <>
       {currentModal === 1 && (

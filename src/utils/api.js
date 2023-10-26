@@ -16,6 +16,7 @@ export async function fetchAllProperties() {
 }
 export async function fetchProperty(slug) {
     const response = await fetch(global.apiURL + 'api/getProperty/' + slug);
+    //console.log('Response Start ', response, 'Response Failed');
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -153,6 +154,23 @@ export async function deleteFavoriteProperty(propertyID) {
                 method: 'GET',
                 url: 'api/deleteFavorite/' + propertyID
             },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+
+export async function reserveFloorPlan(formData) {
+    try {
+        const response = await axios.post('/api/apiProxy', formData, {
+            params: {
+                method: 'POST',
+                url: 'api/addFloorPlanReservation',
+            }
         });
         
         return response.data;
