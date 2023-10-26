@@ -14,13 +14,13 @@ const PreApproval = () => {
           <div className="common_div find-property">
             <h3 className="heading_main">Step 1: Enter Home Price </h3>
             <p>
-            In the "Home Price" field, input the total cost of the home you wish to purchase. This should include the purchase price and any additional costs associated with the property, such as closing costs.
+            In the &APOS;Home Price&APOS; field, input the total cost of the home you wish to purchase. This should include the purchase price and any additional costs associated with the property, such as closing costs.
             </p>
           </div>
           <div className="common_div apply-mortgage">
             <h3 className="heading_main">Step 2: Enter Down Payment </h3>
             <p>
-            Input the amount you intend to pay as a down payment. Typically, down payments range from 3% to 20% or more of the home's purchase price. The calculator will subtract this amount from the home price to determine the loan amount.
+            Input the amount you intend to pay as a down payment. Typically, down payments range from 3% to 20% or more of the home&APOS;s purchase price. The calculator will subtract this amount from the home price to determine the loan amount.
             </p>
           </div>
           <div className="common_div complete-loan-processing">
@@ -53,7 +53,7 @@ const PreApproval = () => {
             </p>
           </div>
           <p className="my-5">
-          If the initial results do not meet your financial goals, you can adjust the parameters. Try different down payment amounts, loan terms, or interest rates to see how they affect your monthly payments. Mortgage calculators allow you to compare different scenarios side by side. This can help you make informed decisions about your home purchase. Keep in mind that the calculated monthly payment is just one part of your homeownership expenses. You should also consider property taxes, homeowner's insurance, and other costs associated with owning a home. While mortgage calculators are helpful tools, it's a good idea to consult with a mortgage professional or a financial advisor to get personalized advice and to explore various mortgage options that best suit your financial situation and goals.
+          If the initial results do not meet your financial goals, you can adjust the parameters. Try different down payment amounts, loan terms, or interest rates to see how they affect your monthly payments. Mortgage calculators allow you to compare different scenarios side by side. This can help you make informed decisions about your home purchase. Keep in mind that the calculated monthly payment is just one part of your homeownership expenses. You should also consider property taxes, homeowner&APOS;s insurance, and other costs associated with owning a home. While mortgage calculators are helpful tools, it&APOS;s a good idea to consult with a mortgage professional or a financial advisor to get personalized advice and to explore various mortgage options that best suit your financial situation and goals.
           </p>
         </div>
       </section>
