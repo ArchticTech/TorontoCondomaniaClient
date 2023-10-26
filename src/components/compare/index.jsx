@@ -7,7 +7,7 @@ import PopupSignInUp from "../common/PopupSignInUp";
 import BreadCrumbBanner from "./BreadCrumbBanner";
 import ComparePricing from "./ComparePricing";
 
-const index = () => {
+const index = ({property1}) => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -28,7 +28,7 @@ const index = () => {
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
-                <h2>Compare Listings</h2>
+                <h2>Compare {property1} Listings</h2>
                 <p>We provide full service at every step</p>
               </div>
             </div>
