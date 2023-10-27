@@ -12,7 +12,7 @@ import DropdownListing from "./drop-down";
 import { useDispatch } from "react-redux";
 import { addKeyword } from "../../features/properties/propertiesSlice";
 
-const index = ({ properties }) => {
+const Index = ({ properties }) => {
   const router = useRouter();
 
   const [compareID, setCompareID] = useState([]);
@@ -230,4 +230,4 @@ const index = ({ properties }) => {
   );
 };
 
-export default index;
+export default Index;
