@@ -11,8 +11,26 @@ import Sidebar from "../../components/listing-details-v1/Sidebar";
 import Head from "next/head";
 import global from "../../config/env";
 import IconPropertyHeart from "../common/IconPropertyHeart";
+import { Router, useRouter } from "next/router";
 
 const PropertyView = ({assignmentVal,property, assignment}) => {
+  const router = useRouter();
+
+  // const handleCompare = () => {
+  //   router.push({
+  //     pathname: '/compare',
+  //     query: {
+  //       property1: property.id,
+  //     },
+  //   });
+  // };
+  const handleCompare = () => {
+    // Build the compare parameter in the format "compare=id"
+    const compareParam = `compare=${property.id}`;
+  
+    // Use router.push to navigate to the 'compare' page with the compare parameter
+    router.push(`/compare?${compareParam}`);
+  };
 
   const priceFrom = property?.price_from;
   const priceTo = property?.price_to;
@@ -95,7 +113,7 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
                   <div className="spss style2 mt20 text-end tal-400">
                     <ul className="mb0">
                       <li className="list-inline-item">
-                        <a href="#">
+                        <a href="#" onClick={handleCompare}>
                           <span className="compare_btn flaticon-transfer-1"></span>
                         </a>
                       </li>
