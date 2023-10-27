@@ -1,3 +1,4 @@
+
 import { fetchProperty } from "../../utils/api";
 import SingleProperty from "../../components/single-property/index";
 import Head from "next/head";
@@ -45,3 +46,5 @@ export async function getServerSideProps(context) {
 }
 
 export default PropertyView;
+
+

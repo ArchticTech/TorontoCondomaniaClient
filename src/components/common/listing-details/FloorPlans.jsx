@@ -24,7 +24,6 @@ const FloorPlans = ({ floorPlan }) => {
   // Function to close the modal when clicking outside
   const handleOverlayClick = (e) => {
     if (overlayRef.current && e.target === overlayRef.current) {
-      console.log('clicked outside modal');
     }
   };
   return (
@@ -80,7 +79,6 @@ const FloorPlans = ({ floorPlan }) => {
                   src={`${global.apiURL}images/${plan.image}`}
                   alt={`Suite ${plan.suite_no}`}
                 />
-                {!loginStatus && <div className="prompt">Login to View Image</div>}
               </div>
               <div style={{ textAlign: "center" }} className="mb-3">
               {loginStatus ? 
@@ -127,7 +125,6 @@ const FloorPlans = ({ floorPlan }) => {
                 :
                 <p className="floor-plan-reservation-locked">Login to Reserve this Floor Plan</p>}
               </div>
-
             </div>
           </div>
         ))}

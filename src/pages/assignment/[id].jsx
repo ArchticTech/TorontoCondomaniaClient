@@ -1,3 +1,5 @@
+
+
 import { fetchAssignment } from "../../utils/api";
 import SingleProperty from "../../components/single-property/index";
 import Head from "next/head";

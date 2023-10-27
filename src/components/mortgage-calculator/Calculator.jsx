@@ -262,7 +262,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navbar /> */}
       <Container maxWidth="xl" sx={{marginTop:4}}>
         <Grid container spacing={5} alignItems="center" className="main_calculator_div">
           <Grid item xs={12} md={6} className="left_calculator_div">
