@@ -16,7 +16,7 @@ const ComparePricing = ({ compareProperty, removeProperty }) => {
     <>
       {/* {comparePricingContent.map((item) => ( */}
       {compareProperty.slice(0, 3).map((item) => (
-        <li className="list-inline-item">
+        <li className="list-inline-item" key={item.id}>
           <ul className="mc_child_list two text-center">
             <li>
               <div className="membership_header">
@@ -65,7 +65,6 @@ const ComparePricing = ({ compareProperty, removeProperty }) => {
           </ul>
         </li>
       ))}
-      ;
     </>
   );
 };

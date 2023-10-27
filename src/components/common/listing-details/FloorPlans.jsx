@@ -23,9 +23,6 @@ const FloorPlans = ({ floorPlan }) => {
   // Function to close the modal when clicking outside
   const handleOverlayClick = (e) => {
     if (overlayRef.current && e.target === overlayRef.current) {
-      console.log('clicked outside modal');
-      // closeModal();
-      // setModalOpen(false);
     }
   };
   return (
@@ -76,20 +73,11 @@ const FloorPlans = ({ floorPlan }) => {
             >
               <div className="card-body text-center">
                 <img
-                  //  height={200}
-                  //  width={200}
                   className="floor_plane_image"
                   // src={`/images/${plan.image}`}
                   src={`${global.apiURL}images/${plan.image}`}
                   alt={`Suite ${plan.suite_no}`}
                 />
-                {/* <p>
-                  Plan description. Lorem ipsum dolor sit amet, consectetuer
-                  adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                  laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
-                  minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                  lobortis nisl ut aliquip ex ea commodo consequat.
-                </p> */}
               </div>
               <div style={{ textAlign: "center" }} className="mb-3">
                 <a href="#" className="btn btn-thm" onClick={() => openModal(plan)} >
@@ -131,17 +119,6 @@ const FloorPlans = ({ floorPlan }) => {
                   </div>
                 )}
               </div>
-
-              {/* <a
-                  href="#"
-                  className="btn btn-thm"
-                  data-bs-toggle="modal"
-                  data-bs-target=".bd-example-modal-floorplan-lg"
-                  id="modalToggler"
-                >
-                  <span className="dn-lg">Reserve now</span>
-                </a>
-              </div> */}
             </div>
           </div>
         ))}

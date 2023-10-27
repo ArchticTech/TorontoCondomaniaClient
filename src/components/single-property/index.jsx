@@ -16,19 +16,9 @@ import { Router, useRouter } from "next/router";
 const PropertyView = ({assignmentVal,property, assignment}) => {
   const router = useRouter();
 
-  // const handleCompare = () => {
-  //   router.push({
-  //     pathname: '/compare',
-  //     query: {
-  //       property1: property.id,
-  //     },
-  //   });
-  // };
   const handleCompare = () => {
-    // Build the compare parameter in the format "compare=id"
     const compareParam = `compare=${property.id}`;
   
-    // Use router.push to navigate to the 'compare' page with the compare parameter
     router.push(`/compare?${compareParam}`);
   };
 
@@ -58,9 +48,7 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
       const popup = popupRef.current;
       const image = imageRef.current;
 
-      // Perform your DOM manipulations here
       if (popup && image) {
-        // Example: Change the display style of the popup and image
         popup.style.display = 'flex';
         image.src = popupImage;
       }
