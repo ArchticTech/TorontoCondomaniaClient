@@ -12,12 +12,10 @@ import DropdownListing from "./drop-down";
 import { useDispatch } from "react-redux";
 import { addKeyword } from "../../features/properties/propertiesSlice";
 
-const index = ({ properties, property1 }) => {
+const index = ({ properties }) => {
   const [selectedProperty1, setSelectedProperty1] = useState(null);
   const [selectedProperty2, setSelectedProperty2] = useState("");
-  const [selectedProperty3, setSelectedProperty3] = useState("");
   const [showSearchBox2, setShowSearchBox2] = useState(true);
-  const [showSearchBox3, setShowSearchBox3] = useState(false);
   // const [resetDropdownKey, setResetDropdownKey] = useState(0);
 
   const dispatch = useDispatch();
@@ -33,7 +31,7 @@ const index = ({ properties, property1 }) => {
     setShowSearchBox3(true);
   };
 
-  console.log(selectedProperty1, selectedProperty2, selectedProperty3);
+  console.log(selectedProperty1, selectedProperty2, );
   const propertyIdFromQuery = router.query.property1;
 
   useEffect(() => {
@@ -59,15 +57,14 @@ const index = ({ properties, property1 }) => {
   const handleSelectProperty2 = (property) => {
     setSelectedProperty2(property);
     setShowSearchBox2(false);
-    setShowSearchBox3(true);
     // setResetDropdownKey((prevKey) => prevKey + 1);
   };
 
-  const handleSelectProperty3 = (property) => {
-    setSelectedProperty3(property);
-    setShowSearchBox3(false);
-    // setResetDropdownKey((prevKey) => prevKey + 1);
-  };
+  // const handleSelectProperty3 = (property) => {
+  //   setSelectedProperty3(property);
+  //   setShowSearchBox3(false);
+  //   // setResetDropdownKey((prevKey) => prevKey + 1);
+  // };
 
   // console.log(selectedProperty1, selectedProperty2, selectedProperty3);
 
@@ -144,8 +141,8 @@ const index = ({ properties, property1 }) => {
                   />
                   <DropdownListing
                     properties={properties}
-                    onSelect={handleSelectProperty3}
-                    selectedProperty={selectedProperty3}
+                    // onSelect={handleSelectProperty3}
+                    // selectedProperty={selectedProperty3}
                     removeProperty={removeProperty3}
                     // key={resetDropdownKey}
                   />

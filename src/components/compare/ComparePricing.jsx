@@ -4,9 +4,9 @@ import global from "../../config/env";
 import { useState } from "react";
 
 const ComparePricing = ({ compareProperty, removeProperty }) => {
-  const handleResetProperty2 = () => {
-    removeProperty2();
-  };
+  // const handleResetProperty2 = () => {
+  //   removeProperty2();
+  // };
 
   // const handleResetProperty3 = () => {
   //   removeProperty3();
@@ -58,7 +58,7 @@ const ComparePricing = ({ compareProperty, removeProperty }) => {
               <a href="#">{item?.yearBuilt}</a>
             </li>
             <li>
-              <a className="btn pricing_btn" href="#">
+              <a  href="#">
                 {item?.status}
               </a>
             </li>

@@ -2566,6 +2566,14 @@
   }
 }
 @media only screen and (max-width: 630px) {
+  .compareBlocks {
+    width: 100%;
+    max-width: 100%; 
+}
+
+.compareBlocks .feat_property .details .tc_content h4, .feat_property .details .tc_content .h4 {
+  text-align: center;
+}
   .banks_slider {
     margin-top: 59rem;
 }

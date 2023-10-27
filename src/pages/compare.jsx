@@ -3,22 +3,14 @@ import Seo from "../components/common/seo";
 import Compare from "../components/compare";
 import { useRouter } from "next/router";
 import { fetchAllProperties} from '../utils/api';
-
+import { useState, useEffect } from "react";
 
 const index = ({properties}) => {
-    
-  const router = useRouter();
-
-  const compare = router.query.compare;
-
-  // If "numbers" is not defined or is an empty array, set it to an empty array
-  const comparePropertyID = compare ? (
-    Array.isArray(compare) ? compare.map(Number) : [Number(compare)]
-  ) : [];
+       
   return (
     <>
       <Seo pageTitle="Compare" />
-      <Compare properties={properties} comparePropertyID={comparePropertyID} />
+      <Compare properties={properties} />
     </>
   );
 };

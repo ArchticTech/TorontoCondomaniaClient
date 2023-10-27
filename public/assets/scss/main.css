@@ -22576,3 +22576,15 @@ color: var(--color-primary);
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
 }
+
+.compareInput{
+  width: 50%;
+    margin: 0 auto;
+}
+
+.compareBlocks{
+  cursor: pointer;
+  width: 48%;
+  padding: 0 10px;
+  max-width: 50%;
+}

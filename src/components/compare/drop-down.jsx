@@ -18,7 +18,7 @@ const DropdownListing = ({ properties, addProperty }) => {
   //   };
 
   const propertyList = properties
-    ?.slice(0, 5)
+    ?.slice(0, 8)
     ?.filter(keywordHandler)
     ?.map((property) => {
       const priceFrom = property?.price_from;
@@ -40,7 +40,7 @@ const DropdownListing = ({ properties, addProperty }) => {
         <div
           key={property?.id}
           onClick={() => addProperty(property.id)}
-          className="d-inline-block"
+          className="d-inline-block compareBlocks" accordion 
         >
           <div className="feat_property dropdown list">
             <div className="thumb">
@@ -52,18 +52,18 @@ const DropdownListing = ({ properties, addProperty }) => {
                 alt={property?.name}
               />
               <div className="thmb_cntnt">
-                <Link href={`/property/${property?.slug}`} className="fp_price">
+                <a href='' className="fp_price">
                   {formattedPriceFrom} - {formattedPriceTo}
-                </Link>
+                </a>
               </div>
             </div>
             <div className="details">
               <div className="tc_content">
                 <p className="text-thm">{property?.type}</p>
                 <h4>
-                  <Link href={`/property/${property?.slug}`}>
+                  <a>
                     {property?.name}
-                  </Link>
+                  </a>
                 </h4>
                 <p>
                   <span className="flaticon-placeholder"></span>

@@ -12,55 +12,108 @@ import DropdownListing from "./drop-down";
 import { useDispatch } from "react-redux";
 import { addKeyword } from "../../features/properties/propertiesSlice";
 
-const index = ({ properties, comparePropertyID }) => {
-  const [compareID, setCompareID] = useState(comparePropertyID);
-  const [compareProperty, setCompareProperty] = useState([]);
-  const [showSearchBox, setShowSearchBox] = useState(true);
-
-  const dispatch = useDispatch();
+const index = ({ properties }) => {
   const router = useRouter();
 
-  const removeProperty = (id) => {
-    const removeProperty = compareID.filter(item => item !== id);
-    setCompareID(removeProperty)
-    setShowSearchBox(true);
-  };
-  
-  const addProperty = (id) => {
-    if(compareID.length >= 3){
-    const addProperty = compareID.concat(id)
-    setCompareID(addProperty); 
-    }
-    // setShowSearchBox2(true);
-  }; 
+  const [compareID, setCompareID] = useState([]);
+  const [compareProperty, setCompareProperty] = useState([]);
+  const [showSearchBox, setShowSearchBox] = useState(true);
+  const [inputVal, setInputVal] = useState('');
 
-  const filteredProperties = properties.filter(property => compareID.includes(property.id));
+  const dispatch = useDispatch();
+
+  const compareRouter = router.query.compare;
 
   useEffect(() => {
     try {
+      const filteredProperties = properties.filter((property) =>
+        compareID.includes(property.id)
+      );
       setCompareProperty(filteredProperties);
-      
     } catch (error) {
       console.error("An error occurred:", error);
     }
   }, [compareID]);
 
-  console.log(compareProperty);
+  useEffect(() => {
+    try {
+      const comparePropertyID = compareRouter
+        ? Array.isArray(compareRouter)
+          ? compareRouter.map(Number)
+          : [Number(compareRouter)]
+        : [];
+      setCompareID(comparePropertyID);
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }, [compareRouter]);
 
-
-  // const handleSelectProperty2 = (property) => {
-  //   setSelectedProperty2(property);
-  //   setShowSearchBox2(false);
-  //   setShowSearchBox3(true);
-  //   // setResetDropdownKey((prevKey) => prevKey + 1);
-  // };
-
-  const handleSelectProperty = (property) => {
-    // setSelectedProperty3(property);
-    // addProperty(property);
-    // setShowSearchBox3(false);
-    // setResetDropdownKey((prevKey) => prevKey + 1);
+  const removeProperty = (id) => {
+    // Remove the id from the compareID array
+    const updatedCompareID = compareID.filter((item) => item !== id);
+    
+    // Create a new object for the query parameters
+    const updatedQuery = { ...router.query };
+    
+    // Remove the 'id' from the query parameters
+    delete updatedQuery.id;
+  
+    // Update the 'compare' query parameter with the updated array
+    updatedQuery.compare = updatedCompareID;
+  
+    // Update the URL with the new query parameters
+    router.push({ pathname: '/compare', query: updatedQuery }, undefined, { shallow: true });
+    
+    setShowSearchBox(true);
   };
+
+  const addProperty = (id) => {
+    if(!compareID.includes(id))
+    {
+      const currentQuery = { ...router.query };
+  
+      // Check if 'compare' is already an array, or convert it to an array
+      currentQuery.compare = Array.isArray(currentQuery.compare)
+        ? currentQuery.compare
+        : [currentQuery.compare].filter(Boolean); // Filter out any falsy values
+    
+      // Check if the 'id' already exists in the 'compare' array
+      const index = currentQuery.compare.indexOf(id);
+      if (index !== -1) {
+        // If the 'id' already exists, replace it
+        currentQuery.compare[index] = id;
+      } else {
+        // If the array already has 3 values, replace the oldest one
+        if (currentQuery.compare.length >= 3) {
+          currentQuery.compare.shift(); // Remove the oldest value
+        }
+    
+        // Add the new 'compare' value to the array
+        currentQuery.compare.push(id);
+      }
+    
+      // Update the URL with the new query parameters
+      router.push({ pathname: "/compare", query: currentQuery }, undefined, {
+        shallow: true,
+      });
+      
+      if (currentQuery.compare.length === 3) {
+        dispatch(addKeyword(''));
+        setShowSearchBox(false);
+      }
+      if (currentQuery.compare.length === 2) {
+        // setInputVal == '';
+        dispatch(addKeyword(''));
+      }
+      if (currentQuery.compare.length === 1) {
+        // setInputVal == '';
+        dispatch(addKeyword(''));
+      }
+      setInputVal('');
+    }
+  };
+  // console.log(compareProperty);
+
 
   return (
     <>
@@ -92,14 +145,19 @@ const index = ({ properties, comparePropertyID }) => {
 
           <div className="row mb-3">
             {showSearchBox && (
-              <div className="col-lg-6 offset-lg-3">
-                <div className="form-group">
+              <div className="col-lg-12">
+                <div className="compareInput">
                   <input
                     type="text"
                     className="form-control"
                     placeholder="Search property to compare"
-                    onChange={(e) => dispatch(addKeyword(e.target.value))}
+                    value={inputVal}
+                    onChange={(e) => {
+                      dispatch(addKeyword(e.target.value));
+                      setInputVal(e.target.value)
+                    }}
                   />
+                  </div>
                   <DropdownListing
                     properties={properties}
                     addProperty={(id) => addProperty(id)}
@@ -107,7 +165,7 @@ const index = ({ properties, comparePropertyID }) => {
                     // removeProperty={removeProperty3}
                     // key={resetDropdownKey}
                   />
-                </div>
+                
               </div>
             )}
             {/* <div className="col-lg-3">
@@ -131,7 +189,7 @@ const index = ({ properties, comparePropertyID }) => {
                       <li>Year of build</li>
                       <li>Status</li>
                     </ul>
-                  </li> 
+                  </li>
                   <ComparePricing
                     compareProperty={compareProperty}
                     removeProperty={(id) => removeProperty(id)}

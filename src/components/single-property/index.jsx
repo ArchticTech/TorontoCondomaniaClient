@@ -16,13 +16,20 @@ import { Router, useRouter } from "next/router";
 const PropertyView = ({assignmentVal,property, assignment}) => {
   const router = useRouter();
 
+  // const handleCompare = () => {
+  //   router.push({
+  //     pathname: '/compare',
+  //     query: {
+  //       property1: property.id,
+  //     },
+  //   });
+  // };
   const handleCompare = () => {
-    router.push({
-      pathname: '/compare',
-      query: {
-        property1: property.id,
-      },
-    });
+    // Build the compare parameter in the format "compare=id"
+    const compareParam = `compare=${property.id}`;
+  
+    // Use router.push to navigate to the 'compare' page with the compare parameter
+    router.push(`/compare?${compareParam}`);
   };
 
   const priceFrom = property?.price_from;
