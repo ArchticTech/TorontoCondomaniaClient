@@ -15,10 +15,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 mapboxgl.accessToken = global.mapboxAccessToken;
 
-const addLocation = ({ name }) => {
-  console.log(name);
-};
-
 const ListingMap = ({ rentals }) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -29,7 +25,14 @@ const ListingMap = ({ rentals }) => {
     });
 
     rentals?.map((rental) => {
-      rental.marker = setMarkerOnMap(map, rental.latitude, rental.longitude);
+      rental.marker = setMarkerOnMap(
+        map, 
+        rental.latitude, 
+        rental.longitude
+        );
+        rental.marker
+        .getElement()
+        .setAttribute("data-marker-id", rental.slug);
     });
 
     // Clean up the map instance when the component unmounts

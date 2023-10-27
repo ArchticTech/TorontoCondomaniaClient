@@ -277,9 +277,6 @@
 }
 /*  (max-width:1200px)+++ */
 @media only screen and (max-width: 1200px) {
-  .home_adv_srch_opt.home6 {
-    top: 491px;
-  }
   .our_experts .double_image {
     display: none;
   }
@@ -473,9 +470,6 @@
   }
   /* home responsibe style 2 Start*/
   /* home slider end */
-  .home1_adsrchfrm {
-    padding: 30px 20px;
-  }
   .home1-advnc-search ul li:first-child .form-control,
   .home1-advnc-search
     .search_option_two

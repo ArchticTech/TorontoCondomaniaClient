@@ -6,7 +6,7 @@ import global from "../../config/env";
 import IconPropertyHeart from "../common/IconPropertyHeart";
 
 const FeaturedItem = ({ properties, isAssignment }) => {
-  // const [showMore, setShowMore] = 
+  
   const [propertiesToShow, setPropertiesToShow] = useState(4);
 
   const {
@@ -122,12 +122,8 @@ const FeaturedItem = ({ properties, isAssignment }) => {
 
   let filteredProperties = properties;
 
-  // if (!showMore) {
-  //   filteredProperties = filteredProperties.slice(0, 4);
-  // }
-
   filteredProperties = filteredProperties
-    // ?.slice(0, 8)
+    ?.slice(0, 8)
     ?.filter(keywordHandler)
     ?.filter(typeHandler)
     ?.filter(locationHandler)
@@ -139,10 +135,10 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(bedroomHandler)
     ?.filter(advanceHandler)
     ?.filter(cityHandler);
+    
   let content = filteredProperties.slice(0, propertiesToShow).map((item) => {
-    // var markerElement = item.marker.getElement();
-    // markerElement.style.display = 'block';
-    // console.log(markerElement.style);
+    var markerElement = item.marker.getElement();
+    markerElement.style.display = 'block';
 
     const priceFrom = item?.price_from;
     const priceTo = item?.price_to;
@@ -282,8 +278,8 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     properties
       .filter((property) => !filteredProperties.includes(property))
       .map((property) => {
-        // var markerElement = property.marker.getElement();
-        // markerElement.style.display = "none";
+        var markerElement = property.marker.getElement();
+        markerElement.style.display = "none";
       });
   }, [dispatch, content, propertiesToShow]);
 

@@ -5265,14 +5265,12 @@ form.home5_advanced_search_form
 }
 
 .home-six {
-  /* background-color: #ffffff;
-  -webkit-background-size: cover; */
   background: url(../images/home/header.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  margin-bottom: 53px;
+  margin-bottom: 103px;
   display: flex;
   justify-content: center;
   align-items: center;

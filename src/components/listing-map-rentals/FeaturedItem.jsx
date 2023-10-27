@@ -156,6 +156,7 @@ const FeaturedItem = ({ rentals }) => {
 
   // status handler
   const filteredRentals = rentals
+    ?.slice(0, 8)
     ?.filter(keywordHandler)
     ?.filter(basementHandler)
     ?.filter(typeHandler)
@@ -170,9 +171,10 @@ const FeaturedItem = ({ rentals }) => {
     ?.filter(advanceHandler)
     ?.filter(priceHandler);
 
-  const content = filteredRentals.slice(0, visibleRentals).map((item) => {
+    const content = filteredRentals.slice(0, visibleRentals).map((item) => {
     const monthlyRent = item?.monthly_rent;
-    // const priceTo = item?.price_to;
+    var markerElement = item.marker.getElement();
+    markerElement.style.display = 'block';
 
     const formattedMonthlyRent = monthlyRent.toLocaleString("en-US", {
       style: "currency",
@@ -180,12 +182,6 @@ const FeaturedItem = ({ rentals }) => {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     });
-    // const formattedPriceTo = priceTo.toLocaleString("en-US", {
-    //   style: "currency",
-    //   currency: "USD",
-    //   minimumFractionDigits: 0,
-    //   maximumFractionDigits: 0,
-    // });
 
     return (
       <div
@@ -286,6 +282,13 @@ const FeaturedItem = ({ rentals }) => {
   // add length of filter items
   useEffect(() => {
     dispatch(addLength(content.length));
+    
+    rentals
+      .filter((rental) => !filteredRentals.includes(rental))
+      .map((rental) => {
+        var markerElement = rental.marker.getElement();
+        markerElement.style.display = "none";
+      });
   }, [dispatch, content]);
 
   return <>

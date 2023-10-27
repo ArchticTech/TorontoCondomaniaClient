@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 const Index = () => {
   const router = useRouter();
-  router.push('/assignments');
+  router.push('/rentals');
 };
 
 export default dynamic(() => Promise.resolve(Index), { ssr: false });

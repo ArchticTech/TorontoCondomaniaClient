@@ -56,6 +56,29 @@ const RentalView = ({rental}) => {
   return (
     <>
 
+      <Head>
+        <link
+          href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+          rel="stylesheet"
+        />
+        <title>{rental?.meta_title}</title>
+        <meta name="title" content={rental?.meta_title} />
+        <meta name="description" content={rental?.meta_description} />
+        <meta name="keywords" content={rental?.meta_keywords} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://torontocondomania.ca/" />
+        <meta property="og:title" content={rental?.meta_title} />
+        <meta property="og:description" content={rental?.meta_description} />
+        <meta property="og:image" content={global.apiURL + 'images/' + rental?.image} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://torontocondomania.ca/" />
+        <meta property="twitter:title" content={rental?.meta_title} />
+        <meta property="twitter:description" content={rental?.meta_description} />
+        <meta property="twitter:image" content={global.apiURL + 'images/' + rental?.image} />
+      </Head>
+
       {/* <!-- Main Header Nav --> */}
       <Header />
 
@@ -211,4 +234,3 @@ export async function getServerSideProps(context) {
 }
 
 export default RentalView;
-

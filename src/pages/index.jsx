@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Head from "next/head";
 import Seo from "../components/common/seo";
 import HomeMain from "../components/home";
 import { fetchAllProperties ,fetchAllAssignments, fetchCityCount, fetchAllRentals } from '../utils/api';
@@ -8,7 +9,21 @@ const Index = ({properties, assignments, citiesCount, rentals }) => {
 
   return (
     <>
-      <Seo pageTitle="TorontoCondomania | Find Your Dream Condo" />
+      <Head>
+        <title>Explore New Developments All Across IN GTA | HOME – Torontocondomania</title>
+        <meta name="title" content="Explore New Developments All Across IN GTA | HOME – Torontocondomania" />
+        <meta name="description" content="Explore The Latest Preconstruction Projects In The GTA · New Development Projects In The Greater Toronto Area. Search By Project Name, Neighborhood, Occupancy etc" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://torontocondomania.ca/" />
+        <meta property="og:title" content="Explore New Developments All Across IN GTA | HOME – Torontocondomania" />
+        <meta property="og:description" content="Explore The Latest Preconstruction Projects In The GTA · New Development Projects In The Greater Toronto Area. Search By Project Name, Neighborhood, Occupancy etc" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://torontocondomania.ca/" />
+        <meta property="twitter:title" content="Explore New Developments All Across IN GTA | HOME – Torontocondomania" />
+        <meta property="twitter:description" content="Explore The Latest Preconstruction Projects In The GTA · New Development Projects In The Greater Toronto Area. Search By Project Name, Neighborhood, Occupancy etc" />s
+      </Head>
       <HomeMain properties={properties} assignments={assignments} rentals={rentals} cities={citiesCount}/>
     </>
   );

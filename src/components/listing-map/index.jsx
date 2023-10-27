@@ -136,15 +136,6 @@ const ListingMap = ({ properties, isAssignment }) => {
                     />
                   </div>
                   {/* End .row */}
-
-                  {/* <div className="row">
-                    <div className="col-lg-12 mt20">
-                      <div className="mbp_pagination">
-                        <Pagination />
-                      </div>
-                    </div>
-                  </div> */}
-                  {/* End .row */}
                 </div>
                 {/* End  page conent */}
               </div>
