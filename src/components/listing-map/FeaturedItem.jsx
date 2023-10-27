@@ -137,8 +137,10 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     ?.filter(cityHandler);
     
   let content = filteredProperties.slice(0, propertiesToShow).map((item) => {
-    var markerElement = item.marker.getElement();
-    markerElement.style.display = 'block';
+    var markerElement = item.marker?.getElement();
+    if(markerElement) {
+      markerElement.style.display = 'block';
+    }
 
     const priceFrom = item?.price_from;
     const priceTo = item?.price_to;

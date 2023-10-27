@@ -4,13 +4,6 @@ import global from "../../config/env";
 import { useState } from "react";
 
 const ComparePricing = ({ compareProperty, removeProperty }) => {
-  // const handleResetProperty2 = () => {
-  //   removeProperty2();
-  // };
-
-  // const handleResetProperty3 = () => {
-  //   removeProperty3();
-  // };
 
   return (
     <>

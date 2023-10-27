@@ -11,7 +11,7 @@ export async function fetchAllProperties() {
         throw new Error('Network response was not ok');
     }
     const properties = await response.json();
-
+    
     return properties;
 }
 export async function fetchProperty(slug) {
