@@ -117,7 +117,7 @@ const HeaderMenuContent = ({ float = "" }) => {
               : undefined
           }
         >
-          <span className="title">Home Loan</span>
+          <span className="title">Mortgage Approval</span>
           <span className="arrow"></span>
         </a>
         <ul className="sub-menu ">

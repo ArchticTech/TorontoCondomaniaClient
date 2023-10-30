@@ -193,15 +193,15 @@ const Index = ({ properties, assignments, rentals, cities }) => {
               <div className="main-title text-start">
                 <h2>How it works?</h2>
                 <h2>
-                  Find a{" "}
                   <span
                     style={{
                       color: "#292D32",
-                      fontWeight: "700",
+                      fontWeight: "300",
                     }}
                   >
-                    Perfect Home
+                  Find a
                   </span>
+                  {" "} Perfect Home
                 </h2>
               </div>
             </div>
@@ -446,18 +446,6 @@ const Index = ({ properties, assignments, rentals, cities }) => {
               <div className="main_cities_header_left">
                 <div className="mission_icon">
                   <span className="icon_span">
-                    {/* <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="64"
-                      height="58"
-                      viewBox="0 0 64 58"
-                      fill="none"
-                    >
-                      <path
-                        d="M0 0V41.4286L8 33.1429H16V8.28571H40V0H0ZM24 16.5714V49.7143H56L64 58V16.5714H24Z"
-                        fill="#FF3636"
-                      />
-                    </svg> */}
                     <img
                       src="../../assets/images/home/OUR-PARTNERT-ICON.svg"
                       style={{ width: "71px", height: "46px", fill: "#ff3636" }}
@@ -482,40 +470,6 @@ const Index = ({ properties, assignments, rentals, cities }) => {
           </div>
         </div>
       </section>
-
-      {/* <!-- Our Blog --> */}
-      {/* <section className="our-blog pb30">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center">
-                <h2>Articles & Tips</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <Blogs />
-          </div>
-        </div>
-      </section> */}
-
-      {/* <!-- Our Partners --> */}
-      {/* <section id="our-partners" className="our-partners ">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center">
-                <h2>Our Partners</h2>
-                <p>We only work with the best companies around the globe</p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <Partners />
-          </div>
-        </div>
-      </section> */}
 
       {/* <!-- Start Call to Action --> */}
       <section className="start-partners bgc-thm pt50 pb50">

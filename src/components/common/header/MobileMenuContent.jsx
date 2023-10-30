@@ -17,7 +17,7 @@ import { addCity } from "../../../features/properties/propertiesSlice";
 const home = { name: "Home", routerPath: "/" };
 
 const listing = [
-  { id: 1, name: "Pre Construction", routerPath: "/pre-construction" },
+  { id: 1, name: "Pre Construction", routerPath: "/properties" },
   { id: 2, name: "Rentals", routerPath: "/rentals" },
   { id: 3, name: "Assignments", routerPath: "/assignments" },
 ];
@@ -78,29 +78,6 @@ const MobileMenuContent = () => {
 
       <SidebarContent>
         <Menu>
-          {/* <SubMenu
-              title="Home"
-              className={
-                home.some((page) => page.routerPath === route.pathname)
-                  ? "parent-menu-active"
-                  : undefined
-              }
-            >
-              {home.map((val, i) => (
-                <MenuItem key={i} active={true}>
-                  <Link
-                    href={val.routerPath}
-                    className={
-                      val.routerPath === route.pathname ? "ui-active" : undefined
-                    }
-                  >
-                    {val.name}
-                  </Link>
-                </MenuItem>
-              ))}
-            </SubMenu> */}
-          {/* End Home Home */}
-
           {
             <SubMenu
               title="Listing"
@@ -140,20 +117,6 @@ const MobileMenuContent = () => {
                   : undefined
               }
             >
-              {/* {topCities.map((val, i) => (
-                <MenuItem key={i}>
-                  <Link
-                    href={val.routerPath}
-                    className={
-                      route.pathname === val.routerPath
-                        ? "ui-active"
-                        : undefined
-                    }
-                  >
-                    {val.name}
-                  </Link>
-                </MenuItem>
-              ))} */}
               {topCities.map((item) => (
                 <MenuItem key={item.id}>
                   <a
@@ -170,7 +133,7 @@ const MobileMenuContent = () => {
 
           {
             <SubMenu
-              title="Home Loan"
+              title="Mortgage Approval"
               className={
                 homeLoan.some(
                   (homeLoan) => homeLoan.routerPath === route.pathname
@@ -210,12 +173,6 @@ const MobileMenuContent = () => {
           </MenuItem>
 
           <MenuItem>
-            {/* <Link
-              href="/login"
-              className={route.pathname === "/login" ? "ui-active" : undefined}
-            >
-              <span className="flaticon-user"></span> Login
-            </Link> */}
             <a
               href="#"
               data-bs-toggle="modal"
@@ -226,14 +183,6 @@ const MobileMenuContent = () => {
           </MenuItem>
 
           <MenuItem>
-            {/* <Link
-              href="/register"
-              className={
-                route.pathname === "/register" ? "ui-active" : undefined
-              }
-            >
-              <span className="flaticon-edit"></span> Register
-            </Link> */}
             <a
               href="#"
               data-bs-toggle="modal"

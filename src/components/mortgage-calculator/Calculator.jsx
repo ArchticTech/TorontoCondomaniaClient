@@ -245,7 +245,7 @@ import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useState } from "react";
 import Result from "./components/Result";
-import SliderSelect from "./components/SliderSelect";
+import InputSelect from "./components/SliderSelect";
 import TenureSelect from "./components/TenureSelect";
 
 function App() {
@@ -255,17 +255,14 @@ function App() {
     loanAmount: 3000 * 0.8,
     loanTerm: 5,
     interestRate: 5,
-    // monthlyPayment: 0,
   });
-
-  // console.log(data)
 
   return (
     <div className="App">
       <Container maxWidth="xl" sx={{marginTop:4}}>
         <Grid container spacing={5} alignItems="center" className="main_calculator_div">
           <Grid item xs={12} md={6} className="left_calculator_div">
-            <SliderSelect data={data} setData={setData} />
+            <InputSelect data={data} setData={setData} />
             <TenureSelect data={data} setData={setData}/>
           </Grid>
           <Grid item xs={12} md={6}>

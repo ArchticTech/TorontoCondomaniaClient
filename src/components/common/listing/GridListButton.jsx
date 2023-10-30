@@ -12,7 +12,7 @@ const GridListButton = ({ isAssignment }) => {
         {isAssignment == true
           ? "Assignments"
           : isAssignment == false
-          ? "Properties"
+          ? "Pre Construction"
           : "Rentals"}
       </button>
       <div className="right_gridorlist">

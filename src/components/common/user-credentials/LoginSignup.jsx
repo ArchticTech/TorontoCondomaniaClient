@@ -194,7 +194,7 @@ const LoginSignup = () => {
                   width={357}
                   height={494}
                   className="img-fluid w100 h-100 cover"
-                  src="/assets/images/resource/login.jpg"
+                  src="/assets/images/login cover.jpg"
                   alt="login.jpg"
                 />
               </div>

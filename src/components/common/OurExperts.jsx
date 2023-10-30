@@ -159,10 +159,9 @@ const OurExperts = () => {
                 <Image
                   width={400}
                   height={400}
-                  src="/assets/images/home/expert-single.png"
+                  src="/assets/images/home/expert-1.jpg"
                   alt=""
                 />
-                <button className="btn btn-thm my-3">Learn More</button>
               
             </div>
             <div className="double_image col-lg-6">
@@ -178,7 +177,6 @@ const OurExperts = () => {
                   src="/assets/images/home/expert-double-2.jpg"
                   alt=""
                 />
-                <button className="btn btn-thm">Learn More</button>
               
             </div>
           </div>

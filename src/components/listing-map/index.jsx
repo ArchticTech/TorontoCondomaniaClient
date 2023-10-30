@@ -1,4 +1,3 @@
-import Pagination from "../common/blog/Pagination";
 import Header from "../common/header/DefaultHeader";
 import MobileMenu from "../common/header/MobileMenu";
 import FilterTopBar2 from "../common/listing/FilterTopBar2";
@@ -10,7 +9,7 @@ import FeaturedItem from "./FeaturedItem";
 import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
-import {useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 mapboxgl.accessToken = global.mapboxAccessToken;
 

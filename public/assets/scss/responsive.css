@@ -1099,6 +1099,10 @@
   .home_adv_srch_opt.home6 {
     top: 415px;
   }
+  .regstr_thumb,
+  .login_thumb {
+    display: none;
+  }
   .loan-calculator .result {
     flex-direction: row;
   }
@@ -3450,10 +3454,6 @@
   }
   .home_adv_srch_opt.home6 {
     top: 143px;
-  }
-  .regstr_thumb,
-  .login_thumb {
-    display: none;
   }
   .mission_header .mission_icon {
     display: none;
