@@ -2626,9 +2626,9 @@
   .main_cities_header .main_cities_header_left p {
     display: none;
   }
-  .main_cities_header .view-all span {
+  /* .main_cities_header .view-all span {
     display: none;
-  }
+  } */
   .main_cities_header .main_cities_header_left {
     align-items: center;
   }
@@ -3477,7 +3477,7 @@
   }
   .main-title h2,
   .main-title .h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
   .main_cities_header {
     padding: 10px 5px;

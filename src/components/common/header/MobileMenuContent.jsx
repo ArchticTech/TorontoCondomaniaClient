@@ -54,13 +54,12 @@ const MobileMenuContent = () => {
         <div className="sidebar-header">
           <Link href="/" className="sidebar-header-inner">
             <Image
-              width={40}
-              height={45}
+              width={80}
+              height={95}
               className="nav_logo_img img-fluid mt20"
-              src="/assets/images/logo.png"
+              src="/assets/images/TCM-LOGO-1.png"
               alt="header-logo.png"
             />
-            <span className="brand-text">TCM</span>
           </Link>
           {/* End .logo */}
 
