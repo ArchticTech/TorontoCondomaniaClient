@@ -31,6 +31,10 @@ const ListingMap = ({ properties, isAssignment }) => {
       property.marker
         .getElement()
         .setAttribute("data-marker-id", property.slug);
+        var markerElement = property.marker?.getElement();
+        if(markerElement) {
+          markerElement.style.display = 'none';
+        }
     });
 
     // Clean up the map instance when the component unmounts
