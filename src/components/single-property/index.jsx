@@ -22,8 +22,8 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
     router.push(`/compare?${compareParam}`);
   };
 
-  const priceFrom = property?.price_from;
-  const priceTo = property?.price_to;
+  const priceFrom = parseFloat(property?.price_from);
+  const priceTo = parseFloat(property?.price_to);
 
   const formattedPriceFrom = priceFrom.toLocaleString('en-US', {
     style: 'currency',
@@ -93,9 +93,9 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
               <div className="col-lg-5 col-xl-4">
                 <div className="single_property_social_share position-static transform-none">
                   <div className="price float-start fn-400">
-                    <h2>
-                      {formattedPriceFrom} - {formattedPriceTo}
-                    </h2>
+                    <h3>
+                      {formattedPriceFrom} &ndash; {formattedPriceTo}
+                    </h3>
                   </div>
 
                   <div className="spss style2 mt20 text-end tal-400">

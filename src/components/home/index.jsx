@@ -71,9 +71,9 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                 </span>
               </div>
               <div className="mission-text">
-                <h2>Find properties in GTA top cities</h2>
+                <h2>Find properties in GTA&apos;s top cities</h2>
                 <p>
-                  Experience the future of real estate with TorontoCondomania
+                  New Homes Trending around GTA
                 </p>
               </div>
             </div>
@@ -117,12 +117,6 @@ const Index = ({ properties, assignments, rentals, cities }) => {
             >
               <div className="container">
                 <div className="row">
-                  {/* <div className="col-lg-6 offset-lg-3">
-                    <div className="main-title text-center mb40">
-                      <h2>Featured Properties</h2>
-                      <p>Handpicked properties by our team.</p>
-                    </div>
-                  </div> */}
                   <div className="main_cities_header">
                     <div className="main_cities_header_left">
                       <div className="mission_icon">
@@ -144,8 +138,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                       <div className="mission-text">
                         <h2>Featured Properties</h2>
                         <p>
-                          Experience the future of real estate with
-                          TorontoCondomania
+                          Featured Developments around GTA
                         </p>
                       </div>
                     </div>
@@ -188,9 +181,9 @@ const Index = ({ properties, assignments, rentals, cities }) => {
       {/* <!-- How it works --> */}
       <section id="how_it_works" className="how_it_works pb30">
         <div className="container">
-          <div className="row">
+          <div className="row px-3">
             <div className="col-lg-6">
-              <div className="main-title text-start">
+              <div className="main-title text-center text-md-start">
                 <h2>How it works?</h2>
                 <h2>
                   <span

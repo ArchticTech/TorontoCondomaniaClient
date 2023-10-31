@@ -23,7 +23,11 @@
 
 @media only screen and (max-height: 786px) {
   .home_adv_srch_opt.home6 {
-    top: 400px;
+    top: 50vh;
+  }
+  .home-six {
+    height: 100vh;
+    min-height: 553px;
   }
 }
 
@@ -902,12 +906,8 @@
   .home_adv_srch_opt.home6 {
     top: 485px;
   }
-  .home_loan .home_loan_main .home_loan_left {
-    display: none;
-  }
   .our_experts {
-    padding-top: 60px;
-    padding-bottom: 0;
+    padding-top: 0px;
   }
   .our_experts .experts_main_div {
     display: flex;
@@ -926,7 +926,7 @@
     text-align: center;
   }
   .our_experts .experts_main_div .experts_div_right {
-    width: 100%;
+    display: none;
   }
 
   .main_cities_header .main_cities_header_left h2,
@@ -1090,6 +1090,10 @@
   }
 }
 @media only screen and (max-width: 992px) {
+  .home-six {
+    align-items: flex-start;
+    padding-top: 300px;
+  }
   .home_header .home-hero-title {
     top: 130px;
   }
@@ -1775,18 +1779,19 @@
   .loan-calculator .result {
     flex-direction: column;
   }
-  /* .banks_slider {
-    margin-top: 100rem;
-  } */
   .mortgage_calculator_section {
     top: 416px;
   }
   section {
     padding-top: 50px;
-    padding-bottom: 0;
+    padding-bottom: 50px;
   }
   .home_adv_srch_opt.home6 {
     top: 330px;
+  }
+  .home-six {
+    align-items: flex-start;
+    padding-top: 200px;
   }
   .home_loan .heading_main h2,
   .home_loan .heading_main .h2 {
@@ -2794,6 +2799,10 @@
 }
 /* (min-width:361px) (max-width:520px) */
 @media only screen and (max-width: 520px) {
+  .home-six {
+    align-items: flex-start;
+    padding-top: 150px;
+  }
   .mortgage_process_header_content .mortgage_process_header {
     top: 106px;
 }
@@ -3436,6 +3445,10 @@
 }
 /* (min-width:361px) (max-width:479px) */
 @media only screen and (max-width: 479px) {
+  .home-six {
+    align-items: flex-start;
+    padding-top: 100px;
+  }
   .home_adv_srch_opt.home3 .nav-pills, .home_adv_srch_opt.home6 .nav-pills {
     justify-content: center;
   }

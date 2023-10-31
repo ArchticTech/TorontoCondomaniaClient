@@ -245,7 +245,7 @@ const clearHandler = () => {
           </div>
           <div className="dd_content2 style2 dropdown-menu">
             <div className="pricing_acontent ">
-              <PricingRangeSlider priceReducer={addPrice} min={1} max={20000}/>
+              <PricingRangeSlider priceReducer={addPrice} min={100000} max={10000000}/>
             </div>
           </div>
         </div>

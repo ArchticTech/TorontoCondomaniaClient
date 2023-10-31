@@ -13,14 +13,6 @@ const partnerItems = [
     id: 3,
     imageSrc: "../../assets/images/partners/3.png",
   },
-  {
-    id: 4,
-    imageSrc: "../../assets/images/partners/4.png",
-  },
-  {
-    id: 4,
-    imageSrc: "../../assets/images/partners/5.png",
-  },
 ];
 
 const OurPartnerSlider = () => {
@@ -57,31 +49,11 @@ const OurPartnerSlider = () => {
             <img
               width={343}
               height={220}
-              className="img-whp cover p-3"
+              className="img-whp contain p-3"
               src={partner.imageSrc}
               alt="blog img"
             />
           </div>
-
-          {/* <div className="details">
-            <div className="tc_content">
-              <h4>
-                <a href={`/blog/${blog.id}`}>{blog.name}</a>
-              </h4>
-              <p className="">{blog.content}</p>
-            </div>
-
-            <div className="fp_footer">
-              <ul className="fp_meta float-start mb0">
-                <li className="list-inline-item">
-                  <a href={`/blog/${blog.id}`} className="fp_price">
-                    <button className="btn btn-thm">Read More</button>
-                  </a>
-                </li>
-              </ul>
-              <div className="fp_pdate float-end"></div>
-            </div>
-          </div> */}
         </div>
       </div>
     );

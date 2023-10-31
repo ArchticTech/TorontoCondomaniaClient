@@ -9,8 +9,7 @@ const Footer = () => {
         <div className="footer_about_widget">
           <h4>About Site</h4>
           <p>
-            We’re reimagining how you buy, sell and rent. It’s now easier to get
-            into a place you love. So let’s do this, together.
+          Experience a fast, secure, and up-to-the-minute real estate platform in the GTA. We&apos;re changing how you buy, sell, and rent. Let&apos;s make it happen together
           </p>
         </div>
       </div>

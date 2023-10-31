@@ -7,7 +7,7 @@ const OurExperts = () => {
       <div className="row experts_main_div">
         <div className="col-lg-6 experts_div_left">
           <div className="heading_main">
-            <h2>Our expert will help you make the right Decission</h2>
+            <h2>Our expert will help you make the right Decision</h2>
           </div>
           <div className="cards pt30">
             <span>
@@ -77,9 +77,7 @@ const OurExperts = () => {
             <div className="card_text">
               <h4>Requirements Assessment</h4>
               <p>
-                Lorem Ipsum has been the industry`&APOS;s standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen.
+                Our journey begins with a deep dive into your unique needs and desires. By understanding every facet of your real estate aspirations, we tailor our approach to align perfectly with your goals. Your satisfaction is our compass, and we&apos;re committed to ensuring that your purchase is not just a transaction but a step towards your dream home.
               </p>
             </div>
           </div>
@@ -113,9 +111,7 @@ const OurExperts = () => {
             <div className="card_text">
               <h4>Market Analysis</h4>
               <p>
-                Lorem Ipsum has been the industry`&APOS;s standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen.
+                In the ever-evolving GTA real estate market, having the right insights is crucial. Our experts possess an in-depth understanding of local trends, market dynamics, and investment opportunities. We provide you with a roadmap, backed by data-driven analysis, to help you navigate the market with confidence and make decisions that align with your long-term vision.
               </p>
             </div>
           </div>
@@ -145,9 +141,7 @@ const OurExperts = () => {
             <div className="card_text">
               <h4>Property Tours</h4>
               <p>
-                Lorem Ipsum has been the industry`&APOS;s standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen.
+                Witness your future unfold with our expert-guided property tours. These tours are not mere walk-throughs; they are windows into the opportunities that await you. Our experienced team showcases handpicked properties that fit your criteria, allowing you to envision the possibilities and choose the right property that resonates with your vision.
               </p>
             </div>
           </div>

@@ -123,7 +123,6 @@ const FeaturedItem = ({ properties, isAssignment }) => {
   let filteredProperties = properties;
 
   filteredProperties = filteredProperties
-    ?.slice(0, 8)
     ?.filter(keywordHandler)
     ?.filter(typeHandler)
     ?.filter(locationHandler)
@@ -142,8 +141,8 @@ const FeaturedItem = ({ properties, isAssignment }) => {
       markerElement.style.display = 'block';
     }
 
-    const priceFrom = item?.price_from;
-    const priceTo = item?.price_to;
+    const priceFrom = parseFloat(item?.price_from);
+    const priceTo = parseFloat(item?.price_to);
 
     const formattedPriceFrom = priceFrom.toLocaleString("en-US", {
       style: "currency",
@@ -159,11 +158,16 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     });
 
     return (
-      <div
+      <Link
+        href={
+          "/" +
+          (isAssignment ? "assignment" : "property") +
+          `/${item.slug}`
+        }
+        key={item.id}
         className={`${
           isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
         } `}
-        key={item.id}
       >
         <div
           className={`feat_property home7 style4 ${
@@ -182,9 +186,6 @@ const FeaturedItem = ({ properties, isAssignment }) => {
             />
             <div className="thmb_cntnt">
               <ul className="tag mb0">
-                <li className="list-inline-item">
-                  <a href="#" className="text-capitalize">{item.vip_featured_promotion}</a>
-                </li>
                 {item.isHot ? (
                   <li className="list-inline-item" >
                     <a href="" className="text-capitalize">
@@ -194,6 +195,9 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                 ) : (
                   ""
                 )}
+                <li className="list-inline-item">
+                  <a href="" className="text-capitalize">{item.vip_featured_promotion}</a>
+                </li>
               </ul>
               <ul className="icon mb0">
                 <li className="list-inline-item">
@@ -203,35 +207,35 @@ const FeaturedItem = ({ properties, isAssignment }) => {
                 </li>
                 <IconPropertyHeart id={item.id} />
               </ul>
-              <Link
-                href={
-                  "/" +
-                  (isAssignment ? "assignment" : "property") +
-                  `/${item.slug}`
-                }
-                className="fp_price"
-              >
-                {formattedPriceFrom} - {formattedPriceTo}
-              </Link>
             </div>
           </div>
           <div className="details">
             <div className="tc_content">
               <p className="text-thm">{item.type}</p>
               <h4>
-                <Link
-                  href={
-                    "/" +
-                    (isAssignment ? "assignment" : "property") +
-                    `/${item.slug}`
-                  }
-                >
                   {item.name}
-                </Link>
               </h4>
-              <p>
-                <span className="flaticon-placeholder"></span>
-                {item.address}
+              
+              <p className="row justify-content-start">
+                <div className="col-3 stat mb-2">
+                  <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/single-bed.png" alt="bed"/>
+                  <span className="count">{item?.beds}</span>
+                </div>
+                <div className="col-3 stat mb-2">
+                  <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/shower-and-tub.png" alt="shower-and-tub"/>
+                  <span className="count">{item?.baths}</span>
+                </div>
+                <div className="col-6 stat-wide mb-2">
+                  <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/fit-to-page.png" alt="land-area"/>
+                  <span className="count">{item?.areaMin}</span> &ndash; <span className="count">{item?.areaMax}</span> Sqft
+                </div>
+              </p>
+              <p className="mb-2 d-flex align-items-start">
+                <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/marker--v1.png" alt="map-marker-v1"/>
+                <span className="mx-2">{item?.address}</span>
+              </p>
+              <p className="mb-0 box">
+                <span className="mx-2">{item?.status}</span>
               </p>
 
               <ul className="prop_details mb0"></ul>
@@ -241,19 +245,9 @@ const FeaturedItem = ({ properties, isAssignment }) => {
             <div className="fp_footer">
               <ul className="fp_meta float-start mb0">
                 <li className="list-inline-item">
-                  {/* <Link href="/agent-v2">
-                    <img
-                      width={40}
-                      height={40}
-                      src={
-                        global.apiURL + "profile-pictures/" + item.agent.image
-                      }
-                      alt="pposter1.png"
-                    />
-                  </Link> */}
                 </li>
                 <li className="list-inline-item">
-                  <Link href="/">Torontocondomania Support</Link>
+                    From <span className="price">{formattedPriceFrom} &ndash; {formattedPriceTo}</span>
                 </li>
               </ul>
               <div className="fp_pdate float-end">{item.postedYear}</div>
@@ -261,7 +255,7 @@ const FeaturedItem = ({ properties, isAssignment }) => {
             {/* End .fp_footer */}
           </div>
         </div>
-      </div>
+      </Link>
     );
   });
 
