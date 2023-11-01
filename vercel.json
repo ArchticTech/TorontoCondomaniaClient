@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "/index.html" }
+    { "source": "/blog", "destination": "blog.torontocondomania.ca" }
   ]
 }
