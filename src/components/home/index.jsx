@@ -34,7 +34,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
     clearHandler();
   }, []);
   return (
-    <>
+    <div className="home">
       {/* <!-- Main Header Nav --> */}
       <Header />
 
@@ -50,7 +50,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
       <Hero properties={properties} />
 
       {/* <!-- Property Cities --> */}
-      <section id="property-city" className="property-city pb30" style={{ padding:'0' }}>
+      <section id="property-city" className="d-none d-lg-block property-city pb30" style={{ padding:'0' }}>
         <div className="container">
           <div className="main_cities_header">
             <div className="main_cities_header_left">
@@ -71,7 +71,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                 </span>
               </div>
               <div className="mission-text">
-                <h2>Find properties in GTA&apos;s top cities</h2>
+                <h3>Find properties in GTA&apos;s top cities</h3>
                 <p>
                   New Homes Trending around GTA
                 </p>
@@ -136,7 +136,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                         </span>
                       </div>
                       <div className="mission-text">
-                        <h2>Featured Properties</h2>
+                        <h4>Featured Properties</h4>
                         <p>
                           Featured Developments around GTA
                         </p>
@@ -179,13 +179,14 @@ const Index = ({ properties, assignments, rentals, cities }) => {
       })()}
 
       {/* <!-- How it works --> */}
+      
       <section id="how_it_works" className="how_it_works pb30">
         <div className="container">
           <div className="row px-3">
             <div className="col-lg-6">
               <div className="main-title text-center text-md-start">
-                <h2>How it works?</h2>
-                <h2>
+                <h5>How it works?</h5>
+                <h5>
                   <span
                     style={{
                       color: "#292D32",
@@ -195,7 +196,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                   Find a
                   </span>
                   {" "} Perfect Home
-                </h2>
+                </h5>
               </div>
             </div>
           </div>
@@ -238,7 +239,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                         </span>
                       </div>
                       <div className="mission-text">
-                        <h2>Rentals added recently</h2>
+                        <h5>Rentals added recently</h5>
                         <p>
                           Experience the future of real estate with
                           TorontoCondomania
@@ -310,7 +311,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                         </span>
                       </div>
                       <div className="mission-text">
-                        <h2>Assignments Added Recently </h2>
+                        <h5>Assignments Added Recently </h5>
                         <p>
                           Experience the future of real estate with
                           TorontoCondomania
@@ -355,7 +356,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
       })()}
 
       {/* <!-- Our Experts --> */}
-      <section id="our_experts" className="our_experts">
+      <section id="our_experts" className="d-none d-md-block our_experts">
         <div className="container">
           <OurExperts />
         </div>
@@ -391,7 +392,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                   </span>
                 </div>
                 <div className="mission-text">
-                  <h2>News & Articles</h2>
+                  <h5>News & Articles</h5>
                   <p>
                     Experience the future of real estate with TorontoCondomania
                   </p>
@@ -447,7 +448,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                   </span>
                 </div>
                 <div className="mission-text">
-                  <h2>Our Partners</h2>
+                  <h6>Our Builders</h6>
                   <p>
                     Experience the future of real estate with TorontoCondomania
                   </p>
@@ -486,7 +487,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
           <CopyrightFooter />
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

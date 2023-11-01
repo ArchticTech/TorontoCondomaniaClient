@@ -301,7 +301,7 @@
     width: 40px;
   }
   .home_header .home-hero-title {
-    font-size: 46px;
+    font-size: 53px;
   }
   .mouse_scroll {
     right: 0px;
@@ -904,7 +904,7 @@
     top: 362px;
   }
   .home_adv_srch_opt.home6 {
-    top: 485px;
+    top: 300px;
   }
   .our_experts {
     padding-top: 0px;
@@ -942,7 +942,7 @@
     width: 35px;
   }
   .home_header .home-hero-title {
-    font-size: 40px;
+    font-size: 50px;
   }
   .dn-md {
     display: none !important;
@@ -1099,9 +1099,6 @@
   }
   .home_header .home-hero-para {
     top: 251px;
-  }
-  .home_adv_srch_opt.home6 {
-    top: 415px;
   }
   .regstr_thumb,
   .login_thumb {
@@ -1821,7 +1818,7 @@
     align-items: baseline;
   }
   .home_header .home-hero-title {
-    font-size: 35px;
+    font-size: 48px;
     padding: 0 2rem;
   }
   .home_header .home-hero-para {
@@ -2585,7 +2582,7 @@
     font-size: 54px;
   }
   .home_header .home-hero-title {
-    font-size: 31px;
+    font-size: 44px;
   }
   .home_header .home-hero-para {
     top: 232px;
@@ -2746,7 +2743,7 @@
     height: 250px;
   }
   .home_header .home-hero-title {
-    font-size: 30px;
+    font-size: 40px;
   }
   .home_header .home-hero-para {
     font-size: 13px;
@@ -2814,7 +2811,7 @@
   }
   .home_header .home-hero-title {
     top: 112px;
-    font-size: 28px;
+    font-size: 36px;
   }
   .home_header .home-hero-para {
     top: 201px;
@@ -3463,7 +3460,7 @@
   }
   .home_header .home-hero-title {
     top: 69px;
-    font-size: 26px;
+    font-size: 33px;
   }
   .home_adv_srch_opt.home6 {
     top: 143px;
@@ -3490,6 +3487,12 @@
 }
 @media only screen and (max-width: 414px) {
 
+  .home h3,
+  .home h4,
+  .home h5,
+  .home h6 {
+    font-size: 27px;
+  }
   .customer_support_header_content .customer_support_header {
     font-size: 28px;
     line-height: normal;
@@ -3498,7 +3501,7 @@
     width: 75%;
   }
   .home_header .home-hero-title {
-    font-size: 24px;
+    font-size: 30px;
   }
   .inner_page_breadcrumb .breadcrumb_title {
     font-size: 28px;

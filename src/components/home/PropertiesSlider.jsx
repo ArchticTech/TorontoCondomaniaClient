@@ -50,16 +50,16 @@ const PropertiesSlider = ({ properties }) => {
     });
 
     return ( 
+      <div
+        className="feat_property home7 style4"
+        key={property.id}
+      >
       <Link
       href={
         "/property" +
         `/${property.slug}`
       }
-      key={property.id}
       className="col-md-6 col-lg-6" >
-      <div
-        className="feat_property home7 style4"
-      >
         <div className="thumb">
           <img
             width={316}
@@ -138,8 +138,8 @@ const PropertiesSlider = ({ properties }) => {
           </div>
           {/* End .fp_footer */}
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   )});
 
   return (

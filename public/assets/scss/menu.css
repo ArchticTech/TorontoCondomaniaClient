@@ -45,13 +45,12 @@
   color: #0a0a0a;
 }
 .header.stylehome1 a {
-  height: 50px;
+  height: auto;
   display: grid;
   line-height: 40px;
-  margin: 0 10px auto;
   padding-top: 15px;
-  top: 20px;
   width: 50px;
+  position: relative;
 }
 header.stylehome1.home3 a {
   background-color: #112360 !important;
@@ -102,26 +101,12 @@ header.stylehome1.home4 a {
 .header a:hover {
   cursor: pointer;
 }
-.header a:before {
-  content: "";
-  display: block;
-  background: #484848;
-  height: 2px;
-  width: 15px;
-}
 .header a span {
   background: #484848;
   display: block;
   height: 2px;
-  margin: 6px 0;
+  margin: 5px 0;
   width: 30px;
-}
-.header a:after {
-  content: "";
-  display: block;
-  background: #484848;
-  height: 2px;
-  width: 20px;
 }
 .header li.list_s a:before,
 .header li.list_s a:after {
@@ -129,11 +114,6 @@ header.stylehome1.home4 a {
 }
 .header li.list_s a span {
   background-color: transparent;
-}
-.menu_bar_home2 li.list-inline-item:first-child {
-  position: absolute;
-  right: 60px;
-  top: -15px;
 }
 .menu_bar_home2 li.list-inline-item:first-child a::before {
   display: none;
@@ -741,6 +721,9 @@ header.stylehome1.home4 a {
   .stylehome1:before,
   .header.stylehome1 {
     background-color: #ffffff !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .stylehome1.home2,
   .stylehome1.home2:before {

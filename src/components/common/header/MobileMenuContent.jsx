@@ -13,6 +13,8 @@ import Router, { useRouter } from "next/router";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { addCity } from "../../../features/properties/propertiesSlice";
+import { useState } from "react";
+import Cookies from "js-cookie";
 
 const home = { name: "Home", routerPath: "/" };
 
@@ -42,6 +44,8 @@ const homeLoan = [
   { id: 3, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
 ];
 const MobileMenuContent = () => {
+  const [loginStatus] = useState(Cookies.get('loginStatus') == 'true')
+
   const route = useRouter();
   const dispatch = useDispatch();
   const submitHandler = (city) => {
@@ -163,12 +167,9 @@ const MobileMenuContent = () => {
 
           <MenuItem>
             <Link
-              href="/contact"
-              className={
-                route.pathname === "/contact" ? "ui-active" : undefined
-              }
+              href="https://blog.torontocondomania.ca"
             >
-              Contact
+              Article
             </Link>
           </MenuItem>
 
@@ -194,14 +195,17 @@ const MobileMenuContent = () => {
         </Menu>
       </SidebarContent>
 
-      <SidebarFooter>
-        <Link
-          href="/dashboard"
-          className="btn btn-block btn-lg btn-thm circle"
-        >
-          <span className="flaticon-home"></span> Dashboard
-        </Link>
-      </SidebarFooter>
+      {
+        loginStatus ? 
+        <SidebarFooter>
+          <Link
+            href="/dashboard"
+            className="btn btn-block btn-lg btn-thm circle"
+          >
+            <span className="flaticon-home"></span> Dashboard
+          </Link>
+        </SidebarFooter>
+      : undefined }
     </ProSidebar>
   );
 };

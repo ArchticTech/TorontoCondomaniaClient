@@ -130,7 +130,7 @@ body {
   background-attachment: fixed;
   background-color: #ffffff;
   color: #777777;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.642;
   overflow-x: hidden;
@@ -251,7 +251,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   line-height: 1.2;
   color: #484848;
 }
@@ -310,14 +310,14 @@ h4,
 .h2,
 .h3,
 .h4 {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 h5,
 h6,
 .h5,
 .h6 {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 h1,
@@ -362,7 +362,7 @@ address {
 }
 
 .ff-nunito {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
 }
 
 .ff-fontawesome {
@@ -440,9 +440,9 @@ address {
 .sign_up_tab li.nav-item .nav-link {
   border: none;
   color: #484848;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .sign_up_tab li.nav-item .nav-link.active {
@@ -547,7 +547,7 @@ address {
 
 .dropdown_content .list_content a p {
   color: #484848;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   margin: 0;
 }
 
@@ -567,7 +567,7 @@ address {
 
 .dropdown_content .list_content h5 {
   color: #212121;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 18px;
   margin-bottom: 15px;
 }
@@ -884,7 +884,7 @@ address {
 .home4_header_top_contact li a,
 ul.sign_up_btn.home4 li a,
 ul.sign_up_btn.home6 a {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-size: 14px;
   line-height: initial;
 }
@@ -915,7 +915,7 @@ ul.sign_up_btn.home6 a {
 
 .header_top.home7 .header_top_lang_widget_home6 button.btn.dropdown-toggle {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgba(255, 255, 255, 0.502);
   height: auto;
   line-height: 1.2;
@@ -929,7 +929,7 @@ ul.sign_up_btn.home6 a {
 
 ul.sign_up_btn.home7 a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
 }
 
 .light_white,
@@ -956,7 +956,7 @@ ul.sign_up_btn.home7 a {
   .mailchimp_form
   input[type="text"].form-control::-webkit-input-placeholder {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -1020,7 +1020,7 @@ ul.sign_up_btn.home7 a {
 
 .ht_right_widget ul li a,
 .home3_header_top_contact li a {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
 }
 
 header.header-nav.menu_style_home_three.navbar-scrolltofixed
@@ -1172,7 +1172,7 @@ header.header-nav.menu_style_home_three.navbar-scrolltofixed
 }
 
 .cd-dropdown-content .cd-secondary-dropdown a {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
 }
 
 li.has-children a {
@@ -1293,7 +1293,7 @@ header.header-nav.menu_style_home_one.home9
 }
 
 header.header-nav.menu_style_home_one ul.ace-responsive-menu li.add_listing a {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: var(--color-primary);
   line-height: 1.2;
   top: 0 !important;
@@ -1370,7 +1370,7 @@ header.header-nav.menu_style_home_one a.navbar_brand span,
 header.header-nav.menu_style_home_three a.navbar_brand span,
 header.header-nav.menu_style_home_five a.navbar_brand span {
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 22px;
   margin-top: 9px;
   padding-left: 15px;
@@ -2202,7 +2202,7 @@ header.header-nav.menu_style_home_five .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_six .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_seven .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_eight .ace-responsive-menu > li > a {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   padding: 38px 16px 30px 10px;
 }
 
@@ -2245,9 +2245,9 @@ header.header-nav.menu_style_home_one.style2 a.navbar_brand {
 
 header.header-nav.menu_style_home_one.style2 a.navbar_brand span {
   color: #484848;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -2305,7 +2305,7 @@ header.header-nav.menu_style_home_one.style2.home10
 
 header.header-nav.menu_style_home_one.style2 .ace-responsive-menu li a {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -2364,7 +2364,7 @@ header.header-nav.menu_style_home_one.style2
   li.add_listing
   a {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 1;
 }
@@ -2421,7 +2421,7 @@ header.header-nav.home2.style_one ul.sign_up_btn li:first-child:before {
 
 header.header-nav.home2.style_one ul.sign_up_btn li a {
   color: #a4a4a4;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 14px;
   line-height: 1.2;
 }
@@ -2575,7 +2575,7 @@ header.header-nav.menu_style_home_three
   li
   a {
   color: #ffffff;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -2651,7 +2651,7 @@ header.header-nav.menu_style_home_three a.navbar_brand:before {
 }
 
 .sign_up_btn.home3 .btn {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 14px;
   line-height: 1.2;
 }
@@ -2791,7 +2791,7 @@ header.header-nav.menu_style_home_four.stricky-fixed
 
 header.header-nav.menu_style_home_four a.navbar_brand span {
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 22px;
   margin-top: 10px;
   padding-left: 15px;
@@ -2834,7 +2834,7 @@ header.header-nav.menu_style_home_four .ace-responsive-menu > li {
 
 header.header-nav.menu_style_home_four .ace-responsive-menu li a {
   color: #ffffff;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
 }
 
 header.header-nav.menu_style_home_four .sign_up_btn .btn {
@@ -2993,7 +2993,7 @@ header.header-nav.menu_style_home_five .ace-responsive-menu li a {
 
 header.header-nav.menu_style_home_five .ace-responsive-menu li a {
   padding-top: 27px;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   text-transform: capitalize;
 }
 
@@ -3120,7 +3120,7 @@ header.header-nav.menu_style_home_six.stricky-fixed
 
 header.header-nav.menu_style_home_six a.navbar_brand span {
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 22px;
   margin-top: 10px;
   padding-left: 15px;
@@ -3158,7 +3158,7 @@ header.header-nav.menu_style_home_six .ace-responsive-menu > li {
 
 header.header-nav.menu_style_home_six .ace-responsive-menu li a {
   color: #ffffff;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
 }
 
 header.header-nav.menu_style_home_six .sign_up_btn .btn {
@@ -3286,7 +3286,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li {
 
 header.header-nav.menu_style_home_seven .ace-responsive-menu li a {
   color: #ffffff;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   padding: 18px 20px 18px 15px;
 }
 
@@ -3429,7 +3429,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 }
 
 .home_content .home-text p {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .home_content.home4 {
@@ -3464,7 +3464,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   }
 }
 .home_content .home-text.home5 h4 {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   font-style: italic;
   line-height: 1.2;
@@ -3488,7 +3488,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 
 .icon_home5 p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 1.2;
   margin-bottom: 0;
@@ -3721,7 +3721,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   background-color: #ffffff;
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.2;
 }
 
@@ -3761,7 +3761,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   input[type="text"].form-control::-webkit-input-placeholder {
   color: #006c70;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.2;
 }
 
@@ -3841,7 +3841,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   width: 170px;
@@ -3954,8 +3954,8 @@ input.amount4 {
   box-shadow: none;
   color: #006c70;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   width: 48%;
 }
@@ -4205,7 +4205,7 @@ form.home5_advanced_search_form .search_option_two .dropdown-menu {
 
 .home1-advnc-search .search_option_two .dropdown-menu button.btn {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -4290,7 +4290,7 @@ form.home5_advanced_search_form
   border-radius: 8px;
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   height: 50px;
   line-height: 2.5;
   width: 180px;
@@ -4541,9 +4541,9 @@ form.home5_advanced_search_form
 
 .home10-mainslider .banner-style-one .banner-title {
   font-size: 45px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   text-transform: capitalize;
 }
@@ -4601,14 +4601,14 @@ form.home5_advanced_search_form
 }
 
 .home-text.home6 h2 {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .home-text.home6 p {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -4753,7 +4753,7 @@ form.home5_advanced_search_form
 .banner-style-one .banner_top_title small {
   color: #ffffff;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 600;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
@@ -4765,7 +4765,7 @@ form.home5_advanced_search_form
 .banner-style-one .banner_top_title {
   font-size: 28px;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -5052,9 +5052,9 @@ form.home5_advanced_search_form
 }
 .home3_home_content h1 {
   font-size: 55px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 @media (max-width: 576px) {
@@ -5065,7 +5065,7 @@ form.home5_advanced_search_form
 }
 .home3_home_content h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 26px;
 }
@@ -5161,7 +5161,7 @@ form.home5_advanced_search_form
 }
 
 .home-five .home-text p {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-size: 18px;
   line-height: 30px;
   max-width: 495px;
@@ -5387,7 +5387,7 @@ form.home5_advanced_search_form
 
 .home4_iconbox .icon p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 3;
   margin-bottom: 0;
@@ -5565,7 +5565,7 @@ form.home5_advanced_search_form
 
 .img_hvr_box.home7 .overlay .details h4 {
   color: #ffffff;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   font-size: 20px;
   line-height: 1.2;
   text-transform: uppercase;
@@ -5681,7 +5681,7 @@ form.home5_advanced_search_form
 
 .cs_row_one .cs_title {
   font-size: 26px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -5828,7 +5828,7 @@ form.home5_advanced_search_form
 }
 
 .cs_row_two .cs_overview .title {
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   font-size: 20px;
   color: #484848;
   line-height: 1.2;
@@ -5836,7 +5836,7 @@ form.home5_advanced_search_form
 }
 
 .cs_row_two .cs_overview h4 {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 18px;
   color: rgb(59, 59, 59);
   line-height: 1.333;
@@ -5903,7 +5903,7 @@ form.home5_advanced_search_form
 
 .cs_row_three .course_content h4.title {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   float: left;
   line-height: 1.2;
@@ -5921,7 +5921,7 @@ form.home5_advanced_search_form
 
 .cs_row_three .course_content .details .cc_tab h4.panel-title {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(59, 59, 59);
   line-height: 1.7;
   border-radius: 5px;
@@ -6015,7 +6015,7 @@ form.home5_advanced_search_form
 .cs_row_four .about_ins_container .aii_title,
 .cs_row_five .student_feedback_container .aii_title {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   margin-bottom: 25px;
   line-height: 1.2;
@@ -6031,7 +6031,7 @@ form.home5_advanced_search_form
 
 .cs_row_four .about_ins_container .details h4 {
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   margin-bottom: 0;
   line-height: 1.5;
@@ -6187,7 +6187,7 @@ form.home5_advanced_search_form
 
 .cs_row_five .student_feedback_container .aii_average_review .av_content h2 {
   font-size: 50px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 0.6;
 }
@@ -6214,7 +6214,7 @@ form.home5_advanced_search_form
 
 .r_course_title {
   font-size: 26px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 30px;
@@ -6245,7 +6245,7 @@ form.home5_advanced_search_form
 }
 
 .feat_property {
-  background-color: transparent;
+  background-color: white;
   border: 1px solid #ebebeb;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -6253,6 +6253,11 @@ form.home5_advanced_search_form
   position: relative;
   transition: all 0.3s ease;
   margin-left: 1rem;
+  height: calc(100% - 33px);
+}
+.partner .feat_property {
+  background-color: transparent;
+  height: auto;
 }
 @media (max-width: 576px) {
   .feat_property.d-flex {
@@ -6283,7 +6288,7 @@ form.home5_advanced_search_form
   background-color: var(--color-primary);
   border-radius: 3px;
   color: rgb(254, 254, 254);
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 14px;
   height: 25px;
   line-height: 25px;
@@ -6357,8 +6362,8 @@ form.home5_advanced_search_form
 .feat_property.home8 ul.tag li a,
 .feat_property.list ul.tag li a {
   font-size: 11px;
-  font-weight: 700;
-  font-family: "Nunito";
+  font-weight: 600;
+  font-family: var(--font-primary);
   color: rgb(29, 28, 51);
   line-height: 1.2;
   margin: 0 0.2rem;
@@ -6423,9 +6428,9 @@ form.home5_advanced_search_form
 .feat_property .thumb .thmb_cntnt a.fp_price {
   bottom: 15px;
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   left: 20px;
   line-height: 1.2;
   position: absolute;
@@ -6479,9 +6484,9 @@ form.home5_advanced_search_form
 
 .feat_property.list .dtls_headr a.fp_price {
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   position: absolute;
   right: 20px;
@@ -6535,7 +6540,7 @@ form.home5_advanced_search_form
   border-radius: 3px;
   background-color: rgb(255, 90, 95);
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(254, 254, 254);
   height: 25px;
   line-height: 1.2;
@@ -6547,7 +6552,7 @@ form.home5_advanced_search_form
   border-radius: 3px;
   background-color: rgb(57, 218, 138);
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(254, 254, 254);
   height: 25px;
   line-height: 20px;
@@ -6559,7 +6564,7 @@ form.home5_advanced_search_form
   border-radius: 3px;
   background-color: rgb(253, 57, 122);
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(254, 254, 254);
   height: 25px;
   line-height: 20px;
@@ -6583,8 +6588,8 @@ form.home5_advanced_search_form
   color: var(--color-primary);
   float: left;
   font-size: 22px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   margin-top: 0;
   position: relative;
@@ -6604,7 +6609,7 @@ form.home5_advanced_search_form
 
 .feat_property .details .tc_content p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 20px;
 }
@@ -6635,9 +6640,9 @@ form.home5_advanced_search_form
 
 .feat_property .details .tc_content h4 {
   font-size: 21px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #111;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 10px;
 }
@@ -6656,7 +6661,7 @@ form.home5_advanced_search_form
 
 .feat_property .details .tc_content .prop_details li a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -6667,7 +6672,7 @@ form.home5_advanced_search_form
 
 .feat_property.home2 .details .tc_content h5 {
   color: #484848;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.333;
 }
 
@@ -6700,7 +6705,7 @@ form.home5_advanced_search_form
 .feat_property .details .fp_footer .fp_meta li:nth-child(2) {
   margin-right: 10px;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-weight: 500;
   color: #555;
   line-height: 1.2;
@@ -6716,7 +6721,7 @@ form.home5_advanced_search_form
 
 .feat_property .details .fp_footer .fp_pdate {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #777777;
   line-height: 1.2;
   margin-top: 15px;
@@ -6757,7 +6762,7 @@ form.home5_advanced_search_form
 
 .feat_property .details .tc_content h4 a,
 .feat_property .details .tc_content .h4 a {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .feat_property.home7.style2 {
@@ -6926,14 +6931,14 @@ form.home5_advanced_search_form
 .properti_city.home6 .details a.fp_price,
 .properti_city.home6 ul.prop_details li a {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .properti_city.home6 .overlay .details h4 a {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -6943,9 +6948,9 @@ form.home5_advanced_search_form
 
 .properti_city.home6 .details a.fp_price {
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2;
 }
 
@@ -7046,14 +7051,14 @@ form.home5_advanced_search_form
 
 .for_blog.feat_property .details .tc_content .bpg_meta li a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(119, 119, 119);
   line-height: 1.2;
 }
 
 .for_blog.feat_property .details .tc_content p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   text-transform: capitalize;
@@ -7150,8 +7155,8 @@ form.home5_advanced_search_form
 .properti_city .overlay .details h4 {
   color: #ffffff;
   font-size: 18px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -7183,9 +7188,9 @@ form.home5_advanced_search_form
 
 .properti_city.home5 .overlay .details .left h4 {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2.3;
   margin: 0;
   color: #fff;
@@ -7217,7 +7222,7 @@ form.home5_advanced_search_form
 
 .properti_city .overlay .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 1.2;
 }
@@ -7290,23 +7295,23 @@ form.home5_advanced_search_form
 }
 
 .modern_apertment .title {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .modern_apertment .subtitle {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 15px;
 }
 
 .modern_apertment p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.429;
   margin-bottom: 30px;
@@ -7320,9 +7325,9 @@ form.home5_advanced_search_form
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 35px;
   height: 50px;
   width: 170px;
@@ -7334,7 +7339,7 @@ form.home5_advanced_search_form
 
 .properti_city.home7 .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgba(119, 119, 119, 0.8);
   line-height: 1.2;
 }
@@ -7347,15 +7352,15 @@ form.home5_advanced_search_form
 
 .search_smart_property h2 {
   font-size: 30px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .search_smart_property p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.875;
   margin-bottom: 30px;
@@ -7370,8 +7375,8 @@ form.home5_advanced_search_form
   border-radius: 8px;
   color: #484848;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   height: 60px;
   line-height: 1.2;
   width: 200px;
@@ -7451,7 +7456,7 @@ form.home5_advanced_search_form
   cursor: pointer;
   display: block;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   height: 45px;
   line-height: 2.1;
   outline: none;
@@ -7496,9 +7501,9 @@ form.home5_advanced_search_form
 
 .single_property_social_share h2 {
   font-size: 30px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
   margin-right: 11px;
@@ -7569,9 +7574,9 @@ form.home5_advanced_search_form
 
 .spls_style_two .overlay .title {
   font-size: 26px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -7732,7 +7737,7 @@ form.home5_advanced_search_form
 .lsd_list li a {
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
   line-height: 1.2;
   cursor: default;
@@ -7807,7 +7812,7 @@ form.home5_advanced_search_form
 
 .additional_details ul li p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
   line-height: 2.857;
   margin-bottom: 0;
@@ -7815,9 +7820,9 @@ form.home5_advanced_search_form
 
 .additional_details ul li p span {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2.857;
 }
 
@@ -7870,16 +7875,16 @@ form.home5_advanced_search_form
 
 .icon_box_area .details h5 {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
   margin-bottom: 0;
 }
 
 .icon_box_area .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
   margin-bottom: 0;
 }
@@ -7887,7 +7892,7 @@ form.home5_advanced_search_form
 .walkscore_area .more_info {
   color: rgb(72, 72, 72);
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.714;
   text-decoration: underline;
 }
@@ -7907,9 +7912,9 @@ form.home5_advanced_search_form
 
 .education_distance h5 {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2;
   margin-bottom: 0;
 }
@@ -7931,7 +7936,7 @@ form.home5_advanced_search_form
 .single_line .para {
   color: rgb(72, 72, 72);
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   float: left;
   line-height: 2.143;
   margin-bottom: 0;
@@ -7960,7 +7965,7 @@ form.home5_advanced_search_form
 
 .single_line .review span.total_rive_count {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(118, 118, 118);
   line-height: 2.143;
 }
@@ -8053,9 +8058,9 @@ form.home5_advanced_search_form
 .sticky-nav-tabs-container li a {
   background-color: #fff;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .sticky-nav-tab {
@@ -8116,7 +8121,7 @@ form.home5_advanced_search_form
 
 .listing_single_property_compare ul li p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
   line-height: 1.857;
   margin-bottom: 0;
@@ -8166,14 +8171,14 @@ form.home5_advanced_search_form
 }
 
 .why_chose_us .details h4 {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .why_chose_us .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.714;
 }
 
@@ -8418,15 +8423,15 @@ form.home5_advanced_search_form
 
 .our_hotoffer h2 {
   font-size: 30px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .our_hotoffer p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 1.2;
   margin-bottom: 25px;
@@ -8457,8 +8462,8 @@ form.home5_advanced_search_form
   box-shadow: 0px 0px 50px 0px rgba(19, 19, 28, 0.12);
   color: #ffffff;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   height: 50px;
   line-height: 1.2;
   width: 170px;
@@ -8503,7 +8508,7 @@ form.home5_advanced_search_form
 
 .testimonial_grid .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 1.429;
   margin-bottom: 0;
@@ -8838,9 +8843,9 @@ form.home5_advanced_search_form
   ul.mc_review
   li.fp_pdate {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(199, 85, 51);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-left: 15px;
 }
@@ -8894,7 +8899,7 @@ form.home5_advanced_search_form
 
 .my_course_content_list .mc_content_list .details .mc_content .subtitle .title {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(10, 10, 10);
   line-height: 1.333;
 }
@@ -8959,9 +8964,9 @@ form.home5_advanced_search_form
 .my_profile_setting_input label,
 .my_profile_setting_textarea label {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
   margin-bottom: 10px;
 }
@@ -8977,7 +8982,7 @@ form.home5_advanced_search_form
 
 .my_profile_setting_input .form-control::placeholder {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
   line-height: 1.2;
 }
@@ -8995,9 +9000,9 @@ form.home5_advanced_search_form
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(255, 90, 95);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   margin-right: 30px;
@@ -9018,9 +9023,9 @@ form.home5_advanced_search_form
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   width: 200px;
@@ -9041,9 +9046,9 @@ form.home5_advanced_search_form
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   width: 200px;
@@ -9070,9 +9075,9 @@ form.home5_advanced_search_form
   border-radius: 8px;
   background-color: rgb(236, 236, 236);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   width: 160px;
@@ -9168,7 +9173,7 @@ form.home5_advanced_search_form
 
 .original_price {
   font-size: 13px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(126, 126, 126);
   line-height: 1.2;
 }
@@ -9306,7 +9311,7 @@ form.home5_advanced_search_form
 
 .hvr_img_box_container .overlay .details h5 {
   color: #484848;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   font-size: 18px;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -9369,9 +9374,9 @@ form.home5_advanced_search_form
 .funfact_one .details .timer,
 .funfact_one .details ul li {
   color: #ffffff;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 600;
   margin-right: -2px;
 }
 
@@ -9409,7 +9414,7 @@ form.home5_advanced_search_form
 .funfact_one.home6 .timer {
   color: #252834;
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: normal;
 }
 
@@ -9628,7 +9633,7 @@ form.home5_advanced_search_form
 
 .copyright-widget p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #8a99b3;
   line-height: 2.143;
   margin-bottom: 0;
@@ -9697,7 +9702,7 @@ form.home5_advanced_search_form
 /*== Footer Widget ==*/
 .footer_about_widget p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #8a99b3;
   line-height: 2.143;
   margin-bottom: 0;
@@ -9738,7 +9743,7 @@ form.home5_advanced_search_form
 .footer_social_widget h4,
 .footer_apps_widget h4 {
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 25px;
 }
 
@@ -9748,7 +9753,7 @@ form.home5_advanced_search_form
 .home3 .footer_social_widget h4,
 .home3 .footer_apps_widget h4 {
   color: #777777;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 25px;
 }
 
@@ -9765,9 +9770,9 @@ form.home5_advanced_search_form
 .home6 .footer_contact_widget h4,
 .home6 .footer_social_widget h4,
 .home6 .footer_apps_widget h4 {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.333;
 }
 
@@ -9779,7 +9784,7 @@ form.home5_advanced_search_form
 .footer_qlink_widget li a,
 .footer_contact_widget li a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #8a99b3;
   line-height: 2.429;
   -webkit-transition: all 0.3s ease 0s;
@@ -9864,9 +9869,9 @@ form.home5_advanced_search_form
 
 .logo-widget span {
   color: #ffffff;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
   padding-left: 15px;
   margin-top: 10px;
   text-transform: uppercase;
@@ -9895,7 +9900,7 @@ form.home5_advanced_search_form
 
 .footer_menu_widget ul li a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #8a99b3;
   line-height: 2.143;
 }
@@ -10144,7 +10149,7 @@ form.home5_advanced_search_form
   /* font-family: Istok Web; */
   font-size: 54px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 50px; /* 78.125% */
   text-transform: capitalize;
 }
@@ -10175,9 +10180,9 @@ form.home5_advanced_search_form
 
 .header_inner_page_section .about_us_header {
   /* font-size: 3vw; */
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
 }
@@ -10212,7 +10217,7 @@ form.home5_advanced_search_form
 .about_content p.large {
   color: #484848;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
   margin-bottom: 45px;
 }
@@ -10248,15 +10253,15 @@ ul.ab_counting li:last-child {
 
 .about_counting .details h3 {
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
 .about_counting .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
 }
 
@@ -10314,7 +10319,7 @@ ul.ab_counting li:last-child {
 
 .about_home3 h5 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 40px;
 }
 
@@ -10504,7 +10509,7 @@ ul.ab_counting li:last-child {
 
 .about_box_home6 .details h3 {
   font-size: 26px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   margin-bottom: 20px;
 }
 
@@ -10556,8 +10561,8 @@ ul.ab_counting li:last-child {
 
 .smp_icon_box .details h4 {
   font-size: 18px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 10px;
 }
@@ -10793,22 +10798,22 @@ ul.ab_counting li:last-child {
 }
 
 .testimonial_item .details h4 {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
 }
 
 .testimonial_item .details .small {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.5;
 }
 
 .testimonial_item .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(119, 119, 119);
   font-style: italic;
   line-height: 1.714;
@@ -10958,7 +10963,7 @@ li.slick-slide.slick-active:nth-child(8) img {
 
 .testimonial_post .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   margin-bottom: 22px;
@@ -11159,9 +11164,9 @@ li.slick-slide.slick-active:nth-child(8) img {
 .blog_post_home2 .bph2_header .bph2_date_meta span,
 .blog_post.one .thumb .post_date span {
   color: #484848;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   display: table-caption;
   line-height: 22px;
 }
@@ -11280,7 +11285,7 @@ li.slick-slide.slick-active:nth-child(8) img {
   background-color: #f8faf9;
   color: #221f1f;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 600;
   padding: 5px 20px 3px;
 }
 
@@ -11598,9 +11603,9 @@ ul.mc_parent_list .membership_header .thumb a span {
 ul.mc_parent_list .membership_header .thumb .price {
   bottom: 15px;
   color: #ffffff;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
   left: 0;
   line-height: 1.2;
   margin: 0 auto;
@@ -11614,7 +11619,7 @@ ul.mc_parent_list .membership_header .details {
 
 ul.mc_parent_list .membership_header .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: var(--color-primary);
   line-height: 1.2;
 }
@@ -11624,7 +11629,7 @@ ul.mc_parent_list li {
 }
 
 ul.mc_parent_list ul.mc_child_list.one li {
-  font-weight: bold;
+  font-weight: 600;
   padding: 10px 50px 10px 50px;
 }
 
@@ -11635,7 +11640,7 @@ ul.mc_parent_list ul.mc_child_list.four li {
   border-bottom: 1px solid #ebebeb;
   color: #484848;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 3.333;
 }
 
@@ -11665,7 +11670,7 @@ ul.mc_parent_list ul.mc_child_list.four li:last-child {
 
 ul.mc_parent_list ul.mc_child_list .membership_header h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.333;
   margin: 0;
@@ -11782,9 +11787,9 @@ ul.mc_parent_list ul.mc_child_list .membership_header h4 {
 
 .erro_code h1 {
   font-size: 45px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -11798,7 +11803,7 @@ ul.mc_parent_list ul.mc_child_list .membership_header h4 {
 
 .error_page.footer_apps_widget p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
 }
@@ -11822,9 +11827,9 @@ a.btn.btn_error {
   background-color: var(--color-primary);
   border-radius: 8px;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   height: 50px;
   line-height: 35px;
   width: 200px;
@@ -11892,22 +11897,22 @@ a.btn.btn_error {
 .pricing_table .pricing_header .price {
   font-size: 40px;
   color: var(--color-primary);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 0.65;
   margin-bottom: 20px;
 }
 
 .pricing_table .pricing_header h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.444;
 }
 
 .pricing_table .pricing_content ul li {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 3.571;
 }
@@ -11922,8 +11927,8 @@ a.btn.btn_error {
   border-radius: 8px;
   color: var(--color-primary);
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 30px;
   -webkit-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   -moz-box-shadow: 0px 1px 4px 0px var(--color-shadow);
@@ -11988,7 +11993,7 @@ a.btn.btn_error {
 .login_form .btn-fpswd {
   color: #8b91dd;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 2.214;
 }
 
@@ -12019,7 +12024,7 @@ a.btn.btn_error {
 
 .login_form.inner_page .heading h4 {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
 }
 
@@ -12114,13 +12119,13 @@ a.btn.btn_error {
 
 .sign_up_form .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 3;
 }
 
 .login_form .heading h4 {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
 }
 
 .login_form.inner_page .heading p {
@@ -12147,7 +12152,7 @@ a.btn.btn_error {
   border-radius: 8px;
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   height: 52px;
   line-height: 1.2;
 }
@@ -12176,9 +12181,9 @@ a.btn.btn_error {
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   color: #ffffff;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   height: 50px;
   line-height: 1.2;
   margin-bottom: 15px;
@@ -12237,7 +12242,7 @@ a.btn.btn_error {
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   color: #ffffff;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   height: 50px;
 }
 .verify-email {
@@ -12307,9 +12312,9 @@ a.btn.btn_error {
 .shortcode_widget_progressbar h4,
 .shortcode_form_title h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 30px;
 }
@@ -12334,7 +12339,7 @@ a.btn.btn_error {
 
 .faq_according .panel .panel-body h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -12348,9 +12353,9 @@ a.btn.btn_error {
 }
 
 .faq_according .panel-heading .panel-title {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 3;
 }
 
@@ -12387,9 +12392,9 @@ a.btn.btn_error {
 
 .faq_according .accordion .card .btn-link {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   padding: 2rem 1rem;
 }
 
@@ -12432,7 +12437,7 @@ a.btn.btn_error {
 
 .faq_according .accordion .card .card-body {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   padding: 10px 0 30px;
@@ -12440,7 +12445,7 @@ a.btn.btn_error {
 
 .faq_according .accordion .card .card-body p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
 }
@@ -12460,7 +12465,7 @@ a.btn.btn_error {
 
 .terms_condition_grid .grids p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
 }
@@ -12484,7 +12489,7 @@ a.btn.btn_error {
 
 .terms_condition_widget ul li a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 2.857;
   -webkit-transition: all 0.3s ease;
@@ -12550,7 +12555,7 @@ a.btn.btn_error {
 
 .ui_kit_tab .tab-content .tab-pane p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.857;
   margin-bottom: 0;
@@ -12718,7 +12723,7 @@ a.btn.btn_error {
 .ui_kit_radiobox .radio label {
   cursor: pointer;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   line-height: 25px;
@@ -12863,7 +12868,7 @@ legend span {
 /*== SwithcBox Widget UI Page ==*/
 .ui_kit_whitchbox .custom-control-label {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   line-height: 2;
@@ -12949,7 +12954,7 @@ legend span {
 
 .ui_page_heading .blockquote p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   font-style: italic;
   line-height: 1.714;
@@ -12972,7 +12977,7 @@ legend span {
 
 .order_list li {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 2.857;
 }
@@ -12991,54 +12996,54 @@ legend span {
 
 .ui_page_headings h1 {
   font-size: 45px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1;
   margin-bottom: 35px;
 }
 
 .ui_page_headings h2 {
   font-size: 35px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 0.686;
   margin-bottom: 35px;
 }
 
 .ui_page_headings h3 {
   font-size: 30px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 0.8;
   margin-bottom: 35px;
 }
 
 .ui_page_headings h4 {
   font-size: 26px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 0.923;
   margin-bottom: 35px;
 }
 
 .ui_page_headings h5 {
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.091;
   margin-bottom: 35px;
 }
 
 .ui_page_headings h6 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.333;
   margin-bottom: 35px;
 }
@@ -13062,7 +13067,7 @@ legend span {
   a
   span.text {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 2.5;
 }
@@ -13077,7 +13082,7 @@ legend span {
 
 .ui_kit_select_search .bootstrap-select .dropdown-menu li a span.text {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 2.5;
 }
@@ -13152,16 +13157,16 @@ legend span {
 
 .blog_sp_tag a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #fefefe;
   line-height: 1.2;
 }
 
 .blog_sp_title {
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 30px;
 }
@@ -13192,7 +13197,7 @@ legend span {
 
 .main_blog_post_content .mbp_thumb_post .details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
 }
@@ -13232,7 +13237,7 @@ legend span {
   border: 1px solid #ebebeb;
   border-radius: 50%;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #777777;
   height: 45px;
   overflow: hidden;
@@ -13305,7 +13310,7 @@ legend span {
 .event_counter_plugin_content ul li span {
   display: block;
   font-size: 26px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   line-height: 1.2;
 }
@@ -13349,7 +13354,7 @@ legend span {
 
 .blog_grid_post .thumb .post_date {
   bottom: 30px;
-  font-weight: bold;
+  font-weight: 600;
   max-width: 95px;
   position: absolute;
   right: 30px;
@@ -13358,20 +13363,20 @@ legend span {
 
 .blog_grid_post .thumb .post_date h2 {
   font-size: 50px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
   margin-bottom: 0;
 }
 
 .blog_grid_post .thumb .post_date span {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
 }
 
 .blog_grid_post .details h3 {
   font-size: 26px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 15px;
@@ -13455,7 +13460,7 @@ legend span {
 
 .blog_grid_post.style2.event_lists .details h3 {
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.091;
 }
@@ -13493,7 +13498,7 @@ legend span {
 
 .event_participator_tile {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 50px;
@@ -13506,7 +13511,7 @@ legend span {
 
 .participator_team .details h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.333;
   margin-bottom: 0;
@@ -13539,9 +13544,9 @@ legend span {
 .sidebar_recent_product .title,
 .sidebar_feature_listing .title {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 25px;
 }
@@ -13566,9 +13571,9 @@ legend span {
 .sidebar_recent_product .media .media-body .post_title,
 .sidebar_feature_listing .media .media-body .post_title {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -13585,15 +13590,15 @@ legend span {
 .sidebar_recent_product .media .media-body a,
 .sidebar_feature_listing .media .media-body a {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(255, 90, 95);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .sidebar_feature_listing .media .media-body ul li {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-right: 0;
@@ -13646,7 +13651,7 @@ legend span {
 .blog_recent_post_widget .title,
 .blog_category_widget .title {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 0;
@@ -13689,7 +13694,7 @@ legend span {
 
 .event_details_widget .title {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 25px;
@@ -13749,7 +13754,7 @@ legend span {
 }
 
 .feature_course_widget h4 {
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   font-size: 20px;
   color: #484848;
   line-height: 1.2;
@@ -13794,9 +13799,9 @@ legend span {
 
 .instructor_pricing_widget .price {
   font-size: 30px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -13907,7 +13912,7 @@ legend span {
 
 .blog_recent_post_widget .media-body .post_title {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #212121;
   line-height: 1.5;
   margin-bottom: 0;
@@ -13930,9 +13935,9 @@ legend span {
 
 .blog_tag_widget .title {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -13952,7 +13957,7 @@ legend span {
 
 .blog_tag_widget .tag_list li a {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -13978,7 +13983,7 @@ legend span {
 
 .mbp_blockquote .blockquote span {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(187, 187, 187);
   font-style: italic;
   line-height: 0.333;
@@ -13986,7 +13991,7 @@ legend span {
 
 .mbp_blockquote .blockquote em {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   font-style: italic;
   line-height: 1.714;
@@ -14010,9 +14015,9 @@ legend span {
 
 .blog_post_share li:first-child a {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2.5;
 }
 
@@ -14036,7 +14041,7 @@ legend span {
 
 .blog_post_share li p {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -14101,7 +14106,7 @@ legend span {
 .mbp_pagination_tab .pag_next .detls {
   display: inline-block;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.75;
   margin-bottom: 0;
@@ -14110,8 +14115,8 @@ legend span {
 .mbp_pagination_tab .pag_prev .detls h5,
 .mbp_pagination_tab .pag_next .detls h5 {
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.5;
   margin-bottom: 0;
 }
@@ -14119,7 +14124,7 @@ legend span {
 .mbp_pagination_tab .pag_prev .detls p,
 .mbp_pagination_tab .pag_next .detls p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   margin-bottom: 0;
@@ -14154,7 +14159,7 @@ legend span {
 
 .mbp_pagination_comments .total_review h4 {
   margin-bottom: 0;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .mbp_pagination_comments .total_review ul.review_star_list li {
@@ -14175,7 +14180,7 @@ legend span {
 
 .mbp_pagination_comments .mbp_first.media .media-body p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   margin-bottom: 0;
@@ -14192,9 +14197,9 @@ legend span {
 .mbp_pagination_comments .mbp_first .media-body .sub_title {
   display: flex;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
   margin-bottom: 0;
 }
@@ -14206,7 +14211,7 @@ legend span {
 
 .mbp_pagination_comments a.write_review {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(255, 90, 95);
   position: absolute;
   right: 30px;
@@ -14214,7 +14219,7 @@ legend span {
 
 .mbp_pagination_comments .tr_outoff {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(118, 118, 118);
 }
 
@@ -14290,7 +14295,7 @@ legend span {
 
 .breadcrumb_widgets .title {
   font-size: 22px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: rgb(10, 10, 10);
   line-height: 1.2;
   margin-bottom: 0;
@@ -14325,7 +14330,7 @@ legend span {
 
 .user_profile .media .media-body h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   padding-left: 30px;
@@ -14400,16 +14405,16 @@ legend span {
 
 .my_dashboard_review .review_content .review_title {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
 }
 
 .my_dashboard_review .review_content .review_date {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(118, 118, 118);
   line-height: 2.143;
 }
@@ -14443,9 +14448,9 @@ legend span {
   background-color: rgb(36, 50, 74);
   border: none;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2.2;
 }
 
@@ -14456,9 +14461,9 @@ legend span {
 .property_table .table td,
 .property_table .table th {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 3;
   padding-left: 30px;
 }
@@ -14471,7 +14476,7 @@ legend span {
 .savesearched_table td.para,
 .property_table td.para {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
 }
 
@@ -14483,9 +14488,9 @@ legend span {
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   width: 200px;
@@ -14634,7 +14639,7 @@ legend span {
   border-bottom: 1px solid #dedede;
   color: #484848;
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.333;
   margin-bottom: 0;
   padding-bottom: 20px;
@@ -14773,7 +14778,7 @@ legend span {
 
 .user_setting .dropdown-menu .user_set_header p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -14791,7 +14796,7 @@ legend span {
 .user_setting .dropdown-menu .user_setting_content a {
   color: #484848;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 2.125 !important;
   padding-left: 0;
   -webkit-transition: all 0.3s ease 0s;
@@ -14984,16 +14989,16 @@ legend span {
 
 .grid_list_search_result .right_area ul li .filter-option-inner-inner {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
 }
 
 .grid_list_search_result .right_area ul li span.stts,
 .grid_list_search_result .right_area ul li span.shrtby {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .grid_list_search_result
@@ -15004,7 +15009,7 @@ legend span {
   a
   span.text {
   color: #777777;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .grid_list_search_result .half_map_advsrch_navg ul li:first-child:before {
@@ -15153,7 +15158,7 @@ legend span {
 
 .h1ads_1st_list.half_style input.form-control::placeholder {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -15270,15 +15275,15 @@ legend span {
 
 .sl_creator .media-body h5 {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .sl_creator .media-body p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
   line-height: 1.5;
   margin-bottom: 0;
@@ -15286,8 +15291,8 @@ legend span {
 
 .sl_creator .media-body a {
   font-size: 14px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
 }
@@ -15301,7 +15306,7 @@ legend span {
   border: 1px solid rgb(235, 235, 235);
   border-radius: 8px;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   height: 52px;
@@ -15350,7 +15355,7 @@ legend span {
   border-radius: 8px;
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   height: 52px;
   line-height: 42px;
   padding-left: 20px;
@@ -15382,7 +15387,7 @@ legend span {
 
 .sasw_list .panel-heading h4.panel-title {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 25px;
@@ -15500,9 +15505,9 @@ legend span {
 
 .portfolio_upload p {
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(72, 72, 72);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
   position: relative;
@@ -15564,16 +15569,16 @@ legend span {
 
 .inbox_user_list .wrap .meta h5.name {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
 }
 
 .inbox_user_list .wrap .meta p.preview {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(119, 119, 119);
   line-height: 2;
   margin-bottom: 0;
@@ -15690,7 +15695,7 @@ legend span {
 
 .message_container .user_heading .wrap h5.name {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(10, 10, 10);
   line-height: 1.2;
   margin-bottom: 0;
@@ -15803,7 +15808,7 @@ legend span {
 }
 .message_container .message_input form input.form-control::placeholder {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
 }
@@ -15915,14 +15920,14 @@ legend span {
 
 .ff_one .detais .timer {
   font-size: 36px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
 
 .ff_one .detais p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(119, 119, 119);
   margin-bottom: 0;
 }
@@ -15950,9 +15955,9 @@ legend span {
 }
 
 .application_statics h4 {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -15968,8 +15973,8 @@ legend span {
 .recent_job_activity h4 {
   color: #484848;
   font-size: 18px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -15999,7 +16004,7 @@ legend span {
 
 .recent_job_activity .grid ul li p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   margin-bottom: 0;
@@ -16058,7 +16063,7 @@ legend span {
   color: rgb(138, 153, 179);
   display: block;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 3.571;
   padding: 0 15px;
 }
@@ -16097,9 +16102,9 @@ legend span {
 .sidebar-menu li.header {
   background-color: #24324a;
   color: #ffffff;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   padding: 10px 0 10px 20px;
   text-align: left;
@@ -16147,7 +16152,7 @@ legend span {
   color: rgb(138, 153, 179);
   display: block;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 2.5;
   padding-left: 30px;
 }
@@ -16172,7 +16177,7 @@ legend span {
 
 .sidebar-menu .title {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(96, 112, 140);
   line-height: 1.5;
   margin-top: 30px;
@@ -16185,7 +16190,7 @@ legend span {
 /*== sidebar about widget ==*/
 .siderbar_contact_widget h4 {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   margin-bottom: 15px;
   line-height: 1.2;
@@ -16330,7 +16335,7 @@ legend span {
   bottom: 20px;
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 2.2;
   height: 50px;
   left: 20px;
@@ -16390,9 +16395,9 @@ legend span {
   background-color: rgb(29, 41, 62);
   cursor: pointer;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 30px;
   position: absolute;
   top: 0;
@@ -16492,7 +16497,7 @@ legend span {
   cursor: pointer;
   display: block;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   height: 50px;
   line-height: 50px;
   margin-top: 0;
@@ -16695,7 +16700,7 @@ legend span {
 
 .blog_post_home2 .details h4 {
   color: #fafafa;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 20px;
   font-weight: normal;
   line-height: 1.5;
@@ -16712,7 +16717,7 @@ legend span {
 }
 
 .read_more_home5 h4 {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /*== Testimonials Home V3 ==*/
@@ -16773,7 +16778,7 @@ legend span {
 }
 
 .form_grid h4 {
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -16801,7 +16806,7 @@ legend span {
   border: 1px solid #ebebeb;
   border-radius: 8px;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 25px;
@@ -16816,9 +16821,9 @@ legend span {
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   width: 200px;
@@ -16835,16 +16840,16 @@ legend span {
 
 .contact_localtion h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .contact_localtion p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   margin-bottom: 20px;
@@ -16852,9 +16857,9 @@ legend span {
 
 .contact_localtion .content_list h5 {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
   margin-bottom: 0;
 }
@@ -16917,14 +16922,14 @@ legend span {
 .maxtext h1 {
   color: #ffffff;
   font-size: 50px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .maxtext p {
   color: #ffffff;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 18px;
   line-height: 1.2;
 }
@@ -17988,15 +17993,15 @@ legend span {
 }
 
 .fw600 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .fw700 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .fw800 {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .fw900 {
@@ -18004,7 +18009,7 @@ legend span {
 }
 
 .fwb {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .db {
@@ -19076,10 +19081,10 @@ section {
   margin-bottom: 10px;
   margin-top: 0;
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 36px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 40px;
 }
 
@@ -19091,7 +19096,7 @@ section {
 
 .main-title p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(119, 119, 119);
   line-height: 1.2;
   margin-bottom: 0;
@@ -19099,7 +19104,7 @@ section {
 
 .main-title p a {
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -19680,7 +19685,7 @@ canvas {
 
 .selected_filter_widget.style2 .accordion .link {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -19895,8 +19900,8 @@ canvas {
   color: #ffffff;
   cursor: pointer;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   height: 50px;
   left: auto;
   line-height: 50px;
@@ -20055,7 +20060,7 @@ canvas {
   border-radius: 3px;
   background-color: var(--color-primary);
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #fefefe;
   height: 25px;
   left: 10px;
@@ -20072,17 +20077,17 @@ canvas {
 }
 
 .shop_grid .details h4.item-tile {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.444;
   margin-bottom: 15px;
 }
 
 .shop_grid .details h4.item-tile .price {
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: var(--color-primary);
-  font-weight: bold;
+  font-weight: 600;
   float: right;
 }
 
@@ -20093,8 +20098,8 @@ canvas {
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   height: 45px;
   width: 150px;
@@ -20112,7 +20117,7 @@ canvas {
 
 .shop_order_box .main_title {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -20140,7 +20145,7 @@ canvas {
 
 .shop_order_box .order_list_raw ul li h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.333;
   margin-bottom: 4px;
@@ -20155,7 +20160,7 @@ canvas {
 
 .shop_order_box .order_details .title {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 40px;
@@ -20163,7 +20168,7 @@ canvas {
 
 .shop_order_box .order_details .title2 {
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -20183,7 +20188,7 @@ canvas {
 
 .shop_order_box .order_details .od_content .tamount {
   font-size: 18px;
-  font-family: "Nunito SemiBold";
+  font-family: var(--font-primary);
   color: rgb(255, 16, 83);
   line-height: 1.333;
 }
@@ -20202,7 +20207,7 @@ canvas {
 
 .checkout_form.style2 .heading p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   margin-bottom: 15px;
@@ -20220,7 +20225,7 @@ canvas {
   border: 1px solid #ebebeb;
   border-radius: 8px;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   height: 52px;
@@ -20230,9 +20235,9 @@ canvas {
 
 .checkout_form .checkout_coupon form label {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.75;
 }
 
@@ -20241,7 +20246,7 @@ canvas {
   border: 1px solid #ebebeb;
   border-radius: 5px;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   height: 52px;
@@ -20253,7 +20258,7 @@ canvas {
   border: 1px solid #ebebeb;
   border-radius: 8px;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   padding: 25px;
@@ -20268,8 +20273,8 @@ canvas {
   -o-box-shadow: 0px 1px 4px 0px rgba(62, 76, 102, 0.3);
   box-shadow: 0px 1px 4px 0px rgba(62, 76, 102, 0.3);
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   height: 50px;
   line-height: 1.2;
   margin-bottom: 0;
@@ -20295,8 +20300,8 @@ canvas {
   -o-box-shadow: 0px 1px 4px 0px var(--color-shadow);
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   position: absolute;
@@ -20346,9 +20351,9 @@ canvas {
 
 .checkout_form .checkout_coupon .form2 .ai_title {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -20356,9 +20361,9 @@ canvas {
 
 .checkout_form .checkout_coupon .form2 p {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.75;
 }
 
@@ -20377,8 +20382,8 @@ canvas {
 .order_sidebar_widget .title {
   color: #484848;
   font-size: 18px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 40px;
 }
@@ -20390,15 +20395,15 @@ canvas {
 .order_sidebar_widget .subtitle p {
   color: #484848;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
 }
 
 .order_sidebar_widget .subtitle span,
 .order_sidebar_widget .subtitle .totals {
   color: var(--color-primary);
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
 }
 
 .payment_widget {
@@ -20422,7 +20427,7 @@ canvas {
 
 .payment_widget .bt_details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   margin-bottom: 0;
@@ -20481,8 +20486,8 @@ canvas {
   border: none;
   color: #484848;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 2.2;
   padding-left: 20px;
 }
@@ -20558,9 +20563,9 @@ canvas {
 
 .cart_page_form tbody.table_body th .cart_list .cart_title {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.444;
 }
 
@@ -20574,9 +20579,9 @@ canvas {
   border-radius: 8px;
   background-color: #efefef;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   height: 50px;
   line-height: 1.2;
   width: 70px;
@@ -20588,7 +20593,7 @@ canvas {
 
 .order_key_status li {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(10, 10, 10);
   line-height: 2.222;
 }
@@ -20629,7 +20634,7 @@ canvas {
 
 .single_product_grid .sps_content .content .shop_single_product_details p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
 }
@@ -20651,24 +20656,6 @@ canvas {
   margin-top: 10px;
   width: 90px;
 }
-
-/* .single_product_slider.owl-theme .owl-dots .owl-dot:first-child span {
-  background-image: url(../images/shop/ss1.png);
-  background-position: center center;
-  background-size: cover;
-}
-
-.single_product_slider.owl-theme .owl-dots .owl-dot:nth-child(2) span {
-  background-image: url(../images/shop/ss2.png);
-  background-position: center center;
-  background-size: cover;
-}
-
-.single_product_slider.owl-theme .owl-dots .owl-dot:nth-child(3) span {
-  background-image: url(../images/shop/ss3.png);
-  background-position: center center;
-  background-size: cover;
-} */
 
 .single_product {
   position: relative;
@@ -20698,8 +20685,8 @@ canvas {
 .shop_single_product_details h4 {
   color: #484848;
   font-size: 22px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.182;
   margin-bottom: 15px;
 }
@@ -20709,9 +20696,9 @@ canvas {
   border: none;
   border-radius: 8px;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   height: 50px;
   text-align: center;
@@ -20720,9 +20707,9 @@ canvas {
 
 .shop_single_product_details .sspd_price {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: var(--color-primary);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -20738,8 +20725,8 @@ canvas {
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   border-radius: 8px;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
   color: #ffffff;
   height: 50px;
@@ -20761,7 +20748,7 @@ canvas {
 
 .shop_single_product_details .sspd_social_icon li:first-child {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: rgb(59, 59, 59);
   line-height: 1.333;
   padding-right: 10px;
@@ -20788,7 +20775,7 @@ canvas {
   .media-body
   p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.857;
   margin-bottom: 0;
@@ -20832,7 +20819,7 @@ canvas {
 .cs_rwo_tabs.csv2 .nav-tabs .nav-link {
   border: 1px solid transparent;
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   height: 64px;
   line-height: 2.5;
@@ -20919,23 +20906,23 @@ ul.total_reivew_view {
 
 ul.total_reivew_view li.sub_titles {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-right: 10px;
 }
 
 ul.total_reivew_view li.avrg_review {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #767676;
   line-height: 2.143;
 }
 
 ul.total_reivew_view li.write_review {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: var(--color-primary);
   line-height: 2.57;
   position: absolute;
@@ -20972,9 +20959,9 @@ ul.total_reivew_view .star_list li:last-child a {
 .shop_single_tab_content .nav-tabs .nav-link {
   border: none;
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   padding: 0.5rem 0;
 }
@@ -20999,9 +20986,9 @@ ul.total_reivew_view .star_list li:last-child a {
 .mbp_comment_form.style2 h4,
 .bsp_reveiw_wrt h4 {
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 25px;
 }
@@ -21013,7 +21000,7 @@ ul.total_reivew_view .star_list li:last-child a {
 .mbp_comment_form.style2 .sspd_review .review_rating_para,
 .review_star li p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.714;
   padding-left: 10px;
@@ -21050,7 +21037,7 @@ ul.total_reivew_view .star_list li:last-child a {
   border: 1px solid #ebebeb;
   border-radius: 8px;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
   height: 52px;
@@ -21065,7 +21052,7 @@ ul.total_reivew_view .star_list li:last-child a {
   border-radius: 8px;
   color: #484848;
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   line-height: 1.2;
   margin-bottom: 20px;
   padding: 20px;
@@ -21081,8 +21068,8 @@ ul.total_reivew_view .star_list li:last-child a {
   box-shadow: 0px 1px 4px 0px var(--color-shadow);
   color: #ffffff;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   height: 50px;
   line-height: 35px;
   width: 200px;
@@ -21124,7 +21111,7 @@ ul.total_reivew_view .star_list li:last-child a {
   color: #484848;
   font-family: nunito;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
   margin-bottom: 30px;
 }
@@ -21196,22 +21183,22 @@ button.gm-ui-hover-effect:focus {
 
 .gm-style-iw-d h5 {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: var(--color-primary);
   line-height: 1.2;
 }
 
 .gm-style-iw-d h4 {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .gm-style-iw-d p {
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 1.2;
 }
@@ -21225,8 +21212,8 @@ button.gm-ui-hover-effect:focus {
 #slider-range-value2 {
   color: #006c70;
   font-size: 16px;
-  font-family: "Nunito";
-  font-weight: bold;
+  font-family: var(--font-primary);
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -21414,7 +21401,7 @@ button.gm-ui-hover-effect:focus {
 /* nav active */
 .ui-active {
   color: #ff3636 !important;
-  font-weight: 900 !important;
+  font-weight: 600 !important;
 }
 
 .pro-sidebar .pro-menu a.ui-active {
@@ -21479,9 +21466,6 @@ button.gm-ui-hover-effect:focus {
 }
 
 .home-hero-image {
-  /* position: absolute;
-  left: 0;
-  bottom: 0; */
   width: 100%;
   height: 100%;
 }
@@ -21513,24 +21497,13 @@ button.gm-ui-hover-effect:focus {
 
 .about_us_header_content .about_us_header {
   text-align: left;
-  /* justify-content: center;
-  color: #fff !important;
-  text-align: center;
-  font-family: Montserrat;
-  font-size: 5vw;
-  font-style: normal;
-  margin-top: 1rem;
-  font-weight: 600;
-  line-height: normal;
-  z-index: 10; */
   color: #fff;
   text-align: center;
   font-size: 52px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   z-index: 100;
-  /* width: 685px; */
   max-width: 80%;
 }
 
@@ -21541,7 +21514,6 @@ button.gm-ui-hover-effect:focus {
 .about_stats_page_section {
   width: 100%;
   padding: 60px 0;
-  /* margin-bottom: 5rem; */
 }
 
 /* About us stats section */
@@ -21559,10 +21531,10 @@ button.gm-ui-hover-effect:focus {
   color: #000;
   text-align: center;
   font-feature-settings: "case" on;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 64px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 50px; /* 78.125% */
   text-transform: capitalize;
 }
@@ -21570,7 +21542,7 @@ button.gm-ui-hover-effect:focus {
 .about_stats_page_section .stats_div p {
   color: #929292;
   text-align: center;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -21597,16 +21569,16 @@ button.gm-ui-hover-effect:focus {
 .mission_section .heading_mission {
   color: #ff3636;
   text-align: center;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 20px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 187.5%;
 }
 
 .mission_section .mission_p {
   font-size: 12px;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #484848;
   line-height: 15px;
 }
@@ -21621,17 +21593,17 @@ button.gm-ui-hover-effect:focus {
 
 .mission_commitment .mission_text h3 {
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 28px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 143.5%;
   gap: 2rem;
 }
 
 .mission_commitment .mission_text p {
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -21680,11 +21652,11 @@ button.gm-ui-hover-effect:focus {
   transition: 0.3s;
   font-size: 21px;
   color: black;
-  font-weight: 600;
+  font-weight: 500;
 }
 .how_it_works .para p{
   transition: 0.3s;
-  font-weight: 100;
+  font-weight: 400;
   color: black;
   font-size: 15px;
 }
@@ -21702,10 +21674,10 @@ button.gm-ui-hover-effect:focus {
 
 .how_it_works_about .main_header_works {
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 36px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 35px;
   text-transform: capitalize;
 }
@@ -21718,14 +21690,6 @@ button.gm-ui-hover-effect:focus {
   color: #ff3636;
 }
 
-/* .how_it_works_about .howitworks_div {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  gap: 1rem; 
-}*/
-
 .how_it_works_about .howitworks_div span {
   width: 48.104px;
   height: 62.479px;
@@ -21733,21 +21697,18 @@ button.gm-ui-hover-effect:focus {
 }
 .how_it_works_about .howitworks_div h3 {
   color: #000;
-  /* font-family: Istok Web; */
   font-size: 20px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 35px;
   text-transform: capitalize;
 }
 
 .how_it_works_about .howitworks_div p {
   color: #929292;
-  /* font-family: Istok Web; */
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
-  /* align-items: start; */
   line-height: 20px;
   text-transform: capitalize;
 }
@@ -21764,10 +21725,9 @@ button.gm-ui-hover-effect:focus {
 
 .owner_message_main h2 {
   color: #000;
-  /* font-family: Istok Web; */
   font-size: 36px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 157.5%;
 }
 
@@ -21776,13 +21736,13 @@ button.gm-ui-hover-effect:focus {
   font-family: Poppins;
   font-size: 28px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 157.5%; /* 44.1px */
+  font-weight: 500;
+  line-height: 157.5%;
 }
 
 .owner_message_main p {
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
@@ -21818,7 +21778,6 @@ button.gm-ui-hover-effect:focus {
 
 .home_header {
   display: flex;
-  /* background: url(../images/home/header.png); */
   background-position: center;
   background-size: cover;
   flex-direction: column;
@@ -21827,13 +21786,6 @@ button.gm-ui-hover-effect:focus {
 }
 
 .home_header::before {
-  /* content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 01); */
   background-color: rgb(29, 41, 62);
   bottom: 0;
   content: "";
@@ -21847,9 +21799,9 @@ button.gm-ui-hover-effect:focus {
 .home_header .home-hero-title {
   color: #fff;
   text-align: center;
-  font-size: 52px;
+  font-size: 53px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
   z-index: 1;
 }
@@ -21861,7 +21813,7 @@ button.gm-ui-hover-effect:focus {
 .home_header .home-hero-para {
   color: var(--cold-grey-5, #f3f4f6);
   text-align: center;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -21876,9 +21828,6 @@ button.gm-ui-hover-effect:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
-  /* gap: 1rem; */
-  /* padding: 40px 0; */
 }
 
 .main_cities_header .main_cities_header_left {
@@ -21891,19 +21840,19 @@ button.gm-ui-hover-effect:focus {
 .main_cities_header .main_cities_header_left h2 {
   color: #292d32;
   font-feature-settings: "case" on;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 32px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 31px;
 }
 
 .main_cities_header .view-all a {
   color: #292d32 !important;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 12px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 20px;
   margin-right: 1rem;
   text-align: center;
@@ -21915,16 +21864,16 @@ button.gm-ui-hover-effect:focus {
 
 .how_it_works_card .heading h4 {
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 20px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 35px;
 }
 
 .how_it_works_card .para p {
   color: #929292;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
@@ -21938,10 +21887,10 @@ button.gm-ui-hover-effect:focus {
 
 .our_experts .heading_main h2 {
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 36px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 40px;
 }
 
@@ -21974,7 +21923,7 @@ button.gm-ui-hover-effect:focus {
 
 .home_loan .heading_main h2 {
   color: #2c2c2c;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -21991,10 +21940,10 @@ button.gm-ui-hover-effect:focus {
 
 .home_loan .cards p {
   color: #929292;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 27px;
 }
 
@@ -22005,22 +21954,6 @@ button.gm-ui-hover-effect:focus {
   align-items: center;
   padding: 2rem;
 }
-/* .home_loan .image img{
-    border-bottom: 10px solid var(--color-primary);
-    border-left: 10px solid var(--color-primary);
-} */
-
-/* .home_loan .image::before{
-  content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 10px solid #000;
-} */
-
-/* Mortgage Process  */
 
 .mortgage_process_header_content {
   display: flex;
@@ -22029,10 +21962,9 @@ button.gm-ui-hover-effect:focus {
   align-items: center;
 }
 .header_inner_page_section .mortgage_process_header {
-  /* font-size: 3vw; */
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
 }
@@ -22042,10 +21974,9 @@ button.gm-ui-hover-effect:focus {
   text-align: center;
   font-size: 52px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   z-index: 1;
-  /* width: 685px; */
   max-width: 70%;
 }
 .mortgage_process_header span {
@@ -22057,7 +21988,7 @@ button.gm-ui-hover-effect:focus {
 
   text-align: center;
   /* Sub Heading */
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -22089,7 +22020,7 @@ button.gm-ui-hover-effect:focus {
   text-align: center;
   color: #515151;
   text-align: center;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -22132,16 +22063,16 @@ button.gm-ui-hover-effect:focus {
 .keytakeaway_container .keytakeaway_header h2 {
   color: var(--primary-colors-black, #02021d);
   text-align: center;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 40px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 64px;
 }
 
 .keytakeaway_container .keytakeaway_ul ul {
   color: #1e1e1e;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -22157,38 +22088,11 @@ button.gm-ui-hover-effect:focus {
   align-items: center;
 }
 
-/* preapproval section   */
-/* .preapproval_section {
-  margin-top: 50rem
-} */
-
-.preapproval_section .heading_main {
-  /* color: #000;
-  font-feature-settings: "case" on;
-  font-family: "Nunito";
-  font-size: 33px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 20px;
-  text-transform: capitalize;
-  margin: 1rem 0; */
-}
-.preapproval_section p {
-  /* color: #515151;
-  font-family: "Nunito";
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 19px;
-  text-transform: capitalize;
-  padding: 8px 0; */
-}
-
 .preapproval_section .find_property_ul {
   list-style: disc;
   padding: 0 20px;
-  font-weight: 800;
-  font-family: "Nunito";
+  font-weight: 700;
+  font-family: var(--font-primary);
   font-size: 15px;
 }
 
@@ -22237,39 +22141,33 @@ button.gm-ui-hover-effect:focus {
 .faq_mortgage_process .main_card .heading_main h2 {
   color: #000;
   font-feature-settings: "case" on;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 32px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 50px; /* 125% */
   text-transform: capitalize;
 }
 
 .faq_mortgage_process .sub_heading {
   color: #000;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 27px;
   text-transform: capitalize;
 }
 
 .faq_mortgage_process .text {
   color: #515151;
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 27px;
   text-transform: capitalize;
 }
-
-/* header{
-  z-index: 100;
-} */
-
-/* pre approval  */
 
 .pre_approval_section {
   position: relative;
@@ -22283,17 +22181,8 @@ button.gm-ui-hover-effect:focus {
   align-items: center;
   margin-top: 0;
   max-width: 100%; /* Set the maximum width to 100% of its container */
-  /* height: auto; */
-}
-/* .slider {
-    width: 100%;
-    height: 100%;
 }
 
-.slider img {
-    width: 100%;
-    height: 100%;
-} */
 .pre_approval_section::before {
   content: ""; /* Pseudo-element content */
   position: absolute; /* Position the pseudo-element absolutely */
@@ -22317,10 +22206,9 @@ button.gm-ui-hover-effect:focus {
   align-items: start;
 }
 .header_inner_page_section .pre_approval_header {
-  /* font-size: 3vw; */
-  font-family: "Nunito";
+  font-family: var(--font-primary);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 0;
 }
@@ -22329,11 +22217,9 @@ button.gm-ui-hover-effect:focus {
   color: #fff;
   font-size: 52px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   z-index: 1;
-  /* width: 685px; */
-  /* max-width: 70%; */
 }
 
 .pre_approval_header_content .btn_mortgage {
@@ -22353,10 +22239,6 @@ button.gm-ui-hover-effect:focus {
 
 .customer_support_section {
   position: relative;
-  /* background: url(../images/customer_header.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
   background-color: #e3e5ed;
   height: 500px;
   margin-top: 88px;
@@ -22365,16 +22247,6 @@ button.gm-ui-hover-effect:focus {
   margin-top: 0;
   max-width: 100%;
 }
-/* .customer_support_section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-} */
 
 .customer_support_header_content {
   display: flex;
@@ -22383,20 +22255,13 @@ button.gm-ui-hover-effect:focus {
   align-items: center;
   padding: 1rem 2rem;
 }
-/* .customer_support_section .customer_support_header {
-  font-family: "Nunito";
-  color: #ffffff;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 0;
-} */
 .customer_support_header_content .customer_support_header {
   color: var(--primary-colors-black, #02021d);
   text-align: center;
   font-family: Montserrat;
   font-size: 56px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 64px; /* 114.286% */
 }
 
@@ -22424,37 +22289,16 @@ button.gm-ui-hover-effect:focus {
   pointer-events: none;
   color: #aaa;
 }
-
-/* .customer_support_header_content .header_input i {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  color: #fff;
-} */
-
 .input-container input {
   padding: 2rem 4rem;
-  /* margin: 1rem; */
 }
 
-/* .customer_support_header_content .customer_support_btn {
-  cursor: pointer;
-  z-index: 10;
-  width: 250px;
-  height: 61px;
-  font-size: 18px;
-  border-radius: 5px;
-  color: #ffffff;
-  transition: all 0.3s ease;
-} */
 
 /* Mortgage calculator */
 .main_calculator_div {
   display: flex !important;
   justify-content: space-between !important;
   box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2) !important;
-  /* margin-top: 0; */
   position: absolute !important;
   top: 510px !important;
   left: 0 !important;
@@ -22477,127 +22321,6 @@ color: var(--color-primary);
 .left_calculator_div_input{
   outline-color: var(--color-primary);
 }
-/* .loan-calculator {
-  font-family: "Nunito", sans-serif;
-  margin: 24px auto;
-  background: #fff;
-  border-radius: 8px;
-  color: #14213d;
-  overflow: hidden;
-}
-
-.loan-calculator,
-.loan-calculator * {
-  box-sizing: border-box;
-}
-
-.loan-calculator .top {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #fff;
-  padding: 32px;
-}
-
-.loan-calculator .top h2 {
-  margin-top: 0;
-  text-align: center;
-  color: #fff;
-}
-
-.loan-calculator form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: space-between;
-}
-
-.loan-calculator form .group {
-  padding-bottom: 4px;
-}
-
-.loan-calculator form .groups {
-  gap: 15px;
-}
-
-.loan-calculator .title {
-  margin-top: 35px;
-  color: rgba(0, 0, 0, 0.7);
-  font-family: "Nunito";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.loan-calculator form input {
-  padding: 8px 20px;
-  width: 100%;
-  border: 1px solid #ebebeb;
-  border-radius: 8px;
-  background-color: #ffffff;
-  color: #484848;
-  font-size: 14px;
-  height: 50px;
-  line-height: 1.2;
-  padding-left: 20px;
-  outline-color: lightgray;
-}
-
-.loan-calculator .result {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 20px 0;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  flex-direction: column;
-}
-
-.loan-calculator .result .left {
-  width: 100%;
-  padding: 8px 32px;
-}
-
-.loan-calculator .left h3 {
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-
-.loan-calculator .result .value {
-  font-size: 30px;
-  font-weight: 900;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(20, 33, 61, 0.2);
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.loan-calculator .result .value::before {
-  content: "$";
-  font-size: 27px;
-  font-weight: 400;
-  margin-right: 6px;
-  opacity: 0.4;
-}
-
-.loan-calculator .group1 {
-  padding-top: 32px;
-  text-align: center;
-}
-
-.loan-calculator .group1 .calculate-btn {
-  padding: 8px 32px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: 900;
-  cursor: pointer;
-  margin: 24px 0; */
-
-/* 
-.loan-calculator .right {
-  width: 50%;
-} */
-/* mortgage calculator  */
 
 .banks_slider {
   margin-top: 28rem;
@@ -22766,4 +22489,20 @@ color: var(--color-primary);
 .experts_div_right img {
   object-fit: cover;
   border-radius: 11px;
+}
+.experts_div_left h6 {
+  font-size: 21px !important;
+}
+
+.home h3,
+.home h4,
+.home h5,
+.home h6 {
+  font-size: 33px;
+  font-weight: 500;
+  color: #111;
+}
+.home .footer_one h4 {
+  font-size: 18px;
+  color: white;
 }

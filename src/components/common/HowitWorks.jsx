@@ -3,7 +3,7 @@ const HowitWorks = () => {
     <>
       <div class="col-lg-3 col-sm-6 my-3">
         <div class="card border-0 p-2">
-          <div className="icon text-center mb-4">
+          <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="49"
@@ -67,10 +67,10 @@ const HowitWorks = () => {
               />
             </svg>
           </div>
-          <div className="heading text-center">
+          <div className="heading">
             <h4>Find Desired Project</h4>
           </div>
-          <div className="para text-center">
+          <div className="para text-justify">
             <p>
             Your search for the perfect project begins here. Say goodbye to the frustration of sifting through countless options. With our intuitive platform, you can easily locate your dream project. Save time and energy as you explore a curated selection tailored to your preferences.
             </p>
@@ -80,7 +80,7 @@ const HowitWorks = () => {
 
       <div class="col-lg-3 col-sm-6 my-3">
         <div class="card border-0 p-2">
-          <div className="icon text-center mb-4">
+          <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="54"
@@ -118,10 +118,10 @@ const HowitWorks = () => {
               />
             </svg>
           </div>
-          <div className="heading text-center">
+          <div className="heading">
             <h4>Reserve your Unit</h4>
           </div>
-          <div className="para text-center">
+          <div className="para text-justify">
             <p>
             Don&apos;t let your dream slip away. Take action instantly by reserving a unit with us. No more anxiety about missing out &ndash; with just a few clicks, you secure your future property.
             </p>
@@ -130,7 +130,7 @@ const HowitWorks = () => {
       </div>
       <div class="col-lg-3 col-sm-6 my-3">
         <div class="card border-0 p-2">
-          <div className="icon text-center mb-4">
+          <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="51"
@@ -152,10 +152,10 @@ const HowitWorks = () => {
               />
             </svg>
           </div>
-          <div className="heading text-center">
+          <div className="heading">
             <h4>Fill Worksheet</h4>
           </div>
-          <div className="para text-center">
+          <div className="para text-justify">
             <p>
             Your unique preferences matter, and we&apos;ve made sure you can communicate them effortlessly. Our user-friendly worksheet allows you to provide your details and needs. This step ensures a personalized experience that aligns perfectly with your vision.
             </p>
@@ -164,7 +164,7 @@ const HowitWorks = () => {
       </div>
       <div class="col-lg-3 col-sm-6 my-3">
         <div class="card border-0 p-2">
-          <div className="icon text-center mb-4">
+          <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="56"
@@ -182,10 +182,10 @@ const HowitWorks = () => {
               />
             </svg>
           </div>
-          <div className="heading text-center">
+          <div className="heading">
             <h4>Get Confirmation</h4>
           </div>
-          <div className="para text-center">
+          <div className="para text-justify">
             <p>
             The wait is over! Expect confirmation within 24 hours. Our dedicated team will promptly review your reservation and worksheet, giving you the green light to your chosen project. Your dream property is one step closer.
             </p>

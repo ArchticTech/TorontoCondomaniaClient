@@ -42,6 +42,11 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
   const imageRef = useRef(null);
   const [popupImage, setPopupImage] = useState('');
   const [showPopup, setShowPopup] = useState(false);
+  
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const images = [property?.image, ...property?.images];
+
   useEffect(() => {
     // Check if we are running on the client side before manipulating the DOM
     if (typeof window !== 'undefined' && showPopup) {
@@ -58,11 +63,18 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
       popup.style.display = 'none';
     }
   }, [showPopup]);
-  const handlePopup = (show, imageName=null) => {
-    if(imageName)
-      setPopupImage(global.apiURL + 'images/' + imageName)
+
+  const handlePopup = (show) => {
+
+    const imageURL = global.apiURL + 'images/' + images[imageIndex];
+    setPopupImage(imageURL);
     setShowPopup(show);
   };
+  const nextImage = () => {
+    setImageIndex(imageIndex + 1);
+    handlePopup(true);
+  }
+  
 
   return (
     <>
@@ -124,8 +136,11 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
             </div>
             {/* End .row */}
 
-            <div ref={popupRef} id="popup" onClick={() => handlePopup(false)}>
-                <img ref={imageRef} id="popupImage" src="" alt=""/>
+            <div ref={popupRef} id="popup">
+                <img ref={imageRef} id="popupImage" src="" alt="" onClick={() => handlePopup(false)}/>
+                <div
+                  onClick={() => nextImage()}
+                >Next</div>
             </div>
 
             <div className="row property-images">
@@ -133,7 +148,7 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="spls_style_two mb30-520">
-                        <div role="button" onClick={() => handlePopup(true, property.image)}>
+                        <div role="button" onClick={() => handlePopup(true)}>
                           <img
                             width={752}
                             height={450}

@@ -142,16 +142,11 @@ const HeaderMenuContent = ({ float = "" }) => {
 
       <li className="last">
         <Link
-          href="http://torontocondomania.ca/blog"
+          href="https://blog.torontocondomania.ca"
           className={route.pathname === "/articles" ? "ui-active" : undefined}
         >
           Articles
         </Link>
-      </li>
-      {/* End .dropitem */}
-
-      <li className={`list-inline-item list_s ${float}`}>
-        
       </li>
       {/* End .dropitem */}
 

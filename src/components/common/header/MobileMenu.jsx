@@ -20,17 +20,6 @@ const MobileMenu = () => {
           {/* main_logo_home2 */}
 
           <ul className="menu_bar_home2">
-            <li className="list-inline-item list_s">
-             
-                {/* <span className="flaticon-user"></span> */}
-                <a
-                href="#"
-                data-bs-toggle="modal"
-                data-bs-target=".bd-example-modal-lg"
-              >
-                <span className="flaticon-user"></span>
-              </a>
-            </li>
             <li
               className="list-inline-item"
               data-bs-toggle="offcanvas"
@@ -38,6 +27,8 @@ const MobileMenu = () => {
               aria-controls="offcanvasMenu"
             >
               <a>
+                <span></span>
+                <span></span>
                 <span></span>
               </a>
             </li>

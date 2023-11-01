@@ -43,7 +43,7 @@ const OurPartnerSlider = () => {
 
   let content = partnerItems?.slice(0, 12)?.map((partner) => {
     return (
-      <div className="item" key={partner.id}>
+      <div className="item partner" key={partner.id}>
         <div className="feat_property">
           <div className="">
             <img

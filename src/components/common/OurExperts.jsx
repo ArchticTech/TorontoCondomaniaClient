@@ -7,7 +7,7 @@ const OurExperts = () => {
       <div className="row experts_main_div">
         <div className="col-lg-6 experts_div_left">
           <div className="heading_main">
-            <h2>Our expert will help you make the right Decision</h2>
+            <h5>Our expert will help you make the right Decision</h5>
           </div>
           <div className="cards pt30">
             <span>
@@ -75,7 +75,7 @@ const OurExperts = () => {
               </svg>
             </span>
             <div className="card_text">
-              <h4>Requirements Assessment</h4>
+              <h6>Requirements Assessment</h6>
               <p>
                 Our journey begins with a deep dive into your unique needs and desires. By understanding every facet of your real estate aspirations, we tailor our approach to align perfectly with your goals. Your satisfaction is our compass, and we&apos;re committed to ensuring that your purchase is not just a transaction but a step towards your dream home.
               </p>
@@ -109,7 +109,7 @@ const OurExperts = () => {
               </svg>
             </span>
             <div className="card_text">
-              <h4>Market Analysis</h4>
+              <h6>Market Analysis</h6>
               <p>
                 In the ever-evolving GTA real estate market, having the right insights is crucial. Our experts possess an in-depth understanding of local trends, market dynamics, and investment opportunities. We provide you with a roadmap, backed by data-driven analysis, to help you navigate the market with confidence and make decisions that align with your long-term vision.
               </p>
@@ -139,7 +139,7 @@ const OurExperts = () => {
               </svg>
             </span>
             <div className="card_text">
-              <h4>Property Tours</h4>
+              <h6>Property Tours</h6>
               <p>
                 Witness your future unfold with our expert-guided property tours. These tours are not mere walk-throughs; they are windows into the opportunities that await you. Our experienced team showcases handpicked properties that fit your criteria, allowing you to envision the possibilities and choose the right property that resonates with your vision.
               </p>

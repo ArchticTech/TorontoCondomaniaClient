@@ -158,104 +158,107 @@ const FeaturedItem = ({ properties, isAssignment }) => {
     });
 
     return (
-      <Link
-        href={
-          "/" +
-          (isAssignment ? "assignment" : "property") +
-          `/${item.slug}`
-        }
+      <div
         key={item.id}
         className={`${
           isGridOrList ? "col-12 list_map feature-list" : "col-md-6 col-lg-6"
         } `}
       >
-        <div
-          className={`feat_property home7 style4 ${
-            isGridOrList ? "d-flex align-items-center" : undefined
-          }`}
-          onMouseEnter={() => setActiveMarker(item.marker)}
-          onMouseLeave={() => setActiveMarker(null)}
+        <Link
+          href={
+            "/" +
+            (isAssignment ? "assignment" : "property") +
+            `/${item.slug}`
+          }
         >
-          <div className="thumb">
-            <img
-              width={316}
-              height={220}
-              className="img-whp w-100 h-100 cover"
-              src={global.apiURL + "images/" + item.image}
-              alt="fp1.jpg"
-            />
-            <div className="thmb_cntnt">
-              <ul className="tag mb0">
-                {item.isHot ? (
-                  <li className="list-inline-item" >
-                    <a href="" className="text-capitalize">
-                      Hot
+          <div
+            className={`feat_property home7 style4 ${
+              isGridOrList ? "d-flex align-items-center" : undefined
+            }`}
+            onMouseEnter={() => setActiveMarker(item.marker)}
+            onMouseLeave={() => setActiveMarker(null)}
+          >
+            <div className="thumb">
+              <img
+                width={316}
+                height={220}
+                className="img-whp w-100 h-100 cover"
+                src={global.apiURL + "images/" + item.image}
+                alt="fp1.jpg"
+              />
+              <div className="thmb_cntnt">
+                <ul className="tag mb0">
+                  {item.isHot ? (
+                    <li className="list-inline-item" >
+                      <a href="" className="text-capitalize">
+                        Hot
+                      </a>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                  <li className="list-inline-item">
+                    <a href="" className="text-capitalize">{item.vip_featured_promotion}</a>
+                  </li>
+                </ul>
+                <ul className="icon mb0">
+                  <li className="list-inline-item">
+                    <a href="#">
+                      <span className="flaticon-transfer-1"></span>
                     </a>
                   </li>
-                ) : (
-                  ""
-                )}
-                <li className="list-inline-item">
-                  <a href="" className="text-capitalize">{item.vip_featured_promotion}</a>
-                </li>
-              </ul>
-              <ul className="icon mb0">
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-transfer-1"></span>
-                  </a>
-                </li>
-                <IconPropertyHeart id={item.id} />
-              </ul>
+                  <IconPropertyHeart id={item.id} />
+                </ul>
+              </div>
+            </div>
+            <div className="details">
+              <div className="tc_content">
+                <p className="text-thm">{item.type}</p>
+                <h4>
+                    {item.name}
+                </h4>
+                
+                <p className="row justify-content-start">
+                  <div className="col-3 stat mb-2">
+                    <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/single-bed.png" alt="bed"/>
+                    <span className="count">{item?.beds}</span>
+                  </div>
+                  <div className="col-3 stat mb-2">
+                    <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/shower-and-tub.png" alt="shower-and-tub"/>
+                    <span className="count">{item?.baths}</span>
+                  </div>
+                  <div className="col-6 stat-wide mb-2">
+                    <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/fit-to-page.png" alt="land-area"/>
+                    <span className="count">{item?.areaMin}</span> &ndash; <span className="count">{item?.areaMax}</span> Sqft
+                  </div>
+                </p>
+                <p className="mb-2 d-flex align-items-start">
+                  <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/marker--v1.png" alt="map-marker-v1"/>
+                  <span className="mx-2">{item?.address}</span>
+                </p>
+                <p className="mb-0 box">
+                  <span className="mx-2">{item?.status}</span>
+                </p>
+
+                <ul className="prop_details mb0"></ul>
+              </div>
+              {/* End .tc_content */}
+
+              <div className="fp_footer">
+                <ul className="fp_meta float-start mb0">
+                  <li className="list-inline-item">
+                  </li>
+                  <li className="list-inline-item">
+                      From <span className="price">{formattedPriceFrom} &ndash; {formattedPriceTo}</span>
+                  </li>
+                </ul>
+                <div className="fp_pdate float-end">{item.postedYear}</div>
+              </div>
+              {/* End .fp_footer */}
             </div>
           </div>
-          <div className="details">
-            <div className="tc_content">
-              <p className="text-thm">{item.type}</p>
-              <h4>
-                  {item.name}
-              </h4>
-              
-              <p className="row justify-content-start">
-                <div className="col-3 stat mb-2">
-                  <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/single-bed.png" alt="bed"/>
-                  <span className="count">{item?.beds}</span>
-                </div>
-                <div className="col-3 stat mb-2">
-                  <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/shower-and-tub.png" alt="shower-and-tub"/>
-                  <span className="count">{item?.baths}</span>
-                </div>
-                <div className="col-6 stat-wide mb-2">
-                  <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/fit-to-page.png" alt="land-area"/>
-                  <span className="count">{item?.areaMin}</span> &ndash; <span className="count">{item?.areaMax}</span> Sqft
-                </div>
-              </p>
-              <p className="mb-2 d-flex align-items-start">
-                <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/marker--v1.png" alt="map-marker-v1"/>
-                <span className="mx-2">{item?.address}</span>
-              </p>
-              <p className="mb-0 box">
-                <span className="mx-2">{item?.status}</span>
-              </p>
-
-              <ul className="prop_details mb0"></ul>
-            </div>
-            {/* End .tc_content */}
-
-            <div className="fp_footer">
-              <ul className="fp_meta float-start mb0">
-                <li className="list-inline-item">
-                </li>
-                <li className="list-inline-item">
-                    From <span className="price">{formattedPriceFrom} &ndash; {formattedPriceTo}</span>
-                </li>
-              </ul>
-              <div className="fp_pdate float-end">{item.postedYear}</div>
-            </div>
-            {/* End .fp_footer */}
-          </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     );
   });
 

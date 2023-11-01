@@ -7,9 +7,9 @@ const Hero = ({ properties }) => {
         <h1 className="home-hero-title">
           Find, Compare <span> Condos </span> & <span> Town </span>
         </h1>
-        <p className="home-hero-para">
+        <h2 className="home-hero-para">
           Find your New Construction Home in Toronto & GTA
-        </p>
+        </h2>
       </div>
       <GlobalHeroFilter properties={properties} className="home6" />
     </section>
