@@ -55,12 +55,6 @@ const DetailsContent = ({ assignmentVal, property, assignment }) => {
       ) : undefined}
       {/* End .additional_details */}
 
-      <div className="property_attachment_area">
-        <h4 className="mb30">Property Attachments</h4>
-        <div className="iba_container style2">
-          <Attachments />
-        </div>
-      </div>
       {Object.keys(property.features).length > 0 ? (
         <div className="application_statics mt30">
           <div className="row">

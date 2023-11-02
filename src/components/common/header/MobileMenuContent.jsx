@@ -39,9 +39,9 @@ const topCities = [
   { id: 12, name: "Niagara Falls", routerPath: "/niagara-falls" },
 ];
 const homeLoan = [
-  { id: 1, name: "Mortgage process", routerPath: "/mortgage-process" },
-  { id: 2, name: "Pre approval", routerPath: "/pre-approval" },
-  { id: 3, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+  { id: 1, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+  { id: 2, name: "Mortgage process", routerPath: "/mortgage-process" },
+  { id: 3, name: "Pre approval", routerPath: "/pre-approval" },
 ];
 const MobileMenuContent = () => {
   const [loginStatus] = useState(Cookies.get('loginStatus') == 'true')
@@ -137,7 +137,7 @@ const MobileMenuContent = () => {
 
           {
             <SubMenu
-              title="Mortgage Approval"
+              title="Mortgage"
               className={
                 homeLoan.some(
                   (homeLoan) => homeLoan.routerPath === route.pathname

@@ -30,9 +30,9 @@ const HeaderMenuContent = ({ float = "" }) => {
     { id: 12, name: "Niagara Falls", routerPath: "/niagara-falls" },
   ];
   const homeLoan = [
-    { id: 1, name: "Mortgage process", routerPath: "/mortgage-process" },
-    { id: 2, name: "Pre approval", routerPath: "/pre-approval" },
-    { id: 3, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+    { id: 1, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+    { id: 2, name: "Mortgage process", routerPath: "/mortgage-process" },
+    { id: 3, name: "Pre approval", routerPath: "/pre-approval" },
   ];
 
   const dispatch = useDispatch();
@@ -117,7 +117,7 @@ const HeaderMenuContent = ({ float = "" }) => {
               : undefined
           }
         >
-          <span className="title">Mortgage Approval</span>
+          <span className="title">Mortgage</span>
           <span className="arrow"></span>
         </a>
         <ul className="sub-menu ">
