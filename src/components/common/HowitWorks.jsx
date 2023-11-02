@@ -1,8 +1,8 @@
 const HowitWorks = () => {
   return (
     <>
-      <div class="col-lg-3 col-sm-6 my-3">
-        <div class="card border-0 p-2">
+      <div className="col-lg-3 col-sm-6 my-3">
+        <div className="card border-0 p-2">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +78,8 @@ const HowitWorks = () => {
         </div>
       </div>
 
-      <div class="col-lg-3 col-sm-6 my-3">
-        <div class="card border-0 p-2">
+      <div className="col-lg-3 col-sm-6 my-3">
+        <div className="card border-0 p-2">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -128,8 +128,8 @@ const HowitWorks = () => {
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6 my-3">
-        <div class="card border-0 p-2">
+      <div className="col-lg-3 col-sm-6 my-3">
+        <div className="card border-0 p-2">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -162,8 +162,8 @@ const HowitWorks = () => {
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6 my-3">
-        <div class="card border-0 p-2">
+      <div className="col-lg-3 col-sm-6 my-3">
+        <div className="card border-0 p-2">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"

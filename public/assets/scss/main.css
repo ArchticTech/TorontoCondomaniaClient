@@ -21428,6 +21428,19 @@ button.gm-ui-hover-effect:focus {
   border-radius: 21px;
   cursor: zoom-out;
 }
+#popup .arrow {
+  width: 5%;
+  margin: 0 2%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#popup .arrow i {
+  font-size: 103px;
+  color: white;
+}
 .property-images img {
   cursor: zoom-in;
 }

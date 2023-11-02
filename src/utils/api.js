@@ -81,12 +81,18 @@ export async function fetchCityCount(name) {
 
 export async function registerUser(userData)
 {
-    const response = await fetch(global.apiURL + 'api/register/' + 
+    try {
+        const response = await fetch(global.apiURL + 'api/register/' + 
         encodeURIComponent(userData['name']) + '/' + 
         encodeURIComponent(userData['email']) + '/' + 
         encodeURIComponent(userData['password']));
 
-    return await response.json();
+        return await response.json();
+    }
+    catch(e)
+    {
+        console.error(e)
+    }
 }
 export async function resendVerificationEmail(email)
 {

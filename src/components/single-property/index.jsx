@@ -11,9 +11,9 @@ import Sidebar from "../../components/listing-details-v1/Sidebar";
 import Head from "next/head";
 import global from "../../config/env";
 import IconPropertyHeart from "../common/IconPropertyHeart";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
-const PropertyView = ({assignmentVal,property, assignment}) => {
+const PropertyView = ({assignmentVal, property, assignment}) => {
   const router = useRouter();
 
   const handleCompare = () => {
@@ -43,36 +43,56 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
   const [popupImage, setPopupImage] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   
-  const [imageIndex, setImageIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(-1);
 
   const images = [property?.image, ...property?.images];
 
   useEffect(() => {
     // Check if we are running on the client side before manipulating the DOM
-    if (typeof window !== 'undefined' && showPopup) {
+    if (typeof window !== 'undefined' && imageIndex >= 0) {
       const popup = popupRef.current;
       const image = imageRef.current;
 
-      if (popup && image) {
+      if (popup && image) { 
+        const imageURL = global.apiURL + 'images/' + images[imageIndex];
+        console.log(imageIndex);
+        
         popup.style.display = 'flex';
-        image.src = popupImage;
+        image.src = imageURL;
       }
     }
     else {
       const popup = popupRef.current;
       popup.style.display = 'none';
     }
-  }, [showPopup]);
+  }, [images, imageIndex]);
 
-  const handlePopup = (show) => {
-
-    const imageURL = global.apiURL + 'images/' + images[imageIndex];
-    setPopupImage(imageURL);
-    setShowPopup(show);
-  };
   const nextImage = () => {
-    setImageIndex(imageIndex + 1);
-    handlePopup(true);
+    if (imageIndex < images.length - 1)
+    {
+      setImageIndex(imageIndex + 1);
+    }
+    else {
+      setImageIndex(0);
+    }
+  }
+  const previousImage = () => {
+    if (imageIndex > 0)
+    {
+      setImageIndex(imageIndex + 1);
+    }
+    else {
+      setImageIndex(images.length - 1);
+    }
+  }
+  const showImage = (imageIndex) => {
+    if (imageIndex >= 0 && imageIndex < images.length)
+    {
+      setImageIndex(imageIndex);
+    }
+  }
+  const hidePopup = () => {
+      setImageIndex(-1);
   }
   
 
@@ -137,10 +157,15 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
             {/* End .row */}
 
             <div ref={popupRef} id="popup">
-                <img ref={imageRef} id="popupImage" src="" alt="" onClick={() => handlePopup(false)}/>
                 <div
+                  className="arrow"
+                  onClick={() => previousImage()}
+                  > <i className="fa fa-angle-left"></i></div>
+                <img ref={imageRef} id="popupImage" src="" alt="" onClick={() => hidePopup()}/>
+                <div
+                  className="arrow"
                   onClick={() => nextImage()}
-                >Next</div>
+                > <i className="fa fa-angle-right"></i></div>
             </div>
 
             <div className="row property-images">
@@ -148,7 +173,7 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="spls_style_two mb30-520">
-                        <div role="button" onClick={() => handlePopup(true)}>
+                        <div role="button" onClick={() => showImage(0)}>
                           <img
                             width={752}
                             height={450}
@@ -165,10 +190,10 @@ const PropertyView = ({assignmentVal,property, assignment}) => {
 
               <div className="col-sm-5 col-lg-4">
                 <div className="row">
-                  {property?.images?.map((image, i) => (
+                  {property?.images?.slice(0, 6).map((image, i) => (
                     <div className="col-6" key={i}>
                       <div className="spls_style_two img-gallery-box mb24">
-                        <div role="button" onClick={() => handlePopup(true, image)}>
+                        <div role="button" onClick={() => showImage(i+1)}>
                           <img
                             width={170}
                             height={133}
