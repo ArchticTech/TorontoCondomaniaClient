@@ -135,7 +135,7 @@ const MobileMenuContent = () => {
           }
           {/* end top cities  */}
 
-          {
+          {/* {
             <SubMenu
               title="Mortgage"
               className={
@@ -161,7 +161,7 @@ const MobileMenuContent = () => {
                 </MenuItem>
               ))}
             </SubMenu>
-          }
+          } */}
 
           {/* End pages Pages */}
 
