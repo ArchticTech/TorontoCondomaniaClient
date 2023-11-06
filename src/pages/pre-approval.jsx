@@ -1,12 +1,12 @@
-import React from 'react'
-import PreApproval from '../components/pre-approval/index';
+// import React from 'react'
+// import PreApproval from '../components/pre-approval/index';
 
-const preApproval = () => {
-  return (
-    <>
-     <PreApproval/> 
-    </>
-  )
-}
+// const preApproval = () => {
+//   return (
+//     <>
+//      <PreApproval/> 
+//     </>
+//   )
+// }
 
-export default preApproval;
+// export default preApproval;
