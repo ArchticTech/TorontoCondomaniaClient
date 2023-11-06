@@ -7,6 +7,7 @@ import BreadCrumbBanner from "./BreadCrumbBanner";
 import PreApproval from "./PreApproval";
 import Calculator from "./Calculator";
 import Banks from "./Banks";
+import Head from "next/head";
 
 const index = () => {
   return (
@@ -24,7 +25,7 @@ const index = () => {
       <BreadCrumbBanner />
 
       {/* <section className="mortgage_calculator_section pt30"> */}
-        <Calculator />
+      <Calculator />
       {/* </section> */}
 
       <section className="banks_slider">

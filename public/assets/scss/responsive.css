@@ -1091,8 +1091,9 @@
 }
 @media only screen and (max-width: 992px) {
   .home-six {
-    align-items: flex-start;
-    padding-top: 300px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 153px;
   }
   .home_header .home-hero-title {
     top: 130px;
@@ -1431,9 +1432,6 @@
   .small_dropdown2 .dd_btn {
     width: 150px;
   }
-  .home1-advnc-search ul li .search_option_button button {
-    width: 170px;
-  }
   .small_dropdown2.home10 .dd_content2 {
     top: 150px;
     z-index: 9;
@@ -1763,7 +1761,7 @@
 @media only screen and (max-width: 768px) {
   .mortgage_process_header_content .mortgage_process_header {
     top: 180px;
-}
+  }
   .how_it_works {
     height: auto;
   }
@@ -1888,6 +1886,53 @@
   header.header-nav.menu_style_home_six .ace-responsive-menu li:last-child {
     border-bottom: none;
   }
+
+  .home1_adsrchfrm {
+    padding: 0 !important;
+  }
+  .home_adv_srch_opt .tab-content {
+    background-color: transparent;
+  }
+  #buy-search-box, 
+  .home1-advnc-search {
+    width: 100%;
+  }
+  .home1-advnc-search ul {
+    width: 100%;
+    padding: 2px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .home1-advnc-search ul input {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .home1-advnc-search li {
+    display: none !important;
+    margin: 0 !important;
+  }
+  .home1-advnc-search li:first-child {
+    width: calc(100% - 100px);
+    display: inline-block !important;
+  }
+  .home1-advnc-search li:last-child {
+    display: inline-block !important;
+    width: fit-content !important;
+  }
+  .home1-advnc-search ul li .search_option_button button {
+    width: 53px !important;
+    color: transparent;
+    margin-left: 21px;
+    background-image: url(https://img.icons8.com/fluency-systems-filled/ffffff/48/search.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .home1-advnc-search ul li .search_option_button button:hover {
+    color: transparent;
+    background-color: var(--color-primary);
+  }
+  
   .menu-toggle #menu-btn {
     background-color: #79b530 !important;
     border-color: #79b530 !important;
