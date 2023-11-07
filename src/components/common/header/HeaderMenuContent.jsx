@@ -104,7 +104,7 @@ const HeaderMenuContent = ({ float = "" }) => {
 
       {/* End .dropitem */}
 
-      {/* <li className="dropitem">
+      <li className="dropitem">
         <a
           href="#"
           className={
@@ -137,7 +137,7 @@ const HeaderMenuContent = ({ float = "" }) => {
             </li>
           ))}
         </ul>
-      </li> */}
+      </li>
       {/* End .dropitem */}
 
       <li className="last">
