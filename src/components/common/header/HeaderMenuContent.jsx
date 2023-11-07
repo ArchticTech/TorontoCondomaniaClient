@@ -88,7 +88,7 @@ const HeaderMenuContent = ({ float = "" }) => {
           <span className="title">Top Cities</span>
           <span className="arrow"></span>
         </a>
-        <ul className="sub-menu ">
+        <ul className="sub-menu double-col-dropdown">
           {topCities.map((item) => (
             <li key={item.id}>
               <a

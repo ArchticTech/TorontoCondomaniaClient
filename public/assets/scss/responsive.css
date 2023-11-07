@@ -896,11 +896,7 @@
   .main_calculator_div {
     top: 410px;
   }
-  .mortgage_process_header_content .mortgage_process_header {
-    position: absolute;
-    top: 200px;
-}
-  .home_header .home-hero-para {
+  .home_header .home-hero-para { 
     top: 362px;
   }
   .home_adv_srch_opt.home6 {
@@ -1100,6 +1096,9 @@
   }
   .home_header .home-hero-para {
     top: 251px;
+  }
+  .header_inner_page_section {
+    padding-top: 100px;
   }
   .regstr_thumb,
   .login_thumb {

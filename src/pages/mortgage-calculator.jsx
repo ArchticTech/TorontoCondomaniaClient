@@ -7,7 +7,6 @@ const mortgageCalculator = () => {
     <>
     <Seo pageTitle="Mortgage Calculator" />
     <MortgageCalculator/>
-      
     </>
   )
 }

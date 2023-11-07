@@ -1633,6 +1633,16 @@ header.header-nav.menu_style_home_one .ace-responsive-menu li ul.sub-menu,
 header.header-nav.home2.style_one .ace-responsive-menu li ul.sub-menu {
   padding-left: 0 !important;
 }
+header.header-nav.menu_style_home_one .double-col-dropdown {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  max-height: 353px;
+  flex-wrap: wrap;
+}
+header.header-nav.menu_style_home_one .double-col-dropdown li:last-child a {
+  border-bottom: 1px solid #dedede !important;
+}
 
 header.header-nav.menu_style_home_one
   .ace-responsive-menu
@@ -6252,7 +6262,6 @@ form.home5_advanced_search_form
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
-  margin-left: 1rem;
   height: calc(100% - 33px);
 }
 .partner .feat_property {
@@ -6362,7 +6371,7 @@ form.home5_advanced_search_form
 .feat_property.home8 ul.tag li a,
 .feat_property.list ul.tag li a {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: var(--font-primary);
   color: rgb(29, 28, 51);
   line-height: 1.2;
@@ -10085,13 +10094,10 @@ form.home5_advanced_search_form
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 799px;
-  margin-top: 88px;
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-  max-width: 100%; /* Set the maximum width to 100% of its container */
-  /* height: auto; */
+  height: 800px;
+  margin: 0 auto;
+  max-width: 100%;
+  padding-top: 150px;
 }
 
 .header_inner_page_section::before {
@@ -21814,7 +21820,7 @@ button.gm-ui-hover-effect:focus {
   text-align: center;
   font-size: 53px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
   z-index: 1;
 }
@@ -21952,20 +21958,39 @@ button.gm-ui-hover-effect:focus {
 }
 
 .home_loan .cards p {
-  color: #929292;
+  color: #333;
   font-family: var(--font-primary);
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 300;
   line-height: 27px;
 }
-
 .home_loan .image {
   display: flex;
   height: 600px;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+}
+.home_loan .image img {
+  border-radius: 11px;
+}
+
+.home_loan .head {
+  padding-left: 21px;
+  position: relative;
+}
+.home_loan .head::before {
+  content: '';
+  width: 3px;
+  height: 53%;
+  background-color: var(--color-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.home_loan .head .heading {
+  font-weight: 400;
 }
 
 .mortgage_process_header_content {
@@ -22306,33 +22331,84 @@ button.gm-ui-hover-effect:focus {
   padding: 2rem 4rem;
 }
 
-
 /* Mortgage calculator */
-.main_calculator_div {
-  display: flex !important;
-  justify-content: space-between !important;
-  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2) !important;
-  position: absolute !important;
-  top: 510px !important;
-  left: 0 !important;
-  right: 0 !important;
-  margin: 0 auto !important;
-  width: 90% !important;
-  background-color: #fff !important;
-  z-index: 1 !important;
-  border-radius: 15px !important;
-  padding-bottom: 4rem !important;
+.main_calculator {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 310px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 15px;
+  padding: 2rem;
 }
-.left_calculator_div{
-  padding: 30px;
+.main_calculator .form-group {
+  position: relative;
 }
-
-.left_calculator_div_span{
-color: var(--color-primary);
+.main_calculator .form-group label {
+  margin: 3px;
+  color: #35434b;
+  font-weight: 500;
+  font-size: 14px;
 }
-
-.left_calculator_div_input{
-  outline-color: var(--color-primary);
+.main_calculator .form-group .form-control {
+  font-size: 17px;
+  font-weight: 300;
+  padding: 0.75rem;
+  height: 50px;
+  max-height: 50px;
+  color: black;
+  border-color: #626a77;
+}
+.main_calculator .form-group .form-control:active,
+.main_calculator .form-group .form-control:focus {
+  border-color: #24324a;
+  border-width: 2px;
+}
+.main_calculator .form-group .inline-inputs .form-control:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.main_calculator .form-group .inline-inputs .form-control:nth-child(2) {
+  max-width: 153px;
+  width: 30%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px;
+}
+.main_calculator .form-group .hasPrefix {
+  padding-left: 2rem;
+}
+.main_calculator .form-group .currency {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 17px;
+  font-weight: 300;
+  color: black;
+  max-height: 53px;
+}
+.main_calculator .suffix {
+  position: absolute;
+  bottom: 0;
+  right: 11px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  padding: 17px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+}
+.main_calculator .chart-section {
+  max-width: 500px;
 }
 
 .banks_slider {

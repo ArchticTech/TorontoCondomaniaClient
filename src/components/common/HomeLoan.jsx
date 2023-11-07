@@ -3,12 +3,12 @@ import React from "react";
 const HomeLoan = () => {
   return (
     <>
-      <div className="row home_loan_main">
-        <div className="col-lg-6 home_loan_left d-none d-lg-block">
+      <div className="row">
+        <div className="col-lg-6 d-none d-lg-block">
           <div className="row">
             <div className="image col-lg-12">
               <img
-                src="../../assets/images/home/home-loan-2.png"
+                src="../../assets/images/home/home-loan.jpg"
                 alt=""
                 className="m-4"
               />
@@ -17,10 +17,10 @@ const HomeLoan = () => {
         </div>
         <div className="main_card col-lg-6">
           <div className="cards">
-            <div className="heading_main mb-4 mb-md-5">
-              <h6>
+            <div className="head mb-4 mb-md-5">
+              <h6 className="heading">
                 Explore your home{" "}
-                <span style={{ fontWeight: "900" }}>loan options</span>
+                <span style={{ fontWeight: "600" }}>loan options</span>
               </h6>
             </div>
             <p className="mb-4 mb-md-5">

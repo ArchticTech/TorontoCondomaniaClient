@@ -7,7 +7,6 @@ import BreadCrumbBanner from "./BreadCrumbBanner";
 import PreApproval from "./PreApproval";
 import Calculator from "./Calculator";
 import Banks from "./Banks";
-import Head from "next/head";
 
 const index = () => {
   return (
