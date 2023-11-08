@@ -42,20 +42,11 @@ const OurServices = () => {
                           className="text-center"
                           style={{ color: "#FF3636" }}
                         >
-                          Service Number 1
+                          Pre-Construction Condo and Townhouse Buying
                         </h3>
                         <span className="mission_p">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugiat nulla pariatur. Excepteur sint occaecat
-                          cupidatat non proident, sunt in culpa qui officia
-                          deserunt mollit anim id est laborum.Lorem ipsum dolor
-                          sit amet, consectetur adipiscing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.
+                          Are you looking to invest in property in the booming Greater Toronto Area (GTA) real estate market? With our pre-construction condo and townhouse buying services, we at TorontoCondomania can help you find and secure the perfect condo or townhouse unit before it&apos;s even built. We&apos;ll guide you through the entire process, from researching different projects to negotiating the best possible price. 
+                          Our team of experienced real estate professionals has a proven track record of helping clients find and buy pre-construction condos and townhouses in the GTA. We&apos;re experts in the market, and we&apos;ll use our knowledge to help you make informed decisions. We&apos;ll also keep you updated on the latest developments in the market, so you can always be ahead of the game.
                         </span>
                       </div>
                     </div>
@@ -74,10 +65,12 @@ const OurServices = () => {
                           className="text-center"
                           style={{ color: "#FF3636" }}
                         >
-                          Service Number 2
+                          Assignment Sales
                         </h3>
                         <span className="mission_p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                          If you&apos;re looking to sell your pre-construction condo or townhouse in the GTA before it&apos;s built, we can help you find a buyer through our assignment sales services. We&apos;ll market your property to our network of qualified investors, and we&apos;ll handle all the paperwork and legalities involved in the sale.
+                          We have a strong track record of helping clients sell their pre-construction condos and townhouses through assignment sales. We&apos;ll work with you to get the best possible price for your property, and we&apos;ll ensure that the sale is completed smoothly and efficiently.
+                          Contact us today to learn more about our pre-construction condo and townhouse buying and assignment sales services in the GTA.
                         </span>
                       </div>
                     </div>
