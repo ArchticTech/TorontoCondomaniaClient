@@ -55,7 +55,7 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
 
       <div className="tab-content home1_adsrchfrm" id="pills-tabContent">
         <div
-          className="tab-pane fade show active"
+          className="tab-pane fade show active w-100"
           id="buy-search-box"
           role="tabpanel"
           aria-labelledby="pills-home-tab"
@@ -64,7 +64,7 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           <DropdownListing properties={properties}/>
         </div>
         <div
-          className="tab-pane fade fade"
+          className="tab-pane fade fade w-100"
           id="rent-search-box"
           role="tabpanel"
           aria-labelledby="pills-home-tab"
@@ -72,7 +72,7 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           <GlobalFilterRent />
         </div>
         <div
-          className="tab-pane fade fade"
+          className="tab-pane fade fade w-100"
           id="assignment-search-box"
           role="tabpanel"
           aria-labelledby="pills-home-tab"

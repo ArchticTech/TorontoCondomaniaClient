@@ -8,6 +8,20 @@ const index = ({  rentals }) => {
   return (
     <>
       <Head>
+        <title>Condos for Rent in Toronto &The GTA</title>
+        <meta name="title" content="Condos for Rent in Toronto &The GTA" />
+        <meta name="description" content="Find your next apartment in Toronto & the Greater Toronto Area (GTA) on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://torontocondomania.ca/" />
+        <meta property="og:title" content="Condos for Rent in Toronto &The GTA" />
+        <meta property="og:description" content="Find your next apartment in Toronto & the Greater Toronto Area (GTA) on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://torontocondomania.ca/" />
+        <meta property="twitter:title" content="Condos for Rent in Toronto &The GTA" />
+        <meta property="twitter:description" content="Find your next apartment in Toronto & the Greater Toronto Area (GTA) on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
+        
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
           rel="stylesheet"

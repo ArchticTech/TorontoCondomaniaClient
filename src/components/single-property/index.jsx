@@ -40,8 +40,6 @@ const PropertyView = ({assignmentVal, property, assignment}) => {
 
   const popupRef = useRef(null);
   const imageRef = useRef(null);
-  const [popupImage, setPopupImage] = useState('');
-  const [showPopup, setShowPopup] = useState(false);
   
   const [imageIndex, setImageIndex] = useState(-1);
 

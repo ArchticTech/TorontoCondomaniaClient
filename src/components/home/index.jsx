@@ -448,7 +448,7 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                   </span>
                 </div>
                 <div className="mission-text">
-                  <h6>Our Builders</h6>
+                  <h6>Toronto Platinum Developers / Builders</h6>
                   <p>
                     Experience the future of real estate with TorontoCondomania
                   </p>

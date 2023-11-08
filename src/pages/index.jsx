@@ -10,19 +10,19 @@ const Index = ({properties, assignments, citiesCount, rentals }) => {
   return (
     <>
       <Head>
-        <title>Explore New Developments All Across IN GTA | HOME – Torontocondomania</title>
-        <meta name="title" content="Explore New Developments All Across IN GTA | HOME – Torontocondomania" />
-        <meta name="description" content="Explore The Latest Preconstruction Projects In The GTA · New Development Projects In The Greater Toronto Area. Search By Project Name, Neighborhood, Occupancy etc" />
+        <title>Explore New Pre-construction Condos in Toronto & GTA</title>
+        <meta name="title" content="Explore New Pre-construction Condos in Toronto & GTA" />
+        <meta name="description" content="Discover TorontoCondoMania - Your Ultimate GTA Pre-Construction, Rentals, and Builder Marketplace. Explore the Latest Condo and Townhome Communities in Toronto and Surrounding Neighborhoods. Access Exclusive Pricing and Floorplans Today." />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://torontocondomania.ca/" />
-        <meta property="og:title" content="Explore New Developments All Across IN GTA | HOME – Torontocondomania" />
-        <meta property="og:description" content="Explore The Latest Preconstruction Projects In The GTA · New Development Projects In The Greater Toronto Area. Search By Project Name, Neighborhood, Occupancy etc" />
+        <meta property="og:title" content="Explore New Pre-construction Condos in Toronto & GTA" />
+        <meta property="og:description" content="Discover TorontoCondoMania - Your Ultimate GTA Pre-Construction, Rentals, and Builder Marketplace. Explore the Latest Condo and Townhome Communities in Toronto and Surrounding Neighborhoods. Access Exclusive Pricing and Floorplans Today." />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="http://torontocondomania.ca/" />
-        <meta property="twitter:title" content="Explore New Developments All Across IN GTA | HOME – Torontocondomania" />
-        <meta property="twitter:description" content="Explore The Latest Preconstruction Projects In The GTA · New Development Projects In The Greater Toronto Area. Search By Project Name, Neighborhood, Occupancy etc" />s
+        <meta property="twitter:title" content="Explore New Pre-construction Condos in Toronto & GTA" />
+        <meta property="twitter:description" content="Discover TorontoCondoMania - Your Ultimate GTA Pre-Construction, Rentals, and Builder Marketplace. Explore the Latest Condo and Townhome Communities in Toronto and Surrounding Neighborhoods. Access Exclusive Pricing and Floorplans Today." />
       </Head>
       <HomeMain properties={properties} assignments={assignments} rentals={rentals} cities={citiesCount}/>
     </>

@@ -27,8 +27,6 @@ const index = () => {
       {/* <!-- Inner Page Breadcrumb --> */}
       <BreadCrumbBanner />
 
-      <Stats />
-
       <OurVisionMission/>
 
       <OurMission2/>

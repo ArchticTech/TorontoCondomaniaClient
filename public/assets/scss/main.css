@@ -3570,12 +3570,16 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   background-color: #ffffff;
   border-radius: 8px;
   color: #1b2032;
-  font-size: 16px;
+  font-size: 14px;
   height: 50px;
   width: fit-content;
   min-width: 110px;
   text-align: center;
-  line-height: 35px;
+  line-height: 21px;
+  padding: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home_adv_srch_opt .nav-pills li.nav-item a.nav-link.active {
@@ -3624,10 +3628,6 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
   background-color: var(--color-primary);
   border-color: #3e4c66;
   color: #ffffff;
-}
-
-.home_adv_srch_opt.home6 .nav-pills li.nav-item a.nav-link.active:before {
-  background-color: var(--color-primary);
 }
 
 .home_adv_srch_opt .tab-content {
@@ -5283,7 +5283,7 @@ form.home5_advanced_search_form
 }
 @media (max-width: 576px) {
   .home-six {
-    height: 800px;
+    height: auto;
   }
 }
 
@@ -9508,16 +9508,14 @@ form.home5_advanced_search_form
   padding-left: 30px;
   width: 195px;
 }
+.footer_mailchimp_form .col-auto input.form-control::placeholder {
+  color: #8a99b3;
+}
 
 .home3 .footer_mailchimp_form .col-auto input.form-control {
   background-color: #e8eef2;
   border: 1px solid #e8eef2;
   color: #777777;
-}
-
-.home5 .footer_mailchimp_form .col-auto input.form-control {
-  background-color: #292d39;
-  border: 1px solid #292d39;
 }
 
 .home6 .footer_mailchimp_form .col-auto input.form-control {
@@ -9686,7 +9684,6 @@ form.home5_advanced_search_form
 }
 
 .footer_one.home5 {
-  background-color: #232733;
   border-bottom: 1px solid rgba(255, 255, 255, 0.102);
 }
 
@@ -9721,7 +9718,7 @@ form.home5_advanced_search_form
 .home5 .footer_qlink_widget li a,
 .home5 .footer_contact_widget li a,
 .home5 .footer_social_widget li a {
-  color: #98a2aa;
+  color: #8a99b3;
 }
 
 .home6 .footer_about_widget p,
@@ -9925,7 +9922,7 @@ form.home5_advanced_search_form
 
 .footer_menu_widget.home5 ul li a,
 .copyright-widget.home5 p {
-  color: #98a2aa;
+  color: #8a99b3;
 }
 
 .footer_menu_widget.home3 ul li a:hover,
@@ -19052,7 +19049,7 @@ legend span {
 }
 
 .bg-ptrn1 {
-  background: #f1f1f1;
+  background: white;
 }
 
 .bg-ptrn2 {
