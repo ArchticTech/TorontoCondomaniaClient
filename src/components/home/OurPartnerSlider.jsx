@@ -13,6 +13,38 @@ const partnerItems = [
     id: 3,
     imageSrc: "../../assets/images/partners/3.png",
   },
+  {
+    id: 4,
+    imageSrc: "../../assets/images/partners/4.png",
+  },
+  {
+    id: 5,
+    imageSrc: "../../assets/images/partners/5.jpg",
+  },
+  {
+    id: 6,
+    imageSrc: "../../assets/images/partners/6.webp",
+  },
+  {
+    id: 7,
+    imageSrc: "../../assets/images/partners/7.png",
+  },
+  {
+    id: 8,
+    imageSrc: "../../assets/images/partners/8.png",
+  },
+  {
+    id: 9,
+    imageSrc: "../../assets/images/partners/9.png",
+  },
+  {
+    id: 10,
+    imageSrc: "../../assets/images/partners/10.png",
+  },
+  {
+    id: 11,
+    imageSrc: "../../assets/images/partners/11.jpg",
+  },
 ];
 
 const OurPartnerSlider = () => {
