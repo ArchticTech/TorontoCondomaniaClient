@@ -1,4 +1,4 @@
-import { fetchProperty, fetchAllProperties } from "../../utils/api";
+import { fetchProperty } from "../../utils/api";
 import SingleProperty from "../../components/single-property/index";
 import Head from "next/head";
 import global from "../../config/env"
@@ -33,34 +33,20 @@ const PropertyView = ({property}) => {
   );
 }
 
-export async function getStaticProps({ params }) {
-  const { id } = params;
-  const property = await fetchProperty(id);
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  var property = await fetchProperty(id);
 
   return {
     props: {
-      property: property.data,
+      'property': property.data,
     },
-    revalidate: 240,
-  };
-}
-
-export async function getStaticPaths() {
-  const properties = await fetchAllProperties();
-
-  const paths = properties.data.map((property) => ({
-    params: { id: property.slug },
-  }));
-
-  return {
-    paths,
-    fallback: false,
   };
 }
 
 export default PropertyView;
 
-// import { fetchProperty } from "../../utils/api";
+// import { fetchProperty, fetchAllProperties } from "../../utils/api";
 // import SingleProperty from "../../components/single-property/index";
 // import Head from "next/head";
 // import global from "../../config/env"
@@ -95,14 +81,28 @@ export default PropertyView;
 //   );
 // }
 
-// export async function getServerSideProps(context) {
-//   const { id } = context.query;
-//   var property = await fetchProperty(id);
+// export async function getStaticProps({ params }) {
+//   const { id } = params;
+//   const property = await fetchProperty(id);
 
 //   return {
 //     props: {
-//       'property': property.data,
+//       property: property.data,
 //     },
+//     revalidate: 3,
+//   };
+// }
+
+// export async function getStaticPaths() {
+//   const properties = await fetchAllProperties();
+
+//   const paths = properties?.data?.map((property) => ({
+//     params: { id: property.slug },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: false,
 //   };
 // }
 

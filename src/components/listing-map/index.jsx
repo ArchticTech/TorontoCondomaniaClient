@@ -110,7 +110,6 @@ const ListingMap = ({ properties, isAssignment }) => {
                 id="mapbox"
                 className="home_two_map style2 half_map_area"
               ></div>
-              ;
             </div>
             {/* End .col */}
 

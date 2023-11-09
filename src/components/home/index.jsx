@@ -2,11 +2,9 @@ import MobileMenu from "../common/header/MobileMenu";
 import PropertiesSlider from "./PropertiesSlider";
 import FindProperties from "./FindProperties";
 import Header from "./Header";
-import Partners from "../common/Partners";
 import CallToAction from "../common/CallToAction";
 import Footer from "../common/footer/Footer";
 import CopyrightFooter from "../common/footer/CopyrightFooter";
-import Blogs from "../common/Blogs";
 import PopupSignInUp from "../common/PopupSignInUp";
 import HowitWorks from "../common/HowitWorks";
 import Hero from "./Hero";
@@ -22,6 +20,7 @@ import BlogSlider from "./BlogSlider";
 import OurPartnerSlider from "./OurPartnerSlider";
 
 const Index = ({ properties, assignments, rentals, cities }) => {
+  
   const dispatch = useDispatch();
 
   const clearHandler = () => {
@@ -449,9 +448,6 @@ const Index = ({ properties, assignments, rentals, cities }) => {
                 </div>
                 <div className="mission-text">
                   <h6>Toronto Platinum Developers / Builders</h6>
-                  <p>
-                    Experience the future of real estate with TorontoCondomania
-                  </p>
                 </div>
               </div>
             </div>
@@ -466,11 +462,11 @@ const Index = ({ properties, assignments, rentals, cities }) => {
       </section>
 
       {/* <!-- Start Call to Action --> */}
-      <section className="start-partners bgc-thm pt50 pb50">
+      {/* <section className="start-partners bgc-thm pt50 pb50">
         <div className="container">
           <CallToAction />
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Footer --> */}
       <section className="footer_one home5">

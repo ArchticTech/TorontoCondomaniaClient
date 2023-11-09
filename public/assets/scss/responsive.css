@@ -2856,7 +2856,7 @@
     margin-bottom: 12rem;
   }
   .slick-dots {
-    display: none;
+    display: none !important;
   }
 }
 /* (min-width:361px) (max-width:520px) */

@@ -52,6 +52,10 @@ const OurPartnerSlider = () => {
               className="img-whp contain p-3"
               src={partner.imageSrc}
               alt="blog img"
+              style={{
+                maxWidth: '300px',
+                margin: '0 auto'
+              }}
             />
           </div>
         </div>
