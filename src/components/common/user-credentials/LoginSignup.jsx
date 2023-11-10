@@ -99,7 +99,7 @@ const LoginSignup = () => {
             }
             Cookies.set('userData', JSON.stringify(userData));
             Cookies.set('loginStatus', true);
-            router.push('/user');
+            router.push('/user')
           }
       });
     }

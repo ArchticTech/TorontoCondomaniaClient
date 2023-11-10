@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { isSinglePageActive } from "../../../../utils/daynamicNavigation";
-import Image from "next/image";
 import axios from "axios";
 import Cookies from "js-cookie";
+import Image from "next/image";
 
 const MyAccount = ({userData = []}) => {
   const profileMenuItems = [
@@ -22,10 +22,10 @@ const MyAccount = ({userData = []}) => {
     <>
       <div className="user_set_header">
         <Image
-          width={40}
-          height={40}
+          width={27}
+          height={27}
           className="float-start"
-          src="/assets/images/team/e1.png"
+          src="/assets/images/team/profile-icon.png"
           alt="e1.png"
         />
         <p>

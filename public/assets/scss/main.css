@@ -21657,17 +21657,22 @@ button.gm-ui-hover-effect:focus {
 .services_section_about .heading_mission .mission_p {
   text-align: justify;
 }
+.form-floating #floatingTextarea {
+    height: 100px;
+}
 
 /* How it works section ABOUT */
 
 .how_it_works {
-  margin-top: 53px;
+  margin-bottom: 53px;
   display: flex;
   align-items: center;
 }
 .how_it_works .card {
   max-width: 400px;
   margin: 0 auto;
+  box-shadow: 0 0 11px 1px rgba(0, 0, 0, 0.10);
+  border-radius: 10px;
 }
 .how_it_works .heading h4{
   transition: 0.3s;

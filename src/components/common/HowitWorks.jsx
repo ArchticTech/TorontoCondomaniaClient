@@ -2,7 +2,7 @@ const HowitWorks = () => {
   return (
     <>
       <div className="col-lg-3 col-sm-6 my-3">
-        <div className="card border-0 p-2">
+        <div className="card border-0 p-4 text-center">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ const HowitWorks = () => {
       </div>
 
       <div className="col-lg-3 col-sm-6 my-3">
-        <div className="card border-0 p-2">
+        <div className="card border-0 p-4 text-center">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ const HowitWorks = () => {
         </div>
       </div>
       <div className="col-lg-3 col-sm-6 my-3">
-        <div className="card border-0 p-2">
+        <div className="card border-0 p-4 text-center">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@ const HowitWorks = () => {
         </div>
       </div>
       <div className="col-lg-3 col-sm-6 my-3">
-        <div className="card border-0 p-2">
+        <div className="card border-0 p-4 text-center">
           <div className="icon mx-2 mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"

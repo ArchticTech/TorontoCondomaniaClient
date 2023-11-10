@@ -2,7 +2,6 @@ import MobileMenu from "../common/header/MobileMenu";
 import PropertiesSlider from "./PropertiesSlider";
 import FindProperties from "./FindProperties";
 import Header from "./Header";
-import CallToAction from "../common/CallToAction";
 import Footer from "../common/footer/Footer";
 import CopyrightFooter from "../common/footer/CopyrightFooter";
 import PopupSignInUp from "../common/PopupSignInUp";

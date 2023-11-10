@@ -150,10 +150,10 @@ const HeaderMenuContent = ({ userData, float = "" }) => {
         <div className="dropdown">
           <a className="btn dropdown-toggle" href="" data-bs-toggle="dropdown">
             <Image
-              width={45}
-              height={45}
+              width={30}
+              height={30}
               className="rounded-circle"
-              src="/assets/images/team/e1.png"
+              src="/assets/images/team/profile-icon.png"
               alt="e1.png"
             />
             <span className="dn-1199 ms-1">User</span>

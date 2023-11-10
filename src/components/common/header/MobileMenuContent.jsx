@@ -173,25 +173,20 @@ const MobileMenuContent = () => {
             </Link>
           </MenuItem>
 
-          <MenuItem>
-            <a
-              href="#"
-              data-bs-toggle="modal"
-              data-bs-target=".bd-example-modal-lg"
-            >
-              <span className="flaticon-user"> Login</span>
-            </a>
-          </MenuItem>
-
-          <MenuItem>
-            <a
-              href="#"
-              data-bs-toggle="modal"
-              data-bs-target=".bd-example-modal-lg"
-            >
-              <span className="flaticon-edit"> Register</span>
-            </a>
-          </MenuItem>
+        {
+        !loginStatus ?
+          <> 
+            <MenuItem>
+              <a
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target=".bd-example-modal-lg"
+              >
+                <span className="flaticon-user">Login / Register</span>
+              </a>
+            </MenuItem>
+            </> : undefined
+        }
         </Menu>
       </SidebarContent>
 
@@ -199,7 +194,7 @@ const MobileMenuContent = () => {
         loginStatus ? 
         <SidebarFooter>
           <Link
-            href="/dashboard"
+            href="/user"
             className="btn btn-block btn-lg btn-thm circle"
           >
             <span className="flaticon-home"></span> Dashboard

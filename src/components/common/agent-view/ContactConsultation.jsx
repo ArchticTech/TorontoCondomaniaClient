@@ -1,6 +1,17 @@
 import { sendConsultationRequest } from "../../../utils/api";
+import NotificationPopup from "../NotificationPopup";
+import { useState } from "react";
 
 const ContactConsultation = ({ property }) => {
+  const [notification, setNotification] = useState(null);
+
+  const showNotification = (message) => {
+    setNotification(message);
+  };
+
+  const closeNotification = () => {
+    setNotification(null);
+  };
 
   const handleSubmitClick = async (e) => {
     e.preventDefault();
@@ -24,11 +35,12 @@ const ContactConsultation = ({ property }) => {
     try {
       const response = await sendConsultationRequest(formData);
 
-      if (response.ok) {
+      if (response.statusText == 'OK') {
+        showNotification('Feedback Submitted Successfully!');
         document.getElementById("free_consultant_form_side").reset();
         console.log("Data sent successfully!");
       } else {
-        console.log("Error in sending data to api");
+        console.error("Error in sending data to api");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -41,6 +53,9 @@ const ContactConsultation = ({ property }) => {
       className="tour-form"
       onSubmit={(e) => handleSubmitClick(e)}
     >
+      {notification && (
+        <NotificationPopup message={notification} onClose={closeNotification} />
+      )}
       <div className="row">
         <div className="col-md-12 mt-3">
           <input

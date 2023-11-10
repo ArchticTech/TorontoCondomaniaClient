@@ -1,6 +1,5 @@
 import AdditionalAssignmentDetails from "../common/listing-details/AdditionalAssignmentDetails";
 import AdditionalDetails from "../common/listing-details/AdditionalDetails";
-import Attachments from "../common/listing-details/Attachments";
 import FloorPlans from "../common/listing-details/FloorPlans";
 import PropertyDescriptions from "../common/listing-details/PropertyDescriptions";
 import PropertyDetails from "../common/listing-details/PropertyDetails";

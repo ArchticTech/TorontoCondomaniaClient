@@ -157,7 +157,7 @@ const SidebarMenu = () => {
                 <span> My Favorites</span>
               </Link>
             </li>
-            <li
+            {/* <li
               className={`treeview ${
                 isSinglePageActive("/my-saved-search", route.pathname)
                   ? "active"
@@ -180,15 +180,15 @@ const SidebarMenu = () => {
                 <i className="flaticon-envelope"></i>
                 <span> Reviews</span>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </li>
         {/* End manage listing */}
 
         <li className="title">
-          <span>Manage Account</span>
+          <span>Profile</span>
           <ul>
-            {manageAccount.map((item) => (
+            {/* {manageAccount.map((item) => (
               <li
                 className={
                   isSinglePageActive(item.route, route.pathname) ? "active" : ""
@@ -199,7 +199,7 @@ const SidebarMenu = () => {
                   <i className={item.icon}></i> <span>{item.name}</span>
                 </Link>
               </li>
-            ))}
+            ))} */}
             <li onClick={logoutUser} >
               <a href='#' className="dropdown-item" >
                 <i className='flaticon-logout'></i> <span>Logout</span>
