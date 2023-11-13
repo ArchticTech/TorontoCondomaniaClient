@@ -5,7 +5,7 @@ import NotFound from "../components/404";
 const index = () => {
   return (
     <>
-      <Seo pageTitle="404 Not Found" />
+      <Seo pageTitle="404 Not Found | TorontoCondomania" />
       <NotFound />
     </>
   );

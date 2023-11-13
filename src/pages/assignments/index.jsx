@@ -8,7 +8,7 @@ const index = ({  assignments }) => {
   return (
     <>
       <Head>
-        <title>Discover Best assignment deals available for sale in Toronto & GTA</title>
+        <title>TorontoCondomania | Discover Best assignment deals available for sale in Toronto & GTA</title>
         <meta name="title" content="Discover Best assignment deals available for sale in Toronto & GTA" />
         <meta name="description" content="Explore Best Assignment deals in Toronto & GTA on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
 

@@ -5,7 +5,7 @@ import MortgageCalculator from "../components/mortgage-calculator/index";
 const mortgageCalculator = () => {
   return (
     <>
-    <Seo pageTitle="Mortgage Calculator" />
+    <Seo pageTitle="Mortgage Calculator | TorontoCondomania" />
     <MortgageCalculator/>
     </>
   )

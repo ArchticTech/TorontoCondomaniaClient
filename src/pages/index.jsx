@@ -10,7 +10,7 @@ const Index = ({properties, assignments, citiesCount, rentals }) => {
   return (
     <>
       <Head>
-        <title>Explore New Pre-construction Condos in Toronto & GTA</title>
+        <title>TorontoCondomania | Explore New Pre-construction Condos in Toronto & GTA</title>
         <meta name="title" content="Explore New Pre-construction Condos in Toronto & GTA" />
         <meta name="description" content="Discover TorontoCondoMania - Your Ultimate GTA Pre-Construction, Rentals, and Builder Marketplace. Explore the Latest Condo and Townhome Communities in Toronto and Surrounding Neighborhoods. Access Exclusive Pricing and Floorplans Today." />
 

@@ -35,11 +35,12 @@ function App() {
           label: 'Mortgage Home Loan',
           data: [data.loanAmount, data.downPayment, totalInterest],
           backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
+            '#ccc',
+            '#333',
+            '#FD3636'
           ],
-          hoverOffset: 4
+          hoverOffset: 4,
+          weight: 10
         }]
       };
       

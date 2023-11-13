@@ -6,7 +6,7 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>About us</title>
+        <title>About Us | TorontoCondomania</title>
         <meta name="title" content="About us" />
         <meta name="description" content="Explore our open positions and learn more about how we're building the future of new construction home buying at TorontoCondoMania. Take a look and let us show you." />
 

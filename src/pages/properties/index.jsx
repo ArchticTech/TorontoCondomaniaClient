@@ -9,7 +9,7 @@ const Index = ({properties}) => {
   return (
     <>
       <Head>
-        <title>Search & Compare Pre-construction condos & Townhomes in Toronto & GTA (2023)</title>
+        <title>TorontoCondomania | Search & Compare Pre-construction condos & Townhomes in Toronto & GTA (2023)</title>
         <meta name="title" content="Search & Compare Pre-construction condos & Townhomes in Toronto & GTA (2023)" />
         <meta name="description" content="Explore the latest pre-construction developments in Toronto and the Greater Toronto Area (GTA) for 2023. Discover upcoming real estate projects, new homes, and investment opportunities." />
 

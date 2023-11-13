@@ -5271,7 +5271,8 @@ form.home5_advanced_search_form
 }
 
 .home-six {
-  background: url(../images/home/header.png);
+  background-color: #d6f6ff;
+  background-image: url(../images/home/house.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10089,7 +10090,7 @@ form.home5_advanced_search_form
 /*== Inner Pages Breadcrumb ==*/
 .header_inner_page_section {
   position: relative;
-  background: url(../images/about/about-us-header.jpg);
+  background: url(../images/mortgage-calculator.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -22150,6 +22151,39 @@ button.gm-ui-hover-effect:focus {
   font-size: 15px;
   padding: 0 15px;
 }
+.preapproval_section h3 {
+  color: #3E3E3E;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+}
+.preapproval_section ul {
+  list-style: disc;
+}
+.preapproval_section ul li {
+  margin: 21px;
+  line-height: 27px;
+  color: #515151;
+  font-size: 16px;
+}
+.preapproval_section ul li::marker {
+  color: var(--color-primary);
+}
+.preapproval_section .card {
+  border: 0;
+  line-height: 27px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #515151;
+  box-shadow: 0 0 11px 11px #0000000f;
+  padding: 21px;
+}
+.preapproval_section .card .bold {
+  font-weight: 600;
+}
 
 .common_div {
   margin-top: 3rem;
@@ -22349,6 +22383,7 @@ button.gm-ui-hover-effect:focus {
   right: 0;
   margin: 0 auto;
   width: fit-content;
+  max-width: calc(100vw - 100px);
   background-color: #fff;
   z-index: 1;
   border-radius: 15px;
@@ -22419,7 +22454,7 @@ button.gm-ui-hover-effect:focus {
 }
 
 .banks_slider {
-  margin-top: 28rem;
+  margin-top: 5rem;
   background: #efefef;
 }
 

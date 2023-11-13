@@ -9,7 +9,7 @@ const index = ({properties}) => {
        
   return (
     <>
-      <Seo pageTitle="Compare" />
+      <Seo pageTitle="Compare | TorontoCondomania" />
       <Compare properties={properties} />
     </>
   );

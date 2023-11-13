@@ -5,7 +5,7 @@ import Terms from "../components/terms-conditions";
 const index = () => {
   return (
     <>
-      <Seo pageTitle="Terms & Conditions" />
+      <Seo pageTitle="Terms & Conditions | TorontoCondomania" />
       <Terms />
     </>
   );

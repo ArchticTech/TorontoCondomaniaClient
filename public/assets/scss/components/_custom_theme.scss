@@ -1315,7 +1315,7 @@ textarea.form-control {
 .half_map_area {
     min-height: calc(100vh - 121px);
     position: relative !important;
-    @media (max-width: 1199px) {
+    @media (max-width: 767px) {
         min-height: auto;
     }
 }
@@ -1332,7 +1332,7 @@ textarea.form-control {
         justify-content: center;
     }
     .half_map_area_content {
-        margin-top: 30px;
+        margin-top: 53px;
     }
 }
 .listing-map-style ul.mb-3 {
@@ -1346,7 +1346,9 @@ textarea.form-control {
 
 @media (max-width: 991px) {
     .sidebar_switch #main2 .filter_open_btn.style2 {
-        top: 0px;
+        top: 33px;
+        position: absolute;
+        left: 21px;
     }
 }
 

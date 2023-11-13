@@ -5,7 +5,7 @@ import MortgageProcess from "../components/mortgage-process";
 const mortgageProcess = () => {
   return (
     <>
-    <Seo pageTitle="Mortgage Process" />
+    <Seo pageTitle="Mortgage Process | TorontoCondomania" />
     <MortgageProcess/>
       
     </>

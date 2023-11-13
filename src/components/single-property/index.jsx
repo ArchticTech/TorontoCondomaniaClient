@@ -136,16 +136,6 @@ const PropertyView = ({assignmentVal, property, assignment}) => {
                         </a>
                       </li>
                       <IconPropertyHeart id={property.id}/>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-share"></span>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-printer"></span>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   {/* End activity and social sharing */}

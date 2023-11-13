@@ -891,7 +891,7 @@
 }
 @media only screen and (max-width: 1024px) {
   .banks_slider {
-    margin-top: 22rem;
+    margin-top: 36rem;
 }
   .main_calculator_div {
     top: 410px;
@@ -1109,7 +1109,7 @@
     flex-direction: row;
   }
   .banks_slider {
-    margin-top: 17rem;
+    margin-top: 30rem;
   }
   .mortgage_calculator_section {
     top: 550px;
@@ -1540,10 +1540,6 @@
   .shop_single_tab_content.style2 {
     margin-bottom: 30px;
   }
-  .sidebar_switch.mobile_style {
-    height: 60px;
-    position: relative;
-  }
   .sidebar_listing_list.style2.mobile_sytle_sidebar {
     max-height: 667px;
     overflow-y: scroll;
@@ -1755,7 +1751,7 @@
 }
 @media only screen and (max-width: 899px) {
   .banks_slider {
-    margin-top: 41rem;
+    margin-top: 30rem;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2072,13 +2068,17 @@
 /* Small devices (min-width: 576px) (max-width: 767.98px) // (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
   .banks_slider {
-    margin-top: 63rem;
+    margin-top: 50rem;
 }
   .customer_support_header_content .customer_support_header {
     font-size: 50px;
   }
   .header_inner_page_section {
     height: 450px;
+  }
+  .sidebar_switch.mobile_style {
+    height: 60px;
+    position: relative;
   }
   /* ExTra Class Start*/
   .about_us_header_content .about_us_header {

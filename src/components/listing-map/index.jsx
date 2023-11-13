@@ -71,7 +71,7 @@ const ListingMap = ({ properties, isAssignment }) => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <div className="sidebar_switch mobile_style dn db-991 mt30 mb0">
+              <div className="sidebar_switch mobile_style dn db-991 mb0">
                 <ShowFilter />
               </div>
 
@@ -101,19 +101,19 @@ const ListingMap = ({ properties, isAssignment }) => {
             </div>
             {/* End .col */}
 
-            <div className="col-xxl-7 col-xl-6  p0 position-relative">
+            <div className="col-xxl-7 col-xl-6 col-md-4 p0 position-relative">
               <div className="sidebar_switch style2 text-right dn-991 visible-filter filter-let-top">
                 <ShowFilter />
               </div>
               {/* filter switch */}
               <div
                 id="mapbox"
-                className="home_two_map style2 half_map_area"
+                className="d-none d-md-block d-home_two_map style2 half_map_area"
               ></div>
             </div>
             {/* End .col */}
 
-            <div className="col-xxl-5 col-xl-6 ">
+            <div className="col-xxl-5 col-xl-6 col-md-8">
               <div className="half_map_area_content mt30">
                 <div className="listing_list_style listing-map-style m0 mb20">
                   

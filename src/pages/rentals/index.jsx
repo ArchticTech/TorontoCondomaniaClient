@@ -8,7 +8,7 @@ const index = ({  rentals }) => {
   return (
     <>
       <Head>
-        <title>Condos for Rent in Toronto &The GTA</title>
+        <title>TorontoCondomania | Condos for Rent in Toronto & The GTA</title>
         <meta name="title" content="Condos for Rent in Toronto &The GTA" />
         <meta name="description" content="Find your next apartment in Toronto & the Greater Toronto Area (GTA) on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
 
