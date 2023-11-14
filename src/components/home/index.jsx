@@ -460,13 +460,6 @@ const Index = ({ properties, assignments, rentals, cities }) => {
         </div>
       </section>
 
-      {/* <!-- Start Call to Action --> */}
-      {/* <section className="start-partners bgc-thm pt50 pb50">
-        <div className="container">
-          <CallToAction />
-        </div>
-      </section> */}
-
       {/* <!-- Our Footer --> */}
       <section className="footer_one home5">
         <div className="container">

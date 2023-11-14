@@ -1,18 +1,18 @@
-.dashboard_navigationbar {
-  margin-bottom: 30px;
-}
+
 .dashboard_navigationbar .dropbtn {
   background-color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
-  display: block;
-  height: 70px;
-  margin-bottom: 30px;
+  display: inline-block;
   outline: none;
   padding: 20px 30px;
   position: relative;
   text-align: left;
-  width: 100%;
+  width: fit-content;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dashboard_navigationbar .dropbtn:hover,
 .dashboard_navigationbar .dropbtn:focus {
@@ -23,6 +23,10 @@
 }
 .dashboard_navigationbar .dropdown {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 21px;
+  background-color: white;
 }
 .dashboard_navigationbar .dropdown-content {
   box-shadow: none;

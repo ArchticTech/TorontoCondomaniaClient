@@ -24,7 +24,7 @@ const Header = ({userData}) => {
         navbar ? "stricky-fixed " : ""
       }`}
     >
-      <div className="container-fluid p0">
+      <div className="container-fluid p0 topbar">
         {/* <!-- Menu Toggle btn--> */}
         <Link href="/" className="navbar_brand float-start dn-smd">
         <Image

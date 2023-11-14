@@ -70,7 +70,7 @@ function App() {
     <div className="App">
       <Container maxWidth="xl" sx={{marginTop:4}}>
         <Grid container spacing={5} alignItems="center" className="main_calculator">
-          <Grid item xs={12} md={6} lg={6} className="p-4">
+          <Grid item xs={12} md={6} lg={6} className="p-4 p-sm-2">
             <div className="form-group my-3">
               <label for="homeValue">Home Value</label>
               <span className="currency">$</span>

@@ -8,8 +8,8 @@ const BreadCrumbBanner = () => {
           <div className="col-xl-6"> */}
             <div className="mortgage_process_header_content">
               <h1 className="mortgage_process_header">
-              <span>Mortgage</span> Process Explained Your Step-by-Step <span>Guide</span> </h1>
-              <p>We focus on ergonomics and meeting you where you work. It&apos;s only a keystroke away.</p>
+              Mortgage Process Explained Your Step-by-Step Guide </h1>
+              <p>Skip the hassle of showing, repairs and months of uncertainty with a simple selling experience.</p>
               <button className="btn_mortgage btn btn-thm mt-2">Try Calculator</button>
             </div>
           </div>

@@ -162,13 +162,13 @@ const OurExperts = () => {
                 <Image
                   width={301}
                   height={236}
-                  src="/assets/images/home/expert-double-1.jpg"
+                  src="/assets/images/home/expert-2.jpg"
                   alt=""
                 />
                 <Image
                   width={301}
                   height={236}
-                  src="/assets/images/home/expert-double-2.jpg"
+                  src="/assets/images/home/expert-3.jpg"
                   alt=""
                 />
               

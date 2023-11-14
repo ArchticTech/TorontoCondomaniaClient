@@ -4920,32 +4920,7 @@ form.home5_advanced_search_form
   padding: 0;
 }
 
-.slidebg-1 {
-  background-image: url(../images/home/4.jpg);
-}
-
-.slidebg-2 {
-  background-image: url(../images/home/5.jpg);
-}
-
-.slidebg-3 {
-  background-image: url(../images/home/6.jpg);
-}
-
-.slidebg-4 {
-  background-image: url(../images/home/7.jpg);
-}
-
-.slidebg-5 {
-  background-image: url(../images/home/2.jpg);
-}
-
-.slidebg-6 {
-  background-image: url(../images/home/1.jpg);
-}
-
 .home-seven {
-  background-image: url(../images/background/10.jpg);
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
@@ -6535,9 +6510,6 @@ form.home5_advanced_search_form
   margin-bottom: 0;
 }
 
-.dropdown {
-  margin: 10px 0;
-}
 .dropdown .thumb img {
   min-height: 130px;
 }
@@ -19010,7 +18982,6 @@ legend span {
 
 /*== BackGround Images ==*/
 .bg-img2 {
-  background-image: url("../images/background/2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19018,7 +18989,6 @@ legend span {
 
 .bg-img3 {
   background-attachment: scroll;
-  background-image: url("../images/background/3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19028,7 +18998,6 @@ legend span {
 
 .bg-img4 {
   background-attachment: scroll;
-  background-image: url("../images/background/4.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19038,7 +19007,6 @@ legend span {
 
 .bg-img5 {
   background-attachment: scroll;
-  background-image: url("../images/background/5.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19047,7 +19015,6 @@ legend span {
 
 .bg-img6 {
   background-attachment: scroll;
-  background-image: url("../images/background/8.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22015,30 +21982,29 @@ button.gm-ui-hover-effect:focus {
   margin-bottom: 0;
 }
 .mortgage_process_header_content .mortgage_process_header {
-  text-align: left;
-  color: #fff;
+  color: #FFF;
   text-align: center;
+  font-family: Gotham;
   font-size: 52px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
   z-index: 1;
-  max-width: 70%;
+  /* max-width: 70%; */
 }
 .mortgage_process_header span {
   color: #ff3636;
 }
 
 .mortgage_process_header_content p {
-  color: #fff;
-
-  text-align: center;
-  /* Sub Heading */
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
+  color: #FFF;
+  font-family: inherit !important;
+text-align: center;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
   z-index: 1;
   padding: 1rem 0;
 }
@@ -22172,7 +22138,7 @@ button.gm-ui-hover-effect:focus {
 .preapproval_section ul li::marker {
   color: var(--color-primary);
 }
-.preapproval_section .card {
+ .card {
   border: 0;
   line-height: 27px;
   border-radius: 5px;
@@ -22180,9 +22146,88 @@ button.gm-ui-hover-effect:focus {
   color: #515151;
   box-shadow: 0 0 11px 11px #0000000f;
   padding: 21px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
 }
-.preapproval_section .card .bold {
+
+ .card i {
+  margin-top: 0.4rem;
+    padding: 0 7px;
+    color: var(--color-primary);
+}
+ .card .bold {
   font-weight: 600;
+}
+.lower_monthly_payment {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+.lower_monthly_payment .top{
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 6rem;
+}
+.lower_monthly_payment .top h2 {
+  color: #3E3E3E;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.lower_monthly_payment h3 {
+  color: #3E3E3E;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+}
+.lower_monthly_payment .top p {
+  color: #515151;
+font-family: Gotham;
+font-size: 16px;
+font-style: normal;
+font-weight: 325;
+line-height: 31px; /* 193.75% */
+text-transform: capitalize;
+text-align: center;
+}
+.lower_payment_card .h4 {
+  color: #515151;
+font-family: inherit !important;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 31px; /* 193.75% */
+text-transform: capitalize;
+position: relative;
+}
+.lower_payment_card {
+  width: 90%;
+  margin: 2rem 0;
+}
+.lower_payment_card .h4::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 117px; /* Adjust the width to control the length of the half border */
+  border-bottom: 2px solid var(--color-primary); /* Adjust the color and width as needed */
+}
+.lower_monthly_payment .bottom{
+  display: flex;
+  gap: 7rem;
+
 }
 
 .common_div {
@@ -22375,13 +22420,13 @@ button.gm-ui-hover-effect:focus {
 /* Mortgage calculator */
 .main_calculator {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 310px;
   left: 0;
   right: 0;
-  margin: 0 auto;
+  margin: 0 auto !important;
   width: fit-content;
   max-width: calc(100vw - 100px);
   background-color: #fff;

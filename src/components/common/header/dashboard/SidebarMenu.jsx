@@ -61,7 +61,7 @@ const SidebarMenu = () => {
           <ul>
             <li
               className={`treeview ${
-                isSinglePageActive("/dashboard", route.pathname)
+                isSinglePageActive("/user", route.pathname)
                   ? "active"
                   : ""
               }`}
