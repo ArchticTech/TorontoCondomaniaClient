@@ -2079,10 +2079,14 @@
     top: 130px;
   }
 }
-
+@media only screen and (max-width: 925px) {
+  .banks_slider {
+    margin-top: 18rem;
+  }
+}
 @media only screen and (max-width: 899px) {
   .banks_slider {
-    margin-top: 30rem;
+    margin-top: 20rem;
   }
 }
 
@@ -2467,7 +2471,7 @@
 
   .mortgage_process_header_content p {
     font-size: 13px;
-    padding: 0 10px;
+    padding: 17px 11px;
   }
 
   .mortgage_process_para_section {
@@ -2487,7 +2491,7 @@
 /* Small devices (min-width: 576px) (max-width: 767.98px) // (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
   .banks_slider {
-    margin-top: 53rem;
+    margin-top: 42rem;
   }
 
   .customer_support_header_content .customer_support_header {
@@ -3179,9 +3183,18 @@
   .inbox_chatting_box .chatting_content {
     padding: 30px 30px 30px;
   }
+  .keytakeaway_container{
+    padding: 2rem;
+  }
 }
 
 @media only screen and (max-width: 630px) {
+  .main_calculator .form-group .inline-inputs .form-control:nth-child(2) {
+  width: 40%;
+  }
+  .main_calculator .form-group .inline-inputs .form-control:first-child {
+  width: 60%;
+  }
   .lower_monthly_payment .bottom {
     flex-wrap: wrap;
   }
@@ -3197,7 +3210,8 @@
   }
 
   .banks_slider {
-    margin-top: 50rem;
+    margin-top: 42rem;
+    padding: 40px 0;
   }
 
   .main_calculator_div {
@@ -3364,8 +3378,8 @@
   }
 
   .mortgage_process_header_content .btn_mortgage {
-    width: 120px;
-    height: 40px;
+    /* width: 120px;
+    height: 40px; */
     font-size: 14px;
   }
 
@@ -3373,9 +3387,14 @@
     font-size: 12px;
     padding: 0 10px;
   }
-
+  .mortgage_process_para_section .h3,
   .preapproval_section .heading_main {
     font-size: 22px;
+    padding-bottom: unset;
+  }
+  .lower_monthly_payment{
+    /* padding: unset !important; */
+    padding: 0 !important;
   }
 
   .pre_approval_header_content .pre_approval_header {
@@ -3397,13 +3416,18 @@
   }
 
   .mortgage_process_header_content p {
-    line-height: 0;
     padding: 25px 0;
   }
 }
 
 /* Extra small devices (min-width:361px) (max-width: 575.98px) // (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
+  .banks_slider .bank_container .image {
+  padding: .5rem 1rem;
+  }
+  .banks_slider {
+    margin-top: 57rem;
+  }
   .mortgage_process_header_content {
     padding-bottom: 5rem;
   }
@@ -3503,6 +3527,18 @@
 
 /* (min-width:361px) (max-width:520px) */
 @media only screen and (max-width: 520px) {
+  .main_calculator{
+    max-width: calc(100vw - 45px);
+  }
+  .main_calculator .chart-section{
+    display: flex;
+    justify-content: center;
+    padding: unset;
+    padding-bottom: 1rem;
+  }
+  .banks_slider {
+    margin-top: 50rem;
+  }
   .main_calculator{
     padding: 0 .4rem !important;
   }

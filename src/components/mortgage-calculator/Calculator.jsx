@@ -168,7 +168,7 @@ function App() {
                 />
             </div>
             <div className="row">
-              <div className="col-6 form-group my-3">
+              <div className="col-sm-6 form-group my-3">
                 <label for="interestRate">Interest Rate</label>
                 <input
                     className="form-control"
@@ -188,7 +188,7 @@ function App() {
                   />
                   <span className="suffix">%</span>
               </div>
-              <div className="col-6 form-group my-3">
+              <div className="col-sm-6 form-group my-3">
                 <label for="loanTerm">Loan Term</label>
                 <input
                     className="form-control"

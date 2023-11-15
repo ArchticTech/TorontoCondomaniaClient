@@ -5,7 +5,31 @@ const Parargraph = () => {
     <>
       <section className="mortgage_process_para_section">
         <div className="container mortgage_process_container">
-          <p className="para1">
+          <h3 className="h3">What is Mortgage Process</h3>
+          <ul>
+            <li>
+              A mortgage is a type of loan used to purchase or maintain a home,
+              plot of land, or other types of real estate. The borrower agrees
+              to pay the lender over time, typically in a series of regular
+              payments that are divided into principal and interest. The
+              property then serves as collateral to secure the loan.
+            </li>
+            <li>
+              A mortgage is a type of loan used to purchase or maintain a home,
+              plot of land, or other types of real estate. The borrower agrees
+              to pay the lender over time, typically in a series of regular
+              payments that are divided into principal and interest. The
+              property then serves as collateral to secure the loan.
+            </li>
+            <li>
+              A mortgage is a type of loan used to purchase or maintain a home,
+              plot of land, or other types of real estate. The borrower agrees
+              to pay the lender over time, typically in a series of regular
+              payments that are divided into principal and interest. The
+              property then serves as collateral to secure the loan.
+            </li>
+          </ul>
+          {/* <p className="para1">
             Obtaining a mortgage can feel like a daunting and intricate process.
             With a multitude of mortgage options to consider and a substantial
             document collection required for applications, understanding the
@@ -22,7 +46,7 @@ const Parargraph = () => {
             {" "}
             In this comprehensive guide, we will elucidate each of these stages
             to provide you with a thorough understanding.
-          </p>
+          </p> */}
         </div>
       </section>
     </>
