@@ -3533,7 +3533,7 @@
   .main_calculator .chart-section{
     display: flex;
     justify-content: center;
-    padding: unset;
+    padding: 0;
     padding-bottom: 1rem;
   }
   .banks_slider {
