@@ -18,7 +18,7 @@ const FAQ = () => {
     </div>
     <div className="text flex-fill">
       <h4 className="sub_heading">
-        What's the Average Time for Home Closing?
+        What&apos;s the Average Time for Home Closing?
       </h4>
       <p className="mb-4">
         The typical timeframe for closing on a house ranges from 30 to 45 days,
@@ -33,7 +33,7 @@ const FAQ = () => {
       <p className="mb-4">
         Closing costs encompass various expenses, including appraisal fees and
         legal fees for contract drafting. These costs can constitute as much as
-        2% to 5% of the home's purchase price and are typically payable at the
+        2% to 5% of the home&apos;s purchase price and are typically payable at the
         time of closing.
       </p>
     </div>
