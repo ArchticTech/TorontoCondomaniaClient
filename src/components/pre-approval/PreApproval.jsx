@@ -10,7 +10,7 @@ const PreApproval = () => {
             <p>
               Mortgage pre-approval is a preliminary evaluation by a lender to
               determine how much they are willing to lend you for a home
-              purchase. It`&APOS;s a step beyond pre-qualification and involves
+              purchase. It&apos;s a step beyond pre-qualification and involves
             </p>
             <p>
               a thorough assessment of your financial situation. Pre-approval
@@ -30,12 +30,12 @@ const PreApproval = () => {
               <p className="p-0 ">
                 Many individuals embark on their property search well in advance
                 of obtaining mortgage pre-approval, sometimes even before
-                considering home purchase. However, if you`&APOS;ve diligently
+                considering home purchase. However, if you&apos;ve diligently
                 followed the steps mentioned earlier and secured pre-approval,
-                you`&APOS;re now primed to begin your search in earnest. There are
+                you&apos;re now primed to begin your search in earnest. There are
                 multiple avenues for house hunting, such as utilizing online
                 real estate platforms like Zillow or Trulia, exploring
-                properties at auctions, or even seeking off-market homes. It`&APOS;s
+                properties at auctions, or even seeking off-market homes. It&apos;s
                 essential to steer clear of common house-hunting pitfalls.
               </p>
             </div>
@@ -48,7 +48,7 @@ const PreApproval = () => {
               </h4>
               <p className="p-0 ">
                 In a competitive real estate market, having pre-approval can
-                make your offer more attractive to sellers, as they know you`&APOS;re
+                make your offer more attractive to sellers, as they know you&apos;re
                 a serious and qualified buyer.
               </p>
             </div>

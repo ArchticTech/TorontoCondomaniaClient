@@ -3301,6 +3301,8 @@
   .keytakeaway_container .keytakeaway_header h2,
   .keytakeaway_container .keytakeaway_header .h2 {
     font-size: 30px;
+    line-height: 35px;
+
   }
 
   .mobile-menu .header_user_notif {
@@ -3333,6 +3335,14 @@
 }
 
 @media only screen and (max-width: 580px) {
+  .keytakeaway_container{
+    padding: 1rem;
+    line-height: 44px;
+  }
+  
+  .preapproval_section{
+    padding: 0;
+  }
   
   .preapproval_section ul li {
     font-size: 15px;
@@ -3391,6 +3401,7 @@
   .preapproval_section .heading_main {
     font-size: 22px;
     padding-bottom: unset;
+    line-height: 36px;
   }
   .lower_monthly_payment{
     /* padding: unset !important; */

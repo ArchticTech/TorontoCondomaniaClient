@@ -6,13 +6,13 @@ const Parargraph = () => {
       <section className="mortgage_process_para_section">
         <div className="container mortgage_process_container p-0">
           <p className="para1">
-          The journey to homeownership is an exciting one, but it can also be daunting, especially if you`&APOS;re new to the world of real estate and mortgages. One of the crucial early steps in this journey is getting pre-approved 
+          The journey to homeownership is an exciting one, but it can also be daunting, especially if you&apos;re new to the world of real estate and mortgages. One of the crucial early steps in this journey is getting pre-approved 
           </p>
           <p className="para2">
-          for a mortgage. Pre-approval not only gives you a clear picture of what you can afford but also strengthens your position when you`&APOS;re ready to make an offer on a house. In this comprehensive guide, we`&APOS;ll delve into what pre-approval means, 
+          for a mortgage. Pre-approval not only gives you a clear picture of what you can afford but also strengthens your position when you&apos;re ready to make an offer on a house. In this comprehensive guide, we&apos;ll delve into what pre-approval means, 
           </p>
           <p className="para3">
-          why it`&APOS;s important, and how you can qualify for a mortgage through the pre-approval process.
+          why it&apos;s important, and how you can qualify for a mortgage through the pre-approval process.
           </p>
         </div>
       </section>
