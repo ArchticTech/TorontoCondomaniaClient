@@ -1,0 +1,41 @@
+Thursday, October 12 : API Proxy Created
+Wednesday, October 11 : Loading Icon Created and Login Done
+Tuesday, October 10 : Registeration and Verify Email Popup functionality created
+Monday, October 09 : Registeration Functionality Created
+Friday, October 06 : Api for User Registration Created
+Thursday, October 05 : Minor Fixes
+Thursday, October 05 : Merge branch 'masam'
+Thursday, October 05 : Mapbox Marker Filtering on Advanced Search Completed
+Thursday, October 05 : rental module integrated
+Thursday, October 05 : Merge branch 'masam'
+Thursday, October 05 : Minor Changes
+Thursday, October 05 : search functionality on main page
+Thursday, October 05 : Merge branch 'masam'
+Thursday, October 05 : Dropdown Listing Added
+Thursday, October 05 : functionality of search box of cities integrated
+Wednesday, October 04 : rental module integrated, rental slider in home page, single rental page integrated and fixed bugs
+Wednesday, October 04 : Merge branch 'masam' of https://github.com/ArchticTech/TorontoCondomaniaClient into masam
+Wednesday, October 04 : fetch api for rentals
+Wednesday, October 04 : Masam Cities Count Code Merged
+Tuesday, October 03 : Merge branch 'masam'
+Tuesday, October 03 : Code Merged
+Tuesday, October 03 : integrated assignment module, assignment slider integrated main page, single assignment view page integrated and many other changes
+Monday, October 02 : Advanced Search Completed
+	
+Friday, September 22 : updated in home page
+Thursday, September 21 : Maps Completed
+Wednesday, September 20 : main page edited, including all the pages and components within main page
+Wednesday, September 20 : main page edited, including all the pages and components within main page
+Tuesday, September 19 : Single Property Display Page Completed
+Tuesday, September 19 : background image changed
+Tuesday, September 19 : testing side branch
+Monday, September 18 : Minor Modification in Property Display Page
+Monday, September 18 : Property Images Added and Image Popup Created
+Friday, September 15 : API Data Fetched for Property View Page
+Thursday, September 14 : Image Issue Resolved
+Thursday, September 14 : Global Variable Created
+Thursday, September 14 : API url changed
+Thursday, September 14 : Build Error Resolved
+Thursday, September 14 : Resolved Build Errors
+Wednesday, September 13 : Properties Displayed
+Tuesday, September 12 : Next JS App Installed
