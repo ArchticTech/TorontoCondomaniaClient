@@ -9,13 +9,17 @@ import {
   SidebarContent,
 } from "react-pro-sidebar";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { addCity } from "../../../features/properties/propertiesSlice";
+import { useState } from "react";
+import Cookies from "js-cookie";
 
 const home = { name: "Home", routerPath: "/" };
 
 const listing = [
-  { id: 1, name: "Pre Construction", routerPath: "/pre-construction" },
+  { id: 1, name: "Pre Construction", routerPath: "/properties" },
   { id: 2, name: "Rentals", routerPath: "/rentals" },
   { id: 3, name: "Assignments", routerPath: "/assignments" },
 ];
@@ -35,25 +39,31 @@ const topCities = [
   { id: 12, name: "Niagara Falls", routerPath: "/niagara-falls" },
 ];
 const homeLoan = [
-  { id: 1, name: "Mortgage process", routerPath: "/mortgage-process" },
-  { id: 2, name: "Pre approval", routerPath: "/pre-approval" },
-  { id: 3, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+  { id: 1, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+  { id: 2, name: "Mortgage process", routerPath: "/mortgage-process" },
+  { id: 3, name: "Pre approval", routerPath: "/pre-approval" },
 ];
 const MobileMenuContent = () => {
+  const [loginStatus] = useState(Cookies.get('loginStatus') == 'true')
+
   const route = useRouter();
+  const dispatch = useDispatch();
+  const submitHandler = (city) => {
+    dispatch(addCity(city));
+    Router.push("/properties");
+  };
   return (
     <ProSidebar>
       <SidebarHeader>
         <div className="sidebar-header">
           <Link href="/" className="sidebar-header-inner">
             <Image
-              width={40}
-              height={45}
+              width={80}
+              height={95}
               className="nav_logo_img img-fluid mt20"
-              src="/assets/images/logo.png"
+              src="/assets/images/TCM-LOGO-1.png"
               alt="header-logo.png"
             />
-            <span className="brand-text">TCM</span>
           </Link>
           {/* End .logo */}
 
@@ -72,29 +82,6 @@ const MobileMenuContent = () => {
 
       <SidebarContent>
         <Menu>
-          {/* <SubMenu
-              title="Home"
-              className={
-                home.some((page) => page.routerPath === route.pathname)
-                  ? "parent-menu-active"
-                  : undefined
-              }
-            >
-              {home.map((val, i) => (
-                <MenuItem key={i} active={true}>
-                  <Link
-                    href={val.routerPath}
-                    className={
-                      val.routerPath === route.pathname ? "ui-active" : undefined
-                    }
-                  >
-                    {val.name}
-                  </Link>
-                </MenuItem>
-              ))}
-            </SubMenu> */}
-          {/* End Home Home */}
-
           {
             <SubMenu
               title="Listing"
@@ -120,30 +107,28 @@ const MobileMenuContent = () => {
               ))}
             </SubMenu>
           }
-          
+
           {/* end listing */}
-          
+
           {
             <SubMenu
               title="Top Cities"
               className={
-                topCities.some((topCities) => topCities.routerPath === route.pathname)
+                topCities.some(
+                  (topCities) => topCities.routerPath === route.pathname
+                )
                   ? "parent-menu-active"
                   : undefined
               }
             >
-              {topCities.map((val, i) => (
-                <MenuItem key={i}>
-                  <Link
-                    href={val.routerPath}
-                    className={
-                      route.pathname === val.routerPath
-                        ? "ui-active"
-                        : undefined
-                    }
+              {topCities.map((item) => (
+                <MenuItem key={item.id}>
+                  <a
+                    onClick={() => submitHandler(item.name)}
+                    style={{ cursor: "pointer" }}
                   >
-                    {val.name}
-                  </Link>
+                    {item.name}
+                  </a>
                 </MenuItem>
               ))}
             </SubMenu>
@@ -152,9 +137,11 @@ const MobileMenuContent = () => {
 
           {
             <SubMenu
-              title="Home Loan"
+              title="Mortgage"
               className={
-                homeLoan.some((homeLoan) => homeLoan.routerPath === route.pathname)
+                homeLoan.some(
+                  (homeLoan) => homeLoan.routerPath === route.pathname
+                )
                   ? "parent-menu-active"
                   : undefined
               }
@@ -180,45 +167,40 @@ const MobileMenuContent = () => {
 
           <MenuItem>
             <Link
-              href="/contact"
-              className={
-                route.pathname === "/contact" ? "ui-active" : undefined
-              }
+              href="https://blog.torontocondomania.ca"
             >
-              Contact
+              Article
             </Link>
           </MenuItem>
 
-          <MenuItem>
-            <Link
-              href="/login"
-              className={route.pathname === "/login" ? "ui-active" : undefined}
-            >
-              <span className="flaticon-user"></span> Login
-            </Link>
-          </MenuItem>
-
-          <MenuItem>
-            <Link
-              href="/register"
-              className={
-                route.pathname === "/register" ? "ui-active" : undefined
-              }
-            >
-              <span className="flaticon-edit"></span> Register
-            </Link>
-          </MenuItem>
+        {
+        !loginStatus ?
+          <> 
+            <MenuItem>
+              <a
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target=".bd-example-modal-lg"
+              >
+                <span className="flaticon-user">Login / Register</span>
+              </a>
+            </MenuItem>
+            </> : undefined
+        }
         </Menu>
       </SidebarContent>
 
-      <SidebarFooter>
-        <Link
-          href="/create-listing"
-          className="btn btn-block btn-lg btn-thm circle"
-        >
-          <span className="flaticon-plus"></span> Create Listing
-        </Link>
-      </SidebarFooter>
+      {
+        loginStatus ? 
+        <SidebarFooter>
+          <Link
+            href="/user"
+            className="btn btn-block btn-lg btn-thm circle"
+          >
+            <span className="flaticon-home"></span> Dashboard
+          </Link>
+        </SidebarFooter>
+      : undefined }
     </ProSidebar>
   );
 };

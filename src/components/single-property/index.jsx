@@ -10,11 +10,20 @@ import DetailsContent from "../../components/listing-details-v1/DetailsContent";
 import Sidebar from "../../components/listing-details-v1/Sidebar";
 import Head from "next/head";
 import global from "../../config/env";
+import IconPropertyHeart from "../common/IconPropertyHeart";
+import { useRouter } from "next/router";
 
-const PropertyView = ({property}) => {
+const PropertyView = ({assignmentVal, property, assignment}) => {
+  const router = useRouter();
 
-  const priceFrom = property?.price_from;
-  const priceTo = property?.price_to;
+  const handleCompare = () => {
+    const compareParam = `compare=${property.id}`;
+  
+    router.push(`/compare?${compareParam}`);
+  };
+
+  const priceFrom = parseFloat(property?.price_from);
+  const priceTo = parseFloat(property?.price_to);
 
   const formattedPriceFrom = priceFrom.toLocaleString('en-US', {
     style: 'currency',
@@ -31,31 +40,59 @@ const PropertyView = ({property}) => {
 
   const popupRef = useRef(null);
   const imageRef = useRef(null);
-  const [popupImage, setPopupImage] = useState('');
-  const [showPopup, setShowPopup] = useState(false);
+  
+  const [imageIndex, setImageIndex] = useState(-1);
+
+  const images = [property?.image, ...property?.images];
+
   useEffect(() => {
     // Check if we are running on the client side before manipulating the DOM
-    if (typeof window !== 'undefined' && showPopup) {
+    if (typeof window !== 'undefined' && imageIndex >= 0) {
       const popup = popupRef.current;
       const image = imageRef.current;
 
-      // Perform your DOM manipulations here
-      if (popup && image) {
-        // Example: Change the display style of the popup and image
+      if (popup && image) { 
+        const imageURL = global.apiURL + 'images/' + images[imageIndex];
+        console.log(imageIndex);
+        
         popup.style.display = 'flex';
-        image.src = popupImage;
+        image.src = imageURL;
       }
     }
     else {
       const popup = popupRef.current;
       popup.style.display = 'none';
     }
-  }, [showPopup]);
-  const handlePopup = (show, imageName=null) => {
-    if(imageName)
-      setPopupImage(global.apiURL + 'images/' + imageName)
-    setShowPopup(show);
-  };
+  }, [images, imageIndex]);
+
+  const nextImage = () => {
+    if (imageIndex < images.length - 1)
+    {
+      setImageIndex(imageIndex + 1);
+    }
+    else {
+      setImageIndex(0);
+    }
+  }
+  const previousImage = () => {
+    if (imageIndex > 0)
+    {
+      setImageIndex(imageIndex + 1);
+    }
+    else {
+      setImageIndex(images.length - 1);
+    }
+  }
+  const showImage = (imageIndex) => {
+    if (imageIndex >= 0 && imageIndex < images.length)
+    {
+      setImageIndex(imageIndex);
+    }
+  }
+  const hidePopup = () => {
+      setImageIndex(-1);
+  }
+  
 
   return (
     <>
@@ -86,33 +123,19 @@ const PropertyView = ({property}) => {
               <div className="col-lg-5 col-xl-4">
                 <div className="single_property_social_share position-static transform-none">
                   <div className="price float-start fn-400">
-                    <h2>
-                      {formattedPriceFrom} - {formattedPriceTo}
-                    </h2>
+                    <h3>
+                      {formattedPriceFrom} &ndash; {formattedPriceTo}
+                    </h3>
                   </div>
 
                   <div className="spss style2 mt20 text-end tal-400">
                     <ul className="mb0">
                       <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-transfer-1"></span>
+                        <a href="#" onClick={handleCompare}>
+                          <span className="compare_btn flaticon-transfer-1"></span>
                         </a>
                       </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-heart"></span>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-share"></span>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-printer"></span>
-                        </a>
-                      </li>
+                      <IconPropertyHeart id={property.id}/>
                     </ul>
                   </div>
                   {/* End activity and social sharing */}
@@ -121,8 +144,16 @@ const PropertyView = ({property}) => {
             </div>
             {/* End .row */}
 
-            <div ref={popupRef} id="popup" onClick={() => handlePopup(false)}>
-                <img ref={imageRef} id="popupImage" src="" alt=""/>
+            <div ref={popupRef} id="popup">
+                <div
+                  className="arrow"
+                  onClick={() => previousImage()}
+                  > <i className="fa fa-angle-left"></i></div>
+                <img ref={imageRef} id="popupImage" src="" alt="" onClick={() => hidePopup()}/>
+                <div
+                  className="arrow"
+                  onClick={() => nextImage()}
+                > <i className="fa fa-angle-right"></i></div>
             </div>
 
             <div className="row property-images">
@@ -130,7 +161,7 @@ const PropertyView = ({property}) => {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="spls_style_two mb30-520">
-                        <div role="button" onClick={() => handlePopup(true, property.image)}>
+                        <div role="button" onClick={() => showImage(0)}>
                           <img
                             width={752}
                             height={450}
@@ -147,10 +178,10 @@ const PropertyView = ({property}) => {
 
               <div className="col-sm-5 col-lg-4">
                 <div className="row">
-                  {property?.images?.map((image, i) => (
+                  {property?.images?.slice(0, 6).map((image, i) => (
                     <div className="col-6" key={i}>
                       <div className="spls_style_two img-gallery-box mb24">
-                        <div role="button" onClick={() => handlePopup(true, image)}>
+                        <div role="button" onClick={() => showImage(i+1)}>
                           <img
                             width={170}
                             height={133}
@@ -170,18 +201,19 @@ const PropertyView = ({property}) => {
           </Gallery>
         </div>
       </section>
+      {/* {console.log(property)}; */}
 
       {/* <!-- Agent Single Grid View --> */}
       <section className="our-agent-single bgc-f7 pb30-991">
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-lg-8">
-              <DetailsContent property={property}/>
+              <DetailsContent assignmentVal={assignmentVal} property={property} assignment={assignment}/>
             </div>
             {/* End details content .col-lg-8 */}
 
             <div className="col-lg-4 col-xl-4">
-              <Sidebar agent={property?.agent}/>
+              <Sidebar property={property}/>
             </div>
             {/* End sidebar content .col-lg-4 */}
           </div>

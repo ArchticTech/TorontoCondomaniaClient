@@ -11,12 +11,9 @@ import FeaturedItem from "./FeaturedItem";
 import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
+import { useDispatch, useSelector } from "react-redux";
 
 mapboxgl.accessToken = global.mapboxAccessToken;
-
-const addLocation = ({ name }) => {
-  console.log(name);
-};
 
 const ListingMap = ({ rentals }) => {
   useEffect(() => {
@@ -28,7 +25,14 @@ const ListingMap = ({ rentals }) => {
     });
 
     rentals?.map((rental) => {
-      rental.marker = setMarkerOnMap(map, rental.latitude, rental.longitude);
+      rental.marker = setMarkerOnMap(
+        map, 
+        rental.latitude, 
+        rental.longitude
+        );
+        rental.marker
+        .getElement()
+        .setAttribute("data-marker-id", rental.slug);
     });
 
     // Clean up the map instance when the component unmounts
@@ -37,7 +41,7 @@ const ListingMap = ({ rentals }) => {
 
   const setMarkerOnMap = (map, latitude, longitude) => {
     const marker = new mapboxgl.Marker({
-      color: "#6449e7", // Marker color
+      color: "#ff3636", // Marker color
       draggable: false, // Allow the user to drag the marker
     })
       .setLngLat([longitude, latitude])
@@ -126,7 +130,7 @@ const ListingMap = ({ rentals }) => {
                 <div className="col-md-12">
                   <div className="grid_list_search_result ">
                     <div className="row align-items-center">
-                      <FilterTopBar2 />
+                      <FilterTopBar2 length={useSelector((state) => state.rentals.length)}/>
                     </div>
                   </div>
                   {/* End .row */}

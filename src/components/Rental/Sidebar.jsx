@@ -1,20 +1,22 @@
-import ContactWithAgent from "../common/agent-view/ContactWithAgent";
 import Categorie from "../common/listing/Categorie";
-import ListingCreator from "../common/listing/ListingCreator";
 import FeaturedListings from "../common/listing/FeaturedListings";
 import FeatureProperties from "../common/listing/FeatureProperties";
+import ContactConsultation from "../common/agent-view/ContactConsultation";
 
-const Sidebar = () => {
+const Sidebar = ({rental}) => {
   return (
     <>
-      {/* <div className="sidebar_listing_list">
+      <div className="sidebar_listing_list">
         <div className="sidebar_advanced_search_widget">
           <div className="sl_creator">
-            <h4 className="mb25">Contact with agent</h4>
+            <h4 className="">Interested In Rental?</h4>
+            <p>Submit Purchase Request</p>
+            {/* <ListingCreator agent={agent}/> */}
           </div>
-          <ContactWithAgent />
+          {/* End .sl_creator */}
+          <ContactConsultation property={rental} />
         </div>
-      </div> */}
+      </div>
       {/* End .sidebar_listing_list */}
 
       <div className="terms_condition_widget">

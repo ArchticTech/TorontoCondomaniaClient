@@ -1,54 +1,22 @@
 import global from '../config/env';
-import apiProxy from '../pages/api/apiProxy';
+import axios from 'axios';
+
+/*************************************************************/
+/***** API Requests that does not require Authentication *****/
+/*************************************************************/
 
 export async function fetchAllProperties() {
-    try {
-        const response = await fetch('/api/apiProxy', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
-
-        return response;
-
-        // const requestData = {
-        //     method: 'GET',
-        //     url: 'api/getAllProperties/',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // };
-
-        // const response = await apiProxy(requestData);
-        // return response;
-    } 
-    catch (error) {
-        console.error('Error fetching property:', error);
-        throw error; // Optionally re-throw the error
+    const response = await fetch(global.apiURL + 'api/getAllProperties/');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
     }
+    const properties = await response.json();
+    
+    return properties;
 }
-
 export async function fetchProperty(slug) {
-    try {
-        const requestData = {
-            method: 'GET',
-            url: 'api/getProperty/' + slug,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const property = await apiProxy(requestData);
-        return property;
-    } 
-    catch (error) {
-        console.error('Error fetching property:', error);
-        throw error; // Optionally re-throw the error
-    }
-}
-export async function fetchProperty2(slug) {
     const response = await fetch(global.apiURL + 'api/getProperty/' + slug);
+    //console.log('Response Start ', response, 'Response Failed');
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -56,6 +24,7 @@ export async function fetchProperty2(slug) {
 
     return property;
 }
+
 export async function fetchAllAssignments() {
     const response = await fetch(global.apiURL + 'api/getAllAssignments');
     if (!response.ok) {
@@ -65,8 +34,8 @@ export async function fetchAllAssignments() {
     return assignments;
 }
 
-export async function fetchAssignment(id) {
-    const response = await fetch(global.apiURL + 'api/getAssignment/' + id);
+export async function fetchAssignment(slug) {
+    const response = await fetch(global.apiURL + 'api/getAssignment/' + slug);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -84,7 +53,7 @@ export async function fetchAllRentals() {
 }
 
 export async function fetchRental(id) {
-    const response = await fetch(global.apiURL + 'api/getRental/' + id);
+    const response = await fetch(global.apiURL + 'api/getRental/'  + id);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -105,18 +74,25 @@ export async function fetchCityCount(name) {
     } catch (error) {
         // Handle the error here
         console.error('Error fetching API:', error);
+        
         throw error; // Re-throw the error to propagate it to the caller if needed
     }
 }
 
 export async function registerUser(userData)
 {
-    const response = await fetch(global.apiURL + 'api/register/' + 
+    try {
+        const response = await fetch(global.apiURL + 'api/register/' + 
         encodeURIComponent(userData['name']) + '/' + 
         encodeURIComponent(userData['email']) + '/' + 
         encodeURIComponent(userData['password']));
 
-    return await response.json();
+        return await response.json();
+    }
+    catch(e)
+    {
+        console.error(e)
+    }
 }
 export async function resendVerificationEmail(email)
 {
@@ -124,28 +100,105 @@ export async function resendVerificationEmail(email)
         'api/resendEmail/' + 
         encodeURIComponent(email));
 }
+
+export async function sendConsultationRequest(consultationData)
+{
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: global.apiURL + 'api/sendConsultationRequest',
+            data: consultationData
+        });
+        return response;
+    }
+    catch (error) {
+        console.error('Error', error);
+    }
+}
+
+
+/****************************************************/
+/***** API Requests that require Authentication *****/
+/****************************************************/
+
+export async function fetchAllFavoriteProperties() {
+    try {
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/getAllFavorites'
+            },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+export async function storeFavoriteProperty(propertyID) {
+    try {
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/storeFavorite/' + propertyID
+            },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+export async function deleteFavoriteProperty(propertyID) {
+    try {
+        const response = await axios.get('/api/apiProxy', {
+            params: {
+                method: 'GET',
+                url: 'api/deleteFavorite/' + propertyID
+            },
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+
+export async function reserveFloorPlan(formData) {
+    try {
+        const response = await axios.post('/api/apiProxy', formData, {
+            params: {
+                method: 'POST',
+                url: 'api/addFloorPlanReservation',
+            }
+        });
+        
+        return response.data;
+    }
+    catch (error) {
+        console.log(error)
+        return error;
+    }
+}
+
 export async function authenticateUser(userData)
 {
     const email = userData['email'];
     const password = userData['password'];
-    try {
-        const response = await fetch('/api/authenticationProxy', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-          });
-
-        return response;
-    } 
-    catch (error) {
-        console.error('Authentication Error:', error);
-        throw error; // Optionally re-throw the error
-    }
-}
-
-export async function validateUser()
-{
     
+    const response = await fetch('/api/authenticationProxy', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+        });
+    const authResponse = await response.json();
+    return authResponse;
 }

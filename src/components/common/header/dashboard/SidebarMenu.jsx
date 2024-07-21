@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
-  isParentPageActive,
   isSinglePageActive,
 } from "../../../../utils/daynamicNavigation";
 import Image from "next/image";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const SidebarMenu = () => {
   const route = useRouter();
@@ -21,31 +22,36 @@ const SidebarMenu = () => {
   const manageAccount = [
     {
       id: 1,
-      name: "My Package",
-      route: "/my-package",
-      icon: "flaticon-box",
+      name: "My Profile",
+      route: "/user/profile",
+      icon: "flaticon-user",
     },
     {
       id: 2,
-      name: "My Profile",
-      route: "/my-profile",
-      icon: "flaticon-user",
+      name: "Reserved Floor Plans",
+      route: "/user/reserved-floor-plans",
+      icon: "flaticon-box",
     },
-    { id: 3, name: "Logout", route: "/login", icon: "flaticon-logout" },
   ];
+  
+  const logoutUser = async () => {
+    const response = await axios.get('/api/logout');
+    Cookies.set('loginStatus', false);
+    route.push('/');
+  }
 
   return (
     <>
       <ul className="sidebar-menu">
         <li className="sidebar_header header">
           <Link href="/">
-            <Image
-              width={40}
-              height={45}
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
+          <Image
+              width={100}
+              height={80}
+              className="logo1 img-fluid contain"
+              src="/assets/images/TCM-LOGO-2.png"
+              alt="header-logo.png"
             />
-            <span>FindHouse</span>
           </Link>
         </li>
         {/* End header */}
@@ -55,17 +61,17 @@ const SidebarMenu = () => {
           <ul>
             <li
               className={`treeview ${
-                isSinglePageActive("/my-dashboard", route.pathname)
+                isSinglePageActive("/user", route.pathname)
                   ? "active"
                   : ""
               }`}
             >
-              <Link href="/my-dashboard">
+              <Link href="/user">
                 <i className="flaticon-layers"></i>
                 <span> Dashboard</span>
               </Link>
             </li>
-            <li
+            {/* <li
               className={`treeview ${
                 isSinglePageActive("/create-listing", route.pathname)
                   ? "active"
@@ -76,8 +82,8 @@ const SidebarMenu = () => {
                 <i className="flaticon-plus"></i>
                 <span> Create Listing</span>
               </Link>
-            </li>
-            <li
+            </li> */}
+            {/* <li
               className={`treeview ${
                 isSinglePageActive("/my-message", route.pathname)
                   ? "active"
@@ -88,7 +94,7 @@ const SidebarMenu = () => {
                 <i className="flaticon-envelope"></i>
                 <span> Message</span>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </li>
         {/* End Main */}
@@ -96,7 +102,7 @@ const SidebarMenu = () => {
         <li className="title">
           <span>Manage Listings</span>
           <ul>
-            <li
+            {/* <li
               className={`treeview ${
                 isParentPageActive(myProperties, route.pathname) ? "active" : ""
               }`}
@@ -114,10 +120,10 @@ const SidebarMenu = () => {
                   </li>
                 ))}
               </ul>
-            </li>
+            </li> */}
             {/* end properties */}
 
-            <li
+            {/* <li
               className={`treeview ${
                 isParentPageActive(reviews, route.pathname) ? "active" : ""
               }`}
@@ -136,22 +142,22 @@ const SidebarMenu = () => {
                   </li>
                 ))}
               </ul>
-            </li>
+            </li> */}
             {/* End Review */}
 
             <li
               className={`treeview ${
-                isSinglePageActive("/my-favourites", route.pathname)
+                isSinglePageActive("/favorites", route.pathname)
                   ? "active"
                   : ""
               }`}
             >
-              <Link href="/my-favourites">
-                <i className="flaticon-magnifying-glass"></i>
+              <Link href="/user/favorites">
+                <i className="flaticon-heart"></i>
                 <span> My Favorites</span>
               </Link>
             </li>
-            <li
+            {/* <li
               className={`treeview ${
                 isSinglePageActive("/my-saved-search", route.pathname)
                   ? "active"
@@ -163,14 +169,26 @@ const SidebarMenu = () => {
                 <span> Saved Search</span>
               </Link>
             </li>
+            <li
+              className={`treeview ${
+                isSinglePageActive("/my-saved-search", route.pathname)
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <Link href="/my-saved-search">
+                <i className="flaticon-envelope"></i>
+                <span> Reviews</span>
+              </Link>
+            </li> */}
           </ul>
         </li>
         {/* End manage listing */}
 
         <li className="title">
-          <span>Manage Account</span>
+          <span>Profile</span>
           <ul>
-            {manageAccount.map((item) => (
+            {/* {manageAccount.map((item) => (
               <li
                 className={
                   isSinglePageActive(item.route, route.pathname) ? "active" : ""
@@ -181,7 +199,12 @@ const SidebarMenu = () => {
                   <i className={item.icon}></i> <span>{item.name}</span>
                 </Link>
               </li>
-            ))}
+            ))} */}
+            <li onClick={logoutUser} >
+              <a href='#' className="dropdown-item" >
+                <i className='flaticon-logout'></i> <span>Logout</span>
+              </a>
+            </li>
           </ul>
         </li>
       </ul>

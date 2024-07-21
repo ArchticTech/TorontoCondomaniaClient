@@ -2,18 +2,17 @@ import BreadCrumb from "../common/BreadCrumb";
 
 const BreadCrumbBanner = () => {
   return (
-    <section className="inner_page_breadcrumb">
+    <section className="header_inner_page_section">
       <div className="container">
-        <div className="row">
-          <div className="col-xl-6">
-            <div className="breadcrumb_content">
-              <BreadCrumb title="about us" />
-              <h4 className="breadcrumb_title">About Us</h4>
+        {/* <div className="row">
+          <div className="col-xl-6"> */}
+            <div className="about_us_header_content">
+              <h1 className="about_us_header">Transforming Homes, Fulfilling <span>Dreams</span> Your <span>Trusted</span> Partner in Real Estate </h1>
             </div>
           </div>
           {/* End .col */}
-        </div>
-      </div>
+        {/* </div>
+      </div> */}
     </section>
   );
 };

@@ -4,7 +4,6 @@ import DropdownListing from "./listing/dropdown-listing";
 import GlobalFilterRent from "./GlobalFilterRent";
 
 const GlobalHeroFilter = ({ properties, className = "" }) => {
-  const {keyword} = useSelector((state) => state.properties);
 
   return (
     <div className={`container px-4 col-lg-12 home_adv_srch_opt ${className}`}>
@@ -56,15 +55,16 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
 
       <div className="tab-content home1_adsrchfrm" id="pills-tabContent">
         <div
-          className="tab-pane fade show active"
+          className="tab-pane fade show active w-100"
           id="buy-search-box"
           role="tabpanel"
           aria-labelledby="pills-home-tab"
         >
           <GlobalFilter />
+          <DropdownListing properties={properties}/>
         </div>
         <div
-          className="tab-pane fade fade"
+          className="tab-pane fade fade w-100"
           id="rent-search-box"
           role="tabpanel"
           aria-labelledby="pills-home-tab"
@@ -72,13 +72,12 @@ const GlobalHeroFilter = ({ properties, className = "" }) => {
           <GlobalFilterRent />
         </div>
         <div
-          className="tab-pane fade fade"
+          className="tab-pane fade fade w-100"
           id="assignment-search-box"
           role="tabpanel"
           aria-labelledby="pills-home-tab"
         >
-          <GlobalFilter />
-          <DropdownListing properties={properties}/>
+          <GlobalFilter isAssignment={true} />
         </div>
       </div>
     </div>

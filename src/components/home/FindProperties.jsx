@@ -1,14 +1,9 @@
-import Link from "next/link";
-import findProperties from "../../data/cityPropertiesCount";
 import Image from "next/image";
-import { addLocation } from "../../pages/properties/index";
 import { useDispatch } from "react-redux";
 import { addCity } from "../../features/properties/propertiesSlice";
-import Router, { useRouter } from "next/router";
+import Router from "next/router";
 
 const FindProperties = ({cities}) => {
-
-  const route = useRouter();
 
   const dispatch = useDispatch();
   const submitHandler = (city) => {

@@ -3,9 +3,9 @@ import Link from "next/link";
 const CopyrightFooter = () => {
   const menuItems = [
     { id: 1, name: "Home", routeLink: "/" },
-    { id: 3, name: "Property", routeLink: "/properties" },
-    { id: 4, name: "About Us", routeLink: "/about" },
-    { id: 5, name: "Blog", routeLink: "/blog" },
+    { id: 3, name: "Pre-Construction", routeLink: "/properties" },
+    { id: 4, name: "About Us", routeLink: "/about-us" },
+    { id: 5, name: "Blog", routeLink: "https://blog.torontocondomania.ca" },
     { id: 6, name: "Contact", routeLink: "/contact" },
   ];
 

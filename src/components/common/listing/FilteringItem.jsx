@@ -23,7 +23,6 @@ import {
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
-import ClearAllFilters from "./ClearAllFilters";
 
 const FilteringItem = () => {
   const {
@@ -246,7 +245,7 @@ const clearHandler = () => {
           </div>
           <div className="dd_content2 style2 dropdown-menu">
             <div className="pricing_acontent ">
-              <PricingRangeSlider priceReducer={addPrice} min={1} max={2000000}/>
+              <PricingRangeSlider priceReducer={addPrice} min={100000} max={10000000}/>
             </div>
           </div>
         </div>
@@ -264,7 +263,7 @@ const clearHandler = () => {
                   data-bs-toggle="collapse"
                   data-bs-parent="#accordion"
                 >
-                  <i className="flaticon-more"></i> Advanced features
+                  <i className="flaticon-more"></i>Advanced features
                 </a>
               </h4>
             </div>

@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import global from "../../config/env";
 import BedIcon from '@mui/icons-material/Bed';
 import BathIcon from '@mui/icons-material/Bathtub';
+import IconPropertyHeart from "../common/IconPropertyHeart";
 
 const PropertiesSlider = ({ properties }) => {
   const settings = {
@@ -32,8 +33,8 @@ const PropertiesSlider = ({ properties }) => {
 
   let content = properties?.slice(0, 12)?.map((property) => {
     
-    const priceFrom = property.price_from;
-    const priceTo = property.price_to;
+    const priceFrom = parseFloat(property.price_from);
+    const priceTo = parseFloat(property.price_to);
 
     const formattedPriceFrom = priceFrom.toLocaleString('en-US', {
       style: 'currency',
@@ -49,94 +50,95 @@ const PropertiesSlider = ({ properties }) => {
     });
 
     return ( 
-    <div className="item" key={property.id}>
-      <div className="feat_property">
+      <div
+        className="feat_property home7 style4"
+        key={property.id}
+      >
+      <Link
+      href={
+        "/property" +
+        `/${property.slug}`
+      }
+      className="col-md-6 col-lg-6" >
         <div className="thumb">
           <img
-            width={343}
+            width={316}
             height={220}
-            className="img-whp cover"
-            src={global.apiURL + 'images/' + property.image}
-            alt={property.name}
+            className="img-whp w-100 h-100 cover"
+            src={global.apiURL + "images/" + property.image}
+            alt="fp1.jpg"
           />
           <div className="thmb_cntnt">
             <ul className="tag mb0">
-                {(property.vip_featured_promotion != null) ? (
-                  <li className="list-inline-item">
-                  <a>{property.vip_featured_promotion}</a>
-                  </li>
-                ) : undefined}
-                {(property.isHot > 0) ? (
-                  <li className="list-inline-item">
-                  <a>Hot</a>
-                  </li>
-                ) : undefined}
+              {property.isHot ? (
+                <li className="list-inline-item" >
+                  <a href="" className="text-capitalize">
+                    Hot
+                  </a>
+                </li>
+              ) : (
+                ""
+              )}
+              <li className="list-inline-item">
+                <a href="" className="text-capitalize">{property.vip_featured_promotion}</a>
+              </li>
             </ul>
-            {/* End .tag */}
-
             <ul className="icon mb0">
               <li className="list-inline-item">
                 <a href="#">
                   <span className="flaticon-transfer-1"></span>
                 </a>
               </li>
-              <li className="list-inline-item">
-                <a href="#">
-                  <span className="flaticon-heart"></span>
-                </a>
-              </li>
+              <IconPropertyHeart id={property.id} />
             </ul>
-            {/* End .icon */}
-
-            
           </div>
         </div>
-        {/* End .thumb */}
-
         <div className="details">
           <div className="tc_content">
             <p className="text-thm">{property.type}</p>
             <h4>
-              <Link href={'/' + ((property.isAssignment) ? 'assignment': 'property') + `/${property.slug}`}>{property.name}</Link>
+                {property.name}
             </h4>
-            <p className="d-flex justify-content-between flex-wrap">
-              <div className="my-1"><span className="flaticon-placeholder"></span> {property.address}</div>
-              <div className="moveIn my-1">Move in <b>{property.est_occupancy_year}</b></div>
+            
+            <p className="row justify-content-start">
+              <div className="col-3 stat mb-2">
+                <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/single-bed.png" alt="bed"/>
+                <span className="count">{property?.beds}</span>
+              </div>
+              <div className="col-3 stat mb-2">
+                <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/shower-and-tub.png" alt="shower-and-tub"/>
+                <span className="count">{property?.baths}</span>
+              </div>
+              <div className="col-6 stat-wide mb-2">
+                <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/fit-to-page.png" alt="land-area"/>
+                <span className="count">{property?.areaMin}</span> &ndash; <span className="count">{property?.areaMax}</span> Sqft
+              </div>
             </p>
-            <p className="d-flex justify-content-between flex-wrap">
-              <div><BedIcon /> {property.beds}</div>
-              <div><BathIcon /> {property.baths}</div>
-              <div></div>
-              <div></div>
-              <div className="my-1">{property.status}</div>
+            <p className="mb-2 d-flex align-items-start">
+              <img height="19" src="https://img.icons8.com/fluency-systems-regular/555555/21/marker--v1.png" alt="map-marker-v1"/>
+              <span className="mx-2">{property?.address}</span>
+            </p>
+            <p className="mb-0 box">
+              <span className="mx-2">{property?.status}</span>
             </p>
 
-            <ul className="prop_details mb0">
-              {/* {item.itemDetails.map((val, i) => (
-                <li className="list-inline-item" key={i}>
-                  <a href="#">
-                    {val.name}: {val.number}
-                  </a>
-                </li>
-              ))} */}
-            </ul>
+            <ul className="prop_details mb0"></ul>
           </div>
           {/* End .tc_content */}
 
           <div className="fp_footer">
             <ul className="fp_meta float-start mb0">
               <li className="list-inline-item">
-              <Link href={`/property/${property.id}`} className="fp_price">
-                <h4>{formattedPriceFrom} - {formattedPriceTo}</h4>
-              </Link>
+              </li>
+              <li className="list-inline-item">
+                  From <span className="price">{formattedPriceFrom} &ndash; {formattedPriceTo}</span>
               </li>
             </ul>
-            <div className="fp_pdate float-end"></div>
+            <div className="fp_pdate float-end">{property.postedYear}</div>
           </div>
           {/* End .fp_footer */}
         </div>
-        {/* End .details */}
-      </div>
+      </Link>
     </div>
   )});
 

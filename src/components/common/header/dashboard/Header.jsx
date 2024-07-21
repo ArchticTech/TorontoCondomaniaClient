@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import HeaderMenuContent from "./HeaderMenuContent";
 import Image from "next/image";
 
-const Header = () => {
+const Header = ({userData}) => {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -24,29 +24,21 @@ const Header = () => {
         navbar ? "stricky-fixed " : ""
       }`}
     >
-      <div className="container-fluid p0">
+      <div className="container-fluid p0 topbar">
         {/* <!-- Menu Toggle btn--> */}
         <Link href="/" className="navbar_brand float-start dn-smd">
-          <Image
-            width={40}
-            height={45}
-            className="logo1 img-fluid"
-            src="/assets/images/header-logo2.png"
-            alt="header-logo2.png"
-          />
-          <Image
-            width={40}
-            height={45}
-            className="logo2 img-fluid"
-            src="/assets/images/header-logo2.png"
-            alt="header-logo2.png"
-          />
-          <span>FindHouse</span>
+        <Image
+              width={100}
+              height={80}
+              className="logo1 img-fluid contain"
+              src="/assets/images/TCM-LOGO-1.png"
+              alt="header-logo.png"
+            />
         </Link>
         {/* site logo brand */}
 
         <nav>
-          <HeaderMenuContent />
+          <HeaderMenuContent userData={userData}/>
         </nav>
         {/* End .navbar */}
       </div>

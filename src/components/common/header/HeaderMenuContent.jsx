@@ -2,14 +2,15 @@ import Link from "next/link";
 import Router, { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { addCity } from "../../../features/properties/propertiesSlice";
+import Cookies from 'js-cookie';
+import { useEffect, useState } from "react";
 
 const HeaderMenuContent = ({ float = "" }) => {
+  const [loginStatus] = useState(Cookies.get('loginStatus') == 'true')
   const route = useRouter();
 
-  const home = { name: "Home", routerPath: "/" };
-
   const listing = [
-    { id: 1, name: "Pre Construction", routerPath: "/pre-construction" },
+    { id: 1, name: "Pre Construction", routerPath: "/properties" },
     { id: 2, name: "Rentals", routerPath: "/rentals" },
     { id: 3, name: "Assignments", routerPath: "/assignments" },
   ];
@@ -29,9 +30,9 @@ const HeaderMenuContent = ({ float = "" }) => {
     { id: 12, name: "Niagara Falls", routerPath: "/niagara-falls" },
   ];
   const homeLoan = [
-    { id: 1, name: "Mortgage process", routerPath: "/mortgage-process" },
-    { id: 2, name: "Pre approval", routerPath: "/pre-approval" },
-    { id: 3, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+    { id: 1, name: "Mortgage Calculator", routerPath: "/mortgage-calculator" },
+    { id: 2, name: "Mortgage process", routerPath: "/mortgage-process" },
+    { id: 3, name: "Pre approval", routerPath: "/pre-approval" },
   ];
 
   const dispatch = useDispatch();
@@ -87,7 +88,7 @@ const HeaderMenuContent = ({ float = "" }) => {
           <span className="title">Top Cities</span>
           <span className="arrow"></span>
         </a>
-        <ul className="sub-menu ">
+        <ul className="sub-menu double-col-dropdown">
           {topCities.map((item) => (
             <li key={item.id}>
               <a
@@ -100,24 +101,6 @@ const HeaderMenuContent = ({ float = "" }) => {
           ))}
         </ul>
       </li>
-      {/* <li className={`dropitem ${isOpen ? 'active' : ''}`}>
-      <a href="#" onClick={toggleDropdown}>
-        <span className="title">Top Cities</span>
-        <span className={`arrow ${isOpen ? 'open' : ''}`}></span>
-      </a>
-      <ul className={`sub-menu ${isOpen ? 'open' : ''}`}>
-        {topCities.map((item) => (
-          <li key={item.id}>
-            <Link href={item.routerPath}>
-              <Link className={route.pathname === item.routerPath ? 'ui-active' : ''}>
-                {item.name}
-              </Link>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </li> */}
-      {/* End .dropitem */}
 
       {/* End .dropitem */}
 
@@ -134,7 +117,7 @@ const HeaderMenuContent = ({ float = "" }) => {
               : undefined
           }
         >
-          <span className="title">Home Loan</span>
+          <span className="title">Mortgage</span>
           <span className="arrow"></span>
         </a>
         <ul className="sub-menu ">
@@ -159,7 +142,7 @@ const HeaderMenuContent = ({ float = "" }) => {
 
       <li className="last">
         <Link
-          href="/articles"
+          href="https://blog.torontocondomania.ca"
           className={route.pathname === "/articles" ? "ui-active" : undefined}
         >
           Articles
@@ -167,29 +150,22 @@ const HeaderMenuContent = ({ float = "" }) => {
       </li>
       {/* End .dropitem */}
 
-      <li className={`list-inline-item list_s ${float}`}>
-        <a
-          href="#"
-          className="btn flaticon-user"
-          data-bs-toggle="modal"
-          data-bs-target=".bd-example-modal-lg"
-        >
-          <span className="dn-lg">Login/Register</span>
-        </a>
-      </li>
-      {/* End .dropitem */}
-
-      {/* <li className={`list-inline-item add_listing ${float}`}>
-      <button onClick={handleCreateListingClick}>
-        <span className="flaticon-plus"></span>
-        <span className="dn-lg"> Create Listing</span>
-      </button>
-    </li> */}
       <li className={`list-inline-item add_listing ${float}`}>
-        <Link href="/create-listing">
-          <span className="flaticon-plus"></span>
-          <span className="dn-lg mx-1">Create Listing</span>
-        </Link>
+        {
+        loginStatus ? 
+          <Link href="/user">
+            <span className="flaticon-home"></span>
+            <span className="dn-lg mx-1">Dashboard</span>
+          </Link>
+        : <a
+            href="#"
+            className="btn flaticon-user"
+            data-bs-toggle="modal"
+            data-bs-target=".bd-example-modal-lg"
+          >
+            <span className="dn-lg">Login/Register</span>
+          </a>
+          }
       </li>
       {/* End .dropitem */}
     </ul>

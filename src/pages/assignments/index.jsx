@@ -8,6 +8,20 @@ const index = ({  assignments }) => {
   return (
     <>
       <Head>
+        <title>TorontoCondomania | Discover Best assignment deals available for sale in Toronto & GTA</title>
+        <meta name="title" content="Discover Best assignment deals available for sale in Toronto & GTA" />
+        <meta name="description" content="Explore Best Assignment deals in Toronto & GTA on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://torontocondomania.ca/" />
+        <meta property="og:title" content="Discover Best assignment deals available for sale in Toronto & GTA" />
+        <meta property="og:description" content="Explore Best Assignment deals in Toronto & GTA on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://torontocondomania.ca/" />
+        <meta property="twitter:title" content="Discover Best assignment deals available for sale in Toronto & GTA" />
+        <meta property="twitter:description" content="Explore Best Assignment deals in Toronto & GTA on Torontocondomania. Use our detailed filters to find the perfect place, then get in touch with the property manager." />
+        
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
           rel="stylesheet"

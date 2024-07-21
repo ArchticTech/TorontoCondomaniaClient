@@ -10,22 +10,16 @@ const MobileMenu = () => {
         <div className="header stylehome1">
           <div className="main_logo_home2 text-center">
             <Image
-              width={40}
-              height={45}
-              className="nav_logo_img contain mt20"
-              src="/assets/images/logo.png"
+              width={90}
+              height={95}
+              className="nav_logo_img contain "
+              src="/assets/images/TCM-LOGO-1.png"
               alt="header-logo2.png"
             />
-            <span className="mt20">TCM</span>
           </div>
           {/* main_logo_home2 */}
 
           <ul className="menu_bar_home2">
-            <li className="list-inline-item list_s">
-              <Link href="/login">
-                <span className="flaticon-user"></span>
-              </Link>
-            </li>
             <li
               className="list-inline-item"
               data-bs-toggle="offcanvas"
@@ -33,6 +27,8 @@ const MobileMenu = () => {
               aria-controls="offcanvasMenu"
             >
               <a>
+                <span></span>
+                <span></span>
                 <span></span>
               </a>
             </li>

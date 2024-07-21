@@ -1,4 +1,3 @@
-import Pagination from "../common/blog/Pagination";
 import Header from "../common/header/DefaultHeader";
 import MobileMenu from "../common/header/MobileMenu";
 import FilterTopBar2 from "../common/listing/FilterTopBar2";
@@ -10,11 +9,11 @@ import FeaturedItem from "./FeaturedItem";
 import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import global from "../../config/env";
+import { useSelector } from "react-redux";
 
-mapboxgl.accessToken = global.mapboxAccessToken; 
+mapboxgl.accessToken = global.mapboxAccessToken;
 
-const ListingMap = ({ properties, isAssignment=true }) => {
-
+const ListingMap = ({ properties, isAssignment }) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "mapbox",
@@ -29,6 +28,13 @@ const ListingMap = ({ properties, isAssignment=true }) => {
         property.latitude,
         property.longitude
       );
+      property.marker
+        .getElement()
+        .setAttribute("data-marker-id", property.slug);
+        var markerElement = property.marker?.getElement();
+        if(markerElement) {
+          markerElement.style.display = 'none';
+        }
     });
 
     // Clean up the map instance when the component unmounts
@@ -37,7 +43,7 @@ const ListingMap = ({ properties, isAssignment=true }) => {
 
   const setMarkerOnMap = (map, latitude, longitude) => {
     const marker = new mapboxgl.Marker({
-      color: "#6449e7", // Marker color
+      color: "#ff3636", // Marker color
       draggable: false, // Allow the user to drag the marker
     })
       .setLngLat([longitude, latitude])
@@ -47,7 +53,7 @@ const ListingMap = ({ properties, isAssignment=true }) => {
   };
 
   return (
-    <div className="scroll-disabled">
+    <div className="">
       {/* <!-- Main Header Nav --> */}
       <Header />
 
@@ -65,7 +71,7 @@ const ListingMap = ({ properties, isAssignment=true }) => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <div className="sidebar_switch mobile_style dn db-991 mt30 mb0">
+              <div className="sidebar_switch mobile_style dn db-991 mb0">
                 <ShowFilter />
               </div>
 
@@ -95,46 +101,41 @@ const ListingMap = ({ properties, isAssignment=true }) => {
             </div>
             {/* End .col */}
 
-            <div className="col-xxl-7 col-xl-6  p0 position-relative">
+            <div className="col-xxl-7 col-xl-6 col-md-4 p0 position-relative">
               <div className="sidebar_switch style2 text-right dn-991 visible-filter filter-let-top">
                 <ShowFilter />
               </div>
               {/* filter switch */}
               <div
                 id="mapbox"
-                className="home_two_map style2 half_map_area"
+                className="d-none d-md-block d-home_two_map style2 half_map_area"
               ></div>
-              ;
             </div>
             {/* End .col */}
 
-            <div className="col-xxl-5 col-xl-6 ">
+            <div className="col-xxl-5 col-xl-6 col-md-8">
               <div className="half_map_area_content mt30">
                 <div className="listing_list_style listing-map-style m0 mb20">
-                  <GridListButton />
+                  
+                  <GridListButton isAssignment={isAssignment} />
                 </div>
                 {/* GridListButton */}
 
                 <div className="col-md-12">
                   <div className="grid_list_search_result ">
                     <div className="row align-items-center">
-                      <FilterTopBar2 />
+                      <FilterTopBar2
+                        length={useSelector((state) => state.properties.length)}
+                      />
                     </div>
                   </div>
                   {/* End .row */}
 
                   <div className="row">
-                    <FeaturedItem properties={properties} isAssignment={isAssignment} />
-                  </div>
-                  {/* End .row */}
-
-                  <div className="row">
-                    <div className="col-lg-12 mt20">
-                      <div className="mbp_pagination">
-                        <Pagination />
-                      </div>
-                    </div>
-                    {/* End paginaion .col */}
+                    <FeaturedItem
+                      properties={properties}
+                      isAssignment={isAssignment}
+                    />
                   </div>
                   {/* End .row */}
                 </div>

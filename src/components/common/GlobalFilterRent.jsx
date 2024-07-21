@@ -1,22 +1,31 @@
 import Router from "next/router";
 import {
   addKeyword,
-  addLocation,
   addType,
-} from "../../features/properties/propertiesSlice";
+  addLocation,
+  addPrice,
+  addAmenities,
+  addLaundry,
+  addPetPolicy,
+  addSmokingPolicy,
+  addBasement,
+  addParking,
+} from "../../features/rentals/rentalsSlice";
 import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";
 import GlobalSelectBox from "./GlobalSelectBox";
-import { useDispatch } from 'react-redux';
-import { addPrice } from "../../features/properties/propertiesSlice";
+import { useDispatch, useSelector } from "react-redux";
+// import { useState } from "react";
 
 const GlobalFilterRent = ({ className = "" }) => {
   const dispatch = useDispatch();
   // submit handler
   const submitHandler = () => {
-    Router.push("/properties");
+    Router.push("/rentals");
   };
 
+  const { amenities, laundry, petPolicy, smokingPolicy, basement, parking } =
+    useSelector((state) => state.rentals);
   return (
     <div className={`home1-advnc-search ${className}`}>
       <ul className="h1ads_1st_list mb0">
@@ -35,8 +44,9 @@ const GlobalFilterRent = ({ className = "" }) => {
         <li className="list-inline-item">
           <div className="search_option_two">
             <div className="candidate_revew_select">
-              <select className="selectpicker w100 form-select show-tick"
-              onChange={(e) => dispatch(addType(e.target.value))}
+              <select
+                className="selectpicker w100 form-select show-tick"
+                onChange={(e) => dispatch(addType(e.target.value))}
               >
                 <option value="">Rental Type</option>
                 <option value="Condo">Condo</option>
@@ -80,7 +90,11 @@ const GlobalFilterRent = ({ className = "" }) => {
             </div>
             <div className="dd_content2 dropdown-menu">
               <div className="pricing_acontent">
-                <PricingRangeSlider priceReducer={addPrice} min={100} max={30000}/>
+                <PricingRangeSlider
+                  priceReducer={addPrice}
+                  min={1}
+                  max={30000}
+                />
               </div>
             </div>
           </div>
@@ -100,13 +114,131 @@ const GlobalFilterRent = ({ className = "" }) => {
               </span>
 
               <div className="dropdown-content dropdown-menu">
-
-                <div className="row p15 pt0-xsd">
-                <div className="col-lg-12 col-xl-12">
-                    <ul className="apeartment_area_list mb0">
+                <div className=" p15 pt0-xsd">
+                  {/* <div className="col-lg-12 col-xl-12"> */}
+                  <ul className="row mb0">
                     <GlobalSelectBox />
-                    </ul>
-                </div>
+
+                    <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
+                      <div className="">
+                        <input
+                          type="date"
+                          className="form-control"
+                          onChange={(e) =>
+                            dispatch(addLocation(e.target.value))
+                          }
+                        />
+                        {/* <label>
+                            
+                          </label> */}
+                      </div>
+                    </li>
+                    {/* End li */}
+                    <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
+                      <div className="row rental_features_badge w-100 mx-auto">
+                        <div className="col-md-8 col-sm-3">
+                          <h4 className="badge d-flex">Laundry Available</h4>
+                        </div>
+                        <div className="col-3 form-check form-switch form-check-reverse">
+                          <input
+                            onChange={(e) =>
+                              dispatch(addLaundry(e.target.checked))
+                            }
+                            value={laundry}
+                            checked={laundry}
+                            className="form-check-input"
+                            type="checkbox"
+                            id="flexSwitchCheckReverse"
+                          />
+                        </div>
+                      </div>
+                    </li> 
+                    {/* End li */}
+                    <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
+                      <div className="row rental_features_badge w-100 mx-auto">
+                        <div className="col-md-8 col-sm-3">
+                          <h4 classname="badge d-flex">Pets Allowed</h4>
+                        </div>
+                        <div classname="col-3 form-check form-switch form-check-reverse">
+                          <input
+                            onChange={(e) =>
+                              dispatch(addPetPolicy(e.target.checked))
+                            }
+                            value={petPolicy}
+                            checked={petPolicy}
+                            className="form-check-input"
+                            type="checkbox"
+                            id="flexSwitchCheckReverse"
+                          />
+                        </div>
+                      </div>
+                    </li>
+                    {/* End li */}
+                    
+
+                    <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
+                      <div className="row rental_features_badge w-100 mx-auto">
+                        <div className="col-md-8 col-sm-3">
+                          <h4 classname="badge d-flex">Smoking Allowed</h4>
+                        </div>
+                        <div classname="col-3 form-check form-switch form-check-reverse">
+                          <input
+                            onChange={(e) =>
+                              dispatch(addSmokingPolicy(e.target.checked))
+                            }
+                            value={smokingPolicy}
+                            checked={smokingPolicy}
+                            className="form-check-input"
+                            type="checkbox"
+                            id="flexSwitchCheckReverse"
+                          />
+                        </div>
+                      </div>
+                    </li>
+                    {/* End li */}
+
+                    <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
+                      <div className="row rental_features_badge w-100 mx-auto">
+                        <div className="col-md-8 col-sm-3">
+                          <h4 classname="badge d-flex">Basement Available</h4>
+                        </div>
+                        <div classname="col-3 form-check form-switch form-check-reverse">
+                          <input
+                            onChange={(e) =>
+                              dispatch(addBasement(e.target.checked))
+                            }
+                            value={basement}
+                            checked={basement}
+                            className="form-check-input"
+                            type="checkbox"
+                            id="flexSwitchCheckReverse"
+                          />
+                        </div>
+                      </div>
+                    </li>
+                    {/* End li */}
+
+                    <li className="col-md-3 list-inline-item mx-0 px-2 mb-2">
+                      <div className="row rental_features_badge w-100 mx-auto">
+                        <div className="col-md-8 col-sm-3">
+                          <h4 classname="badge d-flex">Parking Available</h4>
+                        </div>
+                        <div classname="col-3 form-check form-switch form-check-reverse">
+                          <input
+                            onChange={(e) =>
+                              dispatch(addParking(e.target.checked))
+                            }
+                            value={parking}
+                            checked={parking}
+                            className="form-check-input"
+                            type="checkbox"
+                            id="flexSwitchCheckReverse"
+                          />
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  {/* </div> */}
                 </div>
                 {/* End .row */}
 
@@ -115,8 +247,35 @@ const GlobalFilterRent = ({ className = "" }) => {
                     <h4 className="text-thm3 mb-4">Amenities</h4>
                   </div>
 
-                  <CheckBoxFilter />
+                  <CheckBoxFilter
+                    addAmenities={addAmenities}
+                    amenities={amenities}
+                  />
                 </div>
+
+                <div className="container mb-2">
+                  {/* <li>
+                    <div className="row mx-1 rental_features_badge">
+                      <div className="col-8 ">
+                        <h4 classname="badge d-flex">Laundry Available</h4>
+                      </div>
+                      <div classname="col-3 form-check form-switch form-check-reverse">
+                        <input
+                          onChange={(e) =>
+                            dispatch(addLaundry(e.target.checked))
+                          }
+                          value={laundry}
+                          checked={laundry}
+                          className="form-check-input"
+                          type="checkbox"
+                          id="flexSwitchCheckReverse"
+                        />
+                      </div>
+                    </div>
+                  </li>
+                  End li */}
+                </div>
+                {/* End li */}
                 {/* End .row */}
               </div>
               {/* End .dropdown-menu */}

@@ -16,7 +16,7 @@ const CallToAction = () => {
           {/* <Link href="/register" className="btn btn-thm2">
             Register Now
           </Link> */}
-          <p className="text-white badge" style={{ fontSize: '1rem' }}>Coming Soon</p>{" "}
+          <p className="text-white badge" style={{ fontSize: '2.5rem' }}>Coming Soon</p>{" "}
         </div>
       </div>
       {/* End .col */}

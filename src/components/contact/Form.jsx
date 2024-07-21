@@ -71,7 +71,7 @@ const Form = () => {
           </div>
           {/* End .col */}
 
-          <div className="form-group mb0">
+          <div className="form-group mb0 submit_btn_contact">
             <button type="submit" className="btn btn-lg btn-thm">
               Send Message
             </button>

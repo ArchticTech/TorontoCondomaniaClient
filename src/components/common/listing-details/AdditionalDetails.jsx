@@ -1,12 +1,14 @@
 const AdditionalDetails = ({property}) => {
 
-  const formattedParkingPrice = property?.parking_price?.toLocaleString('en-US', {
+  const parkingPrice = parseFloat(property?.parking_price)
+  const lockerPrice = parseFloat(property?.locker_price)
+  const formattedParkingPrice = parkingPrice.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   });
-  const formattedLockerPrice = property?.locker_price?.toLocaleString('en-US', {
+  const formattedLockerPrice = lockerPrice.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,

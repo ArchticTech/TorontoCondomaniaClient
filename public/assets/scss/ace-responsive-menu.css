@@ -115,7 +115,12 @@ ul {
   transform: scale(1);
   height: auto;
 }
-
+.ace-responsive-menu li.dropitem:hover > .double-col-dropdown {
+  left: -210px
+}
+.ace-responsive-menu li.dropitem:hover > .double-col-dropdown::before {
+  left: 253px !important;
+}
 .ace-responsive-menu li ul.sub-menu {
   background: #333;
 }

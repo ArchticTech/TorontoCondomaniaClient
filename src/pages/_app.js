@@ -3,7 +3,6 @@ import { store } from "../app/store";
 import ScrollToTop from "../components/common/ScrollTop";
 import Seo from "../components/common/seo";
 import "../index.scss";
-import Head from "next/head";
 
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");

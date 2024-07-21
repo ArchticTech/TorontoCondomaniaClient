@@ -1,0 +1,104 @@
+// import Slider from "react-slick";
+
+// const partnerItems = [
+//   {
+//     id: 1,
+//     imageSrc: "../../assets/images/partners/1.png",
+//   },
+//   {
+//     id: 2,
+//     imageSrc: "../../assets/images/partners/2.png",
+//   },
+//   {
+//     id: 3,
+//     imageSrc: "../../assets/images/partners/3.png",
+//   },
+//   {
+//     id: 4,
+//     imageSrc: "../../assets/images/partners/4.png",
+//   },
+//   {
+//     id: 4,
+//     imageSrc: "../../assets/images/partners/5.png",
+//   },
+// ];
+
+// const Banks = () => {
+//   const settings = {
+//     dots: true,
+//     arrows: false,
+//     slidesToShow: 3,
+//     slidesToScroll: 3,
+//     autoplay: false,
+//     speed: 1200,
+//     responsive: [
+//       {
+//         breakpoint: 1200,
+//         settings: {
+//           slidesToShow: 2,
+//           slidesToScroll: 2,
+//         },
+//       },
+//       {
+//         breakpoint: 576,
+//         settings: {
+//           slidesToShow: 1,
+//           slidesToScroll: 1,
+//         },
+//       },
+//     ],
+//   };
+
+//   let content = partnerItems?.slice(0, 12)?.map((partner) => {
+//     return (
+//       <div className="item" key={partner.id}>
+//         <div className="feat_property">
+//           <div className="">
+//             <img
+//               width={343}
+//               height={220}
+//               className="img-whp cover p-3"
+//               src={partner.imageSrc}
+//               alt="blog img"
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   });
+
+//   return (
+//     <>
+//       <Slider {...settings} arrows={false}>
+//         {content}
+//       </Slider>
+//     </>
+//   );
+// };
+
+// export default Banks;
+
+import React from "react";
+
+const Banks = () => {
+  return (
+    <div className="container bank_container">
+      <div className="row">
+        <div className="image col-6 col-md-3 ">
+          <img src="../../assets/images/bank1.png" alt="" />
+        </div>
+        <div className="image col-6 col-md-3">
+          <img src="../../assets/images/bank2.png" alt="" />
+        </div>
+        <div className="image col-6 col-md-3">
+          <img src="../../assets/images/bank3.png" alt="" />
+        </div>
+        <div className="image col-6 col-md-3">
+          <img src="../../assets/images/bank4.png" alt="" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Banks;

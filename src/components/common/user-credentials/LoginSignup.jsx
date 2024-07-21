@@ -2,7 +2,8 @@ import { registerUser, resendVerificationEmail, authenticateUser } from "../../.
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import LoadingIcon from '../LoadingIcon'
+import LoadingIcon from '../LoadingIcon';
+import Cookies from "js-cookie";
 
 const LoginSignup = () => {
 
@@ -64,18 +65,18 @@ const LoginSignup = () => {
       });
     }
   }
-  const loginSubmit = (e) => 
+  const loginSubmit = async (e) => 
   {
     e.preventDefault();
 
     if(!loading)
     {
       setLoading(true);
-      const userData = {
+      const authData = {
         email: loginEmail,
         password: loginPassword,
       };
-      authenticateUser(userData)
+      await authenticateUser(authData)
       .then((response) => 
       {
           setLoading(false);
@@ -92,7 +93,13 @@ const LoginSignup = () => {
             }
           }
           else {
-            router.push('/dashboard');
+            const userData = {
+              name: response.name,
+              email: response.email
+            }
+            Cookies.set('userData', JSON.stringify(userData));
+            Cookies.set('loginStatus', true);
+            router.push('/user')
           }
       });
     }
@@ -187,7 +194,7 @@ const LoginSignup = () => {
                   width={357}
                   height={494}
                   className="img-fluid w100 h-100 cover"
-                  src="/assets/images/resource/login.jpg"
+                  src="/assets/images/login cover.jpg"
                   alt="login.jpg"
                 />
               </div>

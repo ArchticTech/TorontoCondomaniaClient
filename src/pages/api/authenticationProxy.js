@@ -21,8 +21,9 @@ const AuthenticationProxy = async (req, res) => {
         sameSite: 'Strict', // Adjust sameSite attribute as needed
         });
 
+        delete responseData.token;
         res.setHeader('Set-Cookie', [cookieSerialized]);
-        res.status(200).json({success: true});
+        res.status(200).json(responseData);
     }
     else {
         const cookieSerialized = serialize('auth-token', '', {
@@ -35,7 +36,7 @@ const AuthenticationProxy = async (req, res) => {
         // Send the cookie as a response header to clear it
         res.setHeader('Set-Cookie', [cookieSerialized]);
 
-        res.status(200).json(responseData);
+        res.status(401).json(responseData);
     }
 };
 

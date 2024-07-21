@@ -1,30 +1,36 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { isSinglePageActive } from "../../../../utils/daynamicNavigation";
+import axios from "axios";
+import Cookies from "js-cookie";
 import Image from "next/image";
 
-const MyAccount = () => {
+const MyAccount = ({userData = []}) => {
   const profileMenuItems = [
-    { id: 1, name: "My Profile", ruterPath: "/my-profile" },
-    { id: 2, name: " My Message", ruterPath: "/my-message" },
-    { id: 3, name: " My Favourite", ruterPath: "/my-favourites" },
-    { id: 4, name: " My Package", ruterPath: "/my-package" },
-    { id: 5, name: " Log out", ruterPath: "/login" },
+    { id: 1, name: "My Profile", ruterPath: "/user/profile" },
+    { id: 2, name: " My Favourite", ruterPath: "/user/favorites" },
   ];
   const route = useRouter();
+  
+  const logoutUser = async () => {
+    const response = await axios.get('/api/logout');
+    Cookies.set('loginStatus', false);
+    route.push('/');
+  }
+
   return (
     <>
       <div className="user_set_header">
         <Image
-          width={40}
-          height={40}
+          width={27}
+          height={27}
           className="float-start"
-          src="/assets/images/team/e1.png"
+          src="/assets/images/team/profile-icon.png"
           alt="e1.png"
         />
         <p>
-          Ali Tufan <br />
-          <span className="address">alitufan@gmail.com</span>
+          {userData.name}<br />
+          <span className="address">{userData.email}</span>
         </p>
       </div>
       {/* End user_set_header */}
@@ -44,6 +50,10 @@ const MyAccount = () => {
             {item.name}
           </Link>
         ))}
+
+          <a href='#' className="dropdown-item" onClick={logoutUser} >
+            Logout
+          </a>
       </div>
     </>
   );

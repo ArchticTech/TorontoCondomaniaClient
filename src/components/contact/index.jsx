@@ -29,7 +29,7 @@ const index = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-7 col-xl-8">
-              <div className="form_grid">
+              <div className="form_grid send_email_contact">
                 <h4 className="mb5">Send Us An Email</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In

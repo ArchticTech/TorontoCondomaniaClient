@@ -3,19 +3,19 @@ import "photoswipe/dist/photoswipe.css";
 import propertiesContent from "../../../data/properties";
 import Image from "next/image";
 
-const ListingGallery2 = () => {
+const ListingGallery2 = ({propertyImages}) => {
   return (
     <>
       <Gallery>
-        {propertiesContent.slice(37, 38).map((singleItem) => (
-          <div className="row g-0" key={singleItem.id}>
+        {propertyImages.slice(37, 38).map((image) => (
+          <div className="row g-0" key={image.id}>
             <div className="col-md-6 col-lg-6 ">
               <div className="row g-0">
                 <div className="col-lg-12 ">
                   <div className="spls_style_one pr1 1px position-relative">
                     <Item
-                      original={singleItem.img}
-                      thumbnail={singleItem.img}
+                      original={image.img}
+                      thumbnail={image.img}
                       width={752}
                       height={450}
                     >
@@ -35,8 +35,8 @@ const ListingGallery2 = () => {
                             width={759}
                             height={456}
                             className="img-fluid w100 lds-2 h1-00 cover"
-                            src={singleItem.img}
-                            alt={singleItem.img}
+                            src={image.img}
+                            alt={image.img}
                           />
                         </>
                       )}
